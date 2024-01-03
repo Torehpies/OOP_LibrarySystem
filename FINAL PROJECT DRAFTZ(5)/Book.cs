@@ -13,13 +13,13 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             Available,
             Borrowed
         }
-        string title;
-        string isbn13;
-        string isbn10;
-        string author;
-        string category;
-        string publisher;
-        string published;
+        public string title;
+        public string isbn13;
+        public string isbn10;
+        public string author;
+        public string category;
+        public string publisher;
+        public string published;
         Status status = Status.Available;
     }
 }
