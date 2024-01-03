@@ -19,6 +19,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void Form5_Load(object sender, EventArgs e)
         {
+            Book book = new Book();
+            book.title = "How to Write a Lot";
+            label2.Text = book.title;
 
         }
 
