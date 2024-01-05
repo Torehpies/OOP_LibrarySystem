@@ -1,6 +1,6 @@
 ﻿namespace FINAL_PROJECT_DRAFTZ_5_
 {
-    partial class libraryPanel
+    partial class BookDetails
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,16 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SuspendLayout();
-            // 
-            // libraryPanel
-            // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Transparent;
-            Name = "libraryPanel";
-            Size = new Size(407, 302);
-            ResumeLayout(false);
+            components = new System.ComponentModel.Container();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         }
 
         #endregion

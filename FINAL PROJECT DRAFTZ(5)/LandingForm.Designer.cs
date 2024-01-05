@@ -33,8 +33,10 @@
             LibraryLabel = new Button();
             BorrowerListLabel = new Button();
             label1 = new Label();
-            contentPanel = new FlowLayoutPanel();
+            contentPanel = new Panel();
+            libraryPanel = new FlowLayoutPanel();
             panel1.SuspendLayout();
+            contentPanel.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -62,6 +64,7 @@
             ReturningLabel.TabIndex = 4;
             ReturningLabel.Text = "BOOK RETURNING";
             ReturningLabel.TextAlign = ContentAlignment.TopCenter;
+            ReturningLabel.Click += ReturningLabel_Click;
             // 
             // LibraryLabel
             // 
@@ -103,14 +106,26 @@
             // 
             // contentPanel
             // 
+            contentPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             contentPanel.AutoScroll = true;
-            contentPanel.Dock = DockStyle.Right;
-            contentPanel.FlowDirection = FlowDirection.TopDown;
+            contentPanel.BackColor = Color.Ivory;
+            contentPanel.Controls.Add(libraryPanel);
             contentPanel.Location = new Point(150, 0);
             contentPanel.Name = "contentPanel";
             contentPanel.Padding = new Padding(20);
             contentPanel.Size = new Size(650, 450);
             contentPanel.TabIndex = 2;
+            // 
+            // libraryPanel
+            // 
+            libraryPanel.AutoScroll = true;
+            libraryPanel.BackColor = Color.Transparent;
+            libraryPanel.Dock = DockStyle.Fill;
+            libraryPanel.FlowDirection = FlowDirection.TopDown;
+            libraryPanel.Location = new Point(20, 20);
+            libraryPanel.Name = "libraryPanel";
+            libraryPanel.Size = new Size(610, 410);
+            libraryPanel.TabIndex = 0;
             // 
             // LandingForm
             // 
@@ -123,6 +138,7 @@
             Name = "LandingForm";
             Text = "Form7";
             panel1.ResumeLayout(false);
+            contentPanel.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -133,6 +149,7 @@
         private Button LibraryLabel;
         private Button BorrowerListLabel;
         private Label label1;
-        private FlowLayoutPanel contentPanel;
+        private Panel contentPanel;
+        private FlowLayoutPanel libraryPanel;
     }
 }
