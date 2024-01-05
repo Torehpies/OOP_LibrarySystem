@@ -5,6 +5,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         public FormLogin()
         {
             InitializeComponent();
+
         }
     }
 }
