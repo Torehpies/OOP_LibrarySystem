@@ -8,7 +8,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 {
     internal class Book
     {
-        public enum BookStatus
+        public enum BookType
         {
             Available,
             Borrowed
@@ -27,12 +27,24 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         { get; set; }
         public string published
         { get; set; }
-        private BookStatus status = BookStatus.Available;
-        public BookStatus Status
+        public string BookID
+        { get; set; }
+        private BookType status = BookType.Available;
+        public BookType Status
         {
             get { return status; }
             set { status = value; }
         }
-        
+        public Book(string BookTitle, string BookIsbn13, string BookIsbn10, string BookAuthor, string BookCategory, string BookPublisher, string BookPublished, BookType BookStatus)
+        {
+            title = BookTitle;
+            isbn13 = BookIsbn13;
+            isbn10 = BookIsbn10;
+            author = BookAuthor;
+            category = BookCategory;
+            publisher = BookPublisher;
+            published = BookPublished;
+            Status = BookStatus;
+        }
     }
 }
