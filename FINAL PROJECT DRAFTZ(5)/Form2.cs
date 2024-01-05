@@ -21,6 +21,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         {
             InitializeComponent();
             InitializePictureBoxArray();
+            InitializeBookData();
+        }
+        private void InitializeBookData()
+        {
+
         }
         private void InitializePictureBoxArray()
         {
