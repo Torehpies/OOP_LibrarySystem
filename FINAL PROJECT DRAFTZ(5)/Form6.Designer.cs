@@ -325,11 +325,11 @@
             // 
             label3.Font = new Font("Franklin Gothic Medium Cond", 10F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = SystemColors.ControlText;
-            label3.Location = new Point(12, 472);
+            label3.Location = new Point(12, 470);
             label3.Name = "label3";
             label3.Size = new Size(155, 23);
             label3.TabIndex = 20;
-            label3.Text = "DUE DATE TO BE RETURNED";
+            label3.Text = "DATE TO BE RETURNED";
             label3.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // BorrowingForm
