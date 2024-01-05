@@ -7,19 +7,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.DataFormats;
 
 namespace FINAL_PROJECT_DRAFTZ_5_
 {
     public partial class BookContainer : UserControl
     {
+        public Book BookContainerData = null;
+        public event EventHandler ButtonClick;
         public BookContainer()
         {
             InitializeComponent();
+            InitializeUI();
             //MouseEnter += MyUserControl_MouseEnter;
             //MouseLeave += MyUserControl_MouseLeave;
         }
 
-       
+        private void InitializeUI()
+        {
+            bookPic.Image = Image.FromFile(BookContainerData.picturePath);
+            bookTitle.Text = BookContainerData.title;
+            bookYear.Text = BookContainerData.published;
+        }
+
 
         private void Book1_Click(object sender, EventArgs e)
         {
@@ -38,6 +48,15 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         {
             // Set the visibility of the button to false when the mouse leaves the user control
             borrowBtn.Visible = false;
+        }
+
+        private void borrowBtn_Click(object sender, EventArgs e)
+        {
+            BookDetails bookDetails = new BookDetails();
+            //bookDetails.Show();
+            
+            bookDetails.ShowDialog();
+
         }
     }
 }

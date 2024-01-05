@@ -28,44 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            BookDateLabel1 = new Label();
-            Book1 = new PictureBox();
-            BookLabel1 = new Label();
+            bookYear = new Label();
+            bookPic = new PictureBox();
+            bookTitle = new Label();
             borrowBtn = new Button();
-            ((System.ComponentModel.ISupportInitialize)Book1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)bookPic).BeginInit();
             SuspendLayout();
             // 
-            // BookDateLabel1
+            // bookYear
             // 
-            BookDateLabel1.AutoSize = true;
-            BookDateLabel1.Font = new Font("Franklin Gothic Medium", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            BookDateLabel1.Location = new Point(13, 171);
-            BookDateLabel1.Name = "BookDateLabel1";
-            BookDateLabel1.Size = new Size(45, 20);
-            BookDateLabel1.TabIndex = 19;
-            BookDateLabel1.Text = "2018";
+            bookYear.AutoSize = true;
+            bookYear.Font = new Font("Franklin Gothic Medium", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            bookYear.Location = new Point(13, 171);
+            bookYear.Name = "bookYear";
+            bookYear.Size = new Size(45, 20);
+            bookYear.TabIndex = 19;
+            bookYear.Text = "2018";
             // 
-            // Book1
+            // bookPic
             // 
-            Book1.Image = Properties.Resources.how_to_write_a_lot;
-            Book1.Location = new Point(30, 3);
-            Book1.Name = "Book1";
-            Book1.Size = new Size(98, 134);
-            Book1.SizeMode = PictureBoxSizeMode.StretchImage;
-            Book1.TabIndex = 17;
-            Book1.TabStop = false;
-            Book1.Click += Book1_Click;
+            bookPic.Image = Properties.Resources.how_to_write_a_lot;
+            bookPic.Location = new Point(30, 3);
+            bookPic.Name = "bookPic";
+            bookPic.Size = new Size(98, 134);
+            bookPic.SizeMode = PictureBoxSizeMode.StretchImage;
+            bookPic.TabIndex = 17;
+            bookPic.TabStop = false;
+            bookPic.Click += Book1_Click;
             // 
-            // BookLabel1
+            // bookTitle
             // 
-            BookLabel1.AutoEllipsis = true;
-            BookLabel1.Font = new Font("Franklin Gothic Demi Cond", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            BookLabel1.ForeColor = Color.FromArgb(37, 23, 73);
-            BookLabel1.Location = new Point(13, 140);
-            BookLabel1.Name = "BookLabel1";
-            BookLabel1.Size = new Size(133, 31);
-            BookLabel1.TabIndex = 18;
-            BookLabel1.Text = "How to Write a Lot";
+            bookTitle.AutoEllipsis = true;
+            bookTitle.Font = new Font("Franklin Gothic Demi Cond", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            bookTitle.ForeColor = Color.FromArgb(37, 23, 73);
+            bookTitle.Location = new Point(13, 140);
+            bookTitle.Name = "bookTitle";
+            bookTitle.Size = new Size(133, 31);
+            bookTitle.TabIndex = 18;
+            bookTitle.Text = "How to Write a Lot";
             // 
             // borrowBtn
             // 
@@ -80,6 +80,7 @@
             borrowBtn.TabIndex = 20;
             borrowBtn.Text = "BORROW";
             borrowBtn.UseVisualStyleBackColor = false;
+            borrowBtn.Click += borrowBtn_Click;
             // 
             // BookContainer
             // 
@@ -87,21 +88,21 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Ivory;
             Controls.Add(borrowBtn);
-            Controls.Add(BookDateLabel1);
-            Controls.Add(Book1);
-            Controls.Add(BookLabel1);
+            Controls.Add(bookYear);
+            Controls.Add(bookPic);
+            Controls.Add(bookTitle);
             Name = "BookContainer";
             Size = new Size(159, 245);
-            ((System.ComponentModel.ISupportInitialize)Book1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)bookPic).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label BookDateLabel1;
-        private PictureBox Book1;
-        private Label BookLabel1;
+        private Label bookYear;
+        private PictureBox bookPic;
+        private Label bookTitle;
         private Button borrowBtn;
     }
 }

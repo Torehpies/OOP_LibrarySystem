@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FINAL_PROJECT_DRAFTZ_5_
 {
-    internal class Book
+    public class Book
     {
         public enum BookType
         {

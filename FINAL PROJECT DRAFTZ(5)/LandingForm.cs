@@ -8,20 +8,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace FINAL_PROJECT_DRAFTZ_5_
 {
+
+
     public partial class LandingForm : Form
     {
+
         public LandingForm()
         {
             InitializeComponent();
             InitializeBookContainers();
             contentPanel.Controls.Add(new BookReturning());
+            
+            
         }
 
         private void InitializeBookContainers()
         {
-
 
             Label academicLabel = new Label();
             academicLabel.Font = new Font("Franklin Gothic Demi Cond", 18F, FontStyle.Regular, GraphicsUnit.Point);
@@ -45,9 +50,13 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             academicPanel.AutoSize = true;
             academicPanel.AutoScroll = true;
 
-            for (int i = 0; i < 9; i++)
+            Book[] BookList = new bookData().bookList;
+
+            foreach (Book book in BookList)
             {
-                academicPanel.Controls.Add(new BookContainer());
+                BookContainer bookContainer = new BookContainer();
+                bookContainer.BookContainerData = book;
+                academicPanel.Controls.Add(bookContainer);
             }
 
             libraryPanel.Controls.Add(academicPanel);
@@ -56,6 +65,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
             contentPanel.Controls.Add(libraryPanel);
         }
+
 
         private void ReturningLabel_Click(object sender, EventArgs e)
         {

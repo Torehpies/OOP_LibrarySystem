@@ -8,9 +8,15 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 {
     internal class bookData
     {
-        public List <Book> availableBooks
-        { get; set; }
-        Book[] bookList = { new Book ("How to Write a Lot: A Practical Guide to Productive Academic Writing", "9781433829789", "1433829789", "Academic", "Paul J. Silvia", "American Psychological Association", "2018 ", "path"),
+        private List <Book> availableBooks;
+
+        public List<Book> AvailableBooks
+        {
+            get { return availableBooks;}
+            set { availableBooks = value; }
+        
+        }
+        public Book[] bookList = { new Book ("How to Write a Lot: A Practical Guide to Productive Academic Writing", "9781433829789", "1433829789", "Academic", "Paul J. Silvia", "American Psychological Association", "2018 ", "path"),
                             new Book ("Decolonizing Methodologies: Research and Indigenous Peoples", "9781350346086", "135034608X", "Academic", "Smith, Linda Tuhiwai", "Bloomsbury Academic", "2023-01-26", "path"),
                             new Book ("What I Wish I Knew When I Was 20: A Crash Course on Making Your Place in the World", "9780061872495", "0061872490", "Academic", "Tina Seelig", "Harper Collins", "2009", "path"),
                             new Book ("Orientalism", "9780394740676", "039474067X", "Academic", "Said, Edward W.", "Vintage", "1979", "path"),
