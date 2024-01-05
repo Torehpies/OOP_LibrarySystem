@@ -33,17 +33,17 @@
             StudentRadioButton = new RadioButton();
             label1 = new Label();
             StudentLoginPanel = new Panel();
-            StudentLoginbtn = new Button();
-            StudentSectiontxtBox = new TextBox();
-            StudentYeartxtBox = new TextBox();
-            StudentNametxtBox = new TextBox();
-            StudentIDtxtBox = new TextBox();
+            StudentLoginButton = new Button();
+            StudentSectionTxtBox = new TextBox();
+            StudentYearTxtBox = new TextBox();
+            StudentNameTxtBox = new TextBox();
+            StudentIDTxtBox = new TextBox();
             label2 = new Label();
             TeacherLoginPanel = new Panel();
-            TeacherLoginbtn = new Button();
-            TeacherDepartmenttxtBox = new TextBox();
-            TeacherNametxtBox = new TextBox();
-            TeacherIDtxtBox = new TextBox();
+            TeacherLoginButton = new Button();
+            TeacherDepartmentTxtBox = new TextBox();
+            TeacherNameTxtBox = new TextBox();
+            TeacherIDTxtBox = new TextBox();
             label3 = new Label();
             AdmitTypePanel.SuspendLayout();
             StudentLoginPanel.SuspendLayout();
@@ -73,6 +73,7 @@
             TeacherRadioButton.TabStop = true;
             TeacherRadioButton.Text = "TEACHER";
             TeacherRadioButton.UseVisualStyleBackColor = true;
+            TeacherRadioButton.CheckedChanged += TeacherRadioButton_CheckedChanged;
             // 
             // StudentRadioButton
             // 
@@ -86,6 +87,7 @@
             StudentRadioButton.TabStop = true;
             StudentRadioButton.Text = "STUDENT";
             StudentRadioButton.UseVisualStyleBackColor = true;
+            StudentRadioButton.CheckedChanged += StudentRadioButton_CheckedChanged;
             // 
             // label1
             // 
@@ -101,60 +103,61 @@
             // StudentLoginPanel
             // 
             StudentLoginPanel.BorderStyle = BorderStyle.FixedSingle;
-            StudentLoginPanel.Controls.Add(StudentLoginbtn);
-            StudentLoginPanel.Controls.Add(StudentSectiontxtBox);
-            StudentLoginPanel.Controls.Add(StudentYeartxtBox);
-            StudentLoginPanel.Controls.Add(StudentNametxtBox);
-            StudentLoginPanel.Controls.Add(StudentIDtxtBox);
+            StudentLoginPanel.Controls.Add(StudentLoginButton);
+            StudentLoginPanel.Controls.Add(StudentSectionTxtBox);
+            StudentLoginPanel.Controls.Add(StudentYearTxtBox);
+            StudentLoginPanel.Controls.Add(StudentNameTxtBox);
+            StudentLoginPanel.Controls.Add(StudentIDTxtBox);
             StudentLoginPanel.Controls.Add(label2);
             StudentLoginPanel.Location = new Point(12, 118);
             StudentLoginPanel.Name = "StudentLoginPanel";
             StudentLoginPanel.Size = new Size(250, 208);
             StudentLoginPanel.TabIndex = 1;
             // 
-            // StudentLoginbtn
+            // StudentLoginButton
             // 
-            StudentLoginbtn.BackColor = Color.FromArgb(38, 49, 89);
-            StudentLoginbtn.Font = new Font("Franklin Gothic Demi Cond", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            StudentLoginbtn.ForeColor = Color.FromArgb(255, 251, 235);
-            StudentLoginbtn.Location = new Point(35, 167);
-            StudentLoginbtn.Name = "StudentLoginbtn";
-            StudentLoginbtn.Size = new Size(179, 26);
-            StudentLoginbtn.TabIndex = 2;
-            StudentLoginbtn.Text = "LOGIN";
-            StudentLoginbtn.UseVisualStyleBackColor = false;
+            StudentLoginButton.BackColor = Color.FromArgb(38, 49, 89);
+            StudentLoginButton.Font = new Font("Franklin Gothic Demi Cond", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            StudentLoginButton.ForeColor = Color.FromArgb(255, 251, 235);
+            StudentLoginButton.Location = new Point(35, 167);
+            StudentLoginButton.Name = "StudentLoginButton";
+            StudentLoginButton.Size = new Size(179, 26);
+            StudentLoginButton.TabIndex = 2;
+            StudentLoginButton.Text = "LOGIN";
+            StudentLoginButton.UseVisualStyleBackColor = false;
+            StudentLoginButton.Click += StudentLoginButton_Click;
             // 
-            // StudentSectiontxtBox
+            // StudentSectionTxtBox
             // 
-            StudentSectiontxtBox.Location = new Point(16, 138);
-            StudentSectiontxtBox.Name = "StudentSectiontxtBox";
-            StudentSectiontxtBox.PlaceholderText = "Section";
-            StudentSectiontxtBox.Size = new Size(217, 23);
-            StudentSectiontxtBox.TabIndex = 6;
+            StudentSectionTxtBox.Location = new Point(16, 138);
+            StudentSectionTxtBox.Name = "StudentSectionTxtBox";
+            StudentSectionTxtBox.PlaceholderText = "Section";
+            StudentSectionTxtBox.Size = new Size(217, 23);
+            StudentSectionTxtBox.TabIndex = 6;
             // 
-            // StudentYeartxtBox
+            // StudentYearTxtBox
             // 
-            StudentYeartxtBox.Location = new Point(16, 109);
-            StudentYeartxtBox.Name = "StudentYeartxtBox";
-            StudentYeartxtBox.PlaceholderText = "Year";
-            StudentYeartxtBox.Size = new Size(217, 23);
-            StudentYeartxtBox.TabIndex = 5;
+            StudentYearTxtBox.Location = new Point(16, 109);
+            StudentYearTxtBox.Name = "StudentYearTxtBox";
+            StudentYearTxtBox.PlaceholderText = "Year";
+            StudentYearTxtBox.Size = new Size(217, 23);
+            StudentYearTxtBox.TabIndex = 5;
             // 
-            // StudentNametxtBox
+            // StudentNameTxtBox
             // 
-            StudentNametxtBox.Location = new Point(16, 80);
-            StudentNametxtBox.Name = "StudentNametxtBox";
-            StudentNametxtBox.PlaceholderText = "Name";
-            StudentNametxtBox.Size = new Size(217, 23);
-            StudentNametxtBox.TabIndex = 4;
+            StudentNameTxtBox.Location = new Point(16, 80);
+            StudentNameTxtBox.Name = "StudentNameTxtBox";
+            StudentNameTxtBox.PlaceholderText = "Name";
+            StudentNameTxtBox.Size = new Size(217, 23);
+            StudentNameTxtBox.TabIndex = 4;
             // 
-            // StudentIDtxtBox
+            // StudentIDTxtBox
             // 
-            StudentIDtxtBox.Location = new Point(16, 51);
-            StudentIDtxtBox.Name = "StudentIDtxtBox";
-            StudentIDtxtBox.PlaceholderText = "Student ID";
-            StudentIDtxtBox.Size = new Size(217, 23);
-            StudentIDtxtBox.TabIndex = 2;
+            StudentIDTxtBox.Location = new Point(16, 51);
+            StudentIDTxtBox.Name = "StudentIDTxtBox";
+            StudentIDTxtBox.PlaceholderText = "Student ID";
+            StudentIDTxtBox.Size = new Size(217, 23);
+            StudentIDTxtBox.TabIndex = 2;
             // 
             // label2
             // 
@@ -170,51 +173,52 @@
             // TeacherLoginPanel
             // 
             TeacherLoginPanel.BorderStyle = BorderStyle.FixedSingle;
-            TeacherLoginPanel.Controls.Add(TeacherLoginbtn);
-            TeacherLoginPanel.Controls.Add(TeacherDepartmenttxtBox);
-            TeacherLoginPanel.Controls.Add(TeacherNametxtBox);
-            TeacherLoginPanel.Controls.Add(TeacherIDtxtBox);
+            TeacherLoginPanel.Controls.Add(TeacherLoginButton);
+            TeacherLoginPanel.Controls.Add(TeacherDepartmentTxtBox);
+            TeacherLoginPanel.Controls.Add(TeacherNameTxtBox);
+            TeacherLoginPanel.Controls.Add(TeacherIDTxtBox);
             TeacherLoginPanel.Controls.Add(label3);
-            TeacherLoginPanel.Location = new Point(288, 118);
+            TeacherLoginPanel.Location = new Point(12, 118);
             TeacherLoginPanel.Name = "TeacherLoginPanel";
-            TeacherLoginPanel.Size = new Size(250, 208);
+            TeacherLoginPanel.Size = new Size(250, 194);
             TeacherLoginPanel.TabIndex = 7;
             // 
-            // TeacherLoginbtn
+            // TeacherLoginButton
             // 
-            TeacherLoginbtn.BackColor = Color.FromArgb(38, 49, 89);
-            TeacherLoginbtn.Font = new Font("Franklin Gothic Demi Cond", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            TeacherLoginbtn.ForeColor = Color.FromArgb(255, 251, 235);
-            TeacherLoginbtn.Location = new Point(35, 138);
-            TeacherLoginbtn.Name = "TeacherLoginbtn";
-            TeacherLoginbtn.Size = new Size(179, 26);
-            TeacherLoginbtn.TabIndex = 7;
-            TeacherLoginbtn.Text = "LOGIN";
-            TeacherLoginbtn.UseVisualStyleBackColor = false;
+            TeacherLoginButton.BackColor = Color.FromArgb(38, 49, 89);
+            TeacherLoginButton.Font = new Font("Franklin Gothic Demi Cond", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            TeacherLoginButton.ForeColor = Color.FromArgb(255, 251, 235);
+            TeacherLoginButton.Location = new Point(35, 138);
+            TeacherLoginButton.Name = "TeacherLoginButton";
+            TeacherLoginButton.Size = new Size(179, 26);
+            TeacherLoginButton.TabIndex = 7;
+            TeacherLoginButton.Text = "LOGIN";
+            TeacherLoginButton.UseVisualStyleBackColor = false;
+            TeacherLoginButton.Click += TeacherLoginButton_Click;
             // 
-            // TeacherDepartmenttxtBox
+            // TeacherDepartmentTxtBox
             // 
-            TeacherDepartmenttxtBox.Location = new Point(16, 109);
-            TeacherDepartmenttxtBox.Name = "TeacherDepartmenttxtBox";
-            TeacherDepartmenttxtBox.PlaceholderText = "Department";
-            TeacherDepartmenttxtBox.Size = new Size(217, 23);
-            TeacherDepartmenttxtBox.TabIndex = 5;
+            TeacherDepartmentTxtBox.Location = new Point(16, 109);
+            TeacherDepartmentTxtBox.Name = "TeacherDepartmentTxtBox";
+            TeacherDepartmentTxtBox.PlaceholderText = "Department";
+            TeacherDepartmentTxtBox.Size = new Size(217, 23);
+            TeacherDepartmentTxtBox.TabIndex = 5;
             // 
-            // TeacherNametxtBox
+            // TeacherNameTxtBox
             // 
-            TeacherNametxtBox.Location = new Point(16, 80);
-            TeacherNametxtBox.Name = "TeacherNametxtBox";
-            TeacherNametxtBox.PlaceholderText = "Name";
-            TeacherNametxtBox.Size = new Size(217, 23);
-            TeacherNametxtBox.TabIndex = 4;
+            TeacherNameTxtBox.Location = new Point(16, 80);
+            TeacherNameTxtBox.Name = "TeacherNameTxtBox";
+            TeacherNameTxtBox.PlaceholderText = "Name";
+            TeacherNameTxtBox.Size = new Size(217, 23);
+            TeacherNameTxtBox.TabIndex = 4;
             // 
-            // TeacherIDtxtBox
+            // TeacherIDTxtBox
             // 
-            TeacherIDtxtBox.Location = new Point(16, 51);
-            TeacherIDtxtBox.Name = "TeacherIDtxtBox";
-            TeacherIDtxtBox.PlaceholderText = "Employee ID";
-            TeacherIDtxtBox.Size = new Size(217, 23);
-            TeacherIDtxtBox.TabIndex = 2;
+            TeacherIDTxtBox.Location = new Point(16, 51);
+            TeacherIDTxtBox.Name = "TeacherIDTxtBox";
+            TeacherIDTxtBox.PlaceholderText = "Employee ID";
+            TeacherIDTxtBox.Size = new Size(217, 23);
+            TeacherIDTxtBox.TabIndex = 2;
             // 
             // label3
             // 
@@ -232,12 +236,13 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Ivory;
-            ClientSize = new Size(563, 338);
+            ClientSize = new Size(283, 338);
             Controls.Add(TeacherLoginPanel);
             Controls.Add(StudentLoginPanel);
             Controls.Add(AdmitTypePanel);
             Name = "FormLogin";
             Text = "LOGIN";
+            Load += FormLogin_Load;
             AdmitTypePanel.ResumeLayout(false);
             AdmitTypePanel.PerformLayout();
             StudentLoginPanel.ResumeLayout(false);
@@ -254,17 +259,17 @@
         private RadioButton StudentRadioButton;
         private Label label1;
         private Panel StudentLoginPanel;
-        private TextBox StudentYeartxtBox;
-        private TextBox StudentNametxtBox;
-        private TextBox StudentIDtxtBox;
+        private TextBox StudentYearTxtBox;
+        private TextBox StudentNameTxtBox;
+        private TextBox StudentIDTxtBox;
         private Label label2;
-        private TextBox StudentSectiontxtBox;
-        private Button StudentLoginbtn;
+        private TextBox StudentSectionTxtBox;
+        private Button StudentLoginButton;
         private Panel TeacherLoginPanel;
-        private TextBox TeacherDepartmenttxtBox;
-        private TextBox TeacherNametxtBox;
-        private TextBox TeacherIDtxtBox;
+        private TextBox TeacherDepartmentTxtBox;
+        private TextBox TeacherNameTxtBox;
+        private TextBox TeacherIDTxtBox;
         private Label label3;
-        private Button TeacherLoginbtn;
+        private Button TeacherLoginButton;
     }
 }

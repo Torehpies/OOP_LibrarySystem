@@ -29,22 +29,24 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         { get; set; }
         public string BookID
         { get; set; }
+        public string picturePath
+        { get; set; }
         private BookType status = BookType.Available;
         public BookType Status
         {
             get { return status; }
             set { status = value; }
         }
-        public Book(string BookTitle, string BookIsbn13, string BookIsbn10, string BookAuthor, string BookCategory, string BookPublisher, string BookPublished, BookType BookStatus)
+        public Book(string BookTitle, string BookIsbn13, string BookIsbn10, string BookCategory, string BookAuthor, string BookPublisher, string BookPublished, string PicturePath)
         {
             title = BookTitle;
             isbn13 = BookIsbn13;
             isbn10 = BookIsbn10;
-            author = BookAuthor;
             category = BookCategory;
+            author = BookAuthor;
             publisher = BookPublisher;
             published = BookPublished;
-            Status = BookStatus;
+            picturePath = PicturePath;
         }
     }
 }
