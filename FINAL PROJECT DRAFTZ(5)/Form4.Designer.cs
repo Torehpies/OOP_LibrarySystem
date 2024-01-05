@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             listView1 = new ListView();
-            label1 = new Label();
-            panel1 = new Panel();
-            LibraryLabel = new Label();
-            label2 = new Label();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
             columnHeader4 = new ColumnHeader();
+            label1 = new Label();
+            panel1 = new Panel();
+            LibraryLabel = new Label();
+            label2 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -47,10 +47,30 @@
             listView1.GridLines = true;
             listView1.Location = new Point(192, 76);
             listView1.Name = "listView1";
-            listView1.Size = new Size(519, 278);
+            listView1.Size = new Size(406, 278);
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Name";
+            columnHeader1.Width = 100;
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "Student ID";
+            columnHeader2.Width = 100;
+            // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Year Level";
+            columnHeader3.Width = 100;
+            // 
+            // columnHeader4
+            // 
+            columnHeader4.Text = "Section";
+            columnHeader4.Width = 100;
             // 
             // label1
             // 
@@ -98,32 +118,12 @@
             label2.Text = "B";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // columnHeader1
-            // 
-            columnHeader1.Text = "Name";
-            columnHeader1.Width = 100;
-            // 
-            // columnHeader2
-            // 
-            columnHeader2.Text = "Student ID";
-            columnHeader2.Width = 100;
-            // 
-            // columnHeader3
-            // 
-            columnHeader3.Text = "Year Level";
-            columnHeader3.Width = 100;
-            // 
-            // columnHeader4
-            // 
-            columnHeader4.Text = "Section";
-            columnHeader4.Width = 100;
-            // 
             // BorrowerListForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 251, 235);
-            ClientSize = new Size(734, 371);
+            ClientSize = new Size(623, 371);
             Controls.Add(panel1);
             Controls.Add(label1);
             Controls.Add(listView1);

@@ -315,7 +315,7 @@
             label3.Name = "label3";
             label3.Size = new Size(155, 23);
             label3.TabIndex = 21;
-            label3.Text = "DUE DATE TO BE RETURNED";
+            label3.Text = "DATE RETURNED";
             label3.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // dateTimePicker1
