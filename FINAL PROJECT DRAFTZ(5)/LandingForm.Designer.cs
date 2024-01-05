@@ -29,56 +29,65 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            ReturningLabel = new Label();
-            LibraryLabel = new Label();
-            BorrowerListLabel = new Label();
+            ReturningLabel = new Button();
+            LibraryLabel = new Button();
+            BorrowerListLabel = new Button();
             label1 = new Label();
-            bookPanel = new Panel();
+            contentPanel = new Panel();
+            libraryPanel = new FlowLayoutPanel();
             panel1.SuspendLayout();
+            contentPanel.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panel1.BackColor = Color.FromArgb(73, 85, 121);
             panel1.Controls.Add(ReturningLabel);
             panel1.Controls.Add(LibraryLabel);
             panel1.Controls.Add(BorrowerListLabel);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(10, 10);
+            panel1.Dock = DockStyle.Left;
+            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(150, 428);
+            panel1.Size = new Size(150, 450);
             panel1.TabIndex = 1;
             // 
             // ReturningLabel
             // 
+            ReturningLabel.FlatAppearance.BorderSize = 0;
+            ReturningLabel.FlatStyle = FlatStyle.Flat;
             ReturningLabel.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ReturningLabel.ForeColor = Color.FromArgb(255, 251, 235);
             ReturningLabel.Location = new Point(3, 263);
             ReturningLabel.Name = "ReturningLabel";
-            ReturningLabel.Size = new Size(144, 21);
+            ReturningLabel.Size = new Size(144, 32);
             ReturningLabel.TabIndex = 4;
             ReturningLabel.Text = "BOOK RETURNING";
             ReturningLabel.TextAlign = ContentAlignment.TopCenter;
+            ReturningLabel.Click += ReturningLabel_Click;
             // 
             // LibraryLabel
             // 
+            LibraryLabel.FlatAppearance.BorderSize = 0;
+            LibraryLabel.FlatStyle = FlatStyle.Flat;
             LibraryLabel.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            LibraryLabel.ForeColor = Color.White;
+            LibraryLabel.ForeColor = Color.FromArgb(255, 251, 235);
             LibraryLabel.Location = new Point(3, 193);
             LibraryLabel.Name = "LibraryLabel";
-            LibraryLabel.Size = new Size(144, 20);
+            LibraryLabel.Size = new Size(144, 29);
             LibraryLabel.TabIndex = 3;
             LibraryLabel.Text = "LIBRARY";
             LibraryLabel.TextAlign = ContentAlignment.TopCenter;
             // 
             // BorrowerListLabel
             // 
+            BorrowerListLabel.FlatAppearance.BorderSize = 0;
+            BorrowerListLabel.FlatStyle = FlatStyle.Flat;
             BorrowerListLabel.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             BorrowerListLabel.ForeColor = Color.FromArgb(255, 251, 235);
             BorrowerListLabel.Location = new Point(3, 228);
             BorrowerListLabel.Name = "BorrowerListLabel";
-            BorrowerListLabel.Size = new Size(144, 21);
+            BorrowerListLabel.Size = new Size(144, 29);
             BorrowerListLabel.TabIndex = 2;
             BorrowerListLabel.Text = "BORROWER LIST";
             BorrowerListLabel.TextAlign = ContentAlignment.TopCenter;
@@ -95,14 +104,28 @@
             label1.Text = "B";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // bookPanel
+            // contentPanel
             // 
-            bookPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            bookPanel.BackColor = Color.Olive;
-            bookPanel.Location = new Point(166, 12);
-            bookPanel.Name = "bookPanel";
-            bookPanel.Size = new Size(633, 434);
-            bookPanel.TabIndex = 2;
+            contentPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            contentPanel.AutoScroll = true;
+            contentPanel.BackColor = Color.Ivory;
+            contentPanel.Controls.Add(libraryPanel);
+            contentPanel.Location = new Point(150, 0);
+            contentPanel.Name = "contentPanel";
+            contentPanel.Padding = new Padding(20);
+            contentPanel.Size = new Size(650, 450);
+            contentPanel.TabIndex = 2;
+            // 
+            // libraryPanel
+            // 
+            libraryPanel.AutoScroll = true;
+            libraryPanel.BackColor = Color.Transparent;
+            libraryPanel.Dock = DockStyle.Fill;
+            libraryPanel.FlowDirection = FlowDirection.TopDown;
+            libraryPanel.Location = new Point(20, 20);
+            libraryPanel.Name = "libraryPanel";
+            libraryPanel.Size = new Size(610, 410);
+            libraryPanel.TabIndex = 0;
             // 
             // LandingForm
             // 
@@ -110,21 +133,23 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Ivory;
             ClientSize = new Size(800, 450);
-            Controls.Add(bookPanel);
+            Controls.Add(contentPanel);
             Controls.Add(panel1);
             Name = "LandingForm";
             Text = "Form7";
             panel1.ResumeLayout(false);
+            contentPanel.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel panel1;
-        private Label ReturningLabel;
-        private Label LibraryLabel;
-        private Label BorrowerListLabel;
+        private Button ReturningLabel;
+        private Button LibraryLabel;
+        private Button BorrowerListLabel;
         private Label label1;
-        private Panel bookPanel;
+        private Panel contentPanel;
+        private FlowLayoutPanel libraryPanel;
     }
 }

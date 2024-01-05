@@ -5,6 +5,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         public FormLogin()
         {
             InitializeComponent();
+
         }
 
         private void FormLogin_Load(object sender, EventArgs e)
