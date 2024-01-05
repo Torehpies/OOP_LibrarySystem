@@ -74,6 +74,7 @@
             BorrowButton.TabIndex = 7;
             BorrowButton.Text = "BORROW";
             BorrowButton.UseVisualStyleBackColor = false;
+            BorrowButton.Click += BorrowButton_Click;
             // 
             // publisherLabel
             // 
@@ -137,6 +138,8 @@
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.AutoSize = true;
             panel1.Controls.Add(picture);
             panel1.Controls.Add(publishedLabel);
             panel1.Controls.Add(BorrowButton);
@@ -146,13 +149,11 @@
             panel1.Controls.Add(isbn13Label);
             panel1.Controls.Add(authorLabel);
             panel1.Controls.Add(isbn10Label);
-            panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(20, 20);
             panel1.Name = "panel1";
             panel1.Padding = new Padding(10);
             panel1.Size = new Size(660, 390);
             panel1.TabIndex = 23;
-            panel1.Visible = false;
             // 
             // exitButton
             // 
@@ -181,10 +182,12 @@
             Controls.Add(panel1);
             Name = "BookDetails";
             Padding = new Padding(20);
+            StartPosition = FormStartPosition.CenterScreen;
             TopMost = true;
             ((System.ComponentModel.ISupportInitialize)picture).EndInit();
             panel1.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

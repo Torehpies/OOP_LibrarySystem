@@ -117,4 +117,463 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="TeacherRadioButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="TeacherRadioButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Franklin Gothic Demi Cond, 15pt</value>
+  </data>
+  <data name="TeacherRadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>254, 54</value>
+  </data>
+  <data name="TeacherRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 29</value>
+  </data>
+  <data name="TeacherRadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="TeacherRadioButton.Text" xml:space="preserve">
+    <value>TEACHER</value>
+  </data>
+  <data name="&gt;&gt;TeacherRadioButton.Name" xml:space="preserve">
+    <value>TeacherRadioButton</value>
+  </data>
+  <data name="&gt;&gt;TeacherRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TeacherRadioButton.Parent" xml:space="preserve">
+    <value>AdmitTypePanel</value>
+  </data>
+  <data name="&gt;&gt;TeacherRadioButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="StudentRadioButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="StudentRadioButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Franklin Gothic Demi Cond, 15pt</value>
+  </data>
+  <data name="StudentRadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>139, 54</value>
+  </data>
+  <data name="StudentRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 29</value>
+  </data>
+  <data name="StudentRadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="StudentRadioButton.Text" xml:space="preserve">
+    <value>STUDENT</value>
+  </data>
+  <data name="&gt;&gt;StudentRadioButton.Name" xml:space="preserve">
+    <value>StudentRadioButton</value>
+  </data>
+  <data name="&gt;&gt;StudentRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;StudentRadioButton.Parent" xml:space="preserve">
+    <value>AdmitTypePanel</value>
+  </data>
+  <data name="&gt;&gt;StudentRadioButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Franklin Gothic Demi Cond, 15pt</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>157, 14</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 23</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>CHOOSE ADMIT TYPE.</value>
+  </data>
+  <data name="label1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>AdmitTypePanel</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="AdmitTypePanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="AdmitTypePanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>497, 100</value>
+  </data>
+  <data name="AdmitTypePanel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;AdmitTypePanel.Name" xml:space="preserve">
+    <value>AdmitTypePanel</value>
+  </data>
+  <data name="&gt;&gt;AdmitTypePanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AdmitTypePanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;AdmitTypePanel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="StudentLoginButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Franklin Gothic Demi Cond, 10pt</value>
+  </data>
+  <data name="StudentLoginButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>158, 171</value>
+  </data>
+  <data name="StudentLoginButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 26</value>
+  </data>
+  <data name="StudentLoginButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="StudentLoginButton.Text" xml:space="preserve">
+    <value>LOGIN</value>
+  </data>
+  <data name="&gt;&gt;StudentLoginButton.Name" xml:space="preserve">
+    <value>StudentLoginButton</value>
+  </data>
+  <data name="&gt;&gt;StudentLoginButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;StudentLoginButton.Parent" xml:space="preserve">
+    <value>StudentLoginPanel</value>
+  </data>
+  <data name="&gt;&gt;StudentLoginButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="StudentSectionTxtBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>139, 142</value>
+  </data>
+  <data name="StudentSectionTxtBox.PlaceholderText" xml:space="preserve">
+    <value>Section</value>
+  </data>
+  <data name="StudentSectionTxtBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 23</value>
+  </data>
+  <data name="StudentSectionTxtBox.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;StudentSectionTxtBox.Name" xml:space="preserve">
+    <value>StudentSectionTxtBox</value>
+  </data>
+  <data name="&gt;&gt;StudentSectionTxtBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;StudentSectionTxtBox.Parent" xml:space="preserve">
+    <value>StudentLoginPanel</value>
+  </data>
+  <data name="&gt;&gt;StudentSectionTxtBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="StudentYearTxtBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>139, 113</value>
+  </data>
+  <data name="StudentYearTxtBox.PlaceholderText" xml:space="preserve">
+    <value>Year</value>
+  </data>
+  <data name="StudentYearTxtBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 23</value>
+  </data>
+  <data name="StudentYearTxtBox.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;StudentYearTxtBox.Name" xml:space="preserve">
+    <value>StudentYearTxtBox</value>
+  </data>
+  <data name="&gt;&gt;StudentYearTxtBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;StudentYearTxtBox.Parent" xml:space="preserve">
+    <value>StudentLoginPanel</value>
+  </data>
+  <data name="&gt;&gt;StudentYearTxtBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="StudentNameTxtBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>139, 84</value>
+  </data>
+  <data name="StudentNameTxtBox.PlaceholderText" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="StudentNameTxtBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 23</value>
+  </data>
+  <data name="StudentNameTxtBox.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;StudentNameTxtBox.Name" xml:space="preserve">
+    <value>StudentNameTxtBox</value>
+  </data>
+  <data name="&gt;&gt;StudentNameTxtBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;StudentNameTxtBox.Parent" xml:space="preserve">
+    <value>StudentLoginPanel</value>
+  </data>
+  <data name="&gt;&gt;StudentNameTxtBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="StudentIDTxtBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>139, 55</value>
+  </data>
+  <data name="StudentIDTxtBox.PlaceholderText" xml:space="preserve">
+    <value>Student ID</value>
+  </data>
+  <data name="StudentIDTxtBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 23</value>
+  </data>
+  <data name="StudentIDTxtBox.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;StudentIDTxtBox.Name" xml:space="preserve">
+    <value>StudentIDTxtBox</value>
+  </data>
+  <data name="&gt;&gt;StudentIDTxtBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;StudentIDTxtBox.Parent" xml:space="preserve">
+    <value>StudentLoginPanel</value>
+  </data>
+  <data name="&gt;&gt;StudentIDTxtBox.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Franklin Gothic Demi Cond, 15pt</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>157, 13</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 23</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>MEMBER LOGIN</value>
+  </data>
+  <data name="label2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>StudentLoginPanel</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="StudentLoginPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 118</value>
+  </data>
+  <data name="StudentLoginPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>497, 208</value>
+  </data>
+  <data name="StudentLoginPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;StudentLoginPanel.Name" xml:space="preserve">
+    <value>StudentLoginPanel</value>
+  </data>
+  <data name="&gt;&gt;StudentLoginPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;StudentLoginPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;StudentLoginPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="TeacherLoginButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Franklin Gothic Demi Cond, 10pt</value>
+  </data>
+  <data name="TeacherLoginButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>158, 138</value>
+  </data>
+  <data name="TeacherLoginButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 26</value>
+  </data>
+  <data name="TeacherLoginButton.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="TeacherLoginButton.Text" xml:space="preserve">
+    <value>LOGIN</value>
+  </data>
+  <data name="&gt;&gt;TeacherLoginButton.Name" xml:space="preserve">
+    <value>TeacherLoginButton</value>
+  </data>
+  <data name="&gt;&gt;TeacherLoginButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TeacherLoginButton.Parent" xml:space="preserve">
+    <value>TeacherLoginPanel</value>
+  </data>
+  <data name="&gt;&gt;TeacherLoginButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TeacherDepartmentTxtBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>139, 109</value>
+  </data>
+  <data name="TeacherDepartmentTxtBox.PlaceholderText" xml:space="preserve">
+    <value>Department</value>
+  </data>
+  <data name="TeacherDepartmentTxtBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 23</value>
+  </data>
+  <data name="TeacherDepartmentTxtBox.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;TeacherDepartmentTxtBox.Name" xml:space="preserve">
+    <value>TeacherDepartmentTxtBox</value>
+  </data>
+  <data name="&gt;&gt;TeacherDepartmentTxtBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TeacherDepartmentTxtBox.Parent" xml:space="preserve">
+    <value>TeacherLoginPanel</value>
+  </data>
+  <data name="&gt;&gt;TeacherDepartmentTxtBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="TeacherNameTxtBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>139, 80</value>
+  </data>
+  <data name="TeacherNameTxtBox.PlaceholderText" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="TeacherNameTxtBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 23</value>
+  </data>
+  <data name="TeacherNameTxtBox.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;TeacherNameTxtBox.Name" xml:space="preserve">
+    <value>TeacherNameTxtBox</value>
+  </data>
+  <data name="&gt;&gt;TeacherNameTxtBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TeacherNameTxtBox.Parent" xml:space="preserve">
+    <value>TeacherLoginPanel</value>
+  </data>
+  <data name="&gt;&gt;TeacherNameTxtBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="TeacherIDTxtBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>139, 51</value>
+  </data>
+  <data name="TeacherIDTxtBox.PlaceholderText" xml:space="preserve">
+    <value>Employee ID</value>
+  </data>
+  <data name="TeacherIDTxtBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 23</value>
+  </data>
+  <data name="TeacherIDTxtBox.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;TeacherIDTxtBox.Name" xml:space="preserve">
+    <value>TeacherIDTxtBox</value>
+  </data>
+  <data name="&gt;&gt;TeacherIDTxtBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TeacherIDTxtBox.Parent" xml:space="preserve">
+    <value>TeacherLoginPanel</value>
+  </data>
+  <data name="&gt;&gt;TeacherIDTxtBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Franklin Gothic Demi Cond, 15pt</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>157, 9</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 23</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>MEMBER LOGIN</value>
+  </data>
+  <data name="label3.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>TeacherLoginPanel</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="TeacherLoginPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 118</value>
+  </data>
+  <data name="TeacherLoginPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>497, 208</value>
+  </data>
+  <data name="TeacherLoginPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;TeacherLoginPanel.Name" xml:space="preserve">
+    <value>TeacherLoginPanel</value>
+  </data>
+  <data name="&gt;&gt;TeacherLoginPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TeacherLoginPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TeacherLoginPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>7, 15</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>521, 364</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>LOGIN</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FormLogin</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

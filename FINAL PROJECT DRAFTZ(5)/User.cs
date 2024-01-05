@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FINAL_PROJECT_DRAFTZ_5_
 {
-    internal class User
+    public class User
     {
         public string firstName
         { get; set; }
@@ -14,7 +14,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         { get; set; }
         public string userID
         { get; set; }
-        public string borrowedBookCount
+        public int borrowedBookCount
         { get; set; }
     }
 }

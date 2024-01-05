@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace FINAL_PROJECT_DRAFTZ_5_
 {
-    
+
 
     public partial class BookDetails : Form
     {
@@ -19,9 +19,28 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             InitializeComponent();
         }
 
+        public void InitializeUI(Book BookContainerData)
+        {
+
+            picture.Image = Image.FromFile(BookContainerData.picturePath);
+            titleLabel.Text = BookContainerData.title;
+            publishedLabel.Text = "Published: " + BookContainerData.published;
+            isbn10Label.Text = "ISBN-10: " + BookContainerData.isbn10;
+            isbn13Label.Text = "ISBN-13: " + BookContainerData.isbn13;
+            publisherLabel.Text = "Publisher: " + BookContainerData.publisher;
+            authorLabel.Text = "Author: " + BookContainerData.author;
+            categoryLabel.Text = "Category: " + BookContainerData.category;
+        }
         private void exitButton_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void BorrowButton_Click(object sender, EventArgs e)
+        {
+            FormLogin login = new FormLogin();
+            login.TopMost = true;
+            login.ShowDialog();
         }
     }
 }

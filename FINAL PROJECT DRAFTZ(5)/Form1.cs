@@ -60,6 +60,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
             else
             {
+
                 Form form_Homepage = new FormHomepage();
                 form_Homepage.ShowDialog();
                 this.Close();

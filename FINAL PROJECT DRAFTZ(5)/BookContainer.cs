@@ -13,18 +13,19 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 {
     public partial class BookContainer : UserControl
     {
-        public Book BookContainerData = null;
+        Book BookData;
         public event EventHandler ButtonClick;
         public BookContainer()
         {
             InitializeComponent();
-            InitializeUI();
+            
             //MouseEnter += MyUserControl_MouseEnter;
             //MouseLeave += MyUserControl_MouseLeave;
         }
 
-        private void InitializeUI()
+        public void InitializeUI(Book BookContainerData)
         {
+            BookData = BookContainerData;
             bookPic.Image = Image.FromFile(BookContainerData.picturePath);
             bookTitle.Text = BookContainerData.title;
             bookYear.Text = BookContainerData.published;
@@ -53,7 +54,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private void borrowBtn_Click(object sender, EventArgs e)
         {
             BookDetails bookDetails = new BookDetails();
-            //bookDetails.Show();
+            bookDetails.InitializeUI(BookData);
             
             bookDetails.ShowDialog();
 

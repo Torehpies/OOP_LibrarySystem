@@ -51,7 +51,7 @@
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(406, 337);
+            tabPage2.Size = new Size(402, 337);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Teacher Borrower List";
             tabPage2.UseVisualStyleBackColor = true;
@@ -89,7 +89,7 @@
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(406, 337);
+            tabPage1.Size = new Size(402, 337);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Student Borrower List";
             tabPage1.UseVisualStyleBackColor = true;
@@ -133,7 +133,7 @@
             tabControl1.Location = new Point(61, 72);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(414, 365);
+            tabControl1.Size = new Size(410, 365);
             tabControl1.TabIndex = 2;
             // 
             // BorrowerList

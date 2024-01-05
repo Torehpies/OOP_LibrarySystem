@@ -78,6 +78,7 @@
             LibraryLabel.TabIndex = 3;
             LibraryLabel.Text = "LIBRARY";
             LibraryLabel.TextAlign = ContentAlignment.TopCenter;
+            LibraryLabel.Click += LibraryLabel_Click;
             // 
             // BorrowerListLabel
             // 
@@ -91,6 +92,7 @@
             BorrowerListLabel.TabIndex = 2;
             BorrowerListLabel.Text = "BORROWER LIST";
             BorrowerListLabel.TextAlign = ContentAlignment.TopCenter;
+            BorrowerListLabel.Click += BorrowerListLabel_Click;
             // 
             // label1
             // 
@@ -137,6 +139,7 @@
             Controls.Add(panel1);
             Name = "LandingForm";
             Text = "Form7";
+            WindowState = FormWindowState.Maximized;
             panel1.ResumeLayout(false);
             contentPanel.ResumeLayout(false);
             ResumeLayout(false);

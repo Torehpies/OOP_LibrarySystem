@@ -6,11 +6,21 @@ using System.Threading.Tasks;
 
 namespace FINAL_PROJECT_DRAFTZ_5_
 {
-    internal class Student : User 
+    public class Student : User 
     {
         public string yearlevel
         {  get; set; }
         public string section
         { get; set; }
+
+        public Student(string firstname, string lastname, string userId, string yearlevel, string section, int borrowcount)
+        {   
+            firstName = firstname;
+            lastName = lastname;
+            userID = userId;
+            this.yearlevel = yearlevel;
+            this.section = section;
+            borrowedBookCount = borrowcount;
+        }
     }
 }
