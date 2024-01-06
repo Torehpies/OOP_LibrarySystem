@@ -50,8 +50,6 @@
             checkBox13 = new CheckBox();
             checkBox14 = new CheckBox();
             checkBox15 = new CheckBox();
-            dateTimePicker1 = new DateTimePicker();
-            dateTimePicker2 = new DateTimePicker();
             label2 = new Label();
             label3 = new Label();
             groupBox1.SuspendLayout();
@@ -92,6 +90,7 @@
             SubmitButton.TabIndex = 8;
             SubmitButton.Text = "SUBMIT";
             SubmitButton.UseVisualStyleBackColor = false;
+            SubmitButton.Click += SubmitButton_Click;
             // 
             // groupBox1
             // 
@@ -301,38 +300,24 @@
             checkBox15.Text = "A Brief History of Time";
             checkBox15.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(173, 430);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(256, 23);
-            dateTimePicker1.TabIndex = 17;
-            // 
-            // dateTimePicker2
-            // 
-            dateTimePicker2.Location = new Point(173, 470);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(256, 23);
-            dateTimePicker2.TabIndex = 18;
-            // 
             // label2
             // 
-            label2.Font = new Font("Franklin Gothic Medium Cond", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.ControlText;
             label2.Location = new Point(12, 430);
             label2.Name = "label2";
-            label2.Size = new Size(155, 23);
+            label2.Size = new Size(358, 23);
             label2.TabIndex = 19;
             label2.Text = "DATE BORROWED";
             label2.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label3
             // 
-            label3.Font = new Font("Franklin Gothic Medium Cond", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = SystemColors.ControlText;
             label3.Location = new Point(12, 470);
             label3.Name = "label3";
-            label3.Size = new Size(155, 23);
+            label3.Size = new Size(312, 23);
             label3.TabIndex = 20;
             label3.Text = "DATE TO BE RETURNED";
             label3.TextAlign = ContentAlignment.MiddleLeft;
@@ -345,8 +330,6 @@
             ClientSize = new Size(451, 587);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(dateTimePicker2);
-            Controls.Add(dateTimePicker1);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
@@ -391,8 +374,6 @@
         private CheckBox checkBox13;
         private CheckBox checkBox14;
         private CheckBox checkBox15;
-        private DateTimePicker dateTimePicker1;
-        private DateTimePicker dateTimePicker2;
         private Label label2;
         private Label label3;
         private Label label4;

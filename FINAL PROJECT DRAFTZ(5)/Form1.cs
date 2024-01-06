@@ -62,7 +62,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             {
                 bool isExisting = new BorrowerList().checkIfSameID(StudentIDTxtBox.Text);
                 BorrowingForm borrowingForm = new BorrowingForm();
-                borrowingForm.formConfig(true);
+                borrowingForm.isStudent(true);
                 borrowingForm.ShowDialog();
                 this.Close();
             }
@@ -86,7 +86,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             {
                 bool isExisting = new BorrowerList().checkIfSameID(TeacherIDTxtBox.Text);
                 BorrowingForm form_Homepage = new BorrowingForm();
-                form_Homepage.formConfig(false);
+                form_Homepage.isStudent(false);
                 form_Homepage.ShowDialog();
                 this.Close();
             }

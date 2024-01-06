@@ -17,6 +17,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         public BorrowingForm()
         {
             InitializeComponent();
+            DateTime currentDate = DateTime.Now;
+
+            label2.Text = "DATE BORROWED: " + currentDate.ToShortDateString();
         }
 
         private void CheckBox_CheckedChanged(object sender, EventArgs e)
@@ -32,10 +35,19 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
         }
 
-        public void formConfig(bool isStudent)
+        public void isStudent(bool isStudent)
         {
-            if (isStudent) { borrowLimit = 2; }
-            else { borrowLimit = 5; }
+            DateTime currentDate = DateTime.Today;
+            DateTime futureDate = currentDate.AddDays(3);
+            if (isStudent){
+                borrowLimit = 2;
+                label3.Text = "DATE TO BE RETURNED: " + futureDate.ToShortDateString();
+
+            }
+            else { 
+                borrowLimit = 5;
+                label3.Visible = false;
+            }
         }
 
 
@@ -65,9 +77,41 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
             return checkedCount;
         }
+
+        private void UncheckAllCheckboxes(Control container)
+        {
+            foreach (Control control in container.Controls)
+            {
+                if (control is CheckBox checkBox)
+                {
+                    checkBox.Checked = false;
+                }
+
+                // If the control is a container (like a GroupBox), recursively uncheck checkboxes within it
+                if (control.HasChildren)
+                {
+                    UncheckAllCheckboxes(control);
+                }
+            }
+        }
         private void BorrowingForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void SubmitButton_Click(object sender, EventArgs e)
+        {
+            int count = CountCheckedCheckboxes(groupBox2);
+            int count2 = CountCheckedCheckboxes(groupBox3);
+            count += count2;
+
+            if (count > borrowLimit)
+            {
+                MessageBox.Show("Sorry! You have exceeded the \nnumber of books to be borrowed.\n LIMIT: "+ borrowLimit.ToString());
+                UncheckAllCheckboxes(groupBox2);
+                UncheckAllCheckboxes(groupBox3);
+            }
+            
         }
     }
 }
