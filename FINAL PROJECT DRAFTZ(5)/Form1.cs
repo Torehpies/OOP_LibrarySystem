@@ -60,8 +60,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
             else
             {
-
-                Form form_Homepage = new FormHomepage();
+                bool isExisting = new BorrowerList().checkIfSameID(StudentIDTxtBox.Text);
+                BorrowingForm form_Homepage = new BorrowingForm();
                 form_Homepage.ShowDialog();
                 this.Close();
             }
@@ -83,7 +83,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
             else
             {
-                Form form_Homepage = new FormHomepage();
+                bool isExisting = new BorrowerList().checkIfSameID(TeacherIDTxtBox.Text);
+                BorrowingForm form_Homepage = new BorrowingForm();
                 form_Homepage.ShowDialog();
                 this.Close();
             }
