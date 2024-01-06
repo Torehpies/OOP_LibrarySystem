@@ -321,7 +321,6 @@
             label3.TabIndex = 20;
             label3.Text = "DATE TO BE RETURNED";
             label3.TextAlign = ContentAlignment.MiddleLeft;
-            // 
             // BorrowingForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);

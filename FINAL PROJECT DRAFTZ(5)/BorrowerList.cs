@@ -26,7 +26,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         public void addTeacherBorrower(Teacher teacher)
         {
-            teachers.Add(teacher);  
+            teachers.Add(teacher);
         }
 
         public List<Teacher> GetTeachers()
@@ -34,15 +34,17 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             return teachers;
         }
 
-        public List<Student> GetStudents() { 
+        public List<Student> GetStudents()
+        {
             return students;
         }
 
         public bool checkIfSameID(string userID)
         {
             bool result = false;
-            foreach (Student student in students) {
-                if (student.userID == userID)  result = true;
+            foreach (Student student in students)
+            {
+                if (student.userID == userID) result = true;
                 else result = false;
             }
 
@@ -52,8 +54,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 else result = false;
             }
             return result;
-            
-        }
 
+        }
     }
 }

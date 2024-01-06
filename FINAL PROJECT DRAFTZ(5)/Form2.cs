@@ -16,38 +16,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private static FormHomepage instance;
         private static BookReturningForm instanceReturning;
         private static BorrowerListForm instanceBorrowerList;
-        private PictureBox[] bookPictureBoxes;
         public FormHomepage()
         {
             InitializeComponent();
-            InitializePictureBoxArray();
-            InitializeBookData();
         }
-        private void InitializeBookData()
-        {
 
-        }
-        private void InitializePictureBoxArray()
-        {
-            bookPictureBoxes = new PictureBox[15];
-            for (int i = 0; i < 15; i++)
-            {
-                string pictureBoxName = "Book" + (i + 1);
-                bookPictureBoxes[i] = Controls.Find(pictureBoxName, true).FirstOrDefault() as PictureBox;
-
-                bookPictureBoxes[i].Click += BookPictureBox_Click;
-            }
-        }
-        private void BookPictureBox_Click(object sender, EventArgs e)
-        {
-            PictureBox clickedPictureBox = sender as PictureBox;
-
-            if (clickedPictureBox != null)
-            {
-                string pictureBoxName = clickedPictureBox.Name;
-                MessageBox.Show("PictureBox Clicked: " + pictureBoxName);
-            }
-        }
         private void FormHomepage_Load(object sender, EventArgs e)
         {
             BorrowerListLabel.Click += BorrowerListLabel_Click;
