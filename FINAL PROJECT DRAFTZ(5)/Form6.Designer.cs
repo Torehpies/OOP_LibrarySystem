@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            textBox1 = new TextBox();
             CancelButton = new Button();
             SubmitButton = new Button();
             groupBox1 = new GroupBox();
+            label4 = new Label();
             checkBox5 = new CheckBox();
             checkBox4 = new CheckBox();
             checkBox3 = new CheckBox();
@@ -61,22 +61,13 @@
             // 
             // label1
             // 
-            label1.Font = new Font("Franklin Gothic Demi Cond", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Franklin Gothic Demi", 27.75F, FontStyle.Underline, GraphicsUnit.Point);
             label1.ForeColor = Color.FromArgb(73, 85, 121);
-            label1.Location = new Point(12, 22);
+            label1.Location = new Point(53, 37);
             label1.Name = "label1";
-            label1.Size = new Size(218, 34);
+            label1.Size = new Size(352, 57);
             label1.TabIndex = 2;
             label1.Text = "BORROWING FORM";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(12, 80);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Name";
-            textBox1.Size = new Size(417, 23);
-            textBox1.TabIndex = 3;
-            textBox1.Visible = false;
             // 
             // CancelButton
             // 
@@ -104,11 +95,13 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(checkBox5);
             groupBox1.Controls.Add(checkBox4);
             groupBox1.Controls.Add(checkBox3);
             groupBox1.Controls.Add(checkBox2);
             groupBox1.Controls.Add(checkBox1);
+            groupBox1.Enabled = false;
             groupBox1.Font = new Font("Franklin Gothic Medium Cond", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox1.Location = new Point(12, 120);
             groupBox1.Name = "groupBox1";
@@ -116,6 +109,17 @@
             groupBox1.TabIndex = 9;
             groupBox1.TabStop = false;
             groupBox1.Text = "Academic Books";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.FromArgb(255, 192, 192);
+            label4.Font = new Font("Franklin Gothic Medium Cond", 14.25F, FontStyle.Italic, GraphicsUnit.Point);
+            label4.Location = new Point(29, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(364, 24);
+            label4.TabIndex = 15;
+            label4.Text = "Academic books are only allowed inside the library.";
             // 
             // checkBox5
             // 
@@ -348,7 +352,6 @@
             Controls.Add(groupBox1);
             Controls.Add(SubmitButton);
             Controls.Add(CancelButton);
-            Controls.Add(textBox1);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "BorrowingForm";
@@ -363,13 +366,11 @@
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
         private Button CancelButton;
         private Button SubmitButton;
         private GroupBox groupBox1;
@@ -394,5 +395,6 @@
         private DateTimePicker dateTimePicker2;
         private Label label2;
         private Label label3;
+        private Label label4;
     }
 }
