@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListViewItem listViewItem3 = new ListViewItem(new string[] { "", "1234", "cs" }, -1);
-            ListViewItem listViewItem4 = new ListViewItem(new string[] { "", "aaa", "aaa", "" }, -1);
             tabPage2 = new TabPage();
             TeacherListView = new ListView();
             columnHeader5 = new ColumnHeader();
@@ -63,7 +61,6 @@
             TeacherListView.Columns.AddRange(new ColumnHeader[] { columnHeader5, columnHeader6, columnHeader7 });
             TeacherListView.FullRowSelect = true;
             TeacherListView.GridLines = true;
-            TeacherListView.Items.AddRange(new ListViewItem[] { listViewItem3, listViewItem4 });
             TeacherListView.Location = new Point(3, 0);
             TeacherListView.Name = "TeacherListView";
             TeacherListView.Size = new Size(439, 333);

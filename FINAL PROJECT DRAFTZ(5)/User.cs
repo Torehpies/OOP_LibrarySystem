@@ -16,5 +16,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         { get; set; }
         public int borrowedBookCount
         { get; set; }
+        public string[] borrowedBooks { get; set; }
     }
 }
