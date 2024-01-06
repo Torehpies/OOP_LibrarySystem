@@ -52,7 +52,6 @@
             checkBox15 = new CheckBox();
             label2 = new Label();
             label3 = new Label();
-            NameTextBox = new TextBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -322,16 +321,6 @@
             label3.TabIndex = 20;
             label3.Text = "DATE TO BE RETURNED";
             label3.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // NameTextBox
-            // 
-            NameTextBox.Location = new Point(12, 80);
-            NameTextBox.Name = "NameTextBox";
-            NameTextBox.PlaceholderText = "Name";
-            NameTextBox.Size = new Size(417, 23);
-            NameTextBox.TabIndex = 3;
-            NameTextBox.Visible = false;
-            // 
             // BorrowingForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
