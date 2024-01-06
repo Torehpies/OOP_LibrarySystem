@@ -76,6 +76,7 @@
             textBox1.PlaceholderText = "Name";
             textBox1.Size = new Size(417, 23);
             textBox1.TabIndex = 3;
+            textBox1.Visible = false;
             // 
             // CancelButton
             // 
@@ -349,8 +350,11 @@
             Controls.Add(CancelButton);
             Controls.Add(textBox1);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "BorrowingForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "BORROWING FORM";
+            TopMost = true;
             Load += BorrowingForm_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
