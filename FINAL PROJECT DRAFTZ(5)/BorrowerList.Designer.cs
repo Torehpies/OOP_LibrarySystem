@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            ListViewItem listViewItem3 = new ListViewItem(new string[] { "", "1234", "cs" }, -1);
+            ListViewItem listViewItem4 = new ListViewItem(new string[] { "", "aaa", "aaa", "" }, -1);
             tabPage2 = new TabPage();
-            listView2 = new ListView();
+            TeacherListView = new ListView();
             columnHeader5 = new ColumnHeader();
             columnHeader6 = new ColumnHeader();
             columnHeader7 = new ColumnHeader();
             tabPage1 = new TabPage();
-            listView1 = new ListView();
+            StudentListView = new ListView();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
@@ -47,26 +49,27 @@
             // 
             // tabPage2
             // 
-            tabPage2.Controls.Add(listView2);
+            tabPage2.Controls.Add(TeacherListView);
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(402, 337);
+            tabPage2.Size = new Size(448, 337);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Teacher Borrower List";
             tabPage2.UseVisualStyleBackColor = true;
             // 
-            // listView2
+            // TeacherListView
             // 
-            listView2.Columns.AddRange(new ColumnHeader[] { columnHeader5, columnHeader6, columnHeader7 });
-            listView2.FullRowSelect = true;
-            listView2.GridLines = true;
-            listView2.Location = new Point(3, 0);
-            listView2.Name = "listView2";
-            listView2.Size = new Size(439, 333);
-            listView2.TabIndex = 4;
-            listView2.UseCompatibleStateImageBehavior = false;
-            listView2.View = View.Details;
+            TeacherListView.Columns.AddRange(new ColumnHeader[] { columnHeader5, columnHeader6, columnHeader7 });
+            TeacherListView.FullRowSelect = true;
+            TeacherListView.GridLines = true;
+            TeacherListView.Items.AddRange(new ListViewItem[] { listViewItem3, listViewItem4 });
+            TeacherListView.Location = new Point(3, 0);
+            TeacherListView.Name = "TeacherListView";
+            TeacherListView.Size = new Size(439, 333);
+            TeacherListView.TabIndex = 4;
+            TeacherListView.UseCompatibleStateImageBehavior = false;
+            TeacherListView.View = View.Details;
             // 
             // columnHeader5
             // 
@@ -85,26 +88,26 @@
             // 
             // tabPage1
             // 
-            tabPage1.Controls.Add(listView1);
+            tabPage1.Controls.Add(StudentListView);
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(402, 337);
+            tabPage1.Size = new Size(448, 337);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Student Borrower List";
             tabPage1.UseVisualStyleBackColor = true;
             // 
-            // listView1
+            // StudentListView
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
-            listView1.FullRowSelect = true;
-            listView1.GridLines = true;
-            listView1.Location = new Point(3, 3);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(442, 337);
-            listView1.TabIndex = 3;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
+            StudentListView.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
+            StudentListView.FullRowSelect = true;
+            StudentListView.GridLines = true;
+            StudentListView.Location = new Point(3, 3);
+            StudentListView.Name = "StudentListView";
+            StudentListView.Size = new Size(442, 337);
+            StudentListView.TabIndex = 3;
+            StudentListView.UseCompatibleStateImageBehavior = false;
+            StudentListView.View = View.Details;
             // 
             // columnHeader1
             // 
@@ -130,10 +133,10 @@
             // 
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
-            tabControl1.Location = new Point(61, 72);
+            tabControl1.Location = new Point(3, 3);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(410, 365);
+            tabControl1.Size = new Size(456, 365);
             tabControl1.TabIndex = 2;
             // 
             // BorrowerList
@@ -152,12 +155,12 @@
         #endregion
 
         private TabPage tabPage2;
-        private ListView listView2;
+        private ListView TeacherListView;
         private ColumnHeader columnHeader5;
         private ColumnHeader columnHeader6;
         private ColumnHeader columnHeader7;
         private TabPage tabPage1;
-        private ListView listView1;
+        private ListView StudentListView;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
         private ColumnHeader columnHeader3;

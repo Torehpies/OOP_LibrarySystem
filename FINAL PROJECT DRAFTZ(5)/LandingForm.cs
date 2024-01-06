@@ -19,6 +19,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
     {
         BookReturning returnPanel = new BookReturning();
         BorrowerList borrowersPanel = new BorrowerList();
+        private List <Book> books;
         public LandingForm()
         {
             InitializeComponent();

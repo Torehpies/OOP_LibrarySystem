@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            textBox1 = new TextBox();
             CancelButton = new Button();
             SubmitButton = new Button();
             groupBox1 = new GroupBox();
@@ -54,6 +53,7 @@
             dateTimePicker2 = new DateTimePicker();
             label2 = new Label();
             label3 = new Label();
+            NameTextBox = new TextBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -68,15 +68,6 @@
             label1.Size = new Size(218, 34);
             label1.TabIndex = 2;
             label1.Text = "BORROWING FORM";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(12, 80);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Name";
-            textBox1.Size = new Size(417, 23);
-            textBox1.TabIndex = 3;
-            textBox1.Visible = false;
             // 
             // CancelButton
             // 
@@ -333,6 +324,15 @@
             label3.Text = "DATE TO BE RETURNED";
             label3.TextAlign = ContentAlignment.MiddleLeft;
             // 
+            // NameTextBox
+            // 
+            NameTextBox.Location = new Point(12, 80);
+            NameTextBox.Name = "NameTextBox";
+            NameTextBox.PlaceholderText = "Name";
+            NameTextBox.Size = new Size(417, 23);
+            NameTextBox.TabIndex = 3;
+            NameTextBox.Visible = false;
+            // 
             // BorrowingForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -348,7 +348,7 @@
             Controls.Add(groupBox1);
             Controls.Add(SubmitButton);
             Controls.Add(CancelButton);
-            Controls.Add(textBox1);
+            Controls.Add(NameTextBox);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "BorrowingForm";
@@ -369,7 +369,6 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
         private Button CancelButton;
         private Button SubmitButton;
         private GroupBox groupBox1;
@@ -394,5 +393,6 @@
         private DateTimePicker dateTimePicker2;
         private Label label2;
         private Label label3;
+        private TextBox NameTextBox;
     }
 }
