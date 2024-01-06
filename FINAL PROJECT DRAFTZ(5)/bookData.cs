@@ -18,6 +18,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         }
 
+        //"C:\\Users\\Salupado\\source\\repos\\OOP_LibrarySystem\\FINAL PROJECT DRAFTZ(5)\\Resources\\";
         static string picturePath = "C:\\Users\\Salupado\\source\\repos\\OOP_LibrarySystem\\FINAL PROJECT DRAFTZ(5)\\Resources\\";
 
         public Book[] bookList = { new Book ("How to Write a Lot: A Practical Guide to Productive Academic Writing", "9781433829789", "1433829789", "Academic", "Paul J. Silvia", "American Psychological Association", "2018 ", picturePath +"how to write a lot.jpg"),
