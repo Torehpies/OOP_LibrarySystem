@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListViewItem listViewItem3 = new ListViewItem(new string[] { "", "1234", "cs" }, -1);
-            ListViewItem listViewItem4 = new ListViewItem(new string[] { "", "aaa", "aaa", "" }, -1);
+            ListViewItem listViewItem1 = new ListViewItem(new string[] { "", "1234", "cs" }, -1);
+            ListViewItem listViewItem2 = new ListViewItem(new string[] { "", "aaa", "aaa", "" }, -1);
+            ListViewItem listViewItem3 = new ListViewItem("aaa");
             tabPage2 = new TabPage();
             TeacherListView = new ListView();
             columnHeader5 = new ColumnHeader();
@@ -63,7 +64,7 @@
             TeacherListView.Columns.AddRange(new ColumnHeader[] { columnHeader5, columnHeader6, columnHeader7 });
             TeacherListView.FullRowSelect = true;
             TeacherListView.GridLines = true;
-            TeacherListView.Items.AddRange(new ListViewItem[] { listViewItem3, listViewItem4 });
+            TeacherListView.Items.AddRange(new ListViewItem[] { listViewItem1, listViewItem2 });
             TeacherListView.Location = new Point(3, 0);
             TeacherListView.Name = "TeacherListView";
             TeacherListView.Size = new Size(439, 333);
@@ -102,6 +103,7 @@
             StudentListView.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
             StudentListView.FullRowSelect = true;
             StudentListView.GridLines = true;
+            StudentListView.Items.AddRange(new ListViewItem[] { listViewItem3 });
             StudentListView.Location = new Point(3, 3);
             StudentListView.Name = "StudentListView";
             StudentListView.Size = new Size(442, 337);
