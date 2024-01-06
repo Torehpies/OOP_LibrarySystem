@@ -19,15 +19,18 @@ namespace FINAL_PROJECT_DRAFTZ_5_
     {
         BookReturning returnPanel = new BookReturning();
         BorrowerList borrowersPanel = new BorrowerList();
-        private List <Book> books;
+        public List <Book> books = new List<Book>();
         public LandingForm()
         {
             InitializeComponent();
             InitializeBookContainers();
             contentPanel.Controls.Add(returnPanel);
             contentPanel.Controls.Add(borrowersPanel);
-            //foreach (Book book in BookData.bookList)
-
+            foreach (Book book in new bookData().bookList)
+            {
+                books.Add(book);
+            }
+            
 
         }
 
