@@ -32,6 +32,7 @@
             CancelButton = new Button();
             SubmitButton = new Button();
             groupBox1 = new GroupBox();
+            label4 = new Label();
             checkBox5 = new CheckBox();
             checkBox4 = new CheckBox();
             checkBox3 = new CheckBox();
@@ -49,8 +50,6 @@
             checkBox13 = new CheckBox();
             checkBox14 = new CheckBox();
             checkBox15 = new CheckBox();
-            dateTimePicker1 = new DateTimePicker();
-            dateTimePicker2 = new DateTimePicker();
             label2 = new Label();
             label3 = new Label();
             NameTextBox = new TextBox();
@@ -61,11 +60,11 @@
             // 
             // label1
             // 
-            label1.Font = new Font("Franklin Gothic Demi Cond", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Franklin Gothic Demi", 27.75F, FontStyle.Underline, GraphicsUnit.Point);
             label1.ForeColor = Color.FromArgb(73, 85, 121);
-            label1.Location = new Point(12, 22);
+            label1.Location = new Point(53, 37);
             label1.Name = "label1";
-            label1.Size = new Size(218, 34);
+            label1.Size = new Size(352, 57);
             label1.TabIndex = 2;
             label1.Text = "BORROWING FORM";
             // 
@@ -92,14 +91,17 @@
             SubmitButton.TabIndex = 8;
             SubmitButton.Text = "SUBMIT";
             SubmitButton.UseVisualStyleBackColor = false;
+            SubmitButton.Click += SubmitButton_Click;
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(checkBox5);
             groupBox1.Controls.Add(checkBox4);
             groupBox1.Controls.Add(checkBox3);
             groupBox1.Controls.Add(checkBox2);
             groupBox1.Controls.Add(checkBox1);
+            groupBox1.Enabled = false;
             groupBox1.Font = new Font("Franklin Gothic Medium Cond", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox1.Location = new Point(12, 120);
             groupBox1.Name = "groupBox1";
@@ -107,6 +109,17 @@
             groupBox1.TabIndex = 9;
             groupBox1.TabStop = false;
             groupBox1.Text = "Academic Books";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.FromArgb(255, 192, 192);
+            label4.Font = new Font("Franklin Gothic Medium Cond", 14.25F, FontStyle.Italic, GraphicsUnit.Point);
+            label4.Location = new Point(29, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(364, 24);
+            label4.TabIndex = 15;
+            label4.Text = "Academic books are only allowed inside the library.";
             // 
             // checkBox5
             // 
@@ -288,38 +301,24 @@
             checkBox15.Text = "A Brief History of Time";
             checkBox15.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(173, 430);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(256, 23);
-            dateTimePicker1.TabIndex = 17;
-            // 
-            // dateTimePicker2
-            // 
-            dateTimePicker2.Location = new Point(173, 470);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(256, 23);
-            dateTimePicker2.TabIndex = 18;
-            // 
             // label2
             // 
-            label2.Font = new Font("Franklin Gothic Medium Cond", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.ControlText;
             label2.Location = new Point(12, 430);
             label2.Name = "label2";
-            label2.Size = new Size(155, 23);
+            label2.Size = new Size(358, 23);
             label2.TabIndex = 19;
             label2.Text = "DATE BORROWED";
             label2.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label3
             // 
-            label3.Font = new Font("Franklin Gothic Medium Cond", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = SystemColors.ControlText;
             label3.Location = new Point(12, 470);
             label3.Name = "label3";
-            label3.Size = new Size(155, 23);
+            label3.Size = new Size(312, 23);
             label3.TabIndex = 20;
             label3.Text = "DATE TO BE RETURNED";
             label3.TextAlign = ContentAlignment.MiddleLeft;
@@ -341,14 +340,11 @@
             ClientSize = new Size(451, 587);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(dateTimePicker2);
-            Controls.Add(dateTimePicker1);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(SubmitButton);
             Controls.Add(CancelButton);
-            Controls.Add(NameTextBox);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "BorrowingForm";
@@ -363,7 +359,6 @@
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -389,10 +384,8 @@
         private CheckBox checkBox13;
         private CheckBox checkBox14;
         private CheckBox checkBox15;
-        private DateTimePicker dateTimePicker1;
-        private DateTimePicker dateTimePicker2;
         private Label label2;
         private Label label3;
-        private TextBox NameTextBox;
+        private Label label4;
     }
 }
