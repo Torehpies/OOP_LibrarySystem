@@ -34,16 +34,18 @@
             StudentRadioButton = new RadioButton();
             label1 = new Label();
             StudentLoginPanel = new Panel();
+            StudentLastNameTxtBox = new TextBox();
             StudentLoginButton = new Button();
             StudentSectionTxtBox = new TextBox();
             StudentYearTxtBox = new TextBox();
-            StudentNameTxtBox = new TextBox();
+            StudentFirstNameTxtBox = new TextBox();
             StudentIDTxtBox = new TextBox();
             label2 = new Label();
             TeacherLoginPanel = new Panel();
+            TeacherLastNameTxtBox = new TextBox();
             TeacherLoginButton = new Button();
             TeacherDepartmentTxtBox = new TextBox();
-            TeacherNameTxtBox = new TextBox();
+            TeacherFirstNameTxtBox = new TextBox();
             TeacherIDTxtBox = new TextBox();
             label3 = new Label();
             AdmitTypePanel.SuspendLayout();
@@ -87,14 +89,20 @@
             // StudentLoginPanel
             // 
             StudentLoginPanel.BorderStyle = BorderStyle.FixedSingle;
+            StudentLoginPanel.Controls.Add(StudentLastNameTxtBox);
             StudentLoginPanel.Controls.Add(StudentLoginButton);
             StudentLoginPanel.Controls.Add(StudentSectionTxtBox);
             StudentLoginPanel.Controls.Add(StudentYearTxtBox);
-            StudentLoginPanel.Controls.Add(StudentNameTxtBox);
+            StudentLoginPanel.Controls.Add(StudentFirstNameTxtBox);
             StudentLoginPanel.Controls.Add(StudentIDTxtBox);
             StudentLoginPanel.Controls.Add(label2);
             resources.ApplyResources(StudentLoginPanel, "StudentLoginPanel");
             StudentLoginPanel.Name = "StudentLoginPanel";
+            // 
+            // StudentLastNameTxtBox
+            // 
+            resources.ApplyResources(StudentLastNameTxtBox, "StudentLastNameTxtBox");
+            StudentLastNameTxtBox.Name = "StudentLastNameTxtBox";
             // 
             // StudentLoginButton
             // 
@@ -115,10 +123,10 @@
             resources.ApplyResources(StudentYearTxtBox, "StudentYearTxtBox");
             StudentYearTxtBox.Name = "StudentYearTxtBox";
             // 
-            // StudentNameTxtBox
+            // StudentFirstNameTxtBox
             // 
-            resources.ApplyResources(StudentNameTxtBox, "StudentNameTxtBox");
-            StudentNameTxtBox.Name = "StudentNameTxtBox";
+            resources.ApplyResources(StudentFirstNameTxtBox, "StudentFirstNameTxtBox");
+            StudentFirstNameTxtBox.Name = "StudentFirstNameTxtBox";
             // 
             // StudentIDTxtBox
             // 
@@ -134,13 +142,19 @@
             // TeacherLoginPanel
             // 
             TeacherLoginPanel.BorderStyle = BorderStyle.FixedSingle;
+            TeacherLoginPanel.Controls.Add(TeacherLastNameTxtBox);
             TeacherLoginPanel.Controls.Add(TeacherLoginButton);
             TeacherLoginPanel.Controls.Add(TeacherDepartmentTxtBox);
-            TeacherLoginPanel.Controls.Add(TeacherNameTxtBox);
+            TeacherLoginPanel.Controls.Add(TeacherFirstNameTxtBox);
             TeacherLoginPanel.Controls.Add(TeacherIDTxtBox);
             TeacherLoginPanel.Controls.Add(label3);
             resources.ApplyResources(TeacherLoginPanel, "TeacherLoginPanel");
             TeacherLoginPanel.Name = "TeacherLoginPanel";
+            // 
+            // TeacherLastNameTxtBox
+            // 
+            resources.ApplyResources(TeacherLastNameTxtBox, "TeacherLastNameTxtBox");
+            TeacherLastNameTxtBox.Name = "TeacherLastNameTxtBox";
             // 
             // TeacherLoginButton
             // 
@@ -156,10 +170,10 @@
             resources.ApplyResources(TeacherDepartmentTxtBox, "TeacherDepartmentTxtBox");
             TeacherDepartmentTxtBox.Name = "TeacherDepartmentTxtBox";
             // 
-            // TeacherNameTxtBox
+            // TeacherFirstNameTxtBox
             // 
-            resources.ApplyResources(TeacherNameTxtBox, "TeacherNameTxtBox");
-            TeacherNameTxtBox.Name = "TeacherNameTxtBox";
+            resources.ApplyResources(TeacherFirstNameTxtBox, "TeacherFirstNameTxtBox");
+            TeacherFirstNameTxtBox.Name = "TeacherFirstNameTxtBox";
             // 
             // TeacherIDTxtBox
             // 
@@ -177,9 +191,9 @@
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Ivory;
-            Controls.Add(TeacherLoginPanel);
-            Controls.Add(StudentLoginPanel);
             Controls.Add(AdmitTypePanel);
+            Controls.Add(StudentLoginPanel);
+            Controls.Add(TeacherLoginPanel);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "FormLogin";
             Load += FormLogin_Load;
@@ -200,16 +214,18 @@
         private Label label1;
         private Panel StudentLoginPanel;
         private TextBox StudentYearTxtBox;
-        private TextBox StudentNameTxtBox;
+        private TextBox StudentFirstNameTxtBox;
         private TextBox StudentIDTxtBox;
         private Label label2;
         private TextBox StudentSectionTxtBox;
         private Button StudentLoginButton;
         private Panel TeacherLoginPanel;
         private TextBox TeacherDepartmentTxtBox;
-        private TextBox TeacherNameTxtBox;
+        private TextBox TeacherFirstNameTxtBox;
         private TextBox TeacherIDTxtBox;
         private Label label3;
         private Button TeacherLoginButton;
+        private TextBox StudentLastNameTxtBox;
+        private TextBox TeacherLastNameTxtBox;
     }
 }

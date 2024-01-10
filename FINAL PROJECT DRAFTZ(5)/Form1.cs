@@ -42,54 +42,72 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void StudentLoginButton_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(StudentIDTxtBox.Text))
+            
+            if (!isTextBoxValid(StudentLoginPanel))
             {
                 MessageBox.Show("Please enter your student id or check the other information that is missing.", "Notice");
+                return;
             }
-            else if (string.IsNullOrWhiteSpace(StudentNameTxtBox.Text))
+
+            Student userStudent = new Student(StudentFirstNameTxtBox.Text,
+                                              StudentLastNameTxtBox.Text,
+                                              StudentIDTxtBox.Text,
+                                              StudentYearTxtBox.Text,
+                                              StudentSectionTxtBox.Text);
+            if (!UsersData.isUserExists(userStudent))
             {
-                MessageBox.Show("Please enter your name or check the other information that is missing.", "Notice");
+                MessageBox.Show("Incorrect information or User does not exist.", "Notice");
+                return;
             }
-            else if (string.IsNullOrWhiteSpace(StudentYearTxtBox.Text))
-            {
-                MessageBox.Show("Please enter your year or check the other information that is missing.", "Notice");
-            }
-            else if (string.IsNullOrWhiteSpace(StudentSectionTxtBox.Text))
-            {
-                MessageBox.Show("Please enter your section or check the other information that is missing.", "Notice");
-            }
-            else
-            {
-                bool isExisting = new BorrowerList().checkIfSameID(StudentIDTxtBox.Text);
-                BorrowingForm borrowingForm = new BorrowingForm();
-                borrowingForm.isStudent(true);
-                borrowingForm.ShowDialog();
-                this.Close();
-            }
+            
+            BorrowingForm borrowingForm = new BorrowingForm();
+            borrowingForm.ShowDialog();
+            this.Close();
+            
         }
 
         private void TeacherLoginButton_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(TeacherIDTxtBox.Text))
+
+            if (!isTextBoxValid(TeacherLoginPanel))
             {
-                MessageBox.Show("Please enter your employee id or check the other information that is missing.", "Notice");
+                MessageBox.Show("Please enter your student id or check the other information that is missing.", "Notice");
+                return;
             }
-            else if (string.IsNullOrWhiteSpace(TeacherNameTxtBox.Text))
+
+            Teacher userTeacher = new Teacher(TeacherFirstNameTxtBox.Text,
+                                              TeacherLastNameTxtBox.Text,
+                                              TeacherIDTxtBox.Text,
+                                              TeacherDepartmentTxtBox.Text);
+                                              
+            if (!UsersData.isUserExists(userTeacher))
             {
-                MessageBox.Show("Please enter your name or check the other information that is missing.", "Notice");
+                MessageBox.Show("Incorrect information or User does not exist.", "Notice");
+                return;
             }
-            else if (string.IsNullOrWhiteSpace(TeacherDepartmentTxtBox.Text))
-            {
-                MessageBox.Show("Please enter your department or check the other information that is missing.", "Notice");
-            }
-            else
-            {
-                bool isExisting = new BorrowerList().checkIfSameID(TeacherIDTxtBox.Text);
-                BorrowingForm form_Homepage = new BorrowingForm();
-                form_Homepage.isStudent(false);
-                form_Homepage.ShowDialog();
-                this.Close();
-            }
+
+            BorrowingForm borrowingForm = new BorrowingForm();
+            borrowingForm.ShowDialog();
+            this.Close();
         }
+
+        private bool isTextBoxValid(Control container)
+        {
+            bool result = true;
+            foreach (Control control in container.Controls)
+            {
+                if (control is TextBox textBox)
+                {
+                    if (string.IsNullOrWhiteSpace(textBox.Text))
+                    {
+                        result = false;
+                    }
+                }
+            }
+
+            return result;
+        }
+
+  
     }
 }

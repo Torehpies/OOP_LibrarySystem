@@ -13,6 +13,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 {
     public partial class BorrowingForm : Form
     {
+        public string userID;
         int borrowLimit;
         public BorrowingForm()
         {
@@ -39,12 +40,14 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         {
             DateTime currentDate = DateTime.Today;
             DateTime futureDate = currentDate.AddDays(3);
-            if (isStudent){
+            if (isStudent)
+            {
                 borrowLimit = 2;
                 label3.Text = "DATE TO BE RETURNED: " + futureDate.ToShortDateString();
 
             }
-            else { 
+            else
+            {
                 borrowLimit = 5;
                 label3.Visible = false;
             }
@@ -107,11 +110,16 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
             if (count > borrowLimit)
             {
-                MessageBox.Show("Sorry! You have exceeded the \nnumber of books to be borrowed.\n LIMIT: "+ borrowLimit.ToString());
+                MessageBox.Show("Sorry! You have exceeded the \nnumber of books to be borrowed.\n LIMIT: " + borrowLimit.ToString());
                 UncheckAllCheckboxes(groupBox2);
                 UncheckAllCheckboxes(groupBox3);
             }
-            
+
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

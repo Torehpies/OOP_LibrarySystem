@@ -99,7 +99,7 @@
             StudentListView.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
             StudentListView.FullRowSelect = true;
             StudentListView.GridLines = true;
-            StudentListView.Items.AddRange(new ListViewItem[] { listViewItem3 });
+            //StudentListView.Items.AddRange(new ListViewItem[] { listViewItem3 });
             StudentListView.Location = new Point(3, 3);
             StudentListView.Name = "StudentListView";
             StudentListView.Size = new Size(442, 337);
