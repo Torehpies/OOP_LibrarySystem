@@ -22,7 +22,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                                             new Student("Mindra", "Miltranes", "2345", "2", "C", 1),
                                             new Student("Sophie", "Ofesiya", "7812", "2", "A", 1),
                                             new Student("Miling", "Andanar", "7842", "2", "D", 1),
-                                            new Student("Trony", "Talkombre", "7845", "2", "A", 1),
+                                            new Student("Trony", "Talkombre", "7895", "2", "A", 1),
                                             new Student("Mantrano", "Terintinas", "7823", "2", "A", 1)};
 
         public static Student[] Students
@@ -35,9 +35,28 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             get { return teacherData; }
         }
 
-        public static void addBorrowCount()
+        public static void addBorrowCount(string id, int newBorrow, bool isStudent)
         {
-
+            if (isStudent)
+            {
+                foreach(Student student in studentData)
+                {
+                    if (student.userID == id)
+                    {
+                        student.borrowedBookCount += newBorrow;
+                    }
+                }
+            }
+            else
+            {
+                foreach (Teacher teacher in teacherData)
+                {
+                    if (teacher.userID == id)
+                    {
+                        teacher.borrowedBookCount += newBorrow;
+                    }
+                }
+            }
             
         }
 
@@ -70,30 +89,37 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         }
         public static bool isUserExists(Teacher userTeacher)
         {
-            
+            bool result = false;
             foreach (Teacher teacher in teacherData)
             {
-                if (userTeacher.firstName == teacher.firstName && userTeacher.lastName == teacher.lastName && userTeacher.userID == teacher.userID)
+                if (userTeacher.firstName == teacher.firstName && 
+                    userTeacher.lastName == teacher.lastName && 
+                    userTeacher.userID == teacher.userID &&
+                    userTeacher.department == teacher.department)
                 {
-                    return true;
+                    result = true;
                 }
             }
 
-            return false;
+            return result;
         }
 
         public static bool isUserExists(Student userStudent)
         {
-
+            bool result = false;
             foreach (Student student in studentData)
             {
-                if (userStudent.firstName == student.firstName && userStudent.lastName == student.lastName && userStudent.userID == student.userID)
+                if (userStudent.firstName == student.firstName && 
+                    userStudent.lastName == student.lastName && 
+                    userStudent.userID == student.userID &&
+                    userStudent.section == student.section &&
+                    userStudent.yearlevel == student.yearlevel)
                 {
-                    return true;
+                    result = true;
                 }
             }
 
-            return false;
+            return result;
         }
 
     }
