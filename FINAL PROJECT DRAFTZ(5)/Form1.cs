@@ -61,6 +61,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
             
             BorrowingForm borrowingForm = new BorrowingForm();
+            borrowingForm.setUserData(UsersData.getStudentByID(userStudent.userID));
             borrowingForm.ShowDialog();
             this.Close();
             
@@ -87,6 +88,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
 
             BorrowingForm borrowingForm = new BorrowingForm();
+            borrowingForm.setUserData(UsersData.getTeacherByID(userTeacher.userID));
             borrowingForm.ShowDialog();
             this.Close();
         }

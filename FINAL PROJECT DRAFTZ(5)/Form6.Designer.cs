@@ -52,6 +52,7 @@
             checkBox15 = new CheckBox();
             label2 = new Label();
             label3 = new Label();
+            borrowerLabel = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -61,7 +62,7 @@
             // 
             label1.Font = new Font("Franklin Gothic Demi", 27.75F, FontStyle.Underline, GraphicsUnit.Point);
             label1.ForeColor = Color.FromArgb(73, 85, 121);
-            label1.Location = new Point(53, 37);
+            label1.Location = new Point(44, 18);
             label1.Name = "label1";
             label1.Size = new Size(352, 57);
             label1.TabIndex = 2;
@@ -323,12 +324,23 @@
             label3.Text = "DATE TO BE RETURNED";
             label3.TextAlign = ContentAlignment.MiddleLeft;
             // 
+            // borrowerLabel
+            // 
+            borrowerLabel.AutoSize = true;
+            borrowerLabel.Font = new Font("Franklin Gothic Medium Cond", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            borrowerLabel.Location = new Point(12, 84);
+            borrowerLabel.Name = "borrowerLabel";
+            borrowerLabel.Size = new Size(85, 17);
+            borrowerLabel.TabIndex = 21;
+            borrowerLabel.Text = "Borrower Name:";
+            // 
             // BorrowingForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Ivory;
             ClientSize = new Size(451, 587);
+            Controls.Add(borrowerLabel);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(groupBox3);
@@ -350,6 +362,7 @@
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -378,5 +391,6 @@
         private Label label2;
         private Label label3;
         private Label label4;
+        private Label borrowerLabel;
     }
 }

@@ -13,16 +13,46 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 {
     public partial class BorrowingForm : Form
     {
-        public string userID;
+        private Student currentStudent;
+        private Teacher currentTeacher;
+
         int borrowLimit;
         public BorrowingForm()
         {
             InitializeComponent();
+
+        }
+
+        private void setUIData()
+        {
+
             DateTime currentDate = DateTime.Now;
 
             label2.Text = "DATE BORROWED: " + currentDate.ToShortDateString();
+
+            if (currentStudent != null)
+            {
+                borrowerLabel.Text = "Borrower Name: " + currentStudent.firstName + " " + currentStudent.lastName;
+                borrowLimit = 2 - currentStudent.borrowedBookCount;
+            }
+            else
+            {
+                borrowerLabel.Text = "Borrower Name: " + currentTeacher.firstName + " " + currentTeacher.lastName;
+                borrowLimit = 5 - currentTeacher.borrowedBookCount;
+            }
         }
 
+        public void setUserData(Student student)
+        {
+            currentStudent = student;
+            setUIData();
+        }
+
+        public void setUserData(Teacher teacher)
+        {
+            currentTeacher = teacher;
+            setUIData();
+        }
         private void CheckBox_CheckedChanged(object sender, EventArgs e)
         {
             // Check if any CheckBox in the GroupBox is checked

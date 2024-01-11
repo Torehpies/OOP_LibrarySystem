@@ -47,6 +47,27 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         }
 
+        public static Teacher getTeacherByID(string id)
+        {
+            Teacher user = null;
+            foreach (Teacher teacher in teacherData)
+            {
+                if (teacher.userID == id) user = teacher;
+            }
+
+            return user;
+        }
+
+        public static Student getStudentByID(string id)
+        {
+            Student user = null;
+            foreach (Student student in studentData)
+            {
+                if (student.userID == id) user = student;
+            }
+
+            return user;
+        }
         public static bool isUserExists(Teacher userTeacher)
         {
             
