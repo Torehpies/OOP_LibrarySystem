@@ -29,6 +29,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             bookPic.Image = Image.FromFile(BookContainerData.picturePath);
             bookTitle.Text = BookContainerData.title;
             bookYear.Text = BookContainerData.published;
+            if (BookContainerData.status == Book.BookType.Borrowed)
+            {
+                borrowBtn.Text = "SEE DETAILS";
+            }
         }
 
 

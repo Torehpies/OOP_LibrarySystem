@@ -72,11 +72,11 @@
             borrowBtn.BackColor = Color.FromArgb(38, 49, 89);
             borrowBtn.Cursor = Cursors.Hand;
             borrowBtn.FlatStyle = FlatStyle.Flat;
-            borrowBtn.Font = new Font("Franklin Gothic Book", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            borrowBtn.Font = new Font("Franklin Gothic Book", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             borrowBtn.ForeColor = Color.FromArgb(255, 251, 235);
-            borrowBtn.Location = new Point(35, 194);
+            borrowBtn.Location = new Point(26, 194);
             borrowBtn.Name = "borrowBtn";
-            borrowBtn.Size = new Size(86, 35);
+            borrowBtn.Size = new Size(110, 35);
             borrowBtn.TabIndex = 20;
             borrowBtn.Text = "BORROW";
             borrowBtn.UseVisualStyleBackColor = false;

@@ -31,14 +31,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         { get; set; }
         public string picturePath
         { get; set; }
-        private BookType status = BookType.Available;
-        public BookType Status
+        public BookType status
+        { get; set; }
+        public Book(BookType status, string BookTitle, string BookIsbn13, string BookIsbn10, string BookCategory, string BookAuthor, string BookPublisher, string BookPublished, string PicturePath)
         {
-            get { return status; }
-            set { status = value; }
-        }
-        public Book(string BookTitle, string BookIsbn13, string BookIsbn10, string BookCategory, string BookAuthor, string BookPublisher, string BookPublished, string PicturePath)
-        {
+            this.status = status;
             title = BookTitle;
             isbn13 = BookIsbn13;
             isbn10 = BookIsbn10;

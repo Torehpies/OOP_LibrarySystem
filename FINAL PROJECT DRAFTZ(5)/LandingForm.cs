@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Reflection.Metadata.BlobBuilder;
 
 
 
@@ -19,24 +20,21 @@ namespace FINAL_PROJECT_DRAFTZ_5_
     {
         BookReturning returnPanel = new BookReturning();
         BorrowerList borrowersPanel = new BorrowerList();
-        public List <Book> books = new List<Book>();
+       // public List <Book> books = new List<Book>();
         public LandingForm()
         {
             InitializeComponent();
             InitializeBookContainers();
             contentPanel.Controls.Add(returnPanel);
             contentPanel.Controls.Add(borrowersPanel);
-            foreach (Book book in new bookData().bookList)
-            {
-                books.Add(book);
-            }
+            
             
 
         }
 
         private void InitializeBookContainers()
         {
-
+            
             Label academicLabel = new Label();
             academicLabel.Font = new Font("Franklin Gothic Demi Cond", 18F, FontStyle.Regular, GraphicsUnit.Point);
             academicLabel.ForeColor = Color.FromArgb(73, 85, 121);
@@ -60,14 +58,14 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
             libraryPanel.Controls.Add(academicLabel);
 
-            Book[] BookList = new bookData().bookList;
+            
 
             FlowLayoutPanel academicPanel = new FlowLayoutPanel();
             academicPanel.BackColor = Color.Transparent;
             academicPanel.AutoSize = true;
             academicPanel.AutoScroll = true;
 
-            foreach (Book book in BookList)
+            foreach (Book book in bookData.getBookData)
             {
                 if (book.category == "Academic")
                 {
@@ -87,7 +85,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             nonfictionPanel.AutoSize = true;
             nonfictionPanel.AutoScroll = true;
 
-            foreach (Book book in BookList)
+            foreach (Book book in bookData.getBookData)
             {
                 if (book.category == "Non-Fiction")
                 {
@@ -107,7 +105,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             fictionPanel.AutoSize = true;
             fictionPanel.AutoScroll = true;
 
-            foreach (Book book in BookList)
+            foreach (Book book in bookData.getBookData)
             {
                 if (book.category == "Fiction")
                 {
