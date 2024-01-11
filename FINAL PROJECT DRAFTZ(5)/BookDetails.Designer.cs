@@ -38,6 +38,7 @@
             authorLabel = new Label();
             isbn10Label = new Label();
             panel1 = new Panel();
+            statusLabel = new Label();
             exitButton = new Button();
             ((System.ComponentModel.ISupportInitialize)picture).BeginInit();
             panel1.SuspendLayout();
@@ -57,7 +58,7 @@
             // 
             publishedLabel.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             publishedLabel.ForeColor = Color.FromArgb(73, 85, 121);
-            publishedLabel.Location = new Point(244, 247);
+            publishedLabel.Location = new Point(244, 268);
             publishedLabel.Name = "publishedLabel";
             publishedLabel.Size = new Size(303, 26);
             publishedLabel.TabIndex = 21;
@@ -80,7 +81,7 @@
             // 
             publisherLabel.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             publisherLabel.ForeColor = Color.FromArgb(73, 85, 121);
-            publisherLabel.Location = new Point(244, 221);
+            publisherLabel.Location = new Point(244, 242);
             publisherLabel.Name = "publisherLabel";
             publisherLabel.Size = new Size(324, 26);
             publisherLabel.TabIndex = 20;
@@ -100,7 +101,7 @@
             // 
             categoryLabel.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             categoryLabel.ForeColor = Color.FromArgb(73, 85, 121);
-            categoryLabel.Location = new Point(244, 195);
+            categoryLabel.Location = new Point(244, 216);
             categoryLabel.Name = "categoryLabel";
             categoryLabel.Size = new Size(303, 26);
             categoryLabel.TabIndex = 19;
@@ -110,7 +111,7 @@
             // 
             isbn13Label.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             isbn13Label.ForeColor = Color.FromArgb(73, 85, 121);
-            isbn13Label.Location = new Point(244, 117);
+            isbn13Label.Location = new Point(244, 138);
             isbn13Label.Name = "isbn13Label";
             isbn13Label.Size = new Size(303, 17);
             isbn13Label.TabIndex = 15;
@@ -120,7 +121,7 @@
             // 
             authorLabel.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             authorLabel.ForeColor = Color.FromArgb(73, 85, 121);
-            authorLabel.Location = new Point(244, 169);
+            authorLabel.Location = new Point(244, 190);
             authorLabel.Name = "authorLabel";
             authorLabel.Size = new Size(303, 26);
             authorLabel.TabIndex = 18;
@@ -130,7 +131,7 @@
             // 
             isbn10Label.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             isbn10Label.ForeColor = Color.FromArgb(73, 85, 121);
-            isbn10Label.Location = new Point(244, 143);
+            isbn10Label.Location = new Point(244, 164);
             isbn10Label.Name = "isbn10Label";
             isbn10Label.Size = new Size(303, 17);
             isbn10Label.TabIndex = 16;
@@ -140,6 +141,7 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.AutoSize = true;
+            panel1.Controls.Add(statusLabel);
             panel1.Controls.Add(picture);
             panel1.Controls.Add(publishedLabel);
             panel1.Controls.Add(BorrowButton);
@@ -154,6 +156,18 @@
             panel1.Padding = new Padding(10);
             panel1.Size = new Size(660, 390);
             panel1.TabIndex = 23;
+            // 
+            // statusLabel
+            // 
+            statusLabel.BackColor = Color.Ivory;
+            statusLabel.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Underline, GraphicsUnit.Point);
+            statusLabel.ForeColor = Color.FromArgb(73, 85, 121);
+            statusLabel.Location = new Point(244, 100);
+            statusLabel.Name = "statusLabel";
+            statusLabel.Size = new Size(173, 29);
+            statusLabel.TabIndex = 22;
+            statusLabel.Text = "STATUS: ";
+            statusLabel.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // exitButton
             // 
@@ -203,5 +217,6 @@
         private Label isbn10Label;
         private Panel panel1;
         private Button exitButton;
+        private Label statusLabel;
     }
 }

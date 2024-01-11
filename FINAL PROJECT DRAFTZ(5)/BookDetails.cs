@@ -30,6 +30,13 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             publisherLabel.Text = "Publisher: " + BookContainerData.publisher;
             authorLabel.Text = "Author: " + BookContainerData.author;
             categoryLabel.Text = "Category: " + BookContainerData.category;
+            statusLabel.Text = "STATUS: " + BookContainerData.status;
+            if (BookContainerData.status == Book.BookType.Borrowed)
+            {
+                BorrowButton.Enabled = false;
+                BorrowButton.BackColor = Color.White;
+                BorrowButton.Text = "NOT AVAILABLE";
+            }
         }
         private void exitButton_Click(object sender, EventArgs e)
         {
