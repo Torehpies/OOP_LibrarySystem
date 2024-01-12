@@ -26,11 +26,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             LandingFormReference.Reference = this;
         }
 
-        public void RefreshLandingForm()
-        {
-            BookData.Instance.BookList[3].status = Book.BookType.Borrowed;
-        }
-
         private Label CreateLabel(string label)
         {
             Label newLabel = new Label();
@@ -113,9 +108,5 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             libraryPanel.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            RefreshLandingForm();
-        }
     }
 }

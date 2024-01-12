@@ -24,10 +24,20 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             //MouseEnter += MyUserControl_MouseEnter;
             //MouseLeave += MyUserControl_MouseLeave;
         }
-        private void BookListChangedHandler(object sender, EventArgs e)
+        private void BookListChangedHandler(object sender, int index)
         {
-            // Update the text of yourButton when the bookList changes
-            borrowBtn.Text = "New Text";  // Update this line with the logic you need
+            if (BookData.Instance.BookList[index].title == DetailsData.title) 
+            {
+                if (BookData.Instance.BookList[index].status == Book.BookType.Borrowed)
+                {
+                    borrowBtn.Text = "SEE DETAILS";
+                }
+                else
+                {
+                    borrowBtn.Text = "BORROW";
+                }
+            }
+              
         }
         public void InitializeUI(Book BookContainerData)
         {

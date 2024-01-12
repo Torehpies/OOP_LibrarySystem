@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            button1 = new Button();
             ReturningLabel = new Button();
             LibraryLabel = new Button();
             BorrowerListLabel = new Button();
@@ -43,7 +42,6 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(73, 85, 121);
-            panel1.Controls.Add(button1);
             panel1.Controls.Add(ReturningLabel);
             panel1.Controls.Add(LibraryLabel);
             panel1.Controls.Add(BorrowerListLabel);
@@ -53,16 +51,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(150, 450);
             panel1.TabIndex = 1;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(64, 131);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 5;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
             // 
             // ReturningLabel
             // 
@@ -166,6 +154,5 @@
         private Label label1;
         private Panel contentPanel;
         private FlowLayoutPanel libraryPanel;
-        private Button button1;
     }
 }

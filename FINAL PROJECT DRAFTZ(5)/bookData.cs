@@ -12,11 +12,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_
     {
         private static BookData instance;
 
-        public event EventHandler BookListChanged;
+        public event EventHandler<int> BookListChanged;
 
-        protected virtual void OnBookListChanged(EventArgs e)
+        protected virtual void OnBookListChanged(int index)
         {
-            BookListChanged?.Invoke(this, e);
+            BookListChanged?.Invoke(this, index);
         }
 
         //"C:\\Users\\Salupado\\source\\repos\\OOP_LibrarySystem\\FINAL PROJECT DRAFTZ(5)\\Resources\\";
@@ -64,7 +64,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             set
             {
                 bookList = value;
-                OnBookListChanged(EventArgs.Empty);
+                //OnBookListChanged();
             }
         }
        
@@ -74,17 +74,22 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             foreach(int title in Titles)
             {
                 BookList[title].status = Book.BookType.Borrowed;
+                OnBookListChanged(title);
             }
         }
 
         public void BookStatusToAvailable(string Title)
         {
+            int index = 0;
             foreach (Book book in BookList)
             {
                 if (book.title == Title)
                 {
                     book.status = Book.BookType.Available;
+                    
+                    OnBookListChanged(index);
                 }
+                index++;
             }
         }
     }
