@@ -53,6 +53,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
 
             UsersData.deductBorrowCount(user);
+            BookData.Instance.BookStatusToAvailable(BookListCB.SelectedItem.ToString());
+            MessageBox.Show("Book returned successfully.", "Notice");
 
         }
 

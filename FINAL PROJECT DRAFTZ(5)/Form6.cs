@@ -157,7 +157,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 return;
             }
 
-            BookData.Instance.UpdateBookStatus(GetCheckedTitles(this));
+            BookData.Instance.BookStatusToBorrowed(GetCheckedTitles(this));
             UsersData.addBorrowCount(id, count, isStudent);
             MessageBox.Show("Borrowing Successful");
             Close();

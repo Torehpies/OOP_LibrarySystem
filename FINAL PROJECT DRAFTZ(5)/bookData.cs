@@ -69,7 +69,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         }
        
 
-        public void UpdateBookStatus(List<int> Titles)
+        public void BookStatusToBorrowed(List<int> Titles)
         {
             foreach(int title in Titles)
             {
@@ -77,5 +77,15 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
         }
 
+        public void BookStatusToAvailable(string Title)
+        {
+            foreach (Book book in BookList)
+            {
+                if (book.title == Title)
+                {
+                    book.status = Book.BookType.Available;
+                }
+            }
+        }
     }
 }
