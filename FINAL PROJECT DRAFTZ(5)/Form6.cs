@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 
 namespace FINAL_PROJECT_DRAFTZ_5_
@@ -22,6 +23,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         public BorrowingForm()
         {
             InitializeComponent();
+            disableBorrowedBooks(this);
 
         }
 
@@ -162,6 +164,29 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             MessageBox.Show("Borrowing Successful");
             Close();
 
+        }
+
+        private void disableBorrowedBooks(Control container)
+        {
+            foreach (Control control in container.Controls)
+            {
+                if (control is CheckBox checkBox)
+                {
+                    string title = checkBox.Name.Replace("cb", "");
+                    int index = int.Parse(title) - 1;
+
+                    Book book = BookData.Instance.BookList[index];
+                    if (book.status == Book.BookType.Borrowed)
+                    {
+                        checkBox.Enabled = false;
+                    }
+                }
+
+                if (control.HasChildren)
+                {
+                    disableBorrowedBooks(control);
+                }
+            }
         }
 
         private void CancelButton_Click(object sender, EventArgs e)

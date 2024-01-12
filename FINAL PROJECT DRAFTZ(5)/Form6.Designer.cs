@@ -33,11 +33,11 @@
             SubmitButton = new Button();
             groupBox1 = new GroupBox();
             label4 = new Label();
-            checkBox5 = new CheckBox();
-            checkBox4 = new CheckBox();
-            checkBox3 = new CheckBox();
-            checkBox2 = new CheckBox();
-            checkBox1 = new CheckBox();
+            cb2 = new CheckBox();
+            cb4 = new CheckBox();
+            cb1 = new CheckBox();
+            cb3 = new CheckBox();
+            cb5 = new CheckBox();
             groupBox2 = new GroupBox();
             cb10 = new CheckBox();
             cb9 = new CheckBox();
@@ -97,11 +97,11 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(checkBox5);
-            groupBox1.Controls.Add(checkBox4);
-            groupBox1.Controls.Add(checkBox3);
-            groupBox1.Controls.Add(checkBox2);
-            groupBox1.Controls.Add(checkBox1);
+            groupBox1.Controls.Add(cb2);
+            groupBox1.Controls.Add(cb4);
+            groupBox1.Controls.Add(cb1);
+            groupBox1.Controls.Add(cb3);
+            groupBox1.Controls.Add(cb5);
             groupBox1.Enabled = false;
             groupBox1.Font = new Font("Franklin Gothic Medium Cond", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox1.Location = new Point(12, 120);
@@ -122,55 +122,55 @@
             label4.TabIndex = 15;
             label4.Text = "Academic books are only allowed inside the library.";
             // 
-            // checkBox5
+            // cb2
             // 
-            checkBox5.AutoSize = true;
-            checkBox5.Location = new Point(247, 30);
-            checkBox5.Name = "checkBox5";
-            checkBox5.Size = new Size(162, 21);
-            checkBox5.TabIndex = 14;
-            checkBox5.Text = "Decolonizing Methodologies";
-            checkBox5.UseVisualStyleBackColor = true;
+            cb2.AutoSize = true;
+            cb2.Location = new Point(247, 30);
+            cb2.Name = "cb2";
+            cb2.Size = new Size(162, 21);
+            cb2.TabIndex = 14;
+            cb2.Text = "Decolonizing Methodologies";
+            cb2.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // cb4
             // 
-            checkBox4.AutoSize = true;
-            checkBox4.Location = new Point(220, 60);
-            checkBox4.Name = "checkBox4";
-            checkBox4.Size = new Size(164, 21);
-            checkBox4.TabIndex = 13;
-            checkBox4.Text = "In Search of Deeper Learning";
-            checkBox4.UseVisualStyleBackColor = true;
+            cb4.AutoSize = true;
+            cb4.Location = new Point(220, 60);
+            cb4.Name = "cb4";
+            cb4.Size = new Size(164, 21);
+            cb4.TabIndex = 13;
+            cb4.Text = "In Search of Deeper Learning";
+            cb4.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // cb1
             // 
-            checkBox3.AutoSize = true;
-            checkBox3.Location = new Point(149, 30);
-            checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(83, 21);
-            checkBox3.TabIndex = 12;
-            checkBox3.Text = "Orientalism";
-            checkBox3.UseVisualStyleBackColor = true;
+            cb1.AutoSize = true;
+            cb1.Location = new Point(149, 30);
+            cb1.Name = "cb1";
+            cb1.Size = new Size(83, 21);
+            cb1.TabIndex = 12;
+            cb1.Text = "Orientalism";
+            cb1.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // cb3
             // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(16, 60);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(187, 21);
-            checkBox2.TabIndex = 11;
-            checkBox2.Text = "What I Wish I Knew When I Was 20";
-            checkBox2.UseVisualStyleBackColor = true;
+            cb3.AutoSize = true;
+            cb3.Location = new Point(16, 60);
+            cb3.Name = "cb3";
+            cb3.Size = new Size(187, 21);
+            cb3.TabIndex = 11;
+            cb3.Text = "What I Wish I Knew When I Was 20";
+            cb3.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // cb5
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(16, 30);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(112, 21);
-            checkBox1.TabIndex = 10;
-            checkBox1.Text = "How to Write a Lot";
-            checkBox1.UseVisualStyleBackColor = true;
+            cb5.AutoSize = true;
+            cb5.Location = new Point(16, 30);
+            cb5.Name = "cb5";
+            cb5.Size = new Size(112, 21);
+            cb5.TabIndex = 10;
+            cb5.Text = "How to Write a Lot";
+            cb5.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -371,11 +371,11 @@
         private Button CancelButton;
         private Button SubmitButton;
         private GroupBox groupBox1;
-        private CheckBox checkBox1;
-        private CheckBox checkBox2;
-        private CheckBox checkBox5;
-        private CheckBox checkBox4;
-        private CheckBox checkBox3;
+        private CheckBox cb5;
+        private CheckBox cb3;
+        private CheckBox cb2;
+        private CheckBox cb4;
+        private CheckBox cb1;
         private GroupBox groupBox2;
         private CheckBox cb10;
         private CheckBox cb9;
