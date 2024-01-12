@@ -32,5 +32,16 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             this.section = section;
         }
 
+        public Student(string firstname, string lastname, string userId, string yearlevel, string section, int borrowcount, List<int> BorrowedBooks)
+        {
+            firstName = firstname;
+            lastName = lastname;
+            userID = userId;
+            this.yearlevel = yearlevel;
+            this.section = section;
+            borrowedBookCount = borrowcount;
+            borrowedBooks = BorrowedBooks;
+
+        }
     }
 }

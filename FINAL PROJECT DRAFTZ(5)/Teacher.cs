@@ -27,5 +27,15 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             userID = userId;
             this.department = department;
         }
+        public Teacher(string firstname, string lastname, string userId, string department, int borrowercount, List<int> BorrowedBooks)
+        {
+            firstName = firstname;
+            lastName = lastname;
+            userID = userId;
+            this.department = department;
+            borrowedBookCount = borrowercount;
+            borrowedBooks = BorrowedBooks;
+
+        }
     }
 }
