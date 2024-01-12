@@ -71,11 +71,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
 
         }
-        public static void deductBorrowCount(string id)
+        public static void deductBorrowCount(User user)
         {
             foreach (Student student in studentData)
             {
-                if (student.userID == id)
+                if (student.firstName == user.firstName &&
+                    student.lastName == user.lastName)
                 {
                     student.borrowedBookCount--;
                 }
@@ -83,7 +84,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             
             foreach (Teacher teacher in teacherData)
             {
-                if (teacher.userID == id)
+                if (teacher.firstName == user.firstName &&
+                    teacher.lastName == user.lastName)
                 {
                     teacher.borrowedBookCount--;
                 }

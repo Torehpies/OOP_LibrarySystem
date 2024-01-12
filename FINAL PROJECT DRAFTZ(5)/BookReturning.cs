@@ -52,6 +52,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 return;
             }
 
+            UsersData.deductBorrowCount(user);
+
         }
 
         private bool isComboBoxValid()
