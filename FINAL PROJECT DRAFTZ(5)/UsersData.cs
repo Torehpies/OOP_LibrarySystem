@@ -66,11 +66,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             
         }
 
-        public static void removeBorrowCount()
-        {
-
-
-        }
         public static void deductBorrowCount(User user)
         {
             foreach (Student student in studentData)
@@ -172,5 +167,13 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             return false;
         }
 
+        public static void appendUserBookList(List<int> newBookList, string id)
+        {
+            Student student = getStudentByID(id);
+            Teacher teacher = getTeacherByID(id);
+
+            if (student != null) student.borrowedBooks.Concat(newBookList);
+            else teacher.borrowedBooks.Concat(newBookList);
+        }
     }
 }
