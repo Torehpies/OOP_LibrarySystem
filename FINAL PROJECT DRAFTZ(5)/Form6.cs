@@ -115,6 +115,31 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 }
             }
         }
+
+        private List<int> GetCheckedTitles(Control container)
+        {
+            List<int> result = new List<int>();
+            foreach (Control control in container.Controls)
+            {
+                if (control is CheckBox checkBox)
+                {
+                    if (checkBox.Checked)
+                    {
+                        string title = checkBox.Name.Replace("cb", "");
+                        result.Add(int.Parse(title) - 1);
+                    }
+                        
+                }
+
+                // If the control is a container (like a GroupBox), recursively uncheck checkboxes within it
+                if (control.HasChildren)
+                {
+                    result = result.Concat(GetCheckedTitles(control)).ToList();
+                }
+            }
+
+            return result;
+        }
         private void BorrowingForm_Load(object sender, EventArgs e)
         {
 
@@ -122,22 +147,20 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            int count = CountCheckedCheckboxes(groupBox2);
-            int count2 = CountCheckedCheckboxes(groupBox3);
-            count += count2;
-
+            int count = CountCheckedCheckboxes(this);
             
-
             if (count > borrowLimit)
             {
                 MessageBox.Show("Sorry! You have exceeded the \nnumber of books to be borrowed.\n LIMIT: " + borrowLimit.ToString() + 
                     "\n Please return the borrowed books first.");
-                UncheckAllCheckboxes(groupBox2);
-                UncheckAllCheckboxes(groupBox3);
+                UncheckAllCheckboxes(this);
                 return;
             }
 
+            BookData.Instance.UpdateBookStatus(GetCheckedTitles(this));
             UsersData.addBorrowCount(id, count, isStudent);
+            MessageBox.Show("Borrowing Successful");
+            Close();
 
         }
 

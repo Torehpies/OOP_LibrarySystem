@@ -13,19 +13,25 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 {
     public partial class BookContainer : UserControl
     {
-        Book BookData;
+        Book DetailsData;
+        BookData BookDataInstance = BookData.Instance;
         public event EventHandler ButtonClick;
+        
         public BookContainer()
         {
             InitializeComponent();
-            
+            BookData.Instance.BookListChanged += BookListChangedHandler;
             //MouseEnter += MyUserControl_MouseEnter;
             //MouseLeave += MyUserControl_MouseLeave;
         }
-
+        private void BookListChangedHandler(object sender, EventArgs e)
+        {
+            // Update the text of yourButton when the bookList changes
+            borrowBtn.Text = "New Text";  // Update this line with the logic you need
+        }
         public void InitializeUI(Book BookContainerData)
         {
-            BookData = BookContainerData;
+            DetailsData = BookContainerData;
             bookPic.Image = Image.FromFile(BookContainerData.picturePath);
             bookTitle.Text = BookContainerData.title;
             bookYear.Text = BookContainerData.published;
@@ -58,7 +64,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private void borrowBtn_Click(object sender, EventArgs e)
         {
             BookDetails bookDetails = new BookDetails();
-            bookDetails.InitializeUI(BookData);
+            bookDetails.InitializeUI(DetailsData);
             
             bookDetails.ShowDialog();
 

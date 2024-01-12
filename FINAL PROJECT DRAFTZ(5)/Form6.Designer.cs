@@ -39,17 +39,17 @@
             checkBox2 = new CheckBox();
             checkBox1 = new CheckBox();
             groupBox2 = new GroupBox();
-            checkBox6 = new CheckBox();
-            checkBox7 = new CheckBox();
-            checkBox8 = new CheckBox();
-            checkBox9 = new CheckBox();
-            checkBox10 = new CheckBox();
+            cb10 = new CheckBox();
+            cb9 = new CheckBox();
+            cb8 = new CheckBox();
+            cb7 = new CheckBox();
+            cb6 = new CheckBox();
             groupBox3 = new GroupBox();
-            checkBox11 = new CheckBox();
-            checkBox12 = new CheckBox();
-            checkBox13 = new CheckBox();
-            checkBox14 = new CheckBox();
-            checkBox15 = new CheckBox();
+            cb15 = new CheckBox();
+            cb14 = new CheckBox();
+            cb12 = new CheckBox();
+            cb13 = new CheckBox();
+            cb11 = new CheckBox();
             label2 = new Label();
             label3 = new Label();
             borrowerLabel = new Label();
@@ -174,11 +174,11 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(checkBox6);
-            groupBox2.Controls.Add(checkBox7);
-            groupBox2.Controls.Add(checkBox8);
-            groupBox2.Controls.Add(checkBox9);
-            groupBox2.Controls.Add(checkBox10);
+            groupBox2.Controls.Add(cb10);
+            groupBox2.Controls.Add(cb9);
+            groupBox2.Controls.Add(cb8);
+            groupBox2.Controls.Add(cb7);
+            groupBox2.Controls.Add(cb6);
             groupBox2.Font = new Font("Franklin Gothic Medium Cond", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox2.Location = new Point(12, 220);
             groupBox2.Name = "groupBox2";
@@ -187,63 +187,63 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Fiction Books";
             // 
-            // checkBox6
+            // cb10
             // 
-            checkBox6.AutoSize = true;
-            checkBox6.Location = new Point(276, 30);
-            checkBox6.Name = "checkBox6";
-            checkBox6.Size = new Size(72, 21);
-            checkBox6.TabIndex = 14;
-            checkBox6.Text = "Jane Eyre";
-            checkBox6.UseVisualStyleBackColor = true;
+            cb10.AutoSize = true;
+            cb10.Location = new Point(276, 30);
+            cb10.Name = "cb10";
+            cb10.Size = new Size(72, 21);
+            cb10.TabIndex = 14;
+            cb10.Text = "Jane Eyre";
+            cb10.UseVisualStyleBackColor = true;
             // 
-            // checkBox7
+            // cb9
             // 
-            checkBox7.AutoSize = true;
-            checkBox7.Location = new Point(149, 60);
-            checkBox7.Name = "checkBox7";
-            checkBox7.Size = new Size(119, 21);
-            checkBox7.TabIndex = 13;
-            checkBox7.Text = "Pride and Prejudice";
-            checkBox7.UseVisualStyleBackColor = true;
+            cb9.AutoSize = true;
+            cb9.Location = new Point(149, 60);
+            cb9.Name = "cb9";
+            cb9.Size = new Size(119, 21);
+            cb9.TabIndex = 13;
+            cb9.Text = "Pride and Prejudice";
+            cb9.UseVisualStyleBackColor = true;
             // 
-            // checkBox8
+            // cb8
             // 
-            checkBox8.AutoSize = true;
-            checkBox8.Location = new Point(149, 30);
-            checkBox8.Name = "checkBox8";
-            checkBox8.Size = new Size(100, 21);
-            checkBox8.TabIndex = 12;
-            checkBox8.Text = "Changing Tides";
-            checkBox8.UseVisualStyleBackColor = true;
+            cb8.AutoSize = true;
+            cb8.Location = new Point(149, 30);
+            cb8.Name = "cb8";
+            cb8.Size = new Size(100, 21);
+            cb8.TabIndex = 12;
+            cb8.Text = "Changing Tides";
+            cb8.UseVisualStyleBackColor = true;
             // 
-            // checkBox9
+            // cb7
             // 
-            checkBox9.AutoSize = true;
-            checkBox9.Location = new Point(16, 60);
-            checkBox9.Name = "checkBox9";
-            checkBox9.Size = new Size(96, 21);
-            checkBox9.TabIndex = 11;
-            checkBox9.Text = "The Book Thief";
-            checkBox9.UseVisualStyleBackColor = true;
+            cb7.AutoSize = true;
+            cb7.Location = new Point(16, 60);
+            cb7.Name = "cb7";
+            cb7.Size = new Size(96, 21);
+            cb7.TabIndex = 11;
+            cb7.Text = "The Book Thief";
+            cb7.UseVisualStyleBackColor = true;
             // 
-            // checkBox10
+            // cb6
             // 
-            checkBox10.AutoSize = true;
-            checkBox10.Location = new Point(16, 30);
-            checkBox10.Name = "checkBox10";
-            checkBox10.Size = new Size(114, 21);
-            checkBox10.TabIndex = 10;
-            checkBox10.Text = "If We Were Villains";
-            checkBox10.UseVisualStyleBackColor = true;
+            cb6.AutoSize = true;
+            cb6.Location = new Point(16, 30);
+            cb6.Name = "cb6";
+            cb6.Size = new Size(114, 21);
+            cb6.TabIndex = 10;
+            cb6.Text = "If We Were Villains";
+            cb6.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(checkBox11);
-            groupBox3.Controls.Add(checkBox12);
-            groupBox3.Controls.Add(checkBox13);
-            groupBox3.Controls.Add(checkBox14);
-            groupBox3.Controls.Add(checkBox15);
+            groupBox3.Controls.Add(cb15);
+            groupBox3.Controls.Add(cb14);
+            groupBox3.Controls.Add(cb12);
+            groupBox3.Controls.Add(cb13);
+            groupBox3.Controls.Add(cb11);
             groupBox3.Font = new Font("Franklin Gothic Medium Cond", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox3.Location = new Point(12, 320);
             groupBox3.Name = "groupBox3";
@@ -252,55 +252,55 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "Non-Fiction Books";
             // 
-            // checkBox11
+            // cb15
             // 
-            checkBox11.AutoSize = true;
-            checkBox11.Location = new Point(276, 30);
-            checkBox11.Name = "checkBox11";
-            checkBox11.Size = new Size(53, 21);
-            checkBox11.TabIndex = 14;
-            checkBox11.Text = "Night";
-            checkBox11.UseVisualStyleBackColor = true;
+            cb15.AutoSize = true;
+            cb15.Location = new Point(276, 30);
+            cb15.Name = "cb15";
+            cb15.Size = new Size(53, 21);
+            cb15.TabIndex = 14;
+            cb15.Text = "Night";
+            cb15.UseVisualStyleBackColor = true;
             // 
-            // checkBox12
+            // cb14
             // 
-            checkBox12.AutoSize = true;
-            checkBox12.Location = new Point(149, 60);
-            checkBox12.Name = "checkBox12";
-            checkBox12.Size = new Size(90, 21);
-            checkBox12.TabIndex = 13;
-            checkBox12.Text = "Silent Spring";
-            checkBox12.UseVisualStyleBackColor = true;
+            cb14.AutoSize = true;
+            cb14.Location = new Point(149, 60);
+            cb14.Name = "cb14";
+            cb14.Size = new Size(90, 21);
+            cb14.TabIndex = 13;
+            cb14.Text = "Silent Spring";
+            cb14.UseVisualStyleBackColor = true;
             // 
-            // checkBox13
+            // cb12
             // 
-            checkBox13.AutoSize = true;
-            checkBox13.Location = new Point(149, 30);
-            checkBox13.Name = "checkBox13";
-            checkBox13.Size = new Size(119, 21);
-            checkBox13.TabIndex = 12;
-            checkBox13.Text = "The Female Eunuch";
-            checkBox13.UseVisualStyleBackColor = true;
+            cb12.AutoSize = true;
+            cb12.Location = new Point(149, 30);
+            cb12.Name = "cb12";
+            cb12.Size = new Size(119, 21);
+            cb12.TabIndex = 12;
+            cb12.Text = "The Female Eunuch";
+            cb12.UseVisualStyleBackColor = true;
             // 
-            // checkBox14
+            // cb13
             // 
-            checkBox14.AutoSize = true;
-            checkBox14.Location = new Point(16, 60);
-            checkBox14.Name = "checkBox14";
-            checkBox14.Size = new Size(69, 21);
-            checkBox14.TabIndex = 11;
-            checkBox14.Text = "Republic";
-            checkBox14.UseVisualStyleBackColor = true;
+            cb13.AutoSize = true;
+            cb13.Location = new Point(16, 60);
+            cb13.Name = "cb13";
+            cb13.Size = new Size(69, 21);
+            cb13.TabIndex = 11;
+            cb13.Text = "Republic";
+            cb13.UseVisualStyleBackColor = true;
             // 
-            // checkBox15
+            // cb11
             // 
-            checkBox15.AutoSize = true;
-            checkBox15.Location = new Point(16, 30);
-            checkBox15.Name = "checkBox15";
-            checkBox15.Size = new Size(130, 21);
-            checkBox15.TabIndex = 10;
-            checkBox15.Text = "A Brief History of Time";
-            checkBox15.UseVisualStyleBackColor = true;
+            cb11.AutoSize = true;
+            cb11.Location = new Point(16, 30);
+            cb11.Name = "cb11";
+            cb11.Size = new Size(130, 21);
+            cb11.TabIndex = 10;
+            cb11.Text = "A Brief History of Time";
+            cb11.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -377,17 +377,17 @@
         private CheckBox checkBox4;
         private CheckBox checkBox3;
         private GroupBox groupBox2;
-        private CheckBox checkBox6;
-        private CheckBox checkBox7;
-        private CheckBox checkBox8;
-        private CheckBox checkBox9;
-        private CheckBox checkBox10;
+        private CheckBox cb10;
+        private CheckBox cb9;
+        private CheckBox cb8;
+        private CheckBox cb7;
+        private CheckBox cb6;
         private GroupBox groupBox3;
-        private CheckBox checkBox11;
-        private CheckBox checkBox12;
-        private CheckBox checkBox13;
-        private CheckBox checkBox14;
-        private CheckBox checkBox15;
+        private CheckBox cb15;
+        private CheckBox cb14;
+        private CheckBox cb12;
+        private CheckBox cb13;
+        private CheckBox cb11;
         private Label label2;
         private Label label3;
         private Label label4;

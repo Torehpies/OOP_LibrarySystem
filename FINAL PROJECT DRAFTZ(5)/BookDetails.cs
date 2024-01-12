@@ -48,6 +48,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             FormLogin login = new FormLogin();
             login.TopMost = true;
             login.ShowDialog();
+            this.Close();
         }
     }
 }

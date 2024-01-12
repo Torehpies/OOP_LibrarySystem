@@ -99,7 +99,6 @@
             StudentListView.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
             StudentListView.FullRowSelect = true;
             StudentListView.GridLines = true;
-            //StudentListView.Items.AddRange(new ListViewItem[] { listViewItem3 });
             StudentListView.Location = new Point(3, 3);
             StudentListView.Name = "StudentListView";
             StudentListView.Size = new Size(442, 337);
@@ -131,7 +130,7 @@
             // 
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
-            tabControl1.Location = new Point(3, 3);
+            tabControl1.Location = new Point(58, 27);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(456, 365);

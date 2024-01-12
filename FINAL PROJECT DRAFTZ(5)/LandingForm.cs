@@ -20,101 +20,73 @@ namespace FINAL_PROJECT_DRAFTZ_5_
     {
         BookReturning returnPanel = new BookReturning();
         BorrowerList borrowersPanel = new BorrowerList();
-       // public List <Book> books = new List<Book>();
+
+
+        // public List <Book> books = new List<Book>();
         public LandingForm()
         {
             InitializeComponent();
             InitializeBookContainers();
             contentPanel.Controls.Add(returnPanel);
             contentPanel.Controls.Add(borrowersPanel);
-            
-            
-
+            LandingFormReference.Reference = this;
         }
 
-        private void InitializeBookContainers()
+        public void RefreshLandingForm()
         {
-            
-            Label academicLabel = new Label();
-            academicLabel.Font = new Font("Franklin Gothic Demi Cond", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            academicLabel.ForeColor = Color.FromArgb(73, 85, 121);
-            academicLabel.Size = new Size(203, 28);
-            academicLabel.TabIndex = 1;
-            academicLabel.Text = "ACADEMIC BOOKS";
+            BookData.Instance.BookList[3].status = Book.BookType.Borrowed;
+        }
 
-            Label nonfictionLabel = new Label();
-            nonfictionLabel.Font = new Font("Franklin Gothic Demi Cond", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            nonfictionLabel.ForeColor = Color.FromArgb(73, 85, 121);
-            nonfictionLabel.Size = new Size(203, 28);
-            nonfictionLabel.TabIndex = 1;
-            nonfictionLabel.Text = "NON-FICTION BOOKS";
+        private Label CreateLabel(string label)
+        {
+            Label newLabel = new Label();
+            newLabel.Font = new Font("Franklin Gothic Demi Cond", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            newLabel.ForeColor = Color.FromArgb(73, 85, 121);
+            newLabel.Size = new Size(203, 28);
+            newLabel.TabIndex = 1;
+            newLabel.Text = label;
+            return newLabel;
+        }
 
-            Label fictionLabel = new Label();
-            fictionLabel.Font = new Font("Franklin Gothic Demi Cond", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            fictionLabel.ForeColor = Color.FromArgb(73, 85, 121);
-            fictionLabel.Size = new Size(203, 28);
-            fictionLabel.TabIndex = 1;
-            fictionLabel.Text = "FICTION BOOKS";
+        private Panel CreateBookPanel(string category)
+        {
 
-            libraryPanel.Controls.Add(academicLabel);
+            FlowLayoutPanel newPanel = new FlowLayoutPanel();
+            newPanel.BackColor = Color.Transparent;
+            newPanel.AutoSize = true;
+            newPanel.AutoScroll = true;
 
-            
-
-            FlowLayoutPanel academicPanel = new FlowLayoutPanel();
-            academicPanel.BackColor = Color.Transparent;
-            academicPanel.AutoSize = true;
-            academicPanel.AutoScroll = true;
-
-            foreach (Book book in bookData.getBookData)
+            foreach (Book book in BookData.Instance.BookList)
             {
-                if (book.category == "Academic")
+                if (book.category == category)
                 {
                     BookContainer bookContainer = new BookContainer();
                     bookContainer.InitializeUI(book);
-                    academicPanel.Controls.Add(bookContainer);
+                    newPanel.Controls.Add(bookContainer);
                 }
             }
 
+            return newPanel;
+
+        }
+        private void InitializeBookContainers()
+        {
+
+            Label academicLabel = CreateLabel("ACADEMIC BOOKS");
+            Label nonfictionLabel = CreateLabel("NON-FICTION BOOKS");
+            Label fictionLabel = CreateLabel("FICTION BOOKS");
+
+            Panel academicPanel = CreateBookPanel("Academic");
+            Panel fictionPanel = CreateBookPanel("Fiction");
+            Panel nonfictionPanel = CreateBookPanel("Non-Fiction");
+
+            libraryPanel.Controls.Add(academicLabel);
             libraryPanel.Controls.Add(academicPanel);
 
             libraryPanel.Controls.Add(nonfictionLabel);
-
-
-            FlowLayoutPanel nonfictionPanel = new FlowLayoutPanel();
-            nonfictionPanel.BackColor = Color.Transparent;
-            nonfictionPanel.AutoSize = true;
-            nonfictionPanel.AutoScroll = true;
-
-            foreach (Book book in bookData.getBookData)
-            {
-                if (book.category == "Non-Fiction")
-                {
-                    BookContainer bookContainer = new BookContainer();
-                    bookContainer.InitializeUI(book);
-                    nonfictionPanel.Controls.Add(bookContainer);
-                }
-            }
-
             libraryPanel.Controls.Add(nonfictionPanel);
 
             libraryPanel.Controls.Add(fictionLabel);
-
-
-            FlowLayoutPanel fictionPanel = new FlowLayoutPanel();
-            fictionPanel.BackColor = Color.Transparent;
-            fictionPanel.AutoSize = true;
-            fictionPanel.AutoScroll = true;
-
-            foreach (Book book in bookData.getBookData)
-            {
-                if (book.category == "Fiction")
-                {
-                    BookContainer bookContainer = new BookContainer();
-                    bookContainer.InitializeUI(book);
-                    fictionPanel.Controls.Add(bookContainer);
-                }
-            }
-
             libraryPanel.Controls.Add(fictionPanel);
 
             contentPanel.Controls.Add(libraryPanel);
@@ -140,6 +112,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             returnPanel.Hide();
             borrowersPanel.Hide();
             libraryPanel.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            RefreshLandingForm();
         }
     }
 }
