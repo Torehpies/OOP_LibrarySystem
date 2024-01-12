@@ -11,7 +11,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         public string department
         { get; set; }
 
-        public Teacher(string firstname, string lastname, string userId, string department, int borrowercount)
+        public Teacher(string firstname, string lastname, string userId, string department, int borrowercount) : base(firstname, lastname)
         {
             firstName = firstname;
             lastName = lastname;
@@ -20,14 +20,14 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             borrowedBookCount = borrowercount;
         }
 
-        public Teacher(string firstname, string lastname, string userId, string department)
+        public Teacher(string firstname, string lastname, string userId, string department) : base(firstname, lastname)
         {
             firstName = firstname;
             lastName = lastname;
             userID = userId;
             this.department = department;
         }
-        public Teacher(string firstname, string lastname, string userId, string department, int borrowercount, List<int> BorrowedBooks)
+        public Teacher(string firstname, string lastname, string userId, string department, int borrowercount, List<int> BorrowedBooks) : base(firstname, lastname)
         {
             firstName = firstname;
             lastName = lastname;
@@ -36,6 +36,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             borrowedBookCount = borrowercount;
             borrowedBooks = BorrowedBooks;
 
+        }
+        public Teacher(string FirstName, string LastName): base(FirstName, LastName)
+        {
+            firstName = FirstName;
+            lastName = LastName;
         }
     }
 }

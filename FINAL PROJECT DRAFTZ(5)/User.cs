@@ -17,5 +17,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         public int borrowedBookCount
         { get; set; }
         public List<int> borrowedBooks { get; set; }
+        public User(string FirstName, string LastName)
+        {
+            firstName = FirstName;
+            lastName = LastName;
+        }
     }
+
+    
 }

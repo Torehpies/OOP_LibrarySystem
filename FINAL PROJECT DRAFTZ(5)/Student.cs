@@ -13,7 +13,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         public string section
         { get; set; }
 
-        public Student(string firstname, string lastname, string userId, string yearlevel, string section, int borrowcount)
+        public Student(string firstname, string lastname, string userId, string yearlevel, string section, int borrowcount) : base (firstname, lastname)
         {   
             firstName = firstname;
             lastName = lastname;
@@ -23,7 +23,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             borrowedBookCount = borrowcount;
         }
 
-        public Student(string firstname, string lastname, string userId, string yearlevel, string section)
+        public Student(string firstname, string lastname, string userId, string yearlevel, string section) : base(firstname, lastname)
         {
             firstName = firstname;
             lastName = lastname;
@@ -32,7 +32,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             this.section = section;
         }
 
-        public Student(string firstname, string lastname, string userId, string yearlevel, string section, int borrowcount, List<int> BorrowedBooks)
+        public Student(string firstname, string lastname, string userId, string yearlevel, string section, int borrowcount, List<int> BorrowedBooks) : base(firstname, lastname)
         {
             firstName = firstname;
             lastName = lastname;
@@ -43,5 +43,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             borrowedBooks = BorrowedBooks;
 
         }
+
+
     }
 }
