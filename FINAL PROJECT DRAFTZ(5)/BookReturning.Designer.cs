@@ -30,11 +30,14 @@
         {
             SubmitButton = new Button();
             CancelButton = new Button();
-            BookTitleReturningTextBox = new TextBox();
-            DateReturnedTextBox = new TextBox();
-            DateBorrowedTextBox = new TextBox();
             label1 = new Label();
-            NameTextBox = new TextBox();
+            FirstNameTB = new TextBox();
+            LastNameTB = new TextBox();
+            BookListCB = new ComboBox();
+            dateTimePicker1 = new DateTimePicker();
+            dateTimePicker2 = new DateTimePicker();
+            BorrowedLB = new Label();
+            ReturnedLB = new Label();
             SuspendLayout();
             // 
             // SubmitButton
@@ -42,12 +45,13 @@
             SubmitButton.BackColor = Color.FromArgb(38, 49, 89);
             SubmitButton.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             SubmitButton.ForeColor = Color.FromArgb(255, 251, 235);
-            SubmitButton.Location = new Point(341, 281);
+            SubmitButton.Location = new Point(444, 281);
             SubmitButton.Name = "SubmitButton";
             SubmitButton.Size = new Size(122, 56);
             SubmitButton.TabIndex = 14;
             SubmitButton.Text = "SUBMIT";
             SubmitButton.UseVisualStyleBackColor = false;
+            SubmitButton.Click += SubmitButton_Click;
             // 
             // CancelButton
             // 
@@ -61,30 +65,6 @@
             CancelButton.Text = "CANCEL";
             CancelButton.UseVisualStyleBackColor = false;
             // 
-            // BookTitleReturningTextBox
-            // 
-            BookTitleReturningTextBox.Location = new Point(154, 161);
-            BookTitleReturningTextBox.Name = "BookTitleReturningTextBox";
-            BookTitleReturningTextBox.PlaceholderText = "Book Title";
-            BookTitleReturningTextBox.Size = new Size(309, 23);
-            BookTitleReturningTextBox.TabIndex = 12;
-            // 
-            // DateReturnedTextBox
-            // 
-            DateReturnedTextBox.Location = new Point(154, 241);
-            DateReturnedTextBox.Name = "DateReturnedTextBox";
-            DateReturnedTextBox.PlaceholderText = "Date Returned";
-            DateReturnedTextBox.Size = new Size(309, 23);
-            DateReturnedTextBox.TabIndex = 11;
-            // 
-            // DateBorrowedTextBox
-            // 
-            DateBorrowedTextBox.Location = new Point(154, 201);
-            DateBorrowedTextBox.Name = "DateBorrowedTextBox";
-            DateBorrowedTextBox.PlaceholderText = "Due Date";
-            DateBorrowedTextBox.Size = new Size(309, 23);
-            DateBorrowedTextBox.TabIndex = 10;
-            // 
             // label1
             // 
             label1.Font = new Font("Franklin Gothic Demi Cond", 20F, FontStyle.Regular, GraphicsUnit.Point);
@@ -95,28 +75,88 @@
             label1.TabIndex = 9;
             label1.Text = "BOOK RETURNING";
             // 
-            // NameTextBox
+            // FirstNameTB
             // 
-            NameTextBox.Location = new Point(154, 121);
-            NameTextBox.Name = "NameTextBox";
-            NameTextBox.PlaceholderText = "Name";
-            NameTextBox.Size = new Size(309, 23);
-            NameTextBox.TabIndex = 8;
+            FirstNameTB.Location = new Point(154, 121);
+            FirstNameTB.Name = "FirstNameTB";
+            FirstNameTB.PlaceholderText = "First Name";
+            FirstNameTB.Size = new Size(203, 23);
+            FirstNameTB.TabIndex = 8;
+            // 
+            // LastNameTB
+            // 
+            LastNameTB.Location = new Point(363, 121);
+            LastNameTB.Name = "LastNameTB";
+            LastNameTB.PlaceholderText = "Last Name";
+            LastNameTB.Size = new Size(203, 23);
+            LastNameTB.TabIndex = 15;
+            // 
+            // BookListCB
+            // 
+            BookListCB.AutoCompleteMode = AutoCompleteMode.Append;
+            BookListCB.AutoCompleteSource = AutoCompleteSource.ListItems;
+            BookListCB.FormattingEnabled = true;
+            BookListCB.Location = new Point(154, 150);
+            BookListCB.Name = "BookListCB";
+            BookListCB.Size = new Size(412, 23);
+            BookListCB.TabIndex = 16;
+            BookListCB.Text = "Choose Book";
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(277, 220);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(289, 23);
+            dateTimePicker1.TabIndex = 17;
+            // 
+            // dateTimePicker2
+            // 
+            dateTimePicker2.Location = new Point(277, 185);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(289, 23);
+            dateTimePicker2.TabIndex = 18;
+            // 
+            // BorrowedLB
+            // 
+            BorrowedLB.AutoSize = true;
+            BorrowedLB.Font = new Font("Franklin Gothic Medium Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            BorrowedLB.ForeColor = Color.FromArgb(73, 85, 121);
+            BorrowedLB.Location = new Point(154, 185);
+            BorrowedLB.Name = "BorrowedLB";
+            BorrowedLB.Size = new Size(117, 21);
+            BorrowedLB.TabIndex = 19;
+            BorrowedLB.Text = "DATE BORROWED:";
+            BorrowedLB.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // ReturnedLB
+            // 
+            ReturnedLB.AutoSize = true;
+            ReturnedLB.Font = new Font("Franklin Gothic Medium Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ReturnedLB.ForeColor = Color.FromArgb(73, 85, 121);
+            ReturnedLB.Location = new Point(154, 220);
+            ReturnedLB.Name = "ReturnedLB";
+            ReturnedLB.Size = new Size(110, 21);
+            ReturnedLB.TabIndex = 20;
+            ReturnedLB.Text = "DATE RETURNED:";
+            ReturnedLB.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // BookReturning
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
+            Controls.Add(ReturnedLB);
+            Controls.Add(BorrowedLB);
+            Controls.Add(dateTimePicker2);
+            Controls.Add(dateTimePicker1);
+            Controls.Add(BookListCB);
+            Controls.Add(LastNameTB);
             Controls.Add(SubmitButton);
             Controls.Add(CancelButton);
-            Controls.Add(BookTitleReturningTextBox);
-            Controls.Add(DateReturnedTextBox);
-            Controls.Add(DateBorrowedTextBox);
             Controls.Add(label1);
-            Controls.Add(NameTextBox);
+            Controls.Add(FirstNameTB);
             Name = "BookReturning";
-            Size = new Size(617, 411);
+            Size = new Size(1043, 452);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -129,6 +169,12 @@
         private TextBox DateReturnedTextBox;
         private TextBox DateBorrowedTextBox;
         private Label label1;
-        private TextBox NameTextBox;
+        private TextBox FirstNameTB;
+        private TextBox LastNameTB;
+        private ComboBox BookListCB;
+        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dateTimePicker2;
+        private Label BorrowedLB;
+        private Label ReturnedLB;
     }
 }

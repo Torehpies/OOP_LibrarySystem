@@ -17,18 +17,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
 
     public partial class LandingForm : Form
-    {
-        BookReturning returnPanel = new BookReturning();
-        BorrowerList borrowersPanel = new BorrowerList();
-
-
+    { 
         // public List <Book> books = new List<Book>();
         public LandingForm()
         {
             InitializeComponent();
             InitializeBookContainers();
-            contentPanel.Controls.Add(returnPanel);
-            contentPanel.Controls.Add(borrowersPanel);
             LandingFormReference.Reference = this;
         }
 
@@ -95,22 +89,27 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void ReturningLabel_Click(object sender, EventArgs e)
         {
-            libraryPanel.Hide();
-            borrowersPanel.Hide();
+            BookReturning returnPanel = new BookReturning();
+            returnPanel.Dock = DockStyle.Fill;
+            contentPanel.Controls.Add(returnPanel);
+            returnPanel.BringToFront();
             returnPanel.Show();
         }
 
         private void BorrowerListLabel_Click(object sender, EventArgs e)
         {
-            libraryPanel.Hide();
-            returnPanel.Hide();
-            borrowersPanel.Show();
+            BorrowerList borrowerPanel = new BorrowerList();
+            borrowerPanel.Dock = DockStyle.Fill;
+            contentPanel.Controls.Add(borrowerPanel);
+            borrowerPanel.BringToFront();
+            borrowerPanel.Show();
         }
 
         private void LibraryLabel_Click(object sender, EventArgs e)
         {
-            returnPanel.Hide();
-            borrowersPanel.Hide();
+            
+            contentPanel.Controls.Add(libraryPanel);
+            libraryPanel.BringToFront();
             libraryPanel.Show();
         }
 

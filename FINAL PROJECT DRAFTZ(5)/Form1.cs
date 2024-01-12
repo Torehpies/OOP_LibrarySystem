@@ -45,7 +45,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             
             if (!isTextBoxValid(StudentLoginPanel))
             {
-                MessageBox.Show("Please enter your student id or check the other information that is missing.", "Notice");
+                MessageBox.Show("Please check the information that is missing.", "Notice");
                 return;
             }
 
@@ -72,7 +72,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
             if (!isTextBoxValid(TeacherLoginPanel))
             {
-                MessageBox.Show("Please enter your student id or check the other information that is missing.", "Notice");
+                MessageBox.Show("Please check the information that is missing.", "Notice");
                 return;
             }
 
