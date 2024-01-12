@@ -71,6 +71,24 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
 
         }
+        public static void deductBorrowCount(string id)
+        {
+            foreach (Student student in studentData)
+            {
+                if (student.userID == id)
+                {
+                    student.borrowedBookCount--;
+                }
+            }
+            
+            foreach (Teacher teacher in teacherData)
+            {
+                if (teacher.userID == id)
+                {
+                    teacher.borrowedBookCount--;
+                }
+            }
+        }
 
         public static Teacher getTeacherByID(string id)
         {
