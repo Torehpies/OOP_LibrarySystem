@@ -30,7 +30,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private void setUIData()
         {
 
-            DateTime currentDate = DateTime.Now;
+            DateTime currentDate = DateTime.Today;
 
             label2.Text = "DATE BORROWED: " + currentDate.ToShortDateString();
 
@@ -38,11 +38,14 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             {
                 borrowerLabel.Text = "Borrower Name: " + currentStudent.firstName + " " + currentStudent.lastName;
                 borrowLimit = 2 - currentStudent.borrowedBookCount;
+                
+                label3.Text = "DATE TO BE RETURNED: " + currentDate.AddDays(3).ToShortDateString();
             }
             else
             {
                 borrowerLabel.Text = "Borrower Name: " + currentTeacher.firstName + " " + currentTeacher.lastName;
                 borrowLimit = 5 - currentTeacher.borrowedBookCount;
+                label3.Visible = false;
             }
         }
 
