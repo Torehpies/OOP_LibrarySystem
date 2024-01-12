@@ -22,7 +22,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         {
             foreach (Book book in BookData.Instance.BookList)
             {
-                if (book.status == Book.BookType.Borrowed)
+                if (book.status == Book.BookType.Borrowed && book.category != "Academic")
                 {
                     BookListCB.Items.Add(book.title);
                 }
