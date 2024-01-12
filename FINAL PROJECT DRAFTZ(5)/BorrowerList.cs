@@ -22,22 +22,26 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         {
             foreach (Student student in UsersData.Students)
             {
-                ListViewItem item = new ListViewItem(student.firstName + " " + student.lastName);
-                item.SubItems.Add(student.userID);
-                item.SubItems.Add(student.yearlevel);
-                item.SubItems.Add(student.section);
-                StudentListView.Items.Add(item);
+                if (student.borrowedBookCount > 0)
+                {
+                    ListViewItem item = new ListViewItem(student.firstName + " " + student.lastName);
+                    item.SubItems.Add(student.userID);
+                    item.SubItems.Add(student.yearlevel);
+                    item.SubItems.Add(student.section);
+                    StudentListView.Items.Add(item);
+                }
             }
 
             foreach (Teacher teacher in UsersData.Teachers)
             {
-                ListViewItem item = new ListViewItem(teacher.firstName + " " + teacher.lastName);
-                item.SubItems.Add(teacher.userID);
-                item.SubItems.Add(teacher.department);
-                TeacherListView.Items.Add(item);
+                if (teacher.borrowedBookCount > 0)
+                {
+                    ListViewItem item = new ListViewItem(teacher.firstName + " " + teacher.lastName);
+                    item.SubItems.Add(teacher.userID);
+                    item.SubItems.Add(teacher.department);
+                    TeacherListView.Items.Add(item);
+                }
             }
         }
-
-
     }
 }

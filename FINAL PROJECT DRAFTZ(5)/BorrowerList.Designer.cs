@@ -140,9 +140,10 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             Controls.Add(tabControl1);
             Name = "BorrowerList";
-            Size = new Size(748, 503);
+            Size = new Size(1043, 452);
             tabPage2.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabControl1.ResumeLayout(false);
