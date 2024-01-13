@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             SubmitButton = new Button();
-            CancelButton = new Button();
             label1 = new Label();
             FirstNameTB = new TextBox();
             LastNameTB = new TextBox();
@@ -45,25 +44,13 @@
             SubmitButton.BackColor = Color.FromArgb(38, 49, 89);
             SubmitButton.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             SubmitButton.ForeColor = Color.FromArgb(255, 251, 235);
-            SubmitButton.Location = new Point(444, 281);
+            SubmitButton.Location = new Point(294, 274);
             SubmitButton.Name = "SubmitButton";
             SubmitButton.Size = new Size(122, 56);
             SubmitButton.TabIndex = 14;
             SubmitButton.Text = "SUBMIT";
             SubmitButton.UseVisualStyleBackColor = false;
             SubmitButton.Click += SubmitButton_Click;
-            // 
-            // CancelButton
-            // 
-            CancelButton.BackColor = Color.FromArgb(38, 49, 89);
-            CancelButton.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            CancelButton.ForeColor = Color.FromArgb(255, 251, 235);
-            CancelButton.Location = new Point(154, 281);
-            CancelButton.Name = "CancelButton";
-            CancelButton.Size = new Size(122, 56);
-            CancelButton.TabIndex = 13;
-            CancelButton.Text = "CANCEL";
-            CancelButton.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -152,7 +139,6 @@
             Controls.Add(BookListCB);
             Controls.Add(LastNameTB);
             Controls.Add(SubmitButton);
-            Controls.Add(CancelButton);
             Controls.Add(label1);
             Controls.Add(FirstNameTB);
             Name = "BookReturning";
@@ -164,7 +150,6 @@
         #endregion
 
         private Button SubmitButton;
-        private Button CancelButton;
         private TextBox BookTitleReturningTextBox;
         private TextBox DateReturnedTextBox;
         private TextBox DateBorrowedTextBox;
