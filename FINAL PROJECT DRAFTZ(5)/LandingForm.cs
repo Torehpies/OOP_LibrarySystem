@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Reflection.Metadata.BlobBuilder;
+using System.Runtime.InteropServices;
 
 
 
@@ -17,10 +18,22 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
 
     public partial class LandingForm : Form
-    { 
-        // public List <Book> books = new List<Book>();
+    {
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+
+        private static extern IntPtr CreateRoundRectRgn
+            (
+            int nLeftRect,
+            int nTopRect,
+            int nRightRect,
+            int nBottomRect,
+            int nWidthEllipse,
+            int nHeightEllipse
+            );
+
         public LandingForm()
         {
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 1080, 720, 25, 25));
             InitializeComponent();
             InitializeBookContainers();
             LandingFormReference.Reference = this;
