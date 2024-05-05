@@ -9,12 +9,15 @@ namespace FINAL_PROJECT_DRAFTZ_5_
     
     internal class UsersData
     {
-        private static Teacher[] teacherData = 
+
+
+        private static Teacher[] teacherData =
         { 
             new Teacher("Maria", "Espiritu", "2134", "IT", 1, new List<int>{5}),
             new Teacher("John", "Calamba", "2164", "IS", 1, new List<int>{6}),
             new Teacher("Mario", "Narcisso", "2194", "CS", 1, new List<int>{7}) 
         };
+           
 
         private static Student[] studentData = 
         {   

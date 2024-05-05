@@ -28,49 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listView1 = new ListView();
-            columnHeader1 = new ColumnHeader();
-            columnHeader2 = new ColumnHeader();
-            columnHeader3 = new ColumnHeader();
-            columnHeader4 = new ColumnHeader();
             label1 = new Label();
             panel1 = new Panel();
             LibraryLabel = new Label();
             label2 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // listView1
-            // 
-            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
-            listView1.FullRowSelect = true;
-            listView1.GridLines = true;
-            listView1.Location = new Point(192, 76);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(406, 278);
-            listView1.TabIndex = 0;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
-            // 
-            // columnHeader1
-            // 
-            columnHeader1.Text = "Name";
-            columnHeader1.Width = 100;
-            // 
-            // columnHeader2
-            // 
-            columnHeader2.Text = "Student ID";
-            columnHeader2.Width = 100;
-            // 
-            // columnHeader3
-            // 
-            columnHeader3.Text = "Year Level";
-            columnHeader3.Width = 100;
-            // 
-            // columnHeader4
-            // 
-            columnHeader4.Text = "Section";
-            columnHeader4.Width = 100;
             // 
             // label1
             // 
@@ -126,7 +89,6 @@
             ClientSize = new Size(623, 371);
             Controls.Add(panel1);
             Controls.Add(label1);
-            Controls.Add(listView1);
             Name = "BorrowerListForm";
             Text = "BORROWER LIST";
             Load += BorrowerListForm_Load;
@@ -135,15 +97,9 @@
         }
 
         #endregion
-
-        private ListView listView1;
         private Label label1;
         private Panel panel1;
         private Label label2;
         private Label LibraryLabel;
-        private ColumnHeader columnHeader1;
-        private ColumnHeader columnHeader2;
-        private ColumnHeader columnHeader3;
-        private ColumnHeader columnHeader4;
     }
 }

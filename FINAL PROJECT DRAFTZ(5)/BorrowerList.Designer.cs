@@ -1,4 +1,5 @@
-﻿namespace FINAL_PROJECT_DRAFTZ_5_
+﻿
+namespace FINAL_PROJECT_DRAFTZ_5_
 {
     partial class BorrowerList
     {
@@ -67,6 +68,7 @@
             TeacherListView.TabIndex = 4;
             TeacherListView.UseCompatibleStateImageBehavior = false;
             TeacherListView.View = View.Details;
+            TeacherListView.SelectedIndexChanged += TeacherListView_SelectedIndexChanged;
             // 
             // columnHeader5
             // 
@@ -148,6 +150,11 @@
             tabPage1.ResumeLayout(false);
             tabControl1.ResumeLayout(false);
             ResumeLayout(false);
+        }
+
+        private void TeacherListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
