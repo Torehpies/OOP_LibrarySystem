@@ -49,7 +49,7 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(150, 450);
+            panel1.Size = new Size(150, 720);
             panel1.TabIndex = 1;
             // 
             // ReturningLabel
@@ -115,7 +115,7 @@
             contentPanel.Location = new Point(150, 0);
             contentPanel.Name = "contentPanel";
             contentPanel.Padding = new Padding(20);
-            contentPanel.Size = new Size(650, 450);
+            contentPanel.Size = new Size(930, 720);
             contentPanel.TabIndex = 2;
             // 
             // libraryPanel
@@ -125,21 +125,26 @@
             libraryPanel.Dock = DockStyle.Fill;
             libraryPanel.FlowDirection = FlowDirection.TopDown;
             libraryPanel.Location = new Point(20, 20);
+            libraryPanel.Margin = new Padding(0);
             libraryPanel.Name = "libraryPanel";
-            libraryPanel.Size = new Size(610, 410);
+            libraryPanel.Size = new Size(890, 680);
             libraryPanel.TabIndex = 0;
             // 
             // LandingForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.Ivory;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1080, 720);
             Controls.Add(contentPanel);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.None;
+            Location = new Point(30, 40);
+            MinimumSize = new Size(1080, 720);
             Name = "LandingForm";
+            StartPosition = FormStartPosition.Manual;
             Text = "Form7";
-            WindowState = FormWindowState.Maximized;
             panel1.ResumeLayout(false);
             contentPanel.ResumeLayout(false);
             ResumeLayout(false);
