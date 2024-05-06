@@ -50,5 +50,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             login.ShowDialog();
             this.Close();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
