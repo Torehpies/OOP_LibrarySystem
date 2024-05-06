@@ -88,6 +88,7 @@
             bookinvent_btn.TabIndex = 3;
             bookinvent_btn.Text = "BOOK INVENTORY";
             bookinvent_btn.UseVisualStyleBackColor = false;
+            bookinvent_btn.Click += bookinvent_btn_Click;
             // 
             // bookreturn_btn
             // 
@@ -103,6 +104,7 @@
             bookreturn_btn.TabIndex = 2;
             bookreturn_btn.Text = "BOOK RETURNING";
             bookreturn_btn.UseVisualStyleBackColor = false;
+            bookreturn_btn.Click += bookreturn_btn_Click;
             // 
             // borrower_btn
             // 
@@ -118,10 +120,11 @@
             borrower_btn.TabIndex = 1;
             borrower_btn.Text = "BORROWER LIST";
             borrower_btn.UseVisualStyleBackColor = false;
-            borrower_btn.Click += button2_Click_1;
+            borrower_btn.Click += borrower_btn_Click;
             // 
             // library_btn
             // 
+            library_btn.AccessibleName = "";
             library_btn.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             library_btn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             library_btn.Location = new Point(219, 28);
@@ -130,7 +133,7 @@
             library_btn.TabIndex = 0;
             library_btn.Text = "LIBRARY";
             library_btn.UseVisualStyleBackColor = true;
-            library_btn.Click += button1_Click;
+            library_btn.Click += library_btn_Click;
             // 
             // MainForm
             // 
