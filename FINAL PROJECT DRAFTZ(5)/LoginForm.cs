@@ -54,7 +54,20 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void button1_Click(object sender, EventArgs e)
         {
+            String username = LogintBox.Text;
+            String password = PasstBox.Text;
 
+            Database loginChecker = new Database();
+
+            if (loginChecker.checkLogin(username, password))
+            {
+                this.Hide();
+                LandingForm success = new LandingForm();
+                success.ShowDialog();
+            } else
+            {
+                MessageBox.Show("No Account match in our Database");
+            }
         }
     }
 }
