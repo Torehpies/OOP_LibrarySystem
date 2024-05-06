@@ -14,6 +14,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         public void start()
         {
+            // DATABASE SPECIFICATION
             string SERVER = "127.0.0.1";
             string DATABASE = "test";
             string USER = "root";
@@ -42,7 +43,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 }
             }
 
-            String[] studentData = null;
+            List<string> studentData = new List<string>();
             string query = "SELECT * FROM test";
             MySqlCommand cmd = new MySqlCommand(query, SQL_SERVER);
             SQL_SERVER.Open();
@@ -51,11 +52,14 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             {
                 while (reader.Read())
                 {
-                    studentData.Append("Hello");
+                    for (int i = 0; i < reader.FieldCount; i++)
+                    {
+                        MessageBox.Show(reader.GetValue(i).ToString());
+                    }
 
                 }
             }
-            return studentData;
+            return studentData.ToArray();
         }
     }
 }

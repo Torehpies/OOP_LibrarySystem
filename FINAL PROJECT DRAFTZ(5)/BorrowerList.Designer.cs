@@ -41,9 +41,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             columnHeader3 = new ColumnHeader();
             columnHeader4 = new ColumnHeader();
             tabControl1 = new TabControl();
+            testView1 = new DataGridView();
             tabPage2.SuspendLayout();
             tabPage1.SuspendLayout();
             tabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)testView1).BeginInit();
             SuspendLayout();
             // 
             // tabPage2
@@ -107,6 +109,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             StudentListView.TabIndex = 3;
             StudentListView.UseCompatibleStateImageBehavior = false;
             StudentListView.View = View.Details;
+            StudentListView.SelectedIndexChanged += StudentListView_SelectedIndexChanged;
             // 
             // columnHeader1
             // 
@@ -132,23 +135,34 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // 
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
-            tabControl1.Location = new Point(58, 27);
+            tabControl1.Location = new Point(72, 34);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(456, 365);
             tabControl1.TabIndex = 2;
+            // 
+            // testView1
+            // 
+            testView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            testView1.Location = new Point(561, 58);
+            testView1.Name = "testView1";
+            testView1.RowTemplate.Height = 25;
+            testView1.Size = new Size(425, 337);
+            testView1.TabIndex = 3;
             // 
             // BorrowerList
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
+            Controls.Add(testView1);
             Controls.Add(tabControl1);
             Name = "BorrowerList";
             Size = new Size(1043, 452);
             tabPage2.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)testView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -165,11 +179,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private ColumnHeader columnHeader6;
         private ColumnHeader columnHeader7;
         private TabPage tabPage1;
+        private TabControl tabControl1;
         private ListView StudentListView;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader4;
-        private TabControl tabControl1;
+        private DataGridView testView1;
     }
 }

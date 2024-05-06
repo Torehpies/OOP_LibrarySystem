@@ -13,6 +13,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             ApplicationConfiguration.Initialize();
             LandingForm landingForm = new LandingForm();
             Application.Run(landingForm);
+
+            Database database = new Database();
+            database.getStudentData();
         }
     }
 }

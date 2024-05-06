@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace FINAL_PROJECT_DRAFTZ_5_
 {
@@ -20,28 +21,34 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void LoadUsersData()
         {
-            foreach (Student student in UsersData.Students)
-            {
-                if (student.borrowedBookCount > 0)
-                {
-                    ListViewItem item = new ListViewItem(student.firstName + " " + student.lastName);
-                    item.SubItems.Add(student.userID);
-                    item.SubItems.Add(student.yearlevel);
-                    item.SubItems.Add(student.section);
-                    StudentListView.Items.Add(item);
-                }
-            }
+            MySqlConnection con = new MySqlConnection("server=127.0.0.1; user=root; database=test; password=");
+            con.Open();
 
-            foreach (Teacher teacher in UsersData.Teachers)
-            {
-                if (teacher.borrowedBookCount > 0)
-                {
-                    ListViewItem item = new ListViewItem(teacher.firstName + " " + teacher.lastName);
-                    item.SubItems.Add(teacher.userID);
-                    item.SubItems.Add(teacher.department);
-                    TeacherListView.Items.Add(item);
-                }
-            }
+          
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM test", con);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+
+            testView1.DataSource = dataTable;
+            
+
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void StudentListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
