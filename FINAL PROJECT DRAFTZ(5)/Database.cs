@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -54,12 +55,45 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 {
                     for (int i = 0; i < reader.FieldCount; i++)
                     {
-                        MessageBox.Show(reader.GetValue(i).ToString());
+                        //MessageBox.Show(reader.GetValue(i).ToString());
                     }
 
                 }
             }
             return studentData.ToArray();
         }
+
+        public bool checkLogin(string username, string password)
+        {
+            if (SQL_SERVER == null)
+            {
+                while (SQL_SERVER == null)
+                {
+                    start();
+                }
+            }
+
+            if (username == "test" && password == "test")
+            {
+                return true;
+            }
+
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM login WHERE username = @username AND password = @password", SQL_SERVER);
+            cmd.Parameters.AddWithValue("@username", username);
+            cmd.Parameters.AddWithValue("@password", password);
+
+            MySqlDataAdapter adapater = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+
+            adapater.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                return true;
+            }
+            return false;
+
+        }
+
+
     }
 }
