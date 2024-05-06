@@ -115,11 +115,15 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void LibraryLabel_Click(object sender, EventArgs e)
         {
-            
+
             contentPanel.Controls.Add(libraryPanel);
             libraryPanel.BringToFront();
             libraryPanel.Show();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
