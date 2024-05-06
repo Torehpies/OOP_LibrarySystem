@@ -13,7 +13,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             ApplicationConfiguration.Initialize();
           
             Database database = new Database();
-            database.getStudentData();
+            //database.getStudentData();
           
             LoginForm LoginForm = new LoginForm();
             Application.Run(LoginForm);
