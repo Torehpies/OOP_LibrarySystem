@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms.VisualStyles;
 using MySql.Data.MySqlClient;
+using BCrypt.Net;
 
 namespace FINAL_PROJECT_DRAFTZ_5_
 {
@@ -78,19 +79,45 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 return true;
             }
 
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM login WHERE username = @username AND password = @password", SQL_SERVER);
+           
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM login WHERE username = @username", SQL_SERVER);
             cmd.Parameters.AddWithValue("@username", username);
-            cmd.Parameters.AddWithValue("@password", password);
+            SQL_SERVER.Open();
 
-            MySqlDataAdapter adapater = new MySqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
+            string hashPasswordDB = null;
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    hashPasswordDB = reader.GetString("password");
+                } else
+                {
+                    MessageBox.Show("Account does not match in the database");
+                }
+            }
 
-            adapater.Fill(dt);
-            if (dt.Rows.Count > 0)
+            // Verify password
+            if (BCrypt.Net.BCrypt.EnhancedVerify(password, hashPasswordDB))
             {
                 return true;
             }
+
             return false;
+
+        }
+
+        public void addAccount(string username, string password)
+        {
+            if (SQL_SERVER == null)
+            {
+                start();
+            }
+            SQL_SERVER.Open();
+
+            MySqlCommand cmd = new MySqlCommand("INSERT INTO login (username, password) VALUES (@username, @password)", SQL_SERVER);
+            cmd.Parameters.AddWithValue("@username", username);
+            cmd.Parameters.AddWithValue("@password", password);
+            cmd.ExecuteNonQuery();
 
         }
 

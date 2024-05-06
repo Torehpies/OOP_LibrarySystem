@@ -64,10 +64,18 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 this.Hide();
                 LandingForm success = new LandingForm();
                 success.ShowDialog();
-            } else
+            }
+            else
             {
                 MessageBox.Show("No Account match in our Database");
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AddAccount addAccount = new AddAccount();
+            addAccount.ShowDialog();
         }
     }
 }
