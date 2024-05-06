@@ -156,6 +156,7 @@
             panel1.Padding = new Padding(10);
             panel1.Size = new Size(660, 390);
             panel1.TabIndex = 23;
+            panel1.Paint += panel1_Paint;
             // 
             // statusLabel
             // 
