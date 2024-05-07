@@ -62,7 +62,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             if (loginChecker.checkLogin(username, password))
             {
                 this.Hide();
-                LandingForm success = new LandingForm();
+                MainForm success = new MainForm();//Current Landing Form
                 success.ShowDialog();
             } else
             {
