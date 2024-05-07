@@ -54,6 +54,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (LogintBox.Text.Length == 0 || PasstBox.Text.Length == 0)
+            {
+                MessageBox.Show("Please fill in the entries");
+                return;
+            }
+
             String username = LogintBox.Text;
             String password = PasstBox.Text;
 
@@ -64,10 +70,19 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 this.Hide();
                 MainForm success = new MainForm();//Current Landing Form
                 success.ShowDialog();
-            } else
+            }
+            else
             {
                 MessageBox.Show("No Account match in our Database");
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+            this.Hide();
+            AdminLogin addAccount = new AdminLogin();
+            addAccount.ShowDialog();
         }
     }
 }
