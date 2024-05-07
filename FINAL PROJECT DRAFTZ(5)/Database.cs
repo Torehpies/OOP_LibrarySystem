@@ -29,10 +29,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             } catch (Exception ex)
             {
                 MessageBox.Show("Connection to database failed!");
-            } finally
-            {
-                SQL_SERVER.Close();
-            }
+            } 
         }
 
         public String[] getStudentData()
@@ -48,7 +45,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             List<string> studentData = new List<string>();
             string query = "SELECT * FROM test";
             MySqlCommand cmd = new MySqlCommand(query, SQL_SERVER);
-            SQL_SERVER.Open();
 
             using (MySqlDataReader reader = cmd.ExecuteReader())
             {
@@ -103,8 +99,34 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
 
             return false;
-
         }
+
+        public bool checkAccount(string username)
+        {
+            if (SQL_SERVER == null)
+            {
+                start();
+            }
+            
+
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM login WHERE username = @username", SQL_SERVER);
+            cmd.Parameters.AddWithValue("@username", username);
+    
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    SQL_SERVER.Close();
+                    return true;
+                }
+                else
+                {
+                    SQL_SERVER.Close();
+                    return false;
+                }
+            }
+            
+        } 
 
         public void addAccount(string username, string password)
         {
@@ -112,13 +134,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             {
                 start();
             }
-            SQL_SERVER.Open();
-
+            
             MySqlCommand cmd = new MySqlCommand("INSERT INTO login (username, password) VALUES (@username, @password)", SQL_SERVER);
             cmd.Parameters.AddWithValue("@username", username);
             cmd.Parameters.AddWithValue("@password", password);
             cmd.ExecuteNonQuery();
-
+            SQL_SERVER.Close();
         }
 
 
