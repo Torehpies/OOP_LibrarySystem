@@ -78,7 +78,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
            
             MySqlCommand cmd = new MySqlCommand("SELECT * FROM login WHERE username = @username", SQL_SERVER);
             cmd.Parameters.AddWithValue("@username", username);
-            SQL_SERVER.Open();
 
             string hashPasswordDB = null;
             using (MySqlDataReader reader = cmd.ExecuteReader())

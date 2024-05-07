@@ -73,8 +73,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void button2_Click(object sender, EventArgs e)
         {
+            
             this.Hide();
-            AddAccount addAccount = new AddAccount();
+            AdminLogin addAccount = new AdminLogin();
             addAccount.ShowDialog();
         }
     }
