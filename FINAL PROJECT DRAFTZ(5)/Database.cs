@@ -78,7 +78,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 return true;
             }
 
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM login WHERE username = @username AND password = @password", SQL_SERVER);
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM users WHERE username = @username AND password = @password", SQL_SERVER);
             cmd.Parameters.AddWithValue("@username", username);
             cmd.Parameters.AddWithValue("@password", password);
 
