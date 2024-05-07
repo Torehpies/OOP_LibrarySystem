@@ -21,7 +21,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (Usertbox1.Text == null || passwordtbox.Text == null || passwordtbox1.Text == null)
+            if (Usertbox1.Text.Length == 0 || passwordtbox.Text.Length == 0 || passwordtbox1.Text.Length == 0)
             {
                 MessageBox.Show("Fill the following fields.");
                 return;
