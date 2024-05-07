@@ -90,6 +90,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (Adminuser.Text.Length == 0 ||  Adminpass.Text.Length == 0)
+            {
+                MessageBox.Show("Please fill in the entries");
+                return;
+            }
+
             String username = Adminuser.Text;
             String password = Adminpass.Text;
 
