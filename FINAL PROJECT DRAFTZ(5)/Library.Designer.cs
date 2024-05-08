@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             flowLayoutPanel1 = new FlowLayoutPanel();
-            textBox1 = new TextBox();
+            searchBox = new TextBox();
             mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
+            button1 = new Button();
+            button2 = new Button();
             SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -41,13 +43,13 @@
             flowLayoutPanel1.TabIndex = 0;
             flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
-            // textBox1
+            // searchBox
             // 
-            textBox1.Location = new Point(12, 46);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(250, 23);
-            textBox1.TabIndex = 1;
-            textBox1.Text = "Search";
+            searchBox.Location = new Point(12, 46);
+            searchBox.Name = "searchBox";
+            searchBox.Size = new Size(250, 23);
+            searchBox.TabIndex = 1;
+            searchBox.Text = "Search";
             // 
             // mySqlCommand1
             // 
@@ -56,12 +58,34 @@
             mySqlCommand1.EnableCaching = false;
             mySqlCommand1.Transaction = null;
             // 
+            // button1
+            // 
+            button1.Location = new Point(268, 46);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 2;
+            button1.Text = "Search";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(349, 46);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 3;
+            button2.Text = "Reset";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // Library
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1170, 634);
-            Controls.Add(textBox1);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(searchBox);
             Controls.Add(flowLayoutPanel1);
             Name = "Library";
             Text = "Library";
@@ -74,7 +98,9 @@
 
         private Label label1;
         private FlowLayoutPanel flowLayoutPanel1;
-        private TextBox textBox1;
+        private TextBox searchBox;
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
+        private Button button1;
+        private Button button2;
     }
 }
