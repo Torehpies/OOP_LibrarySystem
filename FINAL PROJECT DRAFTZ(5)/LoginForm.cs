@@ -12,7 +12,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 {
     public partial class LoginForm : Form
     {
-        
+
         public LoginForm()
         {
             InitializeComponent();
@@ -20,7 +20,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -71,7 +71,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 this.Hide();
                 MainForm mainForm = new MainForm();
                 mainForm.ShowDialog();
-            } else
+            }
+            else
             {
                 MessageBox.Show("No Account match in our Database");
             }
@@ -79,7 +80,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+
             this.Hide();
             AdminLogin addAccount = new AdminLogin();
             addAccount.ShowDialog();

@@ -32,6 +32,7 @@
             PasstBox = new TextBox();
             Loginlbl = new Label();
             label1 = new Label();
+            lbl1 = new Label();
             button1 = new Button();
             button2 = new Button();
             SuspendLayout();
@@ -40,7 +41,8 @@
             // 
             LogintBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             LogintBox.Font = new Font("Segoe UI", 13.8239994F, FontStyle.Regular, GraphicsUnit.Point);
-            LogintBox.Location = new Point(86, 266);
+            LogintBox.Location = new Point(67, 139);
+            LogintBox.Margin = new Padding(2, 2, 2, 2);
             LogintBox.Name = "LogintBox";
             LogintBox.PlaceholderText = "Username";
             LogintBox.Size = new Size(258, 32);
@@ -51,12 +53,12 @@
             // 
             PasstBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             PasstBox.Font = new Font("Segoe UI", 13.8239994F, FontStyle.Regular, GraphicsUnit.Point);
-            PasstBox.Location = new Point(86, 322);
+            PasstBox.Location = new Point(67, 175);
+            PasstBox.Margin = new Padding(2, 2, 2, 2);
             PasstBox.Name = "PasstBox";
             PasstBox.PlaceholderText = "Password";
             PasstBox.Size = new Size(258, 32);
             PasstBox.TabIndex = 1;
-            PasstBox.UseSystemPasswordChar = true;
             PasstBox.TextChanged += PasstBox_TextChanged;
             // 
             // Loginlbl
@@ -65,7 +67,8 @@
             Loginlbl.AutoSize = true;
             Loginlbl.Font = new Font("Microsoft Sans Serif", 17.8559971F, FontStyle.Bold, GraphicsUnit.Point);
             Loginlbl.ForeColor = SystemColors.HotTrack;
-            Loginlbl.Location = new Point(196, 211);
+            Loginlbl.Location = new Point(140, 108);
+            Loginlbl.Margin = new Padding(2, 0, 2, 0);
             Loginlbl.Name = "Loginlbl";
             Loginlbl.Size = new Size(92, 29);
             Loginlbl.TabIndex = 2;
@@ -86,9 +89,10 @@
             // 
             lbl1.AutoSize = true;
             lbl1.Font = new Font("Impact", 20.16F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl1.Location = new Point(162, 143);
+            lbl1.Location = new Point(120, 64);
+            lbl1.Margin = new Padding(2, 0, 2, 0);
             lbl1.Name = "lbl1";
-            lbl1.Size = new Size(186, 43);
+            lbl1.Size = new Size(145, 34);
             lbl1.TabIndex = 4;
             lbl1.Text = "Wla pa lugo";
             lbl1.Click += label2_Click_1;
@@ -96,7 +100,8 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI", 9.792F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(86, 387);
+            button1.Location = new Point(67, 211);
+            button1.Margin = new Padding(2, 2, 2, 2);
             button1.Name = "button1";
             button1.Size = new Size(257, 27);
             button1.TabIndex = 5;
@@ -104,21 +109,35 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // button2
+            // 
+            button2.Font = new Font("Segoe UI", 9.792F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.Location = new Point(67, 242);
+            button2.Margin = new Padding(2);
+            button2.Name = "button2";
+            button2.Size = new Size(257, 27);
+            button2.TabIndex = 6;
+            button2.Text = "Add Account";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(490, 454);
+            ClientSize = new Size(381, 324);
+            Controls.Add(button2);
             Controls.Add(button1);
+            Controls.Add(lbl1);
             Controls.Add(label1);
             Controls.Add(Loginlbl);
             Controls.Add(PasstBox);
             Controls.Add(LogintBox);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(2, 2, 2, 2);
             Name = "LoginForm";
             Text = "LoginForm";
             Load += LoginForm_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -129,6 +148,8 @@
         private TextBox PasstBox;
         private Label Loginlbl;
         private Label label1;
+        private Label lbl1;
         private Button button1;
+        private Button button2;
     }
 }
