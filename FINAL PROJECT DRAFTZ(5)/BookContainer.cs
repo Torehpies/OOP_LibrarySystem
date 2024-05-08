@@ -16,46 +16,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         Book DetailsData;
         BookData BookDataInstance = BookData.Instance;
         public event EventHandler ButtonClick;
-        
+
         public BookContainer()
         {
             InitializeComponent();
-            BookData.Instance.BookListChanged += BookListChangedHandler;
-            //MouseEnter += MyUserControl_MouseEnter;
-            //MouseLeave += MyUserControl_MouseLeave;
-        }
-        private void BookListChangedHandler(object sender, int index)
-        {
-            if (BookData.Instance.BookList[index].title == DetailsData.title) 
-            {
-                if (BookData.Instance.BookList[index].status == Book.BookType.Borrowed)
-                {
-                    borrowBtn.Text = "SEE DETAILS";
-                }
-                else
-                {
-                    borrowBtn.Text = "BORROW";
-                }
-            }
-              
-        }
-        public void InitializeUI(Book BookContainerData)
-        {
-            DetailsData = BookContainerData;
-            bookPic.Image = Image.FromFile(BookContainerData.picturePath);
-            bookTitle.Text = BookContainerData.title;
-            bookYear.Text = BookContainerData.published;
-            if (BookContainerData.status == Book.BookType.Borrowed)
-            {
-                borrowBtn.Text = "SEE DETAILS";
-            }
         }
 
-
-        private void Book1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         // Event handler for MouseEnter
         private void MyUserControl_MouseEnter(object sender, EventArgs e)
@@ -71,13 +37,50 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             borrowBtn.Visible = false;
         }
 
-        private void borrowBtn_Click(object sender, EventArgs e)
+        #region Properties
+
+        private string _title;
+        private string _year;
+        private Image _icon;
+        private string _ISBN;
+
+        private void bookTitle_Click(object sender, EventArgs e)
         {
-            BookDetails bookDetails = new BookDetails();
-            bookDetails.InitializeUI(DetailsData);
-            
-            bookDetails.ShowDialog();
 
         }
+
+        private void borrowBtn_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"The ISBN for this {ISBN}");
+        }
+
+        [Category("Custom Props")]
+        public string Title
+        {
+            get { return _title; }
+            set { _title = value; bookTitle.Text = value; }
+        }
+
+        [Category("Custom Props")]
+        public string Year
+        {
+            get { return _year; }
+            set { _year = value; bookYear.Text = value; }
+        }
+
+        public string ISBN
+        {
+            get { return _ISBN; }
+            set { _ISBN = value; }
+        }
+
+        [Category("Custom Props")]
+        public Image icon
+        {
+            get { return _icon; }
+            set { _icon = value; }
+        }
+
+        #endregion
     }
 }

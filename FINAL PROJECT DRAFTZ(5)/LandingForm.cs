@@ -50,9 +50,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             return newLabel;
         }
 
+        
+
         private Panel CreateBookPanel(string category)
         {
-
+            
             FlowLayoutPanel newPanel = new FlowLayoutPanel();
             newPanel.BackColor = Color.Transparent;
             newPanel.AutoSize = true;
@@ -63,14 +65,16 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 if (book.category == category)
                 {
                     BookContainer bookContainer = new BookContainer();
-                    bookContainer.InitializeUI(book);
+                    //bookContainer.InitializeUI(book);
                     newPanel.Controls.Add(bookContainer);
                 }
             }
 
             return newPanel;
+            
 
         }
+        
         private void InitializeBookContainers()
         {
 
@@ -125,5 +129,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         {
 
         }
+
     }
 }

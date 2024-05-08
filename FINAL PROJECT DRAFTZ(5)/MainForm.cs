@@ -42,6 +42,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private void MainForm_Load(object sender, EventArgs e)
         {
 
+
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)

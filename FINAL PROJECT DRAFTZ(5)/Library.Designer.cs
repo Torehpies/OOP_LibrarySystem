@@ -28,28 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            textBox1 = new TextBox();
             SuspendLayout();
             // 
-            // label1
+            // flowLayoutPanel1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(438, 322);
-            label1.Name = "label1";
-            label1.Size = new Size(101, 32);
-            label1.TabIndex = 0;
-            label1.Text = "LIBRARY";
-            label1.Click += label1_Click;
+            flowLayoutPanel1.Location = new Point(-2, 84);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(996, 536);
+            flowLayoutPanel1.TabIndex = 0;
+            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(12, 46);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(250, 23);
+            textBox1.TabIndex = 1;
+            textBox1.Text = "Search";
             // 
             // Library
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(998, 617);
-            Controls.Add(label1);
+            ClientSize = new Size(998, 631);
+            Controls.Add(textBox1);
+            Controls.Add(flowLayoutPanel1);
             Name = "Library";
             Text = "Library";
+            Load += Library_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -57,5 +65,7 @@
         #endregion
 
         private Label label1;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private TextBox textBox1;
     }
 }

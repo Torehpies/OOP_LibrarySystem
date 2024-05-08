@@ -33,7 +33,7 @@
             Loginlbl = new Label();
             label1 = new Label();
             button1 = new Button();
-            button2 = new Button();
+            //button2 = new Button();
             SuspendLayout();
             // 
             // LogintBox
@@ -84,6 +84,7 @@
             // 
             // lbl1
             // 
+            /*
             lbl1.AutoSize = true;
             lbl1.Font = new Font("Impact", 20.16F, FontStyle.Regular, GraphicsUnit.Point);
             lbl1.Location = new Point(162, 143);
@@ -92,6 +93,7 @@
             lbl1.TabIndex = 4;
             lbl1.Text = "Wla pa lugo";
             lbl1.Click += label2_Click_1;
+            */
             // 
             // button1
             // 
@@ -118,7 +120,7 @@
             Name = "LoginForm";
             Text = "LoginForm";
             Load += LoginForm_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            //((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
