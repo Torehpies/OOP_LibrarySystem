@@ -32,8 +32,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             } 
         }
 
-        
-
         public bool checkLogin(string username, string password)
         {
             if (SQL_SERVER == null)
@@ -106,6 +104,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             {
                 start();
             }
+
             SQL_SERVER.Open();
             
             MySqlCommand cmd = new MySqlCommand("INSERT INTO users (username, password, created, type) VALUES (@username, @password, @created, @type)", SQL_SERVER);
