@@ -32,8 +32,8 @@
             LogintBox = new TextBox();
             PasstBox = new TextBox();
             label1 = new Label();
-            button1 = new Button();
-            button2 = new Button();
+            loginButton = new Button();
+            createAccount = new Button();
             label2 = new Label();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
@@ -44,25 +44,27 @@
             // LogintBox
             // 
             LogintBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            LogintBox.BorderStyle = BorderStyle.None;
             LogintBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             LogintBox.Location = new Point(588, 304);
             LogintBox.Margin = new Padding(2);
             LogintBox.Name = "LogintBox";
             LogintBox.PlaceholderText = "  Username";
-            LogintBox.Size = new Size(299, 29);
+            LogintBox.Size = new Size(299, 22);
             LogintBox.TabIndex = 0;
             LogintBox.TextChanged += textBox1_TextChanged;
             // 
             // PasstBox
             // 
             PasstBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            PasstBox.BorderStyle = BorderStyle.None;
             PasstBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             PasstBox.Location = new Point(588, 340);
             PasstBox.Margin = new Padding(2);
             PasstBox.Name = "PasstBox";
             PasstBox.PasswordChar = '*';
             PasstBox.PlaceholderText = "  Password";
-            PasstBox.Size = new Size(299, 29);
+            PasstBox.Size = new Size(299, 22);
             PasstBox.TabIndex = 1;
             PasstBox.UseSystemPasswordChar = true;
             PasstBox.TextChanged += PasstBox_TextChanged;
@@ -77,37 +79,38 @@
             label1.TabIndex = 3;
             label1.Click += label1_Click_1;
             // 
-            // button1
+            // loginButton
             // 
-            button1.BackColor = Color.FromArgb(34, 34, 59);
-            button1.Cursor = Cursors.Hand;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = Color.Snow;
-            button1.Location = new Point(672, 373);
-            button1.Margin = new Padding(2);
-            button1.Name = "button1";
-            button1.Size = new Size(142, 38);
-            button1.TabIndex = 2;
-            button1.Text = "Login";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            loginButton.BackColor = Color.FromArgb(34, 34, 59);
+            loginButton.Cursor = Cursors.Hand;
+            loginButton.FlatAppearance.BorderSize = 0;
+            loginButton.FlatStyle = FlatStyle.Flat;
+            loginButton.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            loginButton.ForeColor = Color.Snow;
+            loginButton.Location = new Point(672, 373);
+            loginButton.Margin = new Padding(2);
+            loginButton.Name = "loginButton";
+            loginButton.Size = new Size(142, 38);
+            loginButton.TabIndex = 2;
+            loginButton.Text = "Login";
+            loginButton.UseVisualStyleBackColor = false;
+            loginButton.Click += button1_Click;
             // 
-            // button2
+            // createAccount
             // 
-            button2.Cursor = Cursors.Hand;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.ForeColor = SystemColors.ActiveCaptionText;
-            button2.Location = new Point(685, 409);
-            button2.Margin = new Padding(2);
-            button2.Name = "button2";
-            button2.Size = new Size(120, 32);
-            button2.TabIndex = 3;
-            button2.Text = "Add Account";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            createAccount.BackColor = Color.Transparent;
+            createAccount.Cursor = Cursors.Hand;
+            createAccount.FlatStyle = FlatStyle.Flat;
+            createAccount.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            createAccount.ForeColor = SystemColors.ActiveCaptionText;
+            createAccount.Location = new Point(684, 415);
+            createAccount.Margin = new Padding(2);
+            createAccount.Name = "createAccount";
+            createAccount.Size = new Size(120, 32);
+            createAccount.TabIndex = 3;
+            createAccount.Text = "Create Account";
+            createAccount.UseVisualStyleBackColor = false;
+            createAccount.Click += button2_Click;
             // 
             // label2
             // 
@@ -147,8 +150,8 @@
             Controls.Add(pictureBox2);
             Controls.Add(label2);
             Controls.Add(pictureBox1);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(createAccount);
+            Controls.Add(loginButton);
             Controls.Add(label1);
             Controls.Add(PasstBox);
             Controls.Add(LogintBox);
@@ -171,8 +174,8 @@
         private TextBox LogintBox;
         private TextBox PasstBox;
         private Label label1;
-        private Button button1;
-        private Button button2;
+        private Button loginButton;
+        private Button createAccount;
         private Label label2;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
