@@ -49,7 +49,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 return true;
             }
 
-           
             MySqlCommand cmd = new MySqlCommand("SELECT * FROM users WHERE username = @username", SQL_SERVER);
             cmd.Parameters.AddWithValue("@username", username);
 

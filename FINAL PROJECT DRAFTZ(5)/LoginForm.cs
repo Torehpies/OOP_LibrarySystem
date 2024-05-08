@@ -12,6 +12,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 {
     public partial class LoginForm : Form
     {
+
         public LoginForm()
         {
             InitializeComponent();
@@ -68,8 +69,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             if (loginChecker.checkLogin(username, password))
             {
                 this.Hide();
-                LandingForm success = new LandingForm();
-                success.ShowDialog();
+                MainForm mainForm = new MainForm();
+                mainForm.ShowDialog();
             }
             else
             {
@@ -79,7 +80,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+
             this.Hide();
             AdminLogin addAccount = new AdminLogin();
             addAccount.ShowDialog();
