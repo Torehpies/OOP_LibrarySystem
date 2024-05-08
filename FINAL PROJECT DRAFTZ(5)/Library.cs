@@ -36,18 +36,41 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         }
 
-        string[] testvalues = { "genrey", "ako", "ikaw", "monggi", "testing" };
-
+        
         private void populateItems()
         {
-            BookContainer[] card = new BookContainer[5];
-            for (int i = 0; i < 5; i++)
+            flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.Controls.Clear();
+
+            Database database = new Database();
+            DataTable data = database.retrieveData();
+
+            if (data != null )
             {
-                card[i] = new BookContainer();
-                card[i].Title = testvalues[i];
-                card[i].Year = "taena mo";
-                flowLayoutPanel1.Controls.Add(card[i]);
+                if (data.Rows.Count > 0 )
+                {
+                    BookContainer[] listItems = new BookContainer[data.Rows.Count];
+
+                    for (int i = 0; i < 1; i++)
+                    {
+                        foreach (DataRow row in data.Rows)
+                        {
+                            listItems[i] = new BookContainer();
+
+                            listItems[i].Title = row["title"].ToString();
+                            listItems[i].Year = row["published"].ToString();
+
+                            flowLayoutPanel1.Controls.Add(listItems[i]);
+
+                            
+
+                          
+                        }
+                    }
+                }
             }
+
+            
         }
 
 

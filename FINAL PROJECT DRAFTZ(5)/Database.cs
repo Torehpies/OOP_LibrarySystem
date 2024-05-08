@@ -140,6 +140,28 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             SQL_SERVER.Close();
         }
 
+        public DataTable retrieveData()
+        {
+            if (SQL_SERVER == null)
+            {
+                start();
+            }
+
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM books", SQL_SERVER);
+            try
+            {
+                using (MySqlDataAdapter sda = new MySqlDataAdapter(cmd))
+                {
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    return dt;
+                }
+            } catch
+            {
+                throw;
+            }
+        }
+
 
     }
 }

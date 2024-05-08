@@ -30,13 +30,14 @@
         {
             flowLayoutPanel1 = new FlowLayoutPanel();
             textBox1 = new TextBox();
+            mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             SuspendLayout();
             // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.Location = new Point(-2, 84);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(996, 536);
+            flowLayoutPanel1.Size = new Size(1155, 548);
             flowLayoutPanel1.TabIndex = 0;
             flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
@@ -48,11 +49,18 @@
             textBox1.TabIndex = 1;
             textBox1.Text = "Search";
             // 
+            // mySqlCommand1
+            // 
+            mySqlCommand1.CacheAge = 0;
+            mySqlCommand1.Connection = null;
+            mySqlCommand1.EnableCaching = false;
+            mySqlCommand1.Transaction = null;
+            // 
             // Library
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(998, 631);
+            ClientSize = new Size(1170, 634);
             Controls.Add(textBox1);
             Controls.Add(flowLayoutPanel1);
             Name = "Library";
@@ -67,5 +75,6 @@
         private Label label1;
         private FlowLayoutPanel flowLayoutPanel1;
         private TextBox textBox1;
+        private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
     }
 }
