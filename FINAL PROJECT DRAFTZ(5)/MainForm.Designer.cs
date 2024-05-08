@@ -57,7 +57,7 @@
             container_pnl.Location = new Point(15, 120);
             container_pnl.Margin = new Padding(5);
             container_pnl.Name = "container_pnl";
-            container_pnl.Size = new Size(1159, 629);
+            container_pnl.Size = new Size(1160, 641);
             container_pnl.TabIndex = 1;
             // 
             // navigation_pnl

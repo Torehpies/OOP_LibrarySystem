@@ -12,6 +12,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 {
     public partial class LoginForm : Form
     {
+        
         public LoginForm()
         {
             InitializeComponent();
@@ -19,7 +20,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -54,6 +55,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (LogintBox.Text.Length == 0 || PasstBox.Text.Length == 0)
+            {
+                MessageBox.Show("Please fill in the entries");
+                return;
+            }
+
             String username = LogintBox.Text;
             String password = PasstBox.Text;
 
@@ -62,12 +69,20 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             if (loginChecker.checkLogin(username, password))
             {
                 this.Hide();
-                LandingForm success = new LandingForm();
-                success.ShowDialog();
+                MainForm mainForm = new MainForm();
+                mainForm.ShowDialog();
             } else
             {
                 MessageBox.Show("No Account match in our Database");
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+            this.Hide();
+            AdminLogin addAccount = new AdminLogin();
+            addAccount.ShowDialog();
         }
     }
 }
