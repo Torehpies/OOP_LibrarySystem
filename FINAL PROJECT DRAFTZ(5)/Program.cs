@@ -13,7 +13,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
          
-            Database database = new Database();
+            LoginDatabase database = new LoginDatabase();
           
             LoginForm LoginForm = new LoginForm();
             Application.Run(LoginForm);

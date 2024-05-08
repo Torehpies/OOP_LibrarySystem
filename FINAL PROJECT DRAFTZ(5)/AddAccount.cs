@@ -26,25 +26,21 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 MessageBox.Show("Fill the following fields.");
                 return;
             }
-
             
             if (passwordtbox.Text != passwordtbox1.Text)
             {
                 MessageBox.Show("Password does not match");
                 return;
             }
-
-           
-            Database addData = new Database();
-            if (addData.checkAccount(Usertbox1.Text))
+         
+            if (LoginDatabase.checkAccount(Usertbox1.Text))
             {
                 MessageBox.Show("Account already exists");
                 return;
             }
 
-            string passwordHash = null;
-            passwordHash = BCrypt.Net.BCrypt.EnhancedHashPassword(passwordtbox.Text, 11);
-            addData.addAccount(Usertbox1.Text, passwordHash);
+            string passwordHash = BCrypt.Net.BCrypt.EnhancedHashPassword(passwordtbox.Text, 11);
+            LoginDatabase.addAccount(Usertbox1.Text, passwordHash);
             this.Hide();
 
             MessageBox.Show("Account: " + Usertbox1.Text + " is created.");

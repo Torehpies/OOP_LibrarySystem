@@ -99,9 +99,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             String username = Adminuser.Text;
             String password = Adminpass.Text;
 
-            Database loginChecker = new Database();
-
-            if (loginChecker.checkLogin(username, password))
+            if (LoginDatabase.checkLogin(username, password))
             {
                 this.Hide();
                 AddAccount success = new AddAccount();

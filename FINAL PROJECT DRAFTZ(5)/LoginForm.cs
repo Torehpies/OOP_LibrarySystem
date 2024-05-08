@@ -12,10 +12,17 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 {
     public partial class LoginForm : Form
     {
-
+        bool noAccount = false;
+        private AddAccount addAccPane;
+        
         public LoginForm()
         {
             InitializeComponent();
+            if (!LoginDatabase.isUsersEmpty())
+            {
+                disableLogin();
+                noAccount = true;
+            }
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
@@ -23,22 +30,15 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void disableLogin()
         {
-
+            createAccount.Location = new System.Drawing.Point(707, 320);
+            loginButton.Visible = false;
+            PasstBox.Visible = false;
+            LogintBox.Visible = false;
         }
 
-        private void PasstBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void loginButton_Click(object sender, EventArgs e)
         {
             if (LogintBox.Text.Length == 0 || PasstBox.Text.Length == 0)
             {
@@ -49,9 +49,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             String username = LogintBox.Text;
             String password = PasstBox.Text;
 
-            Database loginChecker = new Database();
-
-            if (loginChecker.checkLogin(username, password))
+            if (LoginDatabase.checkLogin(username, password))
             {
                 this.Hide();
                 MainForm mainForm = new MainForm();
@@ -63,12 +61,20 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void createAcc_Click(object sender, EventArgs e)
         {
-
-            this.Hide();
-            AdminLogin addAccount = new AdminLogin();
-            addAccount.ShowDialog();
+            //this.Hide();
+            if (noAccount)
+            {
+                containerPanel.Visible = true;
+                addAccPane = new AddAccount() { TopLevel = false, TopMost = true, Dock = DockStyle.None };
+                containerPanel.Controls.Add(addAccPane);
+                addAccPane.Show();
+            }
+            else
+            {
+                
+            }
         }
     }
 }

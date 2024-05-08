@@ -10,11 +10,11 @@ using BCrypt.Net;
 
 namespace FINAL_PROJECT_DRAFTZ_5_
 {
-    internal class Database
+    internal class LoginDatabase
     {
-        MySqlConnection SQL_SERVER = null;
+        static MySqlConnection SQL_SERVER;
 
-        public void start()
+        public static void start()
         {
             // DATABASE SPECIFICATION
             string SERVER = "127.0.0.1";
@@ -32,16 +32,32 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             } 
         }
 
-        
+        public static bool isUsersEmpty()
+        {
+            start();
+            MySqlCommand query = new MySqlCommand("SELECT * FROM users", SQL_SERVER);
+            MySqlDataReader reader = query.ExecuteReader();
 
-        public bool checkLogin(string username, string password)
+            if (reader.Read())
+            {
+                SQL_SERVER.Close();
+                return true;
+            }
+            else
+            {
+                SQL_SERVER.Close();
+                return false;
+            }
+        }
+
+        public static bool checkLogin(string username, string password)
         {
             if (SQL_SERVER == null)
             {
-                while (SQL_SERVER == null)
-                {
+                //while (SQL_SERVER == null)
+                //{
                     start();
-                }
+                //}
             }
 
             if (username == "test" && password == "test")
@@ -73,14 +89,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             return false;
         }
 
-        public bool checkAccount(string username)
+        public static bool checkAccount(string username)
         {
-            if (SQL_SERVER == null)
-            {
-                start();
-            }
+            start();
             
-
             MySqlCommand cmd = new MySqlCommand("SELECT * FROM users WHERE username = @username", SQL_SERVER);
             cmd.Parameters.AddWithValue("@username", username);
     
@@ -100,7 +112,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             
         } 
 
-        public void addAccount(string username, string password)
+        public static void addAccount(string username, string password)
         {
             if (SQL_SERVER == null)
             {
