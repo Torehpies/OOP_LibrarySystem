@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms.VisualStyles;
 using MySql.Data.MySqlClient;
+using BCrypt.Net;
 
 namespace FINAL_PROJECT_DRAFTZ_5_
 {
@@ -28,12 +29,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             } catch (Exception ex)
             {
                 MessageBox.Show("Connection to database failed!");
-            } finally
-            {
-                SQL_SERVER.Close();
-            }
+            } 
         }
-
 
         public bool checkLogin(string username, string password)
         {
@@ -50,21 +47,76 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 return true;
             }
 
-            SQL_SERVER.Open();
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM users WHERE username = @username AND password = @password", SQL_SERVER);
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM users WHERE username = @username", SQL_SERVER);
             cmd.Parameters.AddWithValue("@username", username);
-            cmd.Parameters.AddWithValue("@password", password);
 
-            MySqlDataAdapter adapater = new MySqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
+            string hashPasswordDB = null;
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    hashPasswordDB = reader.GetString("password");
+                } else
+                {
+                    MessageBox.Show("Account does not match in the database");
+                }
+            }
 
-            adapater.Fill(dt);
-            if (dt.Rows.Count > 0)
+            // Verify password
+            if (BCrypt.Net.BCrypt.EnhancedVerify(password, hashPasswordDB))
             {
                 return true;
             }
-            return false;
 
+            return false;
+        }
+
+        public bool checkAccount(string username)
+        {
+            if (SQL_SERVER == null)
+            {
+                start();
+            }
+            
+
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM users WHERE username = @username", SQL_SERVER);
+            cmd.Parameters.AddWithValue("@username", username);
+    
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    SQL_SERVER.Close();
+                    return true;
+                }
+                else
+                {
+                    SQL_SERVER.Close();
+                    return false;
+                }
+            }
+            
+        } 
+
+        public void addAccount(string username, string password)
+        {
+            if (SQL_SERVER == null)
+            {
+                start();
+            }
+
+            SQL_SERVER.Open();
+            
+            MySqlCommand cmd = new MySqlCommand("INSERT INTO users (username, password, created, type) VALUES (@username, @password, @created, @type)", SQL_SERVER);
+            cmd.Parameters.AddWithValue("@username", username);
+            cmd.Parameters.AddWithValue("@password", password);
+            DateTime dateTime = DateTime.Now;
+            string formattedDateTime = dateTime.ToString("yyyy-MM-dd HH:mm:ss");
+            cmd.Parameters.AddWithValue("@created", formattedDateTime);
+            cmd.Parameters.AddWithValue("@type", "admin");
+
+            cmd.ExecuteNonQuery();
+            SQL_SERVER.Close();
         }
 
 
