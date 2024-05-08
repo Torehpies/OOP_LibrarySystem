@@ -52,14 +52,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         public static bool checkLogin(string username, string password)
         {
-            if (SQL_SERVER == null)
-            {
-                //while (SQL_SERVER == null)
-                //{
-                    start();
-                //}
-            }
-
+            start();
+      
             if (username == "test" && password == "test")
             {
                 return true;

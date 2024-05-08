@@ -14,6 +14,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
     {
         bool noAccount = false;
         private AddAccount addAccPane;
+        private AdminLogin adminLogin;
         
         public LoginForm()
         {
@@ -38,6 +39,15 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             LogintBox.Visible = false;
         }
 
+        private void enableLogin()
+        {
+            createAccount.Location = new System.Drawing.Point(707, 415);
+            loginButton.Visible = true;
+            PasstBox.Visible = true;
+            LogintBox.Visible = true;
+            containerPanel.Visible = true;
+        }
+
         private void loginButton_Click(object sender, EventArgs e)
         {
             if (LogintBox.Text.Length == 0 || PasstBox.Text.Length == 0)
@@ -59,22 +69,26 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             {
                 MessageBox.Show("No Account match in our Database");
             }
+            this.Hide();
         }
 
         private void createAcc_Click(object sender, EventArgs e)
         {
             //this.Hide();
+            containerPanel.Visible = true;
             if (noAccount)
             {
-                containerPanel.Visible = true;
                 addAccPane = new AddAccount() { TopLevel = false, TopMost = true, Dock = DockStyle.None };
                 containerPanel.Controls.Add(addAccPane);
                 addAccPane.Show();
             }
             else
             {
-                
+                adminLogin = new AdminLogin() { TopLevel = false, TopMost = true, Dock = DockStyle.None };
+                containerPanel.Controls.Add(adminLogin);
+                adminLogin.Show();
             }
+            enableLogin();
         }
     }
 }

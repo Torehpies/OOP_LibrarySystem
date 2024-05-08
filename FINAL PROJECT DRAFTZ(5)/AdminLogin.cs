@@ -17,6 +17,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             InitializeComponent();
         }
 
-        
+        private void Adminuser_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

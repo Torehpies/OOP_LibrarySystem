@@ -38,36 +38,43 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // 
             // Adminuser
             // 
-            Adminuser.Location = new Point(274, 158);
+            Adminuser.BorderStyle = BorderStyle.None;
+            Adminuser.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Adminuser.Location = new Point(59, 50);
             Adminuser.Name = "Adminuser";
-            Adminuser.Size = new Size(232, 23);
+            Adminuser.Size = new Size(160, 22);
             Adminuser.TabIndex = 0;
             Adminuser.Text = "Username";
+            Adminuser.TextChanged += Adminuser_TextChanged;
             // 
             // Adminpass
             // 
-            Adminpass.Location = new Point(274, 187);
+            Adminpass.BorderStyle = BorderStyle.None;
+            Adminpass.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Adminpass.Location = new Point(59, 79);
             Adminpass.Name = "Adminpass";
-            Adminpass.Size = new Size(232, 23);
+            Adminpass.Size = new Size(160, 22);
             Adminpass.TabIndex = 1;
             Adminpass.Text = "Password";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(349, 125);
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(90, 20);
             label1.Name = "label1";
-            label1.Size = new Size(76, 15);
+            label1.Size = new Size(99, 21);
             label1.TabIndex = 2;
             label1.Text = "Admin Login";
             // 
             // button1
             // 
+            button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 9.792F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(259, 225);
+            button1.Location = new Point(59, 119);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
-            button1.Size = new Size(257, 27);
+            button1.Size = new Size(160, 27);
             button1.TabIndex = 6;
             button1.Text = "Login";
             button1.UseVisualStyleBackColor = true;
@@ -77,11 +84,13 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.FromArgb(242, 233, 228);
+            ClientSize = new Size(278, 184);
             Controls.Add(button1);
             Controls.Add(label1);
             Controls.Add(Adminpass);
             Controls.Add(Adminuser);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "AdminLogin";
             Text = "Form7";
             ResumeLayout(false);
