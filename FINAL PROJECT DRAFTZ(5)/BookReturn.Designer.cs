@@ -88,10 +88,10 @@
             // Dsplay_detailsbrwer
             // 
             Dsplay_detailsbrwer.AutoSize = true;
-            Dsplay_detailsbrwer.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Dsplay_detailsbrwer.Font = new Font("Quicksand SemiBold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             Dsplay_detailsbrwer.Location = new Point(118, 56);
             Dsplay_detailsbrwer.Name = "Dsplay_detailsbrwer";
-            Dsplay_detailsbrwer.Size = new Size(69, 25);
+            Dsplay_detailsbrwer.Size = new Size(82, 31);
             Dsplay_detailsbrwer.TabIndex = 4;
             Dsplay_detailsbrwer.Text = "Details";
             // 
@@ -100,6 +100,7 @@
             cancel_btn.BackColor = Color.FromArgb(102, 102, 102);
             cancel_btn.FlatAppearance.BorderColor = Color.FromArgb(242, 233, 228);
             cancel_btn.FlatStyle = FlatStyle.Flat;
+            cancel_btn.Font = new Font("Quicksand SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             cancel_btn.ForeColor = Color.White;
             cancel_btn.Location = new Point(303, 547);
             cancel_btn.Name = "cancel_btn";
@@ -113,6 +114,7 @@
             confirm_btn.BackColor = Color.FromArgb(102, 102, 102);
             confirm_btn.FlatAppearance.BorderColor = Color.FromArgb(242, 233, 228);
             confirm_btn.FlatStyle = FlatStyle.Flat;
+            confirm_btn.Font = new Font("Quicksand SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             confirm_btn.ForeColor = Color.White;
             confirm_btn.Location = new Point(465, 547);
             confirm_btn.Name = "confirm_btn";
@@ -124,10 +126,10 @@
             // Dsplay_namebrwer
             // 
             Dsplay_namebrwer.AutoSize = true;
-            Dsplay_namebrwer.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Dsplay_namebrwer.Font = new Font("Quicksand SemiBold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             Dsplay_namebrwer.Location = new Point(35, 56);
             Dsplay_namebrwer.Name = "Dsplay_namebrwer";
-            Dsplay_namebrwer.Size = new Size(62, 25);
+            Dsplay_namebrwer.Size = new Size(73, 31);
             Dsplay_namebrwer.TabIndex = 1;
             Dsplay_namebrwer.Text = "Name";
             // 
@@ -150,6 +152,7 @@
             // 
             panel7.AutoScroll = true;
             panel7.BackColor = Color.FromArgb(225, 213, 206);
+            panel7.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             panel7.Location = new Point(0, 107);
             panel7.Name = "panel7";
             panel7.Size = new Size(590, 335);
@@ -158,50 +161,50 @@
             // Dsplay_return
             // 
             Dsplay_return.AutoSize = true;
-            Dsplay_return.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Dsplay_return.Font = new Font("Quicksand Medium", 12F, FontStyle.Bold, GraphicsUnit.Point);
             Dsplay_return.Location = new Point(453, 65);
             Dsplay_return.Name = "Dsplay_return";
-            Dsplay_return.Size = new Size(69, 21);
+            Dsplay_return.Size = new Size(74, 24);
             Dsplay_return.TabIndex = 6;
             Dsplay_return.Text = "RETURN";
             // 
             // Dsplay_due
             // 
             Dsplay_due.AutoSize = true;
-            Dsplay_due.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Dsplay_due.Font = new Font("Quicksand Medium", 12F, FontStyle.Bold, GraphicsUnit.Point);
             Dsplay_due.Location = new Point(310, 65);
             Dsplay_due.Name = "Dsplay_due";
-            Dsplay_due.Size = new Size(80, 21);
+            Dsplay_due.Size = new Size(84, 24);
             Dsplay_due.TabIndex = 5;
             Dsplay_due.Text = "DUE DATE";
             // 
             // Dsplay_author
             // 
             Dsplay_author.AutoSize = true;
-            Dsplay_author.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Dsplay_author.Font = new Font("Quicksand SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             Dsplay_author.Location = new Point(163, 65);
             Dsplay_author.Name = "Dsplay_author";
-            Dsplay_author.Size = new Size(72, 21);
+            Dsplay_author.Size = new Size(76, 24);
             Dsplay_author.TabIndex = 4;
             Dsplay_author.Text = "AUTHOR";
             // 
             // Dsplay_title
             // 
             Dsplay_title.AutoSize = true;
-            Dsplay_title.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Dsplay_title.Font = new Font("Quicksand Medium", 12F, FontStyle.Bold, GraphicsUnit.Point);
             Dsplay_title.Location = new Point(39, 65);
             Dsplay_title.Name = "Dsplay_title";
-            Dsplay_title.Size = new Size(46, 21);
+            Dsplay_title.Size = new Size(52, 24);
             Dsplay_title.TabIndex = 3;
             Dsplay_title.Text = "TITLE";
             // 
             // Dsplay_borrowedbooks
             // 
             Dsplay_borrowedbooks.AutoSize = true;
-            Dsplay_borrowedbooks.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            Dsplay_borrowedbooks.Location = new Point(166, 10);
+            Dsplay_borrowedbooks.Font = new Font("Quicksand", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            Dsplay_borrowedbooks.Location = new Point(183, 11);
             Dsplay_borrowedbooks.Name = "Dsplay_borrowedbooks";
-            Dsplay_borrowedbooks.Size = new Size(149, 25);
+            Dsplay_borrowedbooks.Size = new Size(234, 40);
             Dsplay_borrowedbooks.TabIndex = 2;
             Dsplay_borrowedbooks.Text = "Borrowed Books";
             Dsplay_borrowedbooks.Click += label9_Click;
@@ -231,50 +234,50 @@
             // Dsplay_lstreturn
             // 
             Dsplay_lstreturn.AutoSize = true;
-            Dsplay_lstreturn.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Dsplay_lstreturn.Font = new Font("Quicksand Medium", 15F, FontStyle.Bold, GraphicsUnit.Point);
             Dsplay_lstreturn.Location = new Point(64, 244);
             Dsplay_lstreturn.Name = "Dsplay_lstreturn";
-            Dsplay_lstreturn.Size = new Size(130, 25);
+            Dsplay_lstreturn.Size = new Size(149, 30);
             Dsplay_lstreturn.TabIndex = 10;
             Dsplay_lstreturn.Text = "Last Returned:";
             // 
             // Dsplay_bookcount
             // 
             Dsplay_bookcount.AutoSize = true;
-            Dsplay_bookcount.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Dsplay_bookcount.Font = new Font("Quicksand Medium", 15F, FontStyle.Bold, GraphicsUnit.Point);
             Dsplay_bookcount.Location = new Point(64, 202);
             Dsplay_bookcount.Name = "Dsplay_bookcount";
-            Dsplay_bookcount.Size = new Size(209, 25);
+            Dsplay_bookcount.Size = new Size(233, 30);
             Dsplay_bookcount.TabIndex = 9;
             Dsplay_bookcount.Text = "Borrowed Books Count:";
             // 
             // Dsplay_details
             // 
             Dsplay_details.AutoSize = true;
-            Dsplay_details.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Dsplay_details.Font = new Font("Quicksand Medium", 15F, FontStyle.Bold, GraphicsUnit.Point);
             Dsplay_details.Location = new Point(64, 163);
             Dsplay_details.Name = "Dsplay_details";
-            Dsplay_details.Size = new Size(73, 25);
+            Dsplay_details.Size = new Size(79, 30);
             Dsplay_details.TabIndex = 8;
             Dsplay_details.Text = "Details:";
             // 
             // Dsplay_name
             // 
             Dsplay_name.AutoSize = true;
-            Dsplay_name.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Dsplay_name.Font = new Font("Quicksand Medium", 15F, FontStyle.Bold, GraphicsUnit.Point);
             Dsplay_name.Location = new Point(64, 123);
             Dsplay_name.Name = "Dsplay_name";
-            Dsplay_name.Size = new Size(66, 25);
+            Dsplay_name.Size = new Size(73, 30);
             Dsplay_name.TabIndex = 7;
             Dsplay_name.Text = "Name:";
             // 
             // Dsplay_borrowerinfo
             // 
             Dsplay_borrowerinfo.AutoSize = true;
-            Dsplay_borrowerinfo.Font = new Font("Segoe UI", 27.75F, FontStyle.Regular, GraphicsUnit.Point);
+            Dsplay_borrowerinfo.Font = new Font("Quicksand", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
             Dsplay_borrowerinfo.Location = new Point(16, 26);
             Dsplay_borrowerinfo.Name = "Dsplay_borrowerinfo";
-            Dsplay_borrowerinfo.Size = new Size(280, 50);
+            Dsplay_borrowerinfo.Size = new Size(307, 55);
             Dsplay_borrowerinfo.TabIndex = 6;
             Dsplay_borrowerinfo.Text = "Borrower's Info:";
             // 
@@ -293,10 +296,10 @@
             // Dsplay_Id
             // 
             Dsplay_Id.AutoSize = true;
-            Dsplay_Id.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Dsplay_Id.Location = new Point(155, 110);
+            Dsplay_Id.Font = new Font("Quicksand Medium", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            Dsplay_Id.Location = new Point(155, 114);
             Dsplay_Id.Name = "Dsplay_Id";
-            Dsplay_Id.Size = new Size(66, 21);
+            Dsplay_Id.Size = new Size(88, 30);
             Dsplay_Id.TabIndex = 6;
             Dsplay_Id.Text = "Input Id:";
             // 
@@ -305,6 +308,7 @@
             enterId_btn.BackColor = Color.FromArgb(102, 102, 102);
             enterId_btn.FlatAppearance.BorderColor = Color.FromArgb(242, 233, 228);
             enterId_btn.FlatStyle = FlatStyle.Flat;
+            enterId_btn.Font = new Font("Quicksand SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             enterId_btn.ForeColor = Color.White;
             enterId_btn.Location = new Point(357, 145);
             enterId_btn.Name = "enterId_btn";
@@ -325,10 +329,10 @@
             // Dsplay_bookreturn
             // 
             Dsplay_bookreturn.AutoSize = true;
-            Dsplay_bookreturn.Font = new Font("Segoe UI", 27.75F, FontStyle.Regular, GraphicsUnit.Point);
+            Dsplay_bookreturn.Font = new Font("Quicksand", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
             Dsplay_bookreturn.Location = new Point(94, 9);
             Dsplay_bookreturn.Name = "Dsplay_bookreturn";
-            Dsplay_bookreturn.Size = new Size(328, 50);
+            Dsplay_bookreturn.Size = new Size(348, 55);
             Dsplay_bookreturn.TabIndex = 3;
             Dsplay_bookreturn.Text = "BOOK RETURNING";
             // 

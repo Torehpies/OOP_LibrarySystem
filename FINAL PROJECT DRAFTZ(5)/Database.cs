@@ -34,34 +34,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
         }
 
-        public String[] getStudentData()
-        {
-            if (SQL_SERVER == null)
-            {
-                while (SQL_SERVER == null)
-                {
-                    start();
-                }
-            }
-
-            List<string> studentData = new List<string>();
-            string query = "SELECT * FROM test";
-            MySqlCommand cmd = new MySqlCommand(query, SQL_SERVER);
-            SQL_SERVER.Open();
-
-            using (MySqlDataReader reader = cmd.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    for (int i = 0; i < reader.FieldCount; i++)
-                    {
-                        //MessageBox.Show(reader.GetValue(i).ToString());
-                    }
-
-                }
-            }
-            return studentData.ToArray();
-        }
 
         public bool checkLogin(string username, string password)
         {
@@ -78,7 +50,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 return true;
             }
 
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM login WHERE username = @username AND password = @password", SQL_SERVER);
+            SQL_SERVER.Open();
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM users WHERE username = @username AND password = @password", SQL_SERVER);
             cmd.Parameters.AddWithValue("@username", username);
             cmd.Parameters.AddWithValue("@password", password);
 
