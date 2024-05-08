@@ -132,5 +132,19 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         {
             populateItems();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            
+            BookContainer bookContainer = new BookContainer();
+            string message = "Items in checkout list: ";
+            foreach (string title in bookContainer.checkout)
+            {
+                message += $"\n - {title}";
+            }
+            MessageBox.Show(message);
+            
+
+        }
     }
 }

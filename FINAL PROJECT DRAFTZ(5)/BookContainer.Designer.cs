@@ -96,6 +96,7 @@
             button1.TabIndex = 21;
             button1.Text = "+";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // BookContainer
             // 

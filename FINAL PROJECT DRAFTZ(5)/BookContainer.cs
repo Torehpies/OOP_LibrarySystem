@@ -43,6 +43,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private string _year;
         private Image _icon;
         private string _ISBN;
+        private static List<string> bookTitles = new List<string>();
 
         private void bookTitle_Click(object sender, EventArgs e)
         {
@@ -52,6 +53,22 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private void borrowBtn_Click(object sender, EventArgs e)
         {
             MessageBox.Show($"The ISBN for this {ISBN}");
+            bookTitles.Add(Title);
+        }
+
+        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"Bookname: `{Title}` is added to checkout");
+            bookTitles.Add(Title);
+            MessageBox.Show($"Added {Title} to bookTitles. Count: {bookTitles.Count} ");
+        }
+
+        [Category("Custom Props")]
+        public List<string> checkout
+        {
+            get { return bookTitles; }
+            set {  bookTitles = value; }
         }
 
         [Category("Custom Props")]
