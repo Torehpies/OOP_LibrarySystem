@@ -15,8 +15,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             Database database = new Database();
             database.getStudentData();
           
-            LoginForm LoginForm = new LoginForm();
-            Application.Run(LoginForm);
+            MainForm mainForm = new MainForm();
+            Application.Run(mainForm);
         }
     }
 }

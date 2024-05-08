@@ -16,6 +16,15 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private BorrowedList borrowPane;
         private BookReturn bookreturnPane;
         private BookInventory bookinventPane;
+
+        private void addUserControl(UserControl userControl)
+        {
+            userControl.Dock = DockStyle.Fill;
+            container_pnl.Controls.Clear();
+            container_pnl.Controls.Add(userControl);
+            userControl.BringToFront();
+
+        }
         public MainForm()
         {
             InitializeComponent();
@@ -55,7 +64,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         }
         private void library_btn_Click(object sender, EventArgs e)
         {
-            libPane.Show();
+          
+            
+            borrowPane.Show();
             libPane.FormBorderStyle = FormBorderStyle.None;
             borrowPane.Hide();
             bookreturnPane.Hide();
@@ -64,9 +75,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void borrower_btn_Click(object sender, EventArgs e)
         {
+
+            B_Books b_Books = new B_Books();   
+            addUserControl(b_Books);
             libPane.Hide();
-            borrowPane.Show();
-            borrowPane.FormBorderStyle = FormBorderStyle.None;
+            borrowPane.Hide();
             bookreturnPane.Hide();
             bookinventPane.Hide();
         }

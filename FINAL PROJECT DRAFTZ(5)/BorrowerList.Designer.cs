@@ -51,10 +51,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // tabPage2
             // 
             tabPage2.Controls.Add(TeacherListView);
-            tabPage2.Location = new Point(4, 24);
+            tabPage2.Location = new Point(4, 30);
+            tabPage2.Margin = new Padding(4, 4, 4, 4);
             tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(448, 337);
+            tabPage2.Padding = new Padding(4, 4, 4, 4);
+            tabPage2.Size = new Size(578, 477);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Teacher Borrower List";
             tabPage2.UseVisualStyleBackColor = true;
@@ -64,9 +65,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             TeacherListView.Columns.AddRange(new ColumnHeader[] { columnHeader5, columnHeader6, columnHeader7 });
             TeacherListView.FullRowSelect = true;
             TeacherListView.GridLines = true;
-            TeacherListView.Location = new Point(3, 0);
+            TeacherListView.Location = new Point(4, 0);
+            TeacherListView.Margin = new Padding(4, 4, 4, 4);
             TeacherListView.Name = "TeacherListView";
-            TeacherListView.Size = new Size(439, 333);
+            TeacherListView.Size = new Size(563, 465);
             TeacherListView.TabIndex = 4;
             TeacherListView.UseCompatibleStateImageBehavior = false;
             TeacherListView.View = View.Details;
@@ -90,10 +92,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // tabPage1
             // 
             tabPage1.Controls.Add(StudentListView);
-            tabPage1.Location = new Point(4, 24);
+            tabPage1.Location = new Point(4, 30);
+            tabPage1.Margin = new Padding(4, 4, 4, 4);
             tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(448, 337);
+            tabPage1.Padding = new Padding(4, 4, 4, 4);
+            tabPage1.Size = new Size(578, 477);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Student Borrower List";
             tabPage1.UseVisualStyleBackColor = true;
@@ -103,9 +106,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             StudentListView.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
             StudentListView.FullRowSelect = true;
             StudentListView.GridLines = true;
-            StudentListView.Location = new Point(3, 3);
+            StudentListView.Location = new Point(4, 4);
+            StudentListView.Margin = new Padding(4, 4, 4, 4);
             StudentListView.Name = "StudentListView";
-            StudentListView.Size = new Size(442, 337);
+            StudentListView.Size = new Size(567, 470);
             StudentListView.TabIndex = 3;
             StudentListView.UseCompatibleStateImageBehavior = false;
             StudentListView.View = View.Details;
@@ -135,30 +139,35 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // 
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
-            tabControl1.Location = new Point(72, 34);
+            tabControl1.Location = new Point(93, 48);
+            tabControl1.Margin = new Padding(4, 4, 4, 4);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(456, 365);
+            tabControl1.Size = new Size(586, 511);
             tabControl1.TabIndex = 2;
             // 
             // testView1
             // 
             testView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            testView1.Location = new Point(561, 58);
+            testView1.Location = new Point(721, 81);
+            testView1.Margin = new Padding(4, 4, 4, 4);
             testView1.Name = "testView1";
+            testView1.RowHeadersWidth = 53;
             testView1.RowTemplate.Height = 25;
-            testView1.Size = new Size(425, 337);
+            testView1.Size = new Size(546, 472);
             testView1.TabIndex = 3;
             // 
             // BorrowerList
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             Controls.Add(testView1);
             Controls.Add(tabControl1);
+            Margin = new Padding(4, 4, 4, 4);
             Name = "BorrowerList";
-            Size = new Size(1043, 452);
+            Size = new Size(1341, 633);
+            Load += BorrowerList_Load;
             tabPage2.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabControl1.ResumeLayout(false);

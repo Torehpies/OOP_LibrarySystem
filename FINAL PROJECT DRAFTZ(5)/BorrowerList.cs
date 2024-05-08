@@ -24,14 +24,14 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             MySqlConnection con = new MySqlConnection("server=127.0.0.1; user=root; database=test; password=");
             con.Open();
 
-          
+
 
             MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM test", con);
             DataTable dataTable = new DataTable();
             adapter.Fill(dataTable);
 
             testView1.DataSource = dataTable;
-            
+
 
 
         }
@@ -47,6 +47,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         }
 
         private void StudentListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BorrowerList_Load(object sender, EventArgs e)
         {
 
         }
