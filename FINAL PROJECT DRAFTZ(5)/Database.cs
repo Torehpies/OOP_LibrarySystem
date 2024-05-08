@@ -32,34 +32,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             } 
         }
 
-        public String[] getStudentData()
-        {
-            if (SQL_SERVER == null)
-            {
-                while (SQL_SERVER == null)
-                {
-                    start();
-                }
-            }
-
-            List<string> studentData = new List<string>();
-            string query = "SELECT * FROM test";
-            MySqlCommand cmd = new MySqlCommand(query, SQL_SERVER);
-
-            using (MySqlDataReader reader = cmd.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    for (int i = 0; i < reader.FieldCount; i++)
-                    {
-                        //MessageBox.Show(reader.GetValue(i).ToString());
-                    }
-
-                }
-            }
-            return studentData.ToArray();
-        }
-
+        
         public bool checkLogin(string username, string password)
         {
             if (SQL_SERVER == null)
@@ -75,7 +48,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 return true;
             }
 
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM users WHERE username = @username AND password = @password", SQL_SERVER);
+
+
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM users WHERE username = @username", SQL_SERVER);
             cmd.Parameters.AddWithValue("@username", username);
 
             string hashPasswordDB = null;
@@ -86,7 +61,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                     hashPasswordDB = reader.GetString("password");
                 } else
                 {
-                    MessageBox.Show("Account does not match in the database");
+                    return false;
                 }
             }
 
@@ -107,7 +82,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
             
 
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM login WHERE username = @username", SQL_SERVER);
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM users WHERE username = @username", SQL_SERVER);
             cmd.Parameters.AddWithValue("@username", username);
     
             using (MySqlDataReader reader = cmd.ExecuteReader())
@@ -132,10 +107,13 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             {
                 start();
             }
-            
-            MySqlCommand cmd = new MySqlCommand("INSERT INTO login (username, password) VALUES (@username, @password)", SQL_SERVER);
+            SQL_SERVER.Open();
+            MySqlCommand cmd = new MySqlCommand("INSERT INTO users (username, password, created) VALUES (@username, @password, @created)", SQL_SERVER);
             cmd.Parameters.AddWithValue("@username", username);
             cmd.Parameters.AddWithValue("@password", password);
+            DateTime dateTime = DateTime.Now;
+            string formattedDateTime = dateTime.ToString("yyyy-MM-dd HH:mm:ss");
+            cmd.Parameters.AddWithValue("@created", formattedDateTime);
             cmd.ExecuteNonQuery();
             SQL_SERVER.Close();
         }

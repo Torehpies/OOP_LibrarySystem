@@ -75,6 +75,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             else
             {
                 MessageBox.Show("No Account match in our Database");
+                return;
             }
         }
 
