@@ -34,14 +34,13 @@
             columnHeader2 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
             columnHeader4 = new ColumnHeader();
-            columnHeader5 = new ColumnHeader();
-            columnHeader7 = new ColumnHeader();
             textBox1 = new TextBox();
+            button1 = new Button();
             SuspendLayout();
             // 
             // listView1
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader6, columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5, columnHeader7 });
+            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader6, columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
             listView1.GridLines = true;
             listView1.Location = new Point(0, 67);
             listView1.Name = "listView1";
@@ -58,33 +57,23 @@
             // 
             // columnHeader1
             // 
-            columnHeader1.Text = "Title";
+            columnHeader1.Text = "Borrower ID";
             columnHeader1.Width = 220;
             // 
             // columnHeader2
             // 
-            columnHeader2.Text = "Author";
+            columnHeader2.Text = "Borrow Date";
             columnHeader2.Width = 180;
             // 
             // columnHeader3
             // 
-            columnHeader3.Text = "Borrowers Id";
+            columnHeader3.Text = "Return Date";
             columnHeader3.Width = 160;
             // 
             // columnHeader4
             // 
-            columnHeader4.Text = "Borrowers Name";
+            columnHeader4.Text = "Due Date";
             columnHeader4.Width = 170;
-            // 
-            // columnHeader5
-            // 
-            columnHeader5.Text = "Borrowed date";
-            columnHeader5.Width = 160;
-            // 
-            // columnHeader7
-            // 
-            columnHeader7.Text = "Return Date";
-            columnHeader7.Width = 160;
             // 
             // textBox1
             // 
@@ -92,11 +81,23 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(325, 29);
             textBox1.TabIndex = 1;
+            textBox1.TextChanged += textBox1_TextChanged;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(345, 20);
+            button1.Name = "button1";
+            button1.Size = new Size(98, 30);
+            button1.TabIndex = 2;
+            button1.Text = "Search";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // B_Books
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(button1);
             Controls.Add(textBox1);
             Controls.Add(listView1);
             Name = "B_Books";
@@ -118,5 +119,6 @@
         private ColumnHeader columnHeader5;
         private ColumnHeader columnHeader7;
         private TextBox textBox1;
+        private Button button1;
     }
 }
