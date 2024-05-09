@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Org.BouncyCastle.Pkix;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,11 +12,15 @@ using static System.Windows.Forms.DataFormats;
 
 namespace FINAL_PROJECT_DRAFTZ_5_
 {
+    
+
     public partial class BookContainer : UserControl
     {
         Book DetailsData;
         BookData BookDataInstance = BookData.Instance;
         public event EventHandler ButtonClick;
+
+        
 
         public BookContainer()
         {
@@ -45,6 +50,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private string _ISBN;
         private static List<string> bookTitles = new List<string>();
         private static List<Books> checkout = new List<Books>();
+        private int index;
 
         private void bookTitle_Click(object sender, EventArgs e)
         {
@@ -53,20 +59,32 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void borrowBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"The ISBN for this {ISBN}");
-            bookTitles.Add(Title);
+            MessageBox.Show($"The index for this {index}");
         }
 
-        
+        private static bool checker = true;
+        public static bool Checker
+        {
+            get { return checker; }
+            set { checker = value; }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
+            Books addBook = new Books(Title, Year);
+
+            
             MessageBox.Show($"Bookname: `{Title}` is added to checkout");
             bookTitles.Add(Title);
-
-            Books addBook = new Books(Title, Year);
             checkout.Add(addBook);
+            MessageBox.Show($"Added {Title} to bookTitles. Count: {bookTitles.Count} "); 
+        }
 
-            MessageBox.Show($"Added {Title} to bookTitles. Count: {bookTitles.Count} ");
+        [Category("Custom Props")]
+        public int Index
+        {
+            get { return index; }
+            set {  index = value; }
         }
 
         [Category("Custom Props")]

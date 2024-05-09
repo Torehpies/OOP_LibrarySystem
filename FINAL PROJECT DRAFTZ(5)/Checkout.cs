@@ -32,14 +32,14 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.Controls.Clear();
 
-
-
             BookContainer retrieveCheckout = new BookContainer();
+            BookContainer.Checker = false;
             List<Books> checkoutList = retrieveCheckout.getCheckout;
 
 
 
             BookContainer[] books = new BookContainer[checkoutList.Count];
+            
             for (int i = 0; i < 1; i++)
             {
                 foreach (Books book in checkoutList)

@@ -39,6 +39,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void populateItems()
         {
+            BookContainer.Checker = true;
 
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.Controls.Clear();
@@ -52,6 +53,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 {
                     BookContainer[] listItems = new BookContainer[data.Rows.Count];
 
+                    int index = 0;
+
                     for (int i = 0; i < 1; i++)
                     {
                         foreach (DataRow row in data.Rows)
@@ -60,6 +63,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
                             listItems[i].Title = row["title"].ToString();
                             listItems[i].Year = row["published"].ToString();
+                            listItems[i].Index = index;
+                            index++;
 
                             flowLayoutPanel1.Controls.Add(listItems[i]);
 
@@ -88,7 +93,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 if (data.Rows.Count > 0)
                 {
                     BookContainer[] listItems = new BookContainer[data.Rows.Count];
-
+                    int index = 0;
                     for (int i = 0; i < 1; i++)
                     {
                         foreach (DataRow row in data.Rows)
@@ -97,6 +102,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
                             listItems[i].Title = row["title"].ToString();
                             listItems[i].Year = row["published"].ToString();
+                            listItems[i].Index = index;
+                            index++;
+
 
                             flowLayoutPanel1.Controls.Add(listItems[i]);
 
@@ -137,6 +145,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         {
             
             BookContainer bookContainer = new BookContainer();
+            if (bookContainer.getCheckout.Count == 0)
+            {
+                MessageBox.Show("List is empty");
+                return;
+            }
+            
             string message = "Items in checkout list: ";
             foreach (string title in bookContainer.checkoutTitles)
             {
