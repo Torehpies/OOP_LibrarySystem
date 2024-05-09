@@ -40,7 +40,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
 
             string passwordHash = BCrypt.Net.BCrypt.EnhancedHashPassword(passwordtbox.Text, 11);
-            LoginDatabase.addAccount(Usertbox1.Text, passwordHash);
+            bool isAdmin = accountType.Text.Equals("Admin")? true : false;
+            
+            LoginDatabase.addAccount(Usertbox1.Text, passwordHash, isAdmin);
 
             MessageBox.Show("Account: " + Usertbox1.Text + " is created.");
             this.Parent.Visible = false;

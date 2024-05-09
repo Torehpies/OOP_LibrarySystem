@@ -95,13 +95,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             
         } 
 
-        public static void addAccount(string username, string password)
+        public static void addAccount(string username, string password, bool isAdmin)
         {
-            if (SQL_SERVER == null)
-            {
-                start();
-            }
-            SQL_SERVER.Open();
+            start();
             
             MySqlCommand cmd = new MySqlCommand("INSERT INTO users (username, password, created, type) VALUES (@username, @password, @created, @type)", SQL_SERVER);
             cmd.Parameters.AddWithValue("@username", username);
@@ -109,7 +105,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             DateTime dateTime = DateTime.Now;
             string formattedDateTime = dateTime.ToString("yyyy-MM-dd HH:mm:ss");
             cmd.Parameters.AddWithValue("@created", formattedDateTime);
-            cmd.Parameters.AddWithValue("@type", "admin");
+            cmd.Parameters.AddWithValue("@type", isAdmin? "admin" : "standard");
 
             cmd.ExecuteNonQuery();
             SQL_SERVER.Close();

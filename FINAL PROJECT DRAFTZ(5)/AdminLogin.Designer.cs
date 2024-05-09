@@ -42,7 +42,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // 
             Adminuser.BorderStyle = BorderStyle.None;
             Adminuser.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Adminuser.Location = new Point(50, 61);
+            Adminuser.Location = new Point(63, 42);
             Adminuser.Name = "Adminuser";
             Adminuser.PlaceholderText = "Username";
             Adminuser.Size = new Size(182, 22);
@@ -52,7 +52,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // 
             Adminpass.BorderStyle = BorderStyle.None;
             Adminpass.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Adminpass.Location = new Point(50, 90);
+            Adminpass.Location = new Point(63, 71);
             Adminpass.Name = "Adminpass";
             Adminpass.PlaceholderText = "Password";
             Adminpass.Size = new Size(182, 22);
@@ -63,7 +63,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(87, 28);
+            label1.Location = new Point(100, 9);
             label1.Name = "label1";
             label1.Size = new Size(110, 21);
             label1.TabIndex = 2;
@@ -75,7 +75,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             loginButton.FlatStyle = FlatStyle.Flat;
             loginButton.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
             loginButton.ForeColor = Color.FromArgb(242, 233, 228);
-            loginButton.Location = new Point(61, 117);
+            loginButton.Location = new Point(74, 98);
             loginButton.Margin = new Padding(2);
             loginButton.Name = "loginButton";
             loginButton.Size = new Size(160, 30);
@@ -88,7 +88,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // 
             cancelButton.FlatStyle = FlatStyle.Flat;
             cancelButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cancelButton.Location = new Point(62, 149);
+            cancelButton.Location = new Point(75, 130);
             cancelButton.Margin = new Padding(0);
             cancelButton.Name = "cancelButton";
             cancelButton.Size = new Size(158, 30);
@@ -102,7 +102,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(242, 233, 228);
-            ClientSize = new Size(278, 199);
+            ClientSize = new Size(306, 283);
             Controls.Add(cancelButton);
             Controls.Add(loginButton);
             Controls.Add(label1);
