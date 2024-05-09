@@ -22,10 +22,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private void Checkout_Load(object sender, EventArgs e)
         {
             populatecheckout();
-
-
-
         }
+
+        
 
         private void populatecheckout()
         {
@@ -39,7 +38,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
 
             BookContainer[] books = new BookContainer[checkoutList.Count];
-            
             for (int i = 0; i < 1; i++)
             {
                 foreach (Books book in checkoutList)
@@ -52,16 +50,15 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                     flowLayoutPanel1.Controls.Add(books[i]);
                 }
             }
+        
         }
 
+       
 
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
 
-
-
-            private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-            {
-
-            }
+        }
 
 
         }

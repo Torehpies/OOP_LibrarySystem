@@ -20,13 +20,18 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         BookData BookDataInstance = BookData.Instance;
         public event EventHandler ButtonClick;
 
-        
+        private Library parentForm;
+
+        public BookContainer(Library parentForm)
+        {
+            InitializeComponent();
+            this.parentForm = parentForm;
+        }
 
         public BookContainer()
         {
             InitializeComponent();
         }
-
 
         // Event handler for MouseEnter
         private void MyUserControl_MouseEnter(object sender, EventArgs e)
@@ -59,7 +64,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void borrowBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"The index for this {index}");
+            parentForm.removeCard(this);
         }
 
         private static bool checker = true;

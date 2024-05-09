@@ -20,6 +20,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         }
 
+        public void removeCard(BookContainer userControl)
+        {
+            flowLayoutPanel1.Controls.Remove(userControl);
+
+        }
+
         private void Library_Load(object sender, EventArgs e)
         {
             populateItems();
@@ -59,7 +65,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                     {
                         foreach (DataRow row in data.Rows)
                         {
-                            listItems[i] = new BookContainer();
+                            listItems[i] = new BookContainer(this);
 
                             listItems[i].Title = row["title"].ToString();
                             listItems[i].Year = row["published"].ToString();
@@ -98,7 +104,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                     {
                         foreach (DataRow row in data.Rows)
                         {
-                            listItems[i] = new BookContainer();
+                            listItems[i] = new BookContainer(this);
 
                             listItems[i].Title = row["title"].ToString();
                             listItems[i].Year = row["published"].ToString();
@@ -141,10 +147,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             populateItems();
         }
 
+
+
         private void button3_Click(object sender, EventArgs e)
         {
             
-            BookContainer bookContainer = new BookContainer();
+            BookContainer bookContainer = new BookContainer(this);
             if (bookContainer.getCheckout.Count == 0)
             {
                 MessageBox.Show("List is empty");

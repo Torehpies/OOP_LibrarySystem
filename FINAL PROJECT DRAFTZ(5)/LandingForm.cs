@@ -35,7 +35,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         {
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 1080, 720, 25, 25));
             InitializeComponent();
-            InitializeBookContainers();
+            //InitializeBookContainers();
             LandingFormReference.Reference = this;
         }
 
@@ -50,8 +50,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             return newLabel;
         }
 
-        
 
+        /*
         private Panel CreateBookPanel(string category)
         {
             
@@ -65,7 +65,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 if (book.category == category)
                 {
                     BookContainer bookContainer = new BookContainer();
-                    //bookContainer.InitializeUI(book);
+                    bookContainer.InitializeUI(book);
                     newPanel.Controls.Add(bookContainer);
                 }
             }
@@ -74,6 +74,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             
 
         }
+        
         
         private void InitializeBookContainers()
         {
@@ -97,6 +98,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
             contentPanel.Controls.Add(libraryPanel);
         }
+        */
 
 
         private void ReturningLabel_Click(object sender, EventArgs e)
