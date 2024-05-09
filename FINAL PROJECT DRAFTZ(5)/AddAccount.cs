@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BCrypt.Net;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using TextBox = System.Windows.Forms.TextBox;
 
 namespace FINAL_PROJECT_DRAFTZ_5_
 {
@@ -17,6 +19,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         public AddAccount()
         {
             InitializeComponent();
+            if (!LoginDatabase.isUsersEmpty())
+            {
+                accountType.Hide();
+                label1.Text = "Create Admin Account";
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -27,31 +34,40 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 return;
             }
 
-            
             if (passwordtbox.Text != passwordtbox1.Text)
             {
                 MessageBox.Show("Password does not match");
                 return;
             }
 
-           
-            Database addData = new Database();
-            if (addData.checkAccount(Usertbox1.Text))
+            if (LoginDatabase.checkAccount(Usertbox1.Text))
             {
                 MessageBox.Show("Account already exists");
                 return;
             }
 
-            string passwordHash = null;
-            passwordHash = BCrypt.Net.BCrypt.EnhancedHashPassword(passwordtbox.Text, 11);
-            addData.addAccount(Usertbox1.Text, passwordHash);
-            this.Hide();
+            string passwordHash = BCrypt.Net.BCrypt.EnhancedHashPassword(passwordtbox.Text, 11);
+            bool isAdmin = accountType.Text.Equals("Admin") ? true : false;
+
+            LoginDatabase.addAccount(Usertbox1.Text, passwordHash, isAdmin);
 
             MessageBox.Show("Account: " + Usertbox1.Text + " is created.");
-            LoginForm loginForm = new LoginForm();
-            loginForm.ShowDialog();
+            ClearTextBoxes(Parent.Controls);
+            Parent.Visible = false;
+        }
 
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            ClearTextBoxes(this.Parent.Controls);
+            this.Parent.Visible = false;
+        }
 
+        private void ClearTextBoxes(System.Windows.Forms.Control.ControlCollection controls)
+        {
+            foreach (TextBox tb in controls.OfType<TextBox>())
+                tb.Text = string.Empty;
+            foreach (Control c in controls)
+                ClearTextBoxes(c.Controls);
         }
     }
 }
