@@ -130,23 +130,26 @@
   <data name="what i wish i know" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\what i wish i know.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pride and prejudice" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pride and prejudice.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="night" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\night.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="deeper learning" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\deeper learning.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="how to write a lot" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\how to write a lot.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pride and prejudice" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pride and prejudice.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="deeper learning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\deeper learning.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="jane eyre" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\jane eyre.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="orientalism" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\orientalism.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="silent spring" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\silent spring.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="methodologies" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\methodologies.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,7 +163,7 @@
   <data name="a brief history of time" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a brief history of time.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="silent spring" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\silent spring.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="voox_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voox_logo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
