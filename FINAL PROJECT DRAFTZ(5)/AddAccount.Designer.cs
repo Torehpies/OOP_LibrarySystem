@@ -59,6 +59,7 @@
             passwordtbox.PlaceholderText = "Password";
             passwordtbox.Size = new Size(258, 32);
             passwordtbox.TabIndex = 3;
+            passwordtbox.UseSystemPasswordChar = true;
             // 
             // passwordtbox1
             // 
@@ -72,6 +73,7 @@
             passwordtbox1.PlaceholderText = "Confirm Password";
             passwordtbox1.Size = new Size(258, 32);
             passwordtbox1.TabIndex = 4;
+            passwordtbox1.UseSystemPasswordChar = true;
             // 
             // button1
             // 
@@ -79,7 +81,7 @@
             button1.Font = new Font("Segoe UI", 9.792F, FontStyle.Bold, GraphicsUnit.Point);
             button1.Location = new Point(11, 151);
             button1.Margin = new Padding(2);
-            button1.Name = "loginButton";
+            button1.Name = "button1";
             button1.Size = new Size(257, 27);
             button1.TabIndex = 6;
             button1.Text = "Add Account";

@@ -32,8 +32,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
 
             this.Parent.Controls.Remove(this);
-            //Control container = this.Parent;
-            //container.Controls.Remove(this);
+
         }
 
         private void cancelButton_Click(object sender, EventArgs e)

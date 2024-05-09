@@ -41,13 +41,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
             string passwordHash = BCrypt.Net.BCrypt.EnhancedHashPassword(passwordtbox.Text, 11);
             LoginDatabase.addAccount(Usertbox1.Text, passwordHash);
-            this.Hide();
 
             MessageBox.Show("Account: " + Usertbox1.Text + " is created.");
-            LoginForm loginForm = new LoginForm();
-            loginForm.ShowDialog();
-
-
+            this.Parent.Visible = false;
         }
     }
 }

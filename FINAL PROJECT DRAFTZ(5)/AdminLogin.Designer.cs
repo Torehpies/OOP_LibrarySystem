@@ -57,6 +57,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             Adminpass.PlaceholderText = "Password";
             Adminpass.Size = new Size(182, 22);
             Adminpass.TabIndex = 1;
+            Adminpass.UseSystemPasswordChar = true;
             // 
             // label1
             // 
@@ -68,7 +69,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             label1.TabIndex = 2;
             label1.Text = "Admin Login";
             // 
-            // button1
+            // loginButton
             // 
             loginButton.BackColor = Color.FromArgb(34, 34, 59);
             loginButton.FlatStyle = FlatStyle.Flat;
