@@ -22,6 +22,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             if (!LoginDatabase.isUsersEmpty())
             {
                 accountType.Hide();
+                accountType.Text = "Admin";
                 label1.Text = "Create Admin Account";
             }
         }
