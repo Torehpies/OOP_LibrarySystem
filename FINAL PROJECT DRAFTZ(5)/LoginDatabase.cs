@@ -54,33 +54,19 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         {
             start();
       
-            if (username == "test" && password == "test")
-            {
-                return true;
-            }
-
             MySqlCommand cmd = new MySqlCommand("SELECT * FROM users WHERE username = @username", SQL_SERVER);
             cmd.Parameters.AddWithValue("@username", username);
 
-            string hashPasswordDB = null;
-            using (MySqlDataReader reader = cmd.ExecuteReader())
-            {
-                if (reader.Read())
-                {
-                    hashPasswordDB = reader.GetString("password");
-                } else
-                {
-                    MessageBox.Show("Account does not match in the database");
-                }
-            }
+            string hashPasswordDB;
+            MySqlDataReader reader = cmd.ExecuteReader();
 
-            // Verify password
-            if (BCrypt.Net.BCrypt.EnhancedVerify(password, hashPasswordDB))
-            {
-                return true;
-            }
-
-            return false;
+            if (!reader.Read()) return false;
+                
+            hashPasswordDB = reader.GetString("password");
+            SQL_SERVER.Close();
+            if (BCrypt.Net.BCrypt.EnhancedVerify(password, hashPasswordDB)) return true;
+            else return false;
+            
         }
 
         public static bool checkAccount(string username)

@@ -64,12 +64,13 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 this.Hide();
                 MainForm mainForm = new MainForm();
                 mainForm.ShowDialog();
+                this.Close();
             }
             else
             {
-                MessageBox.Show("No Account match in our Database");
+                MessageBox.Show("Wrong username or password");
             }
-            this.Hide();
+            //this.Hide();
         }
 
         private void createAcc_Click(object sender, EventArgs e)
