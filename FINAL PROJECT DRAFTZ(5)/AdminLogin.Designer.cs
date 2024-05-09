@@ -1,5 +1,6 @@
 ﻿
 
+
 namespace FINAL_PROJECT_DRAFTZ_5_
 {
     partial class AdminLogin
@@ -33,7 +34,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             Adminuser = new TextBox();
             Adminpass = new TextBox();
             label1 = new Label();
-            button1 = new Button();
+            loginButton = new Button();
             cancelButton = new Button();
             SuspendLayout();
             // 
@@ -43,10 +44,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             Adminuser.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             Adminuser.Location = new Point(50, 61);
             Adminuser.Name = "Adminuser";
+            Adminuser.PlaceholderText = "Username";
             Adminuser.Size = new Size(182, 22);
             Adminuser.TabIndex = 0;
-            Adminuser.Text = "Username";
-            Adminuser.TextChanged += Adminuser_TextChanged;
             // 
             // Adminpass
             // 
@@ -54,34 +54,34 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             Adminpass.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             Adminpass.Location = new Point(50, 90);
             Adminpass.Name = "Adminpass";
+            Adminpass.PlaceholderText = "Password";
             Adminpass.Size = new Size(182, 22);
             Adminpass.TabIndex = 1;
-            Adminpass.Text = "Password";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(92, 28);
+            label1.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(87, 28);
             label1.Name = "label1";
-            label1.Size = new Size(99, 21);
+            label1.Size = new Size(110, 21);
             label1.TabIndex = 2;
             label1.Text = "Admin Login";
             // 
             // button1
             // 
-            button1.BackColor = Color.FromArgb(34, 34, 59);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.FromArgb(242, 233, 228);
-            button1.Location = new Point(61, 117);
-            button1.Margin = new Padding(2);
-            button1.Name = "button1";
-            button1.Size = new Size(160, 30);
-            button1.TabIndex = 6;
-            button1.Text = "Login";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            loginButton.BackColor = Color.FromArgb(34, 34, 59);
+            loginButton.FlatStyle = FlatStyle.Flat;
+            loginButton.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            loginButton.ForeColor = Color.FromArgb(242, 233, 228);
+            loginButton.Location = new Point(61, 117);
+            loginButton.Margin = new Padding(2);
+            loginButton.Name = "loginButton";
+            loginButton.Size = new Size(160, 30);
+            loginButton.TabIndex = 6;
+            loginButton.Text = "Login";
+            loginButton.UseVisualStyleBackColor = false;
+            loginButton.Click += loginButton_click;
             // 
             // cancelButton
             // 
@@ -103,7 +103,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             BackColor = Color.FromArgb(242, 233, 228);
             ClientSize = new Size(278, 199);
             Controls.Add(cancelButton);
-            Controls.Add(button1);
+            Controls.Add(loginButton);
             Controls.Add(label1);
             Controls.Add(Adminpass);
             Controls.Add(Adminuser);
@@ -114,37 +114,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             PerformLayout();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (Adminuser.Text.Length == 0 ||  Adminpass.Text.Length == 0)
-            {
-                MessageBox.Show("Please fill in the entries");
-                return;
-            }
-
-            String username = Adminuser.Text;
-            String password = Adminpass.Text;
-
-            if (LoginDatabase.checkLogin(username, password))
-            {
-                this.Hide();
-                AddAccount success = new AddAccount();
-                success.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("No Account match in our Database");
-            }
-        }
-
-
-
         #endregion
 
         private TextBox Adminuser;
         private TextBox Adminpass;
         private Label label1;
-        private Button button1;
+        private Button loginButton;
         private Button cancelButton;
     }
 }

@@ -13,8 +13,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
     public partial class LoginForm : Form
     {
         bool noAccount = false;
-        private AddAccount addAccPane;
-        private AdminLogin adminLogin;
         
         public LoginForm()
         {
@@ -59,7 +57,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             String username = LogintBox.Text;
             String password = PasstBox.Text;
 
-            if (LoginDatabase.checkLogin(username, password))
+            if (LoginDatabase.checkLogin(username, password, false))
             {
                 this.Hide();
                 MainForm mainForm = new MainForm();
@@ -70,24 +68,22 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             {
                 MessageBox.Show("Wrong username or password");
             }
-            //this.Hide();
         }
 
         private void createAcc_Click(object sender, EventArgs e)
         {
-            //this.Hide();
             containerPanel.Visible = true;
             if (noAccount)
             {
-                addAccPane = new AddAccount() { TopLevel = false, TopMost = true, Dock = DockStyle.None };
-                containerPanel.Controls.Add(addAccPane);
-                addAccPane.Show();
+                containerPanel.Controls.Add(new AddAccount() { TopLevel = false, TopMost = true, Dock = DockStyle.None });
+                containerPanel.Controls[0].Visible = true;
             }
             else
             {
-                adminLogin = new AdminLogin() { TopLevel = false, TopMost = true, Dock = DockStyle.None };
-                containerPanel.Controls.Add(adminLogin);
-                adminLogin.Show();
+                containerPanel.Controls.Add(new AdminLogin() { TopLevel = false, TopMost = true, Dock = DockStyle.None });
+                containerPanel.Controls[0].Visible = true;
+                containerPanel.Controls.Add(new AddAccount() { TopLevel = false, TopMost = true, Dock = DockStyle.None });
+                containerPanel.Controls[1].Visible = true;
             }
             enableLogin();
         }

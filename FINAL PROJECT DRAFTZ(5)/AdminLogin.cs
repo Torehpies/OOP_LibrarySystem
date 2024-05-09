@@ -17,9 +17,23 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             InitializeComponent();
         }
 
-        private void Adminuser_TextChanged(object sender, EventArgs e)
+        private void loginButton_click(object sender, EventArgs e)
         {
+            if (Adminuser.Text.Length == 0 || Adminpass.Text.Length == 0)
+            {
+                MessageBox.Show("Please fill in the entries");
+                return;
+            }
 
+            if (!LoginDatabase.checkLogin(Adminuser.Text, Adminpass.Text, true))
+            {
+                MessageBox.Show("Wrong username or password");
+                return;
+            }
+
+            this.Parent.Controls.Remove(this);
+            //Control container = this.Parent;
+            //container.Controls.Remove(this);
         }
 
         private void cancelButton_Click(object sender, EventArgs e)

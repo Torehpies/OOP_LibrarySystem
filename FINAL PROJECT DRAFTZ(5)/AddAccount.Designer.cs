@@ -79,7 +79,7 @@
             button1.Font = new Font("Segoe UI", 9.792F, FontStyle.Bold, GraphicsUnit.Point);
             button1.Location = new Point(11, 151);
             button1.Margin = new Padding(2);
-            button1.Name = "button1";
+            button1.Name = "loginButton";
             button1.Size = new Size(257, 27);
             button1.TabIndex = 6;
             button1.Text = "Add Account";

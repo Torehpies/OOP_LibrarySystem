@@ -50,11 +50,14 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
         }
 
-        public static bool checkLogin(string username, string password)
+        public static bool checkLogin(string username, string password, bool isAdmin)
         {
             start();
-      
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM users WHERE username = @username", SQL_SERVER);
+
+            string query = "SELECT * FROM users WHERE username = @username";
+            query = isAdmin? query + " AND type = 'admin'" : query;
+
+            MySqlCommand cmd = new MySqlCommand(query, SQL_SERVER);
             cmd.Parameters.AddWithValue("@username", username);
 
             string hashPasswordDB;
