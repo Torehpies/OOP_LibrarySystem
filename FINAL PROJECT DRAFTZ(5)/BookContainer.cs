@@ -44,6 +44,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private Image _icon;
         private string _ISBN;
         private static List<string> bookTitles = new List<string>();
+        private static List<Books> checkout = new List<Books>();
 
         private void bookTitle_Click(object sender, EventArgs e)
         {
@@ -61,11 +62,22 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         {
             MessageBox.Show($"Bookname: `{Title}` is added to checkout");
             bookTitles.Add(Title);
+
+            Books addBook = new Books(Title, Year);
+            checkout.Add(addBook);
+
             MessageBox.Show($"Added {Title} to bookTitles. Count: {bookTitles.Count} ");
         }
 
         [Category("Custom Props")]
-        public List<string> checkout
+        public List<Books> getCheckout
+        {
+            get { return checkout; }
+            set { checkout = value; }
+        }
+
+        [Category("Custom Props")]
+        public List<string> checkoutTitles
         {
             get { return bookTitles; }
             set {  bookTitles = value; }

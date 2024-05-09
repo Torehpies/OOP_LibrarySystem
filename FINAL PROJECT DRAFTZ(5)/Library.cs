@@ -138,11 +138,16 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             
             BookContainer bookContainer = new BookContainer();
             string message = "Items in checkout list: ";
-            foreach (string title in bookContainer.checkout)
+            foreach (string title in bookContainer.checkoutTitles)
             {
                 message += $"\n - {title}";
             }
             MessageBox.Show(message);
+
+           
+            Checkout checkout = new Checkout();
+            checkout.ShowDialog();
+
             
 
         }
