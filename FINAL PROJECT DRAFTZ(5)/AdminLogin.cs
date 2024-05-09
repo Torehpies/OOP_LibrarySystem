@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Org.BouncyCastle.Asn1.Crmf;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,14 +31,22 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 MessageBox.Show("Wrong username or password");
                 return;
             }
-
-            this.Parent.Controls.Remove(this);
-
+            this.Parent.Controls[0].Hide();
+            this.Parent.Controls[1].Show();
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
+            ClearTextBoxes(this.Parent.Controls);
+            this.Parent.Visible = false;
+        }
 
+        private void ClearTextBoxes(System.Windows.Forms.Control.ControlCollection controls)
+        {
+            foreach (TextBox tb in controls.OfType<TextBox>())
+                tb.Text = string.Empty;
+            foreach (Control c in controls)
+                ClearTextBoxes(c.Controls);
         }
     }
 }

@@ -17,6 +17,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         public LoginForm()
         {
             InitializeComponent();
+            containerPanel.Controls.Add(new AdminLogin() { TopLevel = false, TopMost = true, Dock = DockStyle.None });
+            containerPanel.Controls.Add(new AddAccount() { TopLevel = false, TopMost = true, Dock = DockStyle.None });
             if (!LoginDatabase.isUsersEmpty())
             {
                 disableLogin();
@@ -43,7 +45,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             loginButton.Visible = true;
             PasstBox.Visible = true;
             LogintBox.Visible = true;
-            containerPanel.Visible = true;
+            
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -75,17 +77,14 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             containerPanel.Visible = true;
             if (noAccount)
             {
-                containerPanel.Controls.Add(new AddAccount() { TopLevel = false, TopMost = true, Dock = DockStyle.None });
-                containerPanel.Controls[0].Visible = true;
+                containerPanel.Controls[1].Show();
+                containerPanel.Controls[0].Hide();
+                enableLogin();
+                noAccount = false;
+                return;
             }
-            else
-            {
-                containerPanel.Controls.Add(new AdminLogin() { TopLevel = false, TopMost = true, Dock = DockStyle.None });
-                containerPanel.Controls[0].Visible = true;
-                containerPanel.Controls.Add(new AddAccount() { TopLevel = false, TopMost = true, Dock = DockStyle.None });
-                containerPanel.Controls[1].Visible = true;
-            }
-            enableLogin();
+            containerPanel.Controls[0].Show();
+            containerPanel.Controls[1].Hide();
         }
     }
 }

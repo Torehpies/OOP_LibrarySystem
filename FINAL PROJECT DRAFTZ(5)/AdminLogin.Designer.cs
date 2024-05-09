@@ -42,20 +42,20 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // 
             Adminuser.BorderStyle = BorderStyle.None;
             Adminuser.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Adminuser.Location = new Point(63, 42);
+            Adminuser.Location = new Point(6, 42);
             Adminuser.Name = "Adminuser";
             Adminuser.PlaceholderText = "Username";
-            Adminuser.Size = new Size(182, 22);
+            Adminuser.Size = new Size(299, 22);
             Adminuser.TabIndex = 0;
             // 
             // Adminpass
             // 
             Adminpass.BorderStyle = BorderStyle.None;
             Adminpass.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Adminpass.Location = new Point(63, 71);
+            Adminpass.Location = new Point(6, 71);
             Adminpass.Name = "Adminpass";
             Adminpass.PlaceholderText = "Password";
-            Adminpass.Size = new Size(182, 22);
+            Adminpass.Size = new Size(299, 22);
             Adminpass.TabIndex = 1;
             Adminpass.UseSystemPasswordChar = true;
             // 
