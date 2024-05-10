@@ -77,9 +77,10 @@
             // 
             bookinvent_btn.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             bookinvent_btn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            bookinvent_btn.BackColor = Color.FromArgb(101, 90, 168);
+            bookinvent_btn.BackColor = Color.FromArgb(74, 78, 105);
             bookinvent_btn.FlatAppearance.BorderColor = Color.FromArgb(74, 78, 105);
             bookinvent_btn.FlatStyle = FlatStyle.Flat;
+            bookinvent_btn.Font = new Font("Quicksand", 12F, FontStyle.Bold, GraphicsUnit.Point);
             bookinvent_btn.ForeColor = Color.White;
             bookinvent_btn.Location = new Point(888, 28);
             bookinvent_btn.Name = "bookinvent_btn";
@@ -94,9 +95,10 @@
             // 
             bookreturn_btn.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             bookreturn_btn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            bookreturn_btn.BackColor = Color.FromArgb(101, 90, 168);
+            bookreturn_btn.BackColor = Color.FromArgb(74, 78, 105);
             bookreturn_btn.FlatAppearance.BorderColor = Color.FromArgb(74, 78, 105);
             bookreturn_btn.FlatStyle = FlatStyle.Flat;
+            bookreturn_btn.Font = new Font("Quicksand", 12F, FontStyle.Bold, GraphicsUnit.Point);
             bookreturn_btn.ForeColor = Color.White;
             bookreturn_btn.Location = new Point(664, 28);
             bookreturn_btn.Name = "bookreturn_btn";
@@ -110,9 +112,10 @@
             // 
             borrower_btn.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             borrower_btn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            borrower_btn.BackColor = Color.FromArgb(101, 90, 168);
+            borrower_btn.BackColor = Color.FromArgb(74, 78, 105);
             borrower_btn.FlatAppearance.BorderColor = Color.FromArgb(74, 78, 105);
             borrower_btn.FlatStyle = FlatStyle.Flat;
+            borrower_btn.Font = new Font("Quicksand", 12F, FontStyle.Bold, GraphicsUnit.Point);
             borrower_btn.ForeColor = Color.White;
             borrower_btn.Location = new Point(441, 28);
             borrower_btn.Name = "borrower_btn";
@@ -127,12 +130,16 @@
             library_btn.AccessibleName = "";
             library_btn.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             library_btn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            library_btn.BackColor = Color.FromArgb(242, 233, 228);
+            library_btn.FlatAppearance.BorderColor = Color.FromArgb(74, 78, 105);
+            library_btn.FlatStyle = FlatStyle.Flat;
+            library_btn.Font = new Font("Quicksand", 12F, FontStyle.Bold, GraphicsUnit.Point);
             library_btn.Location = new Point(219, 28);
             library_btn.Name = "library_btn";
             library_btn.Size = new Size(191, 51);
             library_btn.TabIndex = 0;
             library_btn.Text = "LIBRARY";
-            library_btn.UseVisualStyleBackColor = true;
+            library_btn.UseVisualStyleBackColor = false;
             library_btn.Click += library_btn_Click;
             // 
             // MainForm

@@ -13,8 +13,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
          
-            Database database = new Database();
-            //database.getStudentData();
+            LoginDatabase database = new LoginDatabase();
           
             MainForm mainForm = new MainForm();
             Application.Run(mainForm);

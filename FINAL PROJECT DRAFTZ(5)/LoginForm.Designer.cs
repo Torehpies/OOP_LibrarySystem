@@ -28,49 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             LogintBox = new TextBox();
             PasstBox = new TextBox();
-            Loginlbl = new Label();
             label1 = new Label();
-            button1 = new Button();
-           // button2 = new Button();
+            loginButton = new Button();
+            createAccount = new Button();
+            label2 = new Label();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            containerPanel = new Panel();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // LogintBox
             // 
             LogintBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            LogintBox.Font = new Font("Segoe UI", 13.8239994F, FontStyle.Regular, GraphicsUnit.Point);
-            LogintBox.Location = new Point(86, 266);
+            LogintBox.BorderStyle = BorderStyle.None;
+            LogintBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            LogintBox.Location = new Point(618, 304);
+            LogintBox.Margin = new Padding(2);
             LogintBox.Name = "LogintBox";
-            LogintBox.PlaceholderText = "Username";
-            LogintBox.Size = new Size(258, 32);
+            LogintBox.PlaceholderText = "  Username";
+            LogintBox.Size = new Size(299, 22);
             LogintBox.TabIndex = 0;
-            LogintBox.TextChanged += textBox1_TextChanged;
             // 
             // PasstBox
             // 
             PasstBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            PasstBox.Font = new Font("Segoe UI", 13.8239994F, FontStyle.Regular, GraphicsUnit.Point);
-            PasstBox.Location = new Point(86, 322);
+            PasstBox.BorderStyle = BorderStyle.None;
+            PasstBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            PasstBox.Location = new Point(618, 340);
+            PasstBox.Margin = new Padding(2);
             PasstBox.Name = "PasstBox";
-            PasstBox.PlaceholderText = "Password";
-            PasstBox.Size = new Size(258, 32);
+            PasstBox.PasswordChar = '*';
+            PasstBox.PlaceholderText = "  Password";
+            PasstBox.Size = new Size(299, 22);
             PasstBox.TabIndex = 1;
             PasstBox.UseSystemPasswordChar = true;
-            PasstBox.TextChanged += PasstBox_TextChanged;
-            // 
-            // Loginlbl
-            // 
-            Loginlbl.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            Loginlbl.AutoSize = true;
-            Loginlbl.Font = new Font("Microsoft Sans Serif", 17.8559971F, FontStyle.Bold, GraphicsUnit.Point);
-            Loginlbl.ForeColor = SystemColors.HotTrack;
-            Loginlbl.Location = new Point(196, 211);
-            Loginlbl.Name = "Loginlbl";
-            Loginlbl.Size = new Size(92, 29);
-            Loginlbl.TabIndex = 2;
-            Loginlbl.Text = "LOGIN";
-            Loginlbl.Click += label1_Click;
             // 
             // label1
             // 
@@ -80,45 +76,102 @@
             label1.Name = "label1";
             label1.Size = new Size(0, 15);
             label1.TabIndex = 3;
-            label1.Click += label1_Click_1;
             // 
-            // lbl1
+            // loginButton
             // 
-            //lbl1.AutoSize = true;
-           // lbl1.Font = new Font("Impact", 20.16F, FontStyle.Regular, GraphicsUnit.Point);
-          //  lbl1.Location = new Point(162, 143);
-           // lbl1.Name = "lbl1";
-           // lbl1.Size = new Size(186, 43);
-           // lbl1.TabIndex = 4;
-           // lbl1.Text = "Wla pa lugo";
-            //lbl1.Click += label2_Click_1;
+            loginButton.BackColor = Color.FromArgb(34, 34, 59);
+            loginButton.Cursor = Cursors.Hand;
+            loginButton.FlatAppearance.BorderSize = 0;
+            loginButton.FlatStyle = FlatStyle.Flat;
+            loginButton.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            loginButton.ForeColor = Color.Snow;
+            loginButton.Location = new Point(696, 373);
+            loginButton.Margin = new Padding(2);
+            loginButton.Name = "loginButton";
+            loginButton.Size = new Size(142, 38);
+            loginButton.TabIndex = 2;
+            loginButton.Text = "Login";
+            loginButton.UseVisualStyleBackColor = false;
+            loginButton.Click += loginButton_Click;
             // 
-            // button1
+            // createAccount
             // 
-            button1.Font = new Font("Segoe UI", 9.792F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(86, 387);
-            button1.Name = "button1";
-            button1.Size = new Size(257, 27);
-            button1.TabIndex = 5;
-            button1.Text = "Login";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            createAccount.BackColor = Color.Transparent;
+            createAccount.Cursor = Cursors.Hand;
+            createAccount.FlatStyle = FlatStyle.Flat;
+            createAccount.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            createAccount.ForeColor = SystemColors.ActiveCaptionText;
+            createAccount.Location = new Point(707, 415);
+            createAccount.Margin = new Padding(2);
+            createAccount.Name = "createAccount";
+            createAccount.Size = new Size(120, 32);
+            createAccount.TabIndex = 3;
+            createAccount.Text = "Create Account";
+            createAccount.UseVisualStyleBackColor = false;
+            createAccount.Click += createAcc_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Black", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.FromArgb(242, 233, 228);
+            label2.Location = new Point(713, 258);
+            label2.Name = "label2";
+            label2.Size = new Size(75, 30);
+            label2.TabIndex = 8;
+            label2.Text = "VOOX";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(-39, -3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(579, 590);
+            pictureBox1.TabIndex = 7;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.voox_logo;
+            pictureBox2.Location = new Point(692, 105);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(150, 150);
+            pictureBox2.TabIndex = 9;
+            pictureBox2.TabStop = false;
+            // 
+            // containerPanel
+            // 
+            containerPanel.Location = new Point(618, 266);
+            containerPanel.Name = "containerPanel";
+            containerPanel.Size = new Size(306, 283);
+            containerPanel.TabIndex = 10;
+            containerPanel.Visible = false;
             // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(490, 454);
-            Controls.Add(button1);
+            BackColor = Color.FromArgb(242, 233, 228);
+            ClientSize = new Size(984, 561);
+            Controls.Add(containerPanel);
+            Controls.Add(pictureBox2);
+            Controls.Add(label2);
+            Controls.Add(pictureBox1);
+            Controls.Add(createAccount);
+            Controls.Add(loginButton);
             Controls.Add(label1);
-            Controls.Add(Loginlbl);
             Controls.Add(PasstBox);
             Controls.Add(LogintBox);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(2);
             Name = "LoginForm";
-            Text = "LoginForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "VOOX | LOGIN";
             Load += LoginForm_Load;
- //           ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -127,8 +180,12 @@
 
         private TextBox LogintBox;
         private TextBox PasstBox;
-        private Label Loginlbl;
         private Label label1;
-        private Button button1;
+        private Button loginButton;
+        private Button createAccount;
+        private Label label2;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
+        private Panel containerPanel;
     }
 }
