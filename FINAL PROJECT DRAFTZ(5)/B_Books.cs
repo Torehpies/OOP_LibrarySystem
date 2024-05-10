@@ -25,31 +25,26 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void LoadUsersData()
         {
-            MySqlConnection con = new MySqlConnection("server=127.0.0.1; user=root; database=test; password=;Convert Zero Datetime=True");
-            con.Open();
-            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM borrowedbooks", con);
-
-
-            // Right side table
-            DataTable dataTable = new DataTable();
-            adapter.Fill(dataTable);
-
-
-            // Left side table
-            listView1.View = View.Details;
-            for (int i = 0; i < dataTable.Rows.Count; i++)
+            using (MySqlConnection con = new MySqlConnection("server=127.0.0.1; user=root; database=test; password=;Convert Zero Datetime=True"))
             {
+                con.Open();
+                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT b.isbn, b.title, b.author, m.name, bb.borrowDate, bb.dueDate, bb.returnDate FROM BorrowedBooks bb INNER JOIN Books b ON bb.bookId = b.id INNER JOIN Members m ON bb.borrowerId = m.id", con);
 
-                DataRow dr = dataTable.Rows[i];
-                ListViewItem listitem = new ListViewItem(dr["bookID"].ToString());
-                listitem.SubItems.Add(dr["borrowerId"].ToString());
-                listitem.SubItems.Add(dr["borrowDate"].ToString());
-                listitem.SubItems.Add(dr["returnDate"].ToString());
-                listitem.SubItems.Add(dr["dueDate"].ToString());
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
 
-
-
-                listView1.Items.Add(listitem);
+                listView1.View = View.Details;
+                foreach (DataRow dr in dataTable.Rows)
+                {
+                    ListViewItem item = new ListViewItem(dr["isbn"].ToString()); 
+                    item.SubItems.Add(dr["title"].ToString());
+                    item.SubItems.Add(dr["author"].ToString());
+                    item.SubItems.Add(dr["name"].ToString());
+                    item.SubItems.Add(((DateTime)dr["borrowDate"]).ToString("yyyy-MM-dd"));
+                    item.SubItems.Add(((DateTime)dr["returnDate"]).ToString("yyyy-MM-dd"));
+                    item.SubItems.Add(((DateTime)dr["dueDate"]).ToString("yyyy-MM-dd"));
+                    listView1.Items.Add(item);
+                }
             }
         }
 
@@ -58,8 +53,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             listView1.Items.Clear();
             foreach (DataRow dr in dataTable.Rows)
             {
-                ListViewItem listitem = new ListViewItem(dr["bookID"].ToString());
-                listitem.SubItems.Add(dr["borrowerId"].ToString());
+                ListViewItem listitem = new ListViewItem(dr["isbn"].ToString());
+                listitem.SubItems.Add(dr["title"].ToString());
+                listitem.SubItems.Add(dr["author"].ToString());
+                listitem.SubItems.Add(dr["name"].ToString());
                 listitem.SubItems.Add(dr["borrowDate"].ToString());
                 listitem.SubItems.Add(dr["returnDate"].ToString());
                 listitem.SubItems.Add(dr["dueDate"].ToString());
@@ -107,15 +104,28 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
 
 
-            // Construct the SQL query with the search condition
-            string query = $"SELECT bookId, borrowerId, borrowDate, returnDate, dueDate FROM borrowedbooks WHERE " +
-                           $"LOWER(bookId) LIKE '%{searchText.ToLower()}%' OR " +
-                           $"LOWER(borrowerId) LIKE '%{searchText.ToLower()}%' OR " +
-                           $"LOWER(borrowDate) LIKE '%{searchText.ToLower()}%' OR " +
-                           $"LOWER(returnDate) LIKE '%{searchText.ToLower()}%' OR " +
-                           $"LOWER(dueDate) LIKE '%{searchText.ToLower()}%'";
+            // di ko alam kung bakit ganyan. wag nyoko tanungin
+            string query = $"SELECT bb.bookId, bb.borrowerId, " +
+                 $"DATE_FORMAT(bb.borrowDate, '%Y-%m-%d %H:%i:%s') AS borrowDate, " +
+                 $"DATE_FORMAT(bb.returnDate, '%Y-%m-%d %H:%i:%s') AS returnDate, " +
+                 $"DATE_FORMAT(bb.dueDate, '%Y-%m-%d %H:%i:%s') AS dueDate, " +
+                 $"b.isbn AS ISBN, b.title AS Title, b.author AS Author, " +
+                 $"m.name AS Name " +
+                 $"FROM borrowedbooks bb " +
+                 $"INNER JOIN books b ON bb.bookId = b.id " +
+                 $"INNER JOIN members m ON bb.borrowerId = m.id " +
+                 $"WHERE " +
+                 $"LOWER(b.isbn) LIKE '%{searchText.ToLower()}%' OR " +
+                 $"LOWER(b.title) LIKE '%{searchText.ToLower()}%' OR " +
+                 $"LOWER(b.author) LIKE '%{searchText.ToLower()}%' OR " +
+                 $"LOWER(m.name) LIKE '%{searchText.ToLower()}%' OR " +
+                 $"DATE_FORMAT(bb.borrowDate, '%Y-%m-%d %H:%i:%s') LIKE '%{searchText.ToLower()}%' OR " +
+                 $"DATE_FORMAT(bb.returnDate, '%Y-%m-%d %H:%i:%s') LIKE '%{searchText.ToLower()}%' OR " +
+                 $"DATE_FORMAT(bb.dueDate, '%Y-%m-%d %H:%i:%s') LIKE '%{searchText.ToLower()}%'";
 
-            // Create MySqlConnection and MySqlDataAdapter
+
+
+
             using (MySqlConnection con = new MySqlConnection("server=127.0.0.1; user=root; database=test; password="))
             {
                 using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, con))

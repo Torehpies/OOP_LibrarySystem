@@ -30,14 +30,14 @@
         {
             listView1 = new ListView();
             columnHeader6 = new ColumnHeader();
+            columnHeader8 = new ColumnHeader();
+            columnHeader9 = new ColumnHeader();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
             columnHeader4 = new ColumnHeader();
             textBox1 = new TextBox();
             button1 = new Button();
-            columnHeader8 = new ColumnHeader();
-            columnHeader9 = new ColumnHeader();
             SuspendLayout();
             // 
             // listView1
@@ -58,15 +58,23 @@
             columnHeader6.Text = "ISBN";
             columnHeader6.Width = 220;
             // 
+            // columnHeader8
+            // 
+            columnHeader8.Text = "Title";
+            columnHeader8.Width = 200;
+            // 
+            // columnHeader9
+            // 
+            columnHeader9.Text = "Author";
+            columnHeader9.Width = 200;
+            // 
             // columnHeader1
             // 
-            columnHeader1.DisplayIndex = 3;
-            columnHeader1.Text = "Name";
+            columnHeader1.Text = "Borrowers Name";
             columnHeader1.Width = 220;
             // 
             // columnHeader2
             // 
-            columnHeader2.DisplayIndex = 4;
             columnHeader2.Text = "Borrow Date";
             columnHeader2.Width = 180;
             // 
@@ -99,16 +107,6 @@
             button1.Text = "Search";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
-            // 
-            // columnHeader8
-            // 
-            columnHeader8.Text = "Title";
-            columnHeader8.Width = 200;
-            // 
-            // columnHeader9
-            // 
-            columnHeader9.Text = "Author";
-            columnHeader9.Width = 200;
             // 
             // B_Books
             // 
