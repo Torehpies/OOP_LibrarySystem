@@ -79,9 +79,9 @@
             // button1
             // 
             button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(1085, 24);
+            button1.Location = new Point(1085, 28);
             button1.Name = "button1";
-            button1.Size = new Size(79, 55);
+            button1.Size = new Size(65, 51);
             button1.TabIndex = 4;
             button1.Text = "Logout";
             button1.UseVisualStyleBackColor = true;

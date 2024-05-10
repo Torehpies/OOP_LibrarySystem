@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
+using System.Collections.Generic;
+using System.Drawing.Drawing2D;
 
 namespace FINAL_PROJECT_DRAFTZ_5_
 {
@@ -37,10 +40,17 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             borrowPane.Hide();
             bookreturnPane.Hide();
             bookinventPane.Hide();
+
+            // Round button
+            GraphicsPath grp = new GraphicsPath();
+            grp.AddEllipse(2, 2, button1.Width - 5, button1.Height - 5);
+            button1.Region = new Region(grp);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            
+            
 
 
         }
