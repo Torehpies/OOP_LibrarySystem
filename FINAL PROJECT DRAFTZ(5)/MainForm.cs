@@ -129,5 +129,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             bookinventPane.Show();
             bookinventPane.FormBorderStyle = FormBorderStyle.None;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
     }
 }

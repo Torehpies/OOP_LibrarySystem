@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             main_pnl = new Panel();
             container_pnl = new Panel();
             navigation_pnl = new Panel();
+            button1 = new Button();
             bookinvent_btn = new Button();
             bookreturn_btn = new Button();
             borrower_btn = new Button();
@@ -64,6 +66,7 @@
             // 
             navigation_pnl.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             navigation_pnl.BackColor = Color.FromArgb(74, 78, 105);
+            navigation_pnl.Controls.Add(button1);
             navigation_pnl.Controls.Add(bookinvent_btn);
             navigation_pnl.Controls.Add(bookreturn_btn);
             navigation_pnl.Controls.Add(borrower_btn);
@@ -73,6 +76,17 @@
             navigation_pnl.Size = new Size(1186, 103);
             navigation_pnl.TabIndex = 0;
             // 
+            // button1
+            // 
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.Location = new Point(1085, 24);
+            button1.Name = "button1";
+            button1.Size = new Size(79, 55);
+            button1.TabIndex = 4;
+            button1.Text = "Logout";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // bookinvent_btn
             // 
             bookinvent_btn.Anchor = AnchorStyles.Left | AnchorStyles.Right;
@@ -80,7 +94,7 @@
             bookinvent_btn.BackColor = Color.FromArgb(74, 78, 105);
             bookinvent_btn.FlatAppearance.BorderColor = Color.FromArgb(74, 78, 105);
             bookinvent_btn.FlatStyle = FlatStyle.Flat;
-            bookinvent_btn.Font = new Font("Quicksand", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            bookinvent_btn.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
             bookinvent_btn.ForeColor = Color.White;
             bookinvent_btn.Location = new Point(888, 28);
             bookinvent_btn.Name = "bookinvent_btn";
@@ -98,7 +112,7 @@
             bookreturn_btn.BackColor = Color.FromArgb(74, 78, 105);
             bookreturn_btn.FlatAppearance.BorderColor = Color.FromArgb(74, 78, 105);
             bookreturn_btn.FlatStyle = FlatStyle.Flat;
-            bookreturn_btn.Font = new Font("Quicksand", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            bookreturn_btn.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
             bookreturn_btn.ForeColor = Color.White;
             bookreturn_btn.Location = new Point(664, 28);
             bookreturn_btn.Name = "bookreturn_btn";
@@ -115,7 +129,7 @@
             borrower_btn.BackColor = Color.FromArgb(74, 78, 105);
             borrower_btn.FlatAppearance.BorderColor = Color.FromArgb(74, 78, 105);
             borrower_btn.FlatStyle = FlatStyle.Flat;
-            borrower_btn.Font = new Font("Quicksand", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            borrower_btn.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
             borrower_btn.ForeColor = Color.White;
             borrower_btn.Location = new Point(441, 28);
             borrower_btn.Name = "borrower_btn";
@@ -133,7 +147,7 @@
             library_btn.BackColor = Color.FromArgb(242, 233, 228);
             library_btn.FlatAppearance.BorderColor = Color.FromArgb(74, 78, 105);
             library_btn.FlatStyle = FlatStyle.Flat;
-            library_btn.Font = new Font("Quicksand", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            library_btn.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
             library_btn.Location = new Point(219, 28);
             library_btn.Name = "library_btn";
             library_btn.Size = new Size(191, 51);
@@ -165,5 +179,6 @@
         private Button bookreturn_btn;
         private Button borrower_btn;
         private Panel container_pnl;
+        private Button button1;
     }
 }
