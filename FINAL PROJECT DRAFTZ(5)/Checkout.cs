@@ -12,9 +12,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 {
     public partial class Checkout : Form
     {
+
         public Checkout()
         {
             InitializeComponent();
+
+
         }
 
 
@@ -24,7 +27,20 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             populatecheckout();
         }
 
-        
+        List<Books> checkoutList = new List<Books>();
+        public void removeCard(BookContainer userControl)
+        {
+            string titleToRemove = userControl.Title;
+            Books bookToRemove = checkoutList.FirstOrDefault(book => book.Title == titleToRemove);
+            if (bookToRemove != null)
+            {
+                MessageBox.Show($"Removed from checkout book: {titleToRemove}");
+                checkoutList.Remove(bookToRemove);
+            }
+            flowLayoutPanel1.Controls.Remove(userControl);
+        }
+
+
 
         private void populatecheckout()
         {
@@ -32,35 +48,50 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             flowLayoutPanel1.Controls.Clear();
 
             BookContainer retrieveCheckout = new BookContainer();
-            BookContainer.Checker = false;
-            List<Books> checkoutList = retrieveCheckout.getCheckout;
 
+            checkoutList = retrieveCheckout.getCheckout;
 
-
-            BookContainer[] books = new BookContainer[checkoutList.Count];
-            for (int i = 0; i < 1; i++)
+            foreach (Books book in checkoutList)
             {
-                foreach (Books book in checkoutList)
-                {
-                    books[i] = new BookContainer();
+                BookContainer bookContainer = new BookContainer(this);
+                bookContainer.Title = book.Title;
+                bookContainer.Year = book.Date;
 
-                    books[i].Title = book.Title;
-                    books[i].Year = book.Date;
 
-                    flowLayoutPanel1.Controls.Add(books[i]);
-                }
+                flowLayoutPanel1.Controls.Add(bookContainer);
             }
-        
         }
 
-       
+
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
+       
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            BookContainer getList = new BookContainer();
+            Dictionary<string, int> keyValuePairs = new Dictionary<string, int>();
+            keyValuePairs = getList.getdictList;
+
+            foreach (var key in keyValuePairs.Keys)
+            {
+                keyValuePairs[key]--;
+            }
+
+            Database update = new Database();
+            foreach (var pairs in keyValuePairs)
+            {
+                update.updateDatabase(pairs);
+            }
+
+            this.Close();
+            flowLayoutPanel1.Controls.Clear();
+            checkoutList.Clear();
         }
     }
+}
 

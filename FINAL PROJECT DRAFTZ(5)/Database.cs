@@ -165,6 +165,36 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
         }
 
+        public void updateDatabase(KeyValuePair<string, int> keyValuePairs)
+        {
+            if (SQL_SERVER == null )
+            {
+                start();
+            }
+
+            string query = "UPDATE books SET availableCopies = @AvailableCopies WHERE title = @Title";
+  
+            using (MySqlCommand cmd = new MySqlCommand(query, SQL_SERVER))
+            {
+                
+                cmd.Parameters.AddWithValue($"@Title", keyValuePairs.Key);
+                cmd.Parameters.AddWithValue(@"AvailableCopies", keyValuePairs.Value);
+                
+                
+                MessageBox.Show(query);
+                int rowsAffected = cmd.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Update success!");
+                } else
+                {
+                    MessageBox.Show("No rows updated.");
+                }
+            }
+
+        }
+
 
     }
 }

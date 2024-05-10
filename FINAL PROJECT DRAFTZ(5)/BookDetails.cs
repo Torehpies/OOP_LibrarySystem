@@ -14,14 +14,28 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
     public partial class BookDetails : Form
     {
-        public BookDetails()
+        string title;
+        string date;
+        public BookDetails(string title, string date)
         {
             InitializeComponent();
+            this.title = title;
+            this.date = date;
+
+            titleLabel.Text = title;
+            publishedLabel.Text = date;
+
+
+
         }
 
         public void InitializeUI(Book BookContainerData)
         {
+            picture.Image = Image.FromFile(BookContainerData.picturePath);
+            titleLabel.Text = title;
+            publishedLabel.Text = date;
 
+            /*
             picture.Image = Image.FromFile(BookContainerData.picturePath);
             titleLabel.Text = BookContainerData.title;
             publishedLabel.Text = "Published: " + BookContainerData.published;
@@ -37,6 +51,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 BorrowButton.BackColor = Color.White;
                 BorrowButton.Text = "NOT AVAILABLE";
             }
+            */
         }
         private void exitButton_Click(object sender, EventArgs e)
         {

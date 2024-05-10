@@ -15,37 +15,87 @@ namespace FINAL_PROJECT_DRAFTZ_5_
     
 
     public partial class BookContainer : UserControl
-    {
+    { 
         Book DetailsData;
         BookData BookDataInstance = BookData.Instance;
         public event EventHandler ButtonClick;
+        private Library libraryForm;
+        private Checkout checkoutForm;
 
-        private Library parentForm;
+
+        public bool ShowAddButton { get; set; } = true;
+        public bool ShowRemoveButton { get; set; } = true;
 
         public BookContainer(Library parentForm)
         {
             InitializeComponent();
-            this.parentForm = parentForm;
+            this.libraryForm = parentForm;
+            detailsbtn.Text = "Details";
+        }
+
+        public BookContainer(Checkout parentForm)
+        {
+            InitializeComponent();
+            this.checkoutForm = parentForm;
+            detailsbtn.Text = "Remove";
+            addbtn.Visible = false;
         }
 
         public BookContainer()
         {
             InitializeComponent();
+            
         }
 
-        // Event handler for MouseEnter
-        private void MyUserControl_MouseEnter(object sender, EventArgs e)
+        
+        private void InitializeButtons()
         {
-            // Set the visibility of the button to true when the mouse enters the user control
-            borrowBtn.Visible = true;
+            addbtn.Visible = ShowAddButton;
+            detailsbtn.Visible = ShowRemoveButton;
         }
 
-        // Event handler for MouseLeave
-        private void MyUserControl_MouseLeave(object sender, EventArgs e)
+        private void borrowBtn_Click(object sender, EventArgs e)
         {
-            // Set the visibility of the button to false when the mouse leaves the user control
-            borrowBtn.Visible = false;
+            if (this.libraryForm != null)
+            {
+                MessageBox.Show($"The details for this book {Title}");
+                BookDetails bookDetails = new BookDetails(Title, Year);
+                bookDetails.Show();
+
+            } else
+            {
+                checkoutForm.removeCard(this);
+            }
+            
         }
+
+
+
+        
+        static Dictionary<string, int> checkOutList = new Dictionary<string, int>();
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Books addBook = new Books(Title, Year);
+
+            MessageBox.Show($"Bookname: `{Title}` {availCopies} is added to checkout");
+
+
+            bookTitles.Add(Title);
+            checkout.Add(addBook);
+            checkOutList[Title] = availCopies;
+        }
+
+        public Dictionary<string, int> getdictList
+        {
+            get { return checkOutList; }
+        }
+
+        private void bookTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
 
         #region Properties
 
@@ -55,41 +105,13 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private string _ISBN;
         private static List<string> bookTitles = new List<string>();
         private static List<Books> checkout = new List<Books>();
-        private int index;
-
-        private void bookTitle_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void borrowBtn_Click(object sender, EventArgs e)
-        {
-            parentForm.removeCard(this);
-        }
-
-        private static bool checker = true;
-        public static bool Checker
-        {
-            get { return checker; }
-            set { checker = value; }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Books addBook = new Books(Title, Year);
-
-            
-            MessageBox.Show($"Bookname: `{Title}` is added to checkout");
-            bookTitles.Add(Title);
-            checkout.Add(addBook);
-            MessageBox.Show($"Added {Title} to bookTitles. Count: {bookTitles.Count} "); 
-        }
+        private int availCopies;
 
         [Category("Custom Props")]
-        public int Index
+        public int aCopies
         {
-            get { return index; }
-            set {  index = value; }
+            get { return availCopies; }
+            set {  availCopies = value; }
         }
 
         [Category("Custom Props")]
@@ -134,5 +156,19 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         }
 
         #endregion
+
+        // Event handler for MouseEnter
+        private void MyUserControl_MouseEnter(object sender, EventArgs e)
+        {
+            // Set the visibility of the button to true when the mouse enters the user control
+            detailsbtn.Visible = true;
+        }
+
+        // Event handler for MouseLeave
+        private void MyUserControl_MouseLeave(object sender, EventArgs e)
+        {
+            // Set the visibility of the button to false when the mouse leaves the user control
+            detailsbtn.Visible = false;
+        }
     }
 }

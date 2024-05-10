@@ -31,8 +31,8 @@
             bookYear = new Label();
             bookPic = new PictureBox();
             bookTitle = new Label();
-            borrowBtn = new Button();
-            button1 = new Button();
+            detailsbtn = new Button();
+            addbtn = new Button();
             ((System.ComponentModel.ISupportInitialize)bookPic).BeginInit();
             SuspendLayout();
             // 
@@ -68,43 +68,43 @@
             bookTitle.Text = "How to Write a Lot";
             bookTitle.Click += bookTitle_Click;
             // 
-            // borrowBtn
+            // detailsbtn
             // 
-            borrowBtn.BackColor = Color.FromArgb(38, 49, 89);
-            borrowBtn.Cursor = Cursors.Hand;
-            borrowBtn.FlatStyle = FlatStyle.Flat;
-            borrowBtn.Font = new Font("Franklin Gothic Book", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            borrowBtn.ForeColor = Color.FromArgb(255, 251, 235);
-            borrowBtn.Location = new Point(3, 212);
-            borrowBtn.Name = "borrowBtn";
-            borrowBtn.Size = new Size(88, 64);
-            borrowBtn.TabIndex = 20;
-            borrowBtn.Text = "DETAILS";
-            borrowBtn.UseVisualStyleBackColor = false;
-            borrowBtn.Click += borrowBtn_Click;
+            detailsbtn.BackColor = Color.FromArgb(38, 49, 89);
+            detailsbtn.Cursor = Cursors.Hand;
+            detailsbtn.FlatStyle = FlatStyle.Flat;
+            detailsbtn.Font = new Font("Franklin Gothic Book", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            detailsbtn.ForeColor = Color.FromArgb(255, 251, 235);
+            detailsbtn.Location = new Point(3, 212);
+            detailsbtn.Name = "detailsbtn";
+            detailsbtn.Size = new Size(88, 64);
+            detailsbtn.TabIndex = 20;
+            detailsbtn.Text = "DETAILS";
+            detailsbtn.UseVisualStyleBackColor = false;
+            detailsbtn.Click += borrowBtn_Click;
             // 
-            // button1
+            // addbtn
             // 
-            button1.BackColor = Color.FromArgb(38, 49, 89);
-            button1.Cursor = Cursors.Hand;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Franklin Gothic Book", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.FromArgb(255, 251, 235);
-            button1.Location = new Point(97, 212);
-            button1.Name = "button1";
-            button1.Size = new Size(92, 64);
-            button1.TabIndex = 21;
-            button1.Text = "+";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            addbtn.BackColor = Color.FromArgb(38, 49, 89);
+            addbtn.Cursor = Cursors.Hand;
+            addbtn.FlatStyle = FlatStyle.Flat;
+            addbtn.Font = new Font("Franklin Gothic Book", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            addbtn.ForeColor = Color.FromArgb(255, 251, 235);
+            addbtn.Location = new Point(97, 212);
+            addbtn.Name = "addbtn";
+            addbtn.Size = new Size(92, 64);
+            addbtn.TabIndex = 21;
+            addbtn.Text = "+";
+            addbtn.UseVisualStyleBackColor = false;
+            addbtn.Click += button1_Click;
             // 
             // BookContainer
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Ivory;
-            Controls.Add(button1);
-            Controls.Add(borrowBtn);
+            Controls.Add(addbtn);
+            Controls.Add(detailsbtn);
             Controls.Add(bookYear);
             Controls.Add(bookPic);
             Controls.Add(bookTitle);
@@ -120,7 +120,7 @@
         private Label bookYear;
         private PictureBox bookPic;
         private Label bookTitle;
-        private Button borrowBtn;
-        private Button button1;
+        private Button detailsbtn;
+        private Button addbtn;
     }
 }

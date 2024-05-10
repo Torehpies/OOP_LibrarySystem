@@ -16,14 +16,15 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         public Library()
         {
             InitializeComponent();
+            
+
 
 
         }
-
+        
         public void removeCard(BookContainer userControl)
         {
             flowLayoutPanel1.Controls.Remove(userControl);
-
         }
 
         private void Library_Load(object sender, EventArgs e)
@@ -43,9 +44,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         }
 
 
+
+        
         private void populateItems()
         {
-            BookContainer.Checker = true;
+            
+            
 
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.Controls.Clear();
@@ -65,14 +69,17 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                     {
                         foreach (DataRow row in data.Rows)
                         {
-                            listItems[i] = new BookContainer(this);
+                            if (Convert.ToInt32(row["availableCopies"]) > 0)
+                            {
+                                listItems[i] = new BookContainer(this);
 
-                            listItems[i].Title = row["title"].ToString();
-                            listItems[i].Year = row["published"].ToString();
-                            listItems[i].Index = index;
-                            index++;
+                                listItems[i].Title = row["title"].ToString();
+                                listItems[i].Year = row["published"].ToString();
+                                listItems[i].aCopies = Convert.ToInt32(row["availableCopies"]);
 
-                            flowLayoutPanel1.Controls.Add(listItems[i]);
+                                flowLayoutPanel1.Controls.Add(listItems[i]);
+                            }
+                            
 
 
 
@@ -104,12 +111,15 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                     {
                         foreach (DataRow row in data.Rows)
                         {
-                            listItems[i] = new BookContainer(this);
+                            if (Convert.ToInt32(row["availableCopies"]) > 0)
+                            {
+                                listItems[i] = new BookContainer(this);
 
-                            listItems[i].Title = row["title"].ToString();
-                            listItems[i].Year = row["published"].ToString();
-                            listItems[i].Index = index;
-                            index++;
+                                listItems[i].Title = row["title"].ToString();
+                                listItems[i].Year = row["published"].ToString();
+                                listItems[i].aCopies = Convert.ToInt32(row["availableCopies"]);
+                            }
+                            
 
 
                             flowLayoutPanel1.Controls.Add(listItems[i]);
@@ -159,14 +169,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 return;
             }
             
-            string message = "Items in checkout list: ";
-            foreach (string title in bookContainer.checkoutTitles)
-            {
-                message += $"\n - {title}";
-            }
-            MessageBox.Show(message);
-
-           
             Checkout checkout = new Checkout();
             checkout.ShowDialog();
 
