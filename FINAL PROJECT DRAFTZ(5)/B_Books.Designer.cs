@@ -36,11 +36,14 @@
             columnHeader4 = new ColumnHeader();
             textBox1 = new TextBox();
             button1 = new Button();
+            columnHeader8 = new ColumnHeader();
+            columnHeader9 = new ColumnHeader();
             SuspendLayout();
             // 
             // listView1
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader6, columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
+            listView1.BackColor = SystemColors.Control;
+            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader6, columnHeader8, columnHeader9, columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
             listView1.GridLines = true;
             listView1.Location = new Point(0, 67);
             listView1.Name = "listView1";
@@ -52,26 +55,30 @@
             // 
             // columnHeader6
             // 
-            columnHeader6.Text = "BookID";
+            columnHeader6.Text = "ISBN";
             columnHeader6.Width = 220;
             // 
             // columnHeader1
             // 
-            columnHeader1.Text = "Borrower ID";
+            columnHeader1.DisplayIndex = 3;
+            columnHeader1.Text = "Name";
             columnHeader1.Width = 220;
             // 
             // columnHeader2
             // 
+            columnHeader2.DisplayIndex = 4;
             columnHeader2.Text = "Borrow Date";
             columnHeader2.Width = 180;
             // 
             // columnHeader3
             // 
+            columnHeader3.DisplayIndex = 6;
             columnHeader3.Text = "Return Date";
             columnHeader3.Width = 160;
             // 
             // columnHeader4
             // 
+            columnHeader4.DisplayIndex = 5;
             columnHeader4.Text = "Due Date";
             columnHeader4.Width = 170;
             // 
@@ -93,10 +100,21 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // columnHeader8
+            // 
+            columnHeader8.Text = "Title";
+            columnHeader8.Width = 200;
+            // 
+            // columnHeader9
+            // 
+            columnHeader9.Text = "Author";
+            columnHeader9.Width = 200;
+            // 
             // B_Books
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaption;
             Controls.Add(button1);
             Controls.Add(textBox1);
             Controls.Add(listView1);
@@ -120,5 +138,7 @@
         private ColumnHeader columnHeader7;
         private TextBox textBox1;
         private Button button1;
+        private ColumnHeader columnHeader8;
+        private ColumnHeader columnHeader9;
     }
 }
