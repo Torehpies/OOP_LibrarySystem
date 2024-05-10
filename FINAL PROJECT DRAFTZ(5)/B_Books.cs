@@ -25,9 +25,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void LoadUsersData()
         {
-            MySqlConnection con = new MySqlConnection("server=127.0.0.1; user=root; database=test; password=");
+            MySqlConnection con = new MySqlConnection("server=127.0.0.1; user=root; database=test; password=;Convert Zero Datetime=True");
             con.Open();
-            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT bookId, borrowerId, borrowDate, returnDate,dueDate FROM borrowedbooks", con);
+            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM borrowedbooks", con);
 
 
             // Right side table
@@ -52,10 +52,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 listView1.Items.Add(listitem);
             }
         }
-
-       
-
-        
 
         private void UpdateListView(DataTable dataTable)
         {

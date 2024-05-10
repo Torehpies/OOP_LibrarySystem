@@ -13,7 +13,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
     public partial class MainForm : Form
     {
         private Library libPane;
-        private BorrowedList borrowPane;
+        private B_Books borrowPane;
         private BookReturn bookreturnPane;
         private BookInventory bookinventPane;
 
@@ -30,7 +30,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             InitializeComponent();
 
             libPane = new Library() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
-            borrowPane = new BorrowedList() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
+            borrowPane = new B_Books() {/*TopLevel = false, TopMost = true,*/ Dock = DockStyle.Fill };
             bookreturnPane = new BookReturn() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
             bookinventPane = new BookInventory() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
 
