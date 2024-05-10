@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,14 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 {
     public partial class Checkout : Form
     {
+        List<Books> checkoutList = new List<Books>();
+        Dictionary<string, int> keyValuePairs = new Dictionary<string, int>();
+        BookContainer getList = new BookContainer();
 
         public Checkout()
         {
             InitializeComponent();
+            keyValuePairs = getList.getdictList;
 
 
         }
@@ -27,8 +32,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             populatecheckout();
         }
 
-        List<Books> checkoutList = new List<Books>();
-        Dictionary<string, int> keyValuePairs = new Dictionary<string, int>();
+        
+        
+
         public void removeCard(BookContainer userControl)
         {
             string titleToRemove = userControl.Title;
@@ -38,6 +44,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 MessageBox.Show($"Removed from checkout book: {titleToRemove}");
                 checkoutList.Remove(bookToRemove);
                 keyValuePairs.Remove(bookToRemove.Title);
+                MessageBox.Show($"Removed: {bookToRemove.Title}");
+                MessageBox.Show($"Dict count: {keyValuePairs.Count}");
             }
             flowLayoutPanel1.Controls.Remove(userControl);
         }
@@ -50,7 +58,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             flowLayoutPanel1.Controls.Clear();
 
             BookContainer retrieveCheckout = new BookContainer();
-
             checkoutList = retrieveCheckout.getCheckout;
 
             foreach (Books book in checkoutList)
@@ -77,9 +84,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         {
             if ( checkoutList.Count > 0)
             {
-                BookContainer getList = new BookContainer();
-                keyValuePairs = getList.getdictList;
-
                 foreach (var key in keyValuePairs.Keys)
                 {
                     keyValuePairs[key]--;
@@ -91,14 +95,29 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                     update.updateDatabase(pairs);
                 }
 
+                // Di ako sure dito kung ganito mag refresh
+                if (Library.Instance != null)
+                {
+                    Library.Instance.populateItems();
+
+                }
+                
+
+
                 this.Close();
                 flowLayoutPanel1.Controls.Clear();
                 checkoutList.Clear();
+
+                
+
+
 
             } else
             {
                 MessageBox.Show("Nothing to checkout");
                 this.Close();
+
+                
             }
             
         }

@@ -13,14 +13,14 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 {
     public partial class Library : Form
     {
+        public static Library Instance { get; private set; }
         public Library()
         {
             InitializeComponent();
-            
-
-
-
+            Instance = this;
         }
+
+        
         
         public void removeCard(BookContainer userControl)
         {
@@ -46,11 +46,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
 
         
-        private void populateItems()
+        public void populateItems()
         {
-            
-            
-
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.Controls.Clear();
 
@@ -171,9 +168,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             
             Checkout checkout = new Checkout();
             checkout.ShowDialog();
+        }
 
-            
-
+        public void refresh()
+        {
+            this.Refresh();
         }
     }
 }
