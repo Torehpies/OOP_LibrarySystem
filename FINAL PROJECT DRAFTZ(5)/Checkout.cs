@@ -28,6 +28,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         }
 
         List<Books> checkoutList = new List<Books>();
+        Dictionary<string, int> keyValuePairs = new Dictionary<string, int>();
         public void removeCard(BookContainer userControl)
         {
             string titleToRemove = userControl.Title;
@@ -36,6 +37,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             {
                 MessageBox.Show($"Removed from checkout book: {titleToRemove}");
                 checkoutList.Remove(bookToRemove);
+                keyValuePairs.Remove(bookToRemove.Title);
             }
             flowLayoutPanel1.Controls.Remove(userControl);
         }
@@ -73,24 +75,32 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void button1_Click(object sender, EventArgs e)
         {
-            BookContainer getList = new BookContainer();
-            Dictionary<string, int> keyValuePairs = new Dictionary<string, int>();
-            keyValuePairs = getList.getdictList;
-
-            foreach (var key in keyValuePairs.Keys)
+            if ( checkoutList.Count > 0)
             {
-                keyValuePairs[key]--;
-            }
+                BookContainer getList = new BookContainer();
+                keyValuePairs = getList.getdictList;
 
-            Database update = new Database();
-            foreach (var pairs in keyValuePairs)
+                foreach (var key in keyValuePairs.Keys)
+                {
+                    keyValuePairs[key]--;
+                }
+
+                Database update = new Database();
+                foreach (var pairs in keyValuePairs)
+                {
+                    update.updateDatabase(pairs);
+                }
+
+                this.Close();
+                flowLayoutPanel1.Controls.Clear();
+                checkoutList.Clear();
+
+            } else
             {
-                update.updateDatabase(pairs);
+                MessageBox.Show("Nothing to checkout");
+                this.Close();
             }
-
-            this.Close();
-            flowLayoutPanel1.Controls.Clear();
-            checkoutList.Clear();
+            
         }
     }
 }
