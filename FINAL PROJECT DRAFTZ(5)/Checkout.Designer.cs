@@ -1,6 +1,6 @@
-namespace FINAL_PROJECT_DRAFTZ_5_
+﻿namespace FINAL_PROJECT_DRAFTZ_5_
 {
-    partial class BookInventory
+    partial class Checkout
     {
         /// <summary>
         /// Required designer variable.
@@ -28,57 +28,44 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             button1 = new Button();
-            AddBookPanelMain = new Panel();
             SuspendLayout();
             // 
-            // panel1
+            // flowLayoutPanel1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 27.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(497, 49);
-            label1.Name = "label1";
-            label1.Size = new Size(328, 50);
-            label1.TabIndex = 0;
-            label1.Text = "BOOK RETURNING";
+            flowLayoutPanel1.Location = new Point(1, 2);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(799, 419);
+            flowLayoutPanel1.TabIndex = 0;
+            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
             // button1
             // 
-            button1.Location = new Point(30, 223);
+            button1.Location = new Point(713, 427);
             button1.Name = "button1";
-            button1.Size = new Size(218, 62);
+            button1.Size = new Size(75, 23);
             button1.TabIndex = 1;
-            button1.Text = "ADD BOOK";
+            button1.Text = "Checkout";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click_1;
+            button1.Click += button1_Click;
             // 
-            // AddBookPanelMain
-            // 
-            AddBookPanelMain.Location = new Point(266, 128);
-            AddBookPanelMain.Name = "AddBookPanelMain";
-            AddBookPanelMain.Size = new Size(773, 533);
-            AddBookPanelMain.TabIndex = 2;
-            AddBookPanelMain.Paint += AddBookPanelMain_Paint;
-            // 
-            // BookInventory
+            // Checkout
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1098, 673);
-            Controls.Add(AddBookPanelMain);
+            ClientSize = new Size(800, 450);
             Controls.Add(button1);
-            Controls.Add(label1);
-            Name = "BookInventory";
-            Text = "BookInventory";
-            Load += BookInventory_Load;
+            Controls.Add(flowLayoutPanel1);
+            Name = "Checkout";
+            Text = "Form7";
+            Load += Checkout_Load;
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Label label1;
+        private FlowLayoutPanel flowLayoutPanel1;
         private Button button1;
-        private Panel AddBookPanelMain;
     }
 }

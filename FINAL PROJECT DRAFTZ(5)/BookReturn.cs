@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Text;
 
 namespace FINAL_PROJECT_DRAFTZ_5_
 {
@@ -17,9 +18,25 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void BookReturn_Load(object sender, EventArgs e)
         {
 
         }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
     }
 }

@@ -12,9 +12,18 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 {
     public partial class LoginForm : Form
     {
+        public bool noAccount = false;
+      
         public LoginForm()
         {
             InitializeComponent();
+            containerPanel.Controls.Add(new AdminLogin() { TopLevel = false, TopMost = true, Dock = DockStyle.None });
+            containerPanel.Controls.Add(new AddAccount() { TopLevel = false, TopMost = true, Dock = DockStyle.None });
+            if (!LoginDatabase.isUsersEmpty())
+            {
+                disableLogin();
+                noAccount = true;
+            }
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
@@ -22,52 +31,60 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void disableLogin()
         {
-
+            createAccount.Location = new System.Drawing.Point(707, 320);
+            loginButton.Visible = false;
+            PasstBox.Visible = false;
+            LogintBox.Visible = false;
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void enableLogin()
         {
-
+            createAccount.Location = new System.Drawing.Point(707, 415);
+            loginButton.Visible = true;
+            PasstBox.Visible = true;
+            LogintBox.Visible = true;
+            
         }
 
-        private void PasstBox_TextChanged(object sender, EventArgs e)
+        private void loginButton_Click(object sender, EventArgs e)
         {
+            if (LogintBox.Text.Length == 0 || PasstBox.Text.Length == 0)
+            {
+                MessageBox.Show("Please fill in the entries");
+                return;
+            }
 
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
             String username = LogintBox.Text;
             String password = PasstBox.Text;
 
-            Database loginChecker = new Database();
-
-            if (loginChecker.checkLogin(username, password))
+            if (LoginDatabase.checkLogin(username, password, false))
             {
                 this.Hide();
-                LandingForm success = new LandingForm();
-                success.ShowDialog();
-            } else
-            {
-                MessageBox.Show("No Account match in our Database");
+                MainForm mainForm = new MainForm();
+                mainForm.ShowDialog();
+                this.Close();
             }
+            else
+            {
+                MessageBox.Show("Wrong username or password");
+            }
+        }
+
+        private void createAcc_Click(object sender, EventArgs e)
+        {
+            containerPanel.Visible = true;
+            if (noAccount)
+            {
+                containerPanel.Controls[1].Show();
+                containerPanel.Controls[0].Hide();
+                enableLogin();
+                noAccount = false;
+                return;
+            }
+            containerPanel.Controls[0].Show();
+            containerPanel.Controls[1].Hide();
         }
     }
 }

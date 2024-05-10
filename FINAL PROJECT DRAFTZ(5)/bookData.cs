@@ -21,8 +21,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         //"C:\\Users\\Salupado\\source\\repos\\OOP_LibrarySystem\\FINAL PROJECT DRAFTZ(5)\\Resources\\";
 
-        static string picturePath = "C:\\Users\\ADMIN\\Source\\Repos\\OOP_LibrarySystem\\FINAL PROJECT DRAFTZ(5)\\Resources\\";
-
+        static string picturePath = "F:\\LIB\\FINAL PROJECT DRAFTZ(5)\\Resources\\";
+      
         private Book[] bookList;
         private BookData()
         {

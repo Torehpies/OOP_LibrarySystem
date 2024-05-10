@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Text;
 
 namespace FINAL_PROJECT_DRAFTZ_5_
 {
@@ -40,6 +41,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             AddBookPanelMain.Controls.Clear();
             AddBookPanelMain.Controls.Add(abDashboard);
             abDashboard.Dock = DockStyle.Fill;
+        }
+
+        private void BookInventory_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

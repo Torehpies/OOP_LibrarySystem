@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace FINAL_PROJECT_DRAFTZ_5_
 {
-    internal static class LandingFormReference
+    internal interface FormProperties
     {
-        public static LandingForm Reference { get; set; }   
+        void removeCard();
     }
 }
