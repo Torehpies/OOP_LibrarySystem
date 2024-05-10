@@ -118,6 +118,87 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             SQL_SERVER.Close();
         }
 
+        public void updateDatabase(KeyValuePair<string, int> keyValuePairs)
+        {
+            if (SQL_SERVER == null)
+            {
+                start();
+            }
+
+            string query = "UPDATE books SET availableCopies = @AvailableCopies WHERE title = @Title";
+
+            using (MySqlCommand cmd = new MySqlCommand(query, SQL_SERVER))
+            {
+
+                cmd.Parameters.AddWithValue($"@Title", keyValuePairs.Key);
+                cmd.Parameters.AddWithValue(@"AvailableCopies", keyValuePairs.Value);
+
+
+                MessageBox.Show(query);
+                int rowsAffected = cmd.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Update success!");
+                }
+                else
+                {
+                    MessageBox.Show("No rows updated.");
+                }
+            }
+
+        }
+
+        public DataTable retrieveData()
+        {
+            if (SQL_SERVER == null)
+            {
+                start();
+            }
+
+
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM books", SQL_SERVER);
+            try
+            {
+                using (MySqlDataAdapter sda = new MySqlDataAdapter(cmd))
+                {
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    return dt;
+                }
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public DataTable retrieveData(string searchword)
+        {
+            if (SQL_SERVER == null)
+            {
+                start();
+            }
+
+            searchword = searchword + '%';
+
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM books WHERE title LIKE @title OR isbn LIKE @isbn", SQL_SERVER);
+            cmd.Parameters.AddWithValue("@title", searchword);
+            cmd.Parameters.AddWithValue("@isbn", searchword);
+            try
+            {
+                using (MySqlDataAdapter sda = new MySqlDataAdapter(cmd))
+                {
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    return dt;
+                }
+            }
+            catch
+            {
+                throw;
+            }
+        }
 
     }
 }

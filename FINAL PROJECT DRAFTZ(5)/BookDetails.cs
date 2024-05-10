@@ -59,11 +59,13 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         }
 
         private void BorrowButton_Click(object sender, EventArgs e)
-        {
+        { 
+            /*
             FormLogin login = new FormLogin();
             login.TopMost = true;
             login.ShowDialog();
             this.Close();
+            */
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
