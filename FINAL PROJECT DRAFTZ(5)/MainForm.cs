@@ -13,24 +13,16 @@ namespace FINAL_PROJECT_DRAFTZ_5_
     public partial class MainForm : Form
     {
         private Library libPane;
-        private B_Books borrowPane;
+        private BorrowedList borrowPane;
         private BookReturn bookreturnPane;
         private BookInventory bookinventPane;
 
-        private void addUserControl(UserControl userControl)
-        {
-            userControl.Dock = DockStyle.Fill;
-            container_pnl.Controls.Clear();
-            container_pnl.Controls.Add(userControl);
-            userControl.BringToFront();
-
-        }
         public MainForm()
         {
             InitializeComponent();
 
             libPane = new Library() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
-            borrowPane = new B_Books() {/*TopLevel = false, TopMost = true,*/ Dock = DockStyle.Fill };
+            borrowPane = new BorrowedList() {TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
             bookreturnPane = new BookReturn() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
             bookinventPane = new BookInventory() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
 
@@ -88,8 +80,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private void borrower_btn_Click(object sender, EventArgs e)
         {
 
-            B_Books b_Books = new B_Books();   
-            addUserControl(b_Books);
             library_btn.BackColor = ColorTranslator.FromHtml("#4A4E69");
             borrower_btn.BackColor = ColorTranslator.FromHtml("#F2E9E4");
             bookreturn_btn.BackColor = ColorTranslator.FromHtml("#4A4E69");
@@ -101,7 +91,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             bookinvent_btn.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
 
             libPane.Hide();
-            borrowPane.Hide();
+            borrowPane.Show();
             bookreturnPane.Hide();
             bookinventPane.Hide();
         }

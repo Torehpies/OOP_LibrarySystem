@@ -105,6 +105,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
 
             // di ko alam kung bakit ganyan. wag nyoko tanungin
+            //in the name of the father, the son, the holy spirit, amen
+            //why
             string query = $"SELECT bb.bookId, bb.borrowerId, " +
                  $"DATE_FORMAT(bb.borrowDate, '%Y-%m-%d %H:%i:%s') AS borrowDate, " +
                  $"DATE_FORMAT(bb.returnDate, '%Y-%m-%d %H:%i:%s') AS returnDate, " +

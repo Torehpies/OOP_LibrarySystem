@@ -47,17 +47,16 @@
             main_pnl.Controls.Add(navigation_pnl);
             main_pnl.Location = new Point(0, 0);
             main_pnl.Name = "main_pnl";
-            main_pnl.Size = new Size(1186, 761);
+            main_pnl.Size = new Size(1186, 749);
             main_pnl.TabIndex = 0;
             main_pnl.Paint += panel1_Paint;
             // 
             // container_pnl
             // 
-            container_pnl.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            container_pnl.Location = new Point(15, 120);
+            container_pnl.Location = new Point(27, 126);
             container_pnl.Margin = new Padding(5);
             container_pnl.Name = "container_pnl";
-            container_pnl.Size = new Size(1160, 641);
+            container_pnl.Size = new Size(1130, 600);
             container_pnl.TabIndex = 1;
             // 
             // navigation_pnl
@@ -146,7 +145,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1184, 761);
+            ClientSize = new Size(1184, 749);
             Controls.Add(main_pnl);
             Name = "MainForm";
             Text = "MainForm";

@@ -28,34 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            b_Books1 = new B_Books();
             SuspendLayout();
             // 
-            // label1
+            // b_Books1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(392, 301);
-            label1.Name = "label1";
-            label1.Size = new Size(258, 45);
-            label1.TabIndex = 0;
-            label1.Text = "BORROWED LIST";
-            label1.Click += label1_Click;
+            b_Books1.BackColor = SystemColors.ActiveCaption;
+            b_Books1.Dock = DockStyle.Fill;
+            b_Books1.Location = new Point(0, 0);
+            b_Books1.Margin = new Padding(2, 2, 2, 2);
+            b_Books1.Name = "b_Books1";
+            b_Books1.Size = new Size(1130, 600);
+            b_Books1.TabIndex = 0;
             // 
             // BorrowedList
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1058, 632);
-            Controls.Add(label1);
+            ClientSize = new Size(1130, 600);
+            Controls.Add(b_Books1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "BorrowedList";
             Text = "BorrowedList";
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
+        private B_Books b_Books1;
     }
 }
