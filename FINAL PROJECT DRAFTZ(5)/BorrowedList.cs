@@ -10,15 +10,14 @@ using System.Windows.Forms;
 
 namespace FINAL_PROJECT_DRAFTZ_5_
 {
-    public partial class BookReturningForm : Form
+    public partial class BorrowedList : Form
     {
-        public BookReturningForm()
+        public BorrowedList()
         {
             InitializeComponent();
-
         }
 
-        private void BookReturningForm_Load(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

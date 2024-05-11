@@ -203,6 +203,16 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap voox_logo {
+            get {
+                object obj = ResourceManager.GetObject("voox_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap what_i_wish_i_know {
             get {
                 object obj = ResourceManager.GetObject("what i wish i know", resourceCulture);

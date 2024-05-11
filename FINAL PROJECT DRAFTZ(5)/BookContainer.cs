@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Org.BouncyCastle.Pkix;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,73 +12,163 @@ using static System.Windows.Forms.DataFormats;
 
 namespace FINAL_PROJECT_DRAFTZ_5_
 {
+    
+
     public partial class BookContainer : UserControl
-    {
+    { 
         Book DetailsData;
         BookData BookDataInstance = BookData.Instance;
         public event EventHandler ButtonClick;
-        
+        private Library libraryForm;
+        private Checkout checkoutForm;
+
+
+        public bool ShowAddButton { get; set; } = true;
+        public bool ShowRemoveButton { get; set; } = true;
+
+        public BookContainer(Library parentForm)
+        {
+            InitializeComponent();
+            this.libraryForm = parentForm;
+            detailsbtn.Text = "Details";
+        }
+
+        public BookContainer(Checkout parentForm)
+        {
+            InitializeComponent();
+            this.checkoutForm = parentForm;
+            detailsbtn.Text = "Remove";
+            addbtn.Visible = false;
+        }
+
         public BookContainer()
         {
             InitializeComponent();
-            BookData.Instance.BookListChanged += BookListChangedHandler;
-            //MouseEnter += MyUserControl_MouseEnter;
-            //MouseLeave += MyUserControl_MouseLeave;
+            
         }
-        private void BookListChangedHandler(object sender, int index)
+
+        
+        private void InitializeButtons()
         {
-            if (BookData.Instance.BookList[index].title == DetailsData.title) 
+            addbtn.Visible = ShowAddButton;
+            detailsbtn.Visible = ShowRemoveButton;
+        }
+
+        private void borrowBtn_Click(object sender, EventArgs e)
+        {
+            if (this.libraryForm != null)
             {
-                if (BookData.Instance.BookList[index].status == Book.BookType.Borrowed)
-                {
-                    borrowBtn.Text = "SEE DETAILS";
-                }
-                else
-                {
-                    borrowBtn.Text = "BORROW";
-                }
-            }
-              
-        }
-        public void InitializeUI(Book BookContainerData)
-        {
-            DetailsData = BookContainerData;
-            bookPic.Image = Image.FromFile(BookContainerData.picturePath);
-            bookTitle.Text = BookContainerData.title;
-            bookYear.Text = BookContainerData.published;
-            if (BookContainerData.status == Book.BookType.Borrowed)
+                MessageBox.Show($"The details for this book {Title}");
+                BookDetails bookDetails = new BookDetails(Title, Year);
+                bookDetails.Show();
+
+            } else
             {
-                borrowBtn.Text = "SEE DETAILS";
+                checkoutForm.removeCard(this);
             }
+            
         }
 
 
-        private void Book1_Click(object sender, EventArgs e)
+
+        
+        static Dictionary<string, int> checkOutList = new Dictionary<string, int>();
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Books addBook = new Books(Title, Year);
+
+            MessageBox.Show($"Bookname: `{Title}` {availCopies} is added to checkout");
+
+
+            bookTitles.Add(Title);
+            checkout.Add(addBook);
+            checkOutList[Title] = availCopies;
+        }
+
+        public Dictionary<string, int> getdictList
+        {
+            get { return checkOutList; }
+        }
+
+        private void bookTitle_Click(object sender, EventArgs e)
         {
 
         }
+
+
+
+        #region Properties
+
+        private string _title;
+        private string _year;
+        private Image _icon;
+        private string _ISBN;
+        private static List<string> bookTitles = new List<string>();
+        private static List<Books> checkout = new List<Books>();
+        private int availCopies;
+
+        [Category("Custom Props")]
+        public int aCopies
+        {
+            get { return availCopies; }
+            set {  availCopies = value; }
+        }
+
+        [Category("Custom Props")]
+        public List<Books> getCheckout
+        {
+            get { return checkout; }
+            set { checkout = value; }
+        }
+
+        [Category("Custom Props")]
+        public List<string> checkoutTitles
+        {
+            get { return bookTitles; }
+            set {  bookTitles = value; }
+        }
+
+        [Category("Custom Props")]
+        public string Title
+        {
+            get { return _title; }
+            set { _title = value; bookTitle.Text = value; }
+        }
+
+        [Category("Custom Props")]
+        public string Year
+        {
+            get { return _year; }
+            set { _year = value; bookYear.Text = value; }
+        }
+
+        public string ISBN
+        {
+            get { return _ISBN; }
+            set { _ISBN = value; }
+        }
+
+        [Category("Custom Props")]
+        public Image icon
+        {
+            get { return _icon; }
+            set { _icon = value; }
+        }
+
+        #endregion
 
         // Event handler for MouseEnter
         private void MyUserControl_MouseEnter(object sender, EventArgs e)
         {
             // Set the visibility of the button to true when the mouse enters the user control
-            borrowBtn.Visible = true;
+            detailsbtn.Visible = true;
         }
 
         // Event handler for MouseLeave
         private void MyUserControl_MouseLeave(object sender, EventArgs e)
         {
             // Set the visibility of the button to false when the mouse leaves the user control
-            borrowBtn.Visible = false;
-        }
-
-        private void borrowBtn_Click(object sender, EventArgs e)
-        {
-            BookDetails bookDetails = new BookDetails();
-            bookDetails.InitializeUI(DetailsData);
-            
-            bookDetails.ShowDialog();
-
+            detailsbtn.Visible = false;
         }
     }
 }
