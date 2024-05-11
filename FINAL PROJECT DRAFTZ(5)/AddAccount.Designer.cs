@@ -44,12 +44,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             Usertbox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             Usertbox1.BorderStyle = BorderStyle.None;
             Usertbox1.Font = new Font("Quicksand", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            Usertbox1.Location = new Point(6, 44);
+            Usertbox1.Location = new Point(3, 44);
             Usertbox1.Margin = new Padding(0);
-            Usertbox1.MinimumSize = new Size(258, 32);
+            Usertbox1.MinimumSize = new Size(258, 25);
             Usertbox1.Name = "Usertbox1";
             Usertbox1.PlaceholderText = "Username";
-            Usertbox1.Size = new Size(299, 32);
+            Usertbox1.Size = new Size(299, 25);
             Usertbox1.TabIndex = 0;
             // 
             // passwordtbox
@@ -57,12 +57,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             passwordtbox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             passwordtbox.BorderStyle = BorderStyle.None;
             passwordtbox.Font = new Font("Quicksand", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            passwordtbox.Location = new Point(6, 80);
+            passwordtbox.Location = new Point(3, 76);
             passwordtbox.Margin = new Padding(0);
-            passwordtbox.MinimumSize = new Size(258, 32);
+            passwordtbox.MinimumSize = new Size(258, 25);
             passwordtbox.Name = "passwordtbox";
             passwordtbox.PlaceholderText = "Password";
-            passwordtbox.Size = new Size(299, 32);
+            passwordtbox.Size = new Size(299, 25);
             passwordtbox.TabIndex = 1;
             passwordtbox.UseSystemPasswordChar = true;
             // 
@@ -71,12 +71,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             passwordtbox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             passwordtbox1.BorderStyle = BorderStyle.None;
             passwordtbox1.Font = new Font("Quicksand", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            passwordtbox1.Location = new Point(6, 116);
+            passwordtbox1.Location = new Point(3, 109);
             passwordtbox1.Margin = new Padding(0);
-            passwordtbox1.MinimumSize = new Size(258, 32);
+            passwordtbox1.MinimumSize = new Size(258, 25);
             passwordtbox1.Name = "passwordtbox1";
             passwordtbox1.PlaceholderText = "Confirm Password";
-            passwordtbox1.Size = new Size(299, 32);
+            passwordtbox1.Size = new Size(299, 25);
             passwordtbox1.TabIndex = 2;
             passwordtbox1.UseSystemPasswordChar = true;
             // 
@@ -91,7 +91,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Quicksand", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.FromArgb(242, 233, 228);
-            button1.Location = new Point(80, 190);
+            button1.Location = new Point(77, 190);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(150, 30);
@@ -107,7 +107,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             accountType.Font = new Font("Quicksand", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             accountType.FormattingEnabled = true;
             accountType.Items.AddRange(new object[] { "Admin", "Standard" });
-            accountType.Location = new Point(6, 154);
+            accountType.Location = new Point(4, 140);
+            accountType.MinimumSize = new Size(121, 0);
             accountType.Name = "accountType";
             accountType.Size = new Size(121, 31);
             accountType.TabIndex = 3;
@@ -134,7 +135,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             cancelButton.FlatStyle = FlatStyle.Flat;
             cancelButton.Font = new Font("Quicksand", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             cancelButton.ForeColor = Color.FromArgb(34, 34, 59);
-            cancelButton.Location = new Point(80, 221);
+            cancelButton.Location = new Point(77, 221);
             cancelButton.Margin = new Padding(2);
             cancelButton.Name = "cancelButton";
             cancelButton.Size = new Size(150, 30);
