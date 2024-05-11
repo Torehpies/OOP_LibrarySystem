@@ -22,7 +22,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             InitializeComponent();
 
             Region = Region.FromHrgn(RoundEdge.CreateRoundRectRgn(0,0,Width,Height,30,30));
-            container_pnl.Region = Region.FromHrgn(RoundEdge.CreateRoundRectRgn(0, 0, container_pnl.Width, container_pnl.Height, 30, 30));
 
             libPane = new Library() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
             borrowPane = new BorrowedList() {TopLevel = false, TopMost = true, Dock = DockStyle.Fill };

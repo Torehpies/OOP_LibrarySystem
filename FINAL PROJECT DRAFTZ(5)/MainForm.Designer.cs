@@ -53,10 +53,10 @@
             // 
             // container_pnl
             // 
-            container_pnl.Location = new Point(27, 90);
+            container_pnl.Location = new Point(0, 67);
             container_pnl.Margin = new Padding(5);
             container_pnl.Name = "container_pnl";
-            container_pnl.Size = new Size(1130, 590);
+            container_pnl.Size = new Size(1186, 633);
             container_pnl.TabIndex = 1;
             // 
             // navigation_pnl

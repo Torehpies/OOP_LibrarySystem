@@ -19,6 +19,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         public B_Books()
         {
             InitializeComponent();
+            listView1.Region = Region.FromHrgn(RoundEdge.CreateRoundRectRgn(0, 0, listView1.Width, listView1.Height, 30, 30));
             originalDataTable = new DataTable();
             LoadUsersData();
         }

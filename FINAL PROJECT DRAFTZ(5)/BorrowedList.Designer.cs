@@ -37,7 +37,7 @@
             b_Books1.Font = new Font("Quicksand", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             b_Books1.Location = new Point(0, 0);
             b_Books1.Name = "b_Books1";
-            b_Books1.Size = new Size(1130, 600);
+            b_Books1.Size = new Size(1186, 633);
             b_Books1.TabIndex = 0;
             // 
             // BorrowedList

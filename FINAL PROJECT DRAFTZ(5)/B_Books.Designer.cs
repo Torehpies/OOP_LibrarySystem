@@ -47,7 +47,7 @@
             listView1.BorderStyle = BorderStyle.None;
             listView1.Columns.AddRange(new ColumnHeader[] { columnHeader6, columnHeader8, columnHeader9, columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
             listView1.GridLines = true;
-            listView1.Location = new Point(14, 68);
+            listView1.Location = new Point(41, 93);
             listView1.Name = "listView1";
             listView1.Size = new Size(1100, 500);
             listView1.Sorting = SortOrder.Ascending;
@@ -97,7 +97,7 @@
             // 
             textBox1.BorderStyle = BorderStyle.None;
             textBox1.Font = new Font("Quicksand", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(14, 24);
+            textBox1.Location = new Point(42, 41);
             textBox1.MinimumSize = new Size(327, 31);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(327, 31);
@@ -111,7 +111,7 @@
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.ForeColor = SystemColors.ControlText;
-            button1.Location = new Point(350, 24);
+            button1.Location = new Point(378, 41);
             button1.Name = "button1";
             button1.Size = new Size(98, 31);
             button1.TabIndex = 2;
@@ -129,7 +129,7 @@
             Controls.Add(listView1);
             Font = new Font("Quicksand", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "B_Books";
-            Size = new Size(1130, 590);
+            Size = new Size(1186, 633);
             Load += B_Books_Load_1;
             ResumeLayout(false);
             PerformLayout();
