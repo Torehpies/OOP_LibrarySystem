@@ -43,11 +43,14 @@
             // listView1
             // 
             listView1.BackColor = SystemColors.Control;
+            listView1.BackgroundImageTiled = true;
+            listView1.BorderStyle = BorderStyle.None;
             listView1.Columns.AddRange(new ColumnHeader[] { columnHeader6, columnHeader8, columnHeader9, columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
             listView1.GridLines = true;
-            listView1.Location = new Point(0, 67);
+            listView1.Location = new Point(41, 93);
             listView1.Name = "listView1";
-            listView1.Size = new Size(1341, 566);
+            listView1.Size = new Size(1100, 500);
+            listView1.Sorting = SortOrder.Ascending;
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
@@ -92,32 +95,41 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(14, 20);
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Font = new Font("Quicksand", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox1.Location = new Point(42, 41);
+            textBox1.MinimumSize = new Size(327, 31);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(325, 29);
+            textBox1.Size = new Size(327, 31);
             textBox1.TabIndex = 1;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
             // button1
             // 
-            button1.Location = new Point(345, 20);
+            button1.BackColor = Color.FromArgb(242, 233, 228);
+            button1.BackgroundImageLayout = ImageLayout.None;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.ForeColor = SystemColors.ControlText;
+            button1.Location = new Point(378, 41);
             button1.Name = "button1";
-            button1.Size = new Size(98, 30);
+            button1.Size = new Size(98, 31);
             button1.TabIndex = 2;
             button1.Text = "Search";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // B_Books
             // 
-            AutoScaleDimensions = new SizeF(9F, 21F);
+            AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveCaption;
+            BackColor = Color.FromArgb(201, 173, 167);
             Controls.Add(button1);
             Controls.Add(textBox1);
             Controls.Add(listView1);
+            Font = new Font("Quicksand", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "B_Books";
-            Size = new Size(1341, 633);
+            Size = new Size(1186, 633);
             Load += B_Books_Load_1;
             ResumeLayout(false);
             PerformLayout();

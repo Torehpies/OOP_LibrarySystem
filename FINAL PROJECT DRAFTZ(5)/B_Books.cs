@@ -19,6 +19,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         public B_Books()
         {
             InitializeComponent();
+            listView1.Region = Region.FromHrgn(RoundEdge.CreateRoundRectRgn(0, 0, listView1.Width, listView1.Height, 30, 30));
             originalDataTable = new DataTable();
             LoadUsersData();
         }
@@ -34,6 +35,14 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 adapter.Fill(dataTable);
 
                 listView1.View = View.Details;
+                listView1.Columns[0].Width = -1;
+                listView1.Columns[1].Width = 350;
+                listView1.Columns[2].Width = 170;
+                listView1.Columns[3].Width = 170;
+                listView1.Columns[4].Width = 100;
+                listView1.Columns[5].Width = 100;
+                listView1.Columns[6].Width = 100;
+
                 foreach (DataRow dr in dataTable.Rows)
                 {
                     ListViewItem item = new ListViewItem(dr["isbn"].ToString()); 
@@ -105,6 +114,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
 
             // di ko alam kung bakit ganyan. wag nyoko tanungin
+            //in the name of the father, the son, the holy spirit, amen
+            //why
             string query = $"SELECT bb.bookId, bb.borrowerId, " +
                  $"DATE_FORMAT(bb.borrowDate, '%Y-%m-%d %H:%i:%s') AS borrowDate, " +
                  $"DATE_FORMAT(bb.returnDate, '%Y-%m-%d %H:%i:%s') AS returnDate, " +
