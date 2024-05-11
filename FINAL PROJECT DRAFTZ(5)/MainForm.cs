@@ -24,10 +24,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         {
             InitializeComponent();
 
-            Region = Region.FromHrgn(RoundEdge.CreateRoundRectRgn(0,0,Width,Height,30,30));
+            Region = Region.FromHrgn(RoundEdge.CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
 
             libPane = new Library() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
-            borrowPane = new BorrowedList() {TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
+            borrowPane = new BorrowedList() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
             bookreturnPane = new BookReturn() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
             bookinventPane = new BookInventory() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
 
@@ -44,16 +44,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             bookreturnPane.Hide();
             bookinventPane.Hide();
 
-            // Round button
-            GraphicsPath grp = new GraphicsPath();
-            grp.AddEllipse(2, 2, button1.Width - 5, button1.Height - 5);
-            button1.Region = new Region(grp);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            
-            
+
+
 
 
         }
@@ -69,8 +65,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         }
         private void library_btn_Click(object sender, EventArgs e)
         {
-          
-            
+
+
             borrowPane.Show();
             library_btn.BackColor = ColorTranslator.FromHtml("#F2E9E4");
             borrower_btn.BackColor = ColorTranslator.FromHtml("#4A4E69");
@@ -146,9 +142,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             bookinventPane.FormBorderStyle = FormBorderStyle.None;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void logoutButton_Click(object sender, EventArgs e)
         {
             Application.Restart();
         }
+   
     }
 }

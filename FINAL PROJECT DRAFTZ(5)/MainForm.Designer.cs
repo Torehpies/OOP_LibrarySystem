@@ -1,4 +1,6 @@
-﻿namespace FINAL_PROJECT_DRAFTZ_5_
+﻿using CustomControls.RJControls;
+
+namespace FINAL_PROJECT_DRAFTZ_5_
 {
     partial class MainForm
     {
@@ -28,15 +30,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             main_pnl = new Panel();
             container_pnl = new Panel();
             navigation_pnl = new Panel();
-            button1 = new Button();
-            bookinvent_btn = new Button();
-            bookreturn_btn = new Button();
-            borrower_btn = new Button();
-            library_btn = new Button();
+            logoutButton = new CustomButton();
+            bookinvent_btn = new CustomButton();
+            bookreturn_btn = new CustomButton();
+            borrower_btn = new CustomButton();
+            library_btn = new CustomButton();
             main_pnl.SuspendLayout();
             navigation_pnl.SuspendLayout();
             SuspendLayout();
@@ -65,7 +66,7 @@
             // 
             navigation_pnl.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             navigation_pnl.BackColor = Color.FromArgb(74, 78, 105);
-            navigation_pnl.Controls.Add(button1);
+            navigation_pnl.Controls.Add(logoutButton);
             navigation_pnl.Controls.Add(bookinvent_btn);
             navigation_pnl.Controls.Add(bookreturn_btn);
             navigation_pnl.Controls.Add(borrower_btn);
@@ -75,32 +76,47 @@
             navigation_pnl.Size = new Size(1186, 67);
             navigation_pnl.TabIndex = 0;
             // 
-            // button1
+            // logoutButton
             // 
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(1085, 28);
-            button1.Name = "button1";
-            button1.Size = new Size(65, 51);
-            button1.TabIndex = 4;
-            button1.Text = "Logout";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            logoutButton.BackColor = Color.FromArgb(74, 78, 105);
+            logoutButton.BackgroundColor = Color.FromArgb(74, 78, 105);
+            logoutButton.BorderColor = Color.FromArgb(242, 233, 228);
+            logoutButton.BorderRadius = 20;
+            logoutButton.BorderSize = 0;
+            logoutButton.FlatAppearance.BorderSize = 0;
+            logoutButton.FlatAppearance.MouseOverBackColor = Color.IndianRed;
+            logoutButton.FlatStyle = FlatStyle.Flat;
+            logoutButton.Font = new Font("Quicksand SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            logoutButton.ForeColor = Color.White;
+            logoutButton.Location = new Point(1061, 12);
+            logoutButton.Name = "logoutButton";
+            logoutButton.Size = new Size(93, 40);
+            logoutButton.TabIndex = 0;
+            logoutButton.Text = "Logout";
+            logoutButton.TextColor = Color.White;
+            logoutButton.UseVisualStyleBackColor = false;
+            logoutButton.Click += logoutButton_Click;
             // 
             // bookinvent_btn
             // 
             bookinvent_btn.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             bookinvent_btn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             bookinvent_btn.BackColor = Color.FromArgb(74, 78, 105);
+            bookinvent_btn.BackgroundColor = Color.FromArgb(74, 78, 105);
+            bookinvent_btn.BorderColor = Color.FromArgb(242, 233, 228);
+            bookinvent_btn.BorderRadius = 20;
+            bookinvent_btn.BorderSize = 2;
             bookinvent_btn.FlatAppearance.BorderColor = Color.FromArgb(74, 78, 105);
             bookinvent_btn.FlatStyle = FlatStyle.Flat;
-            bookinvent_btn.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            bookinvent_btn.Font = new Font("Quicksand SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             bookinvent_btn.ForeColor = Color.White;
-            bookinvent_btn.Location = new Point(826, 12);
+            bookinvent_btn.Location = new Point(770, 12);
             bookinvent_btn.Name = "bookinvent_btn";
             bookinvent_btn.RightToLeft = RightToLeft.Yes;
             bookinvent_btn.Size = new Size(191, 40);
             bookinvent_btn.TabIndex = 3;
             bookinvent_btn.Text = "BOOK INVENTORY";
+            bookinvent_btn.TextColor = Color.White;
             bookinvent_btn.UseVisualStyleBackColor = false;
             bookinvent_btn.Click += bookinvent_btn_Click;
             // 
@@ -109,15 +125,20 @@
             bookreturn_btn.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             bookreturn_btn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             bookreturn_btn.BackColor = Color.FromArgb(74, 78, 105);
+            bookreturn_btn.BackgroundColor = Color.FromArgb(74, 78, 105);
+            bookreturn_btn.BorderColor = Color.FromArgb(242, 233, 228);
+            bookreturn_btn.BorderRadius = 20;
+            bookreturn_btn.BorderSize = 2;
             bookreturn_btn.FlatAppearance.BorderColor = Color.FromArgb(74, 78, 105);
             bookreturn_btn.FlatStyle = FlatStyle.Flat;
-            bookreturn_btn.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            bookreturn_btn.Font = new Font("Quicksand SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             bookreturn_btn.ForeColor = Color.White;
-            bookreturn_btn.Location = new Point(602, 12);
+            bookreturn_btn.Location = new Point(546, 12);
             bookreturn_btn.Name = "bookreturn_btn";
             bookreturn_btn.Size = new Size(191, 40);
             bookreturn_btn.TabIndex = 2;
             bookreturn_btn.Text = "BOOK RETURNING";
+            bookreturn_btn.TextColor = Color.White;
             bookreturn_btn.UseVisualStyleBackColor = false;
             bookreturn_btn.Click += bookreturn_btn_Click;
             // 
@@ -126,15 +147,20 @@
             borrower_btn.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             borrower_btn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             borrower_btn.BackColor = Color.FromArgb(74, 78, 105);
+            borrower_btn.BackgroundColor = Color.FromArgb(74, 78, 105);
+            borrower_btn.BorderColor = Color.FromArgb(242, 233, 228);
+            borrower_btn.BorderRadius = 20;
+            borrower_btn.BorderSize = 2;
             borrower_btn.FlatAppearance.BorderColor = Color.FromArgb(74, 78, 105);
             borrower_btn.FlatStyle = FlatStyle.Flat;
-            borrower_btn.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            borrower_btn.Font = new Font("Quicksand SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             borrower_btn.ForeColor = Color.White;
-            borrower_btn.Location = new Point(379, 12);
+            borrower_btn.Location = new Point(323, 12);
             borrower_btn.Name = "borrower_btn";
             borrower_btn.Size = new Size(191, 40);
             borrower_btn.TabIndex = 1;
             borrower_btn.Text = "BORROWER LIST";
+            borrower_btn.TextColor = Color.White;
             borrower_btn.UseVisualStyleBackColor = false;
             borrower_btn.Click += borrower_btn_Click;
             // 
@@ -143,15 +169,22 @@
             library_btn.AccessibleName = "";
             library_btn.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             library_btn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            library_btn.BackColor = Color.FromArgb(242, 233, 228);
-            library_btn.FlatAppearance.BorderColor = Color.FromArgb(74, 78, 105);
+            library_btn.BackColor = Color.FromArgb(74, 78, 105);
+            library_btn.BackgroundColor = Color.FromArgb(74, 78, 105);
+            library_btn.BorderColor = Color.FromArgb(242, 233, 228);
+            library_btn.BorderRadius = 20;
+            library_btn.BorderSize = 2;
+            library_btn.FlatAppearance.BorderColor = Color.FromArgb(242, 233, 228);
+            library_btn.FlatAppearance.BorderSize = 2;
             library_btn.FlatStyle = FlatStyle.Flat;
-            library_btn.Font = new Font("Quicksand", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            library_btn.Location = new Point(157, 12);
+            library_btn.Font = new Font("Quicksand SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            library_btn.ForeColor = Color.White;
+            library_btn.Location = new Point(101, 12);
             library_btn.Name = "library_btn";
             library_btn.Size = new Size(191, 40);
             library_btn.TabIndex = 0;
             library_btn.Text = "LIBRARY";
+            library_btn.TextColor = Color.White;
             library_btn.UseVisualStyleBackColor = false;
             library_btn.Click += library_btn_Click;
             // 
@@ -163,6 +196,7 @@
             Controls.Add(main_pnl);
             FormBorderStyle = FormBorderStyle.None;
             Name = "MainForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "MainForm";
             Load += MainForm_Load;
             main_pnl.ResumeLayout(false);
@@ -174,11 +208,11 @@
 
         private Panel main_pnl;
         private Panel navigation_pnl;
-        private Button library_btn;
-        private Button bookinvent_btn;
-        private Button bookreturn_btn;
-        private Button borrower_btn;
+        private CustomButton library_btn;
+        private CustomButton bookinvent_btn;
+        private CustomButton bookreturn_btn;
+        private CustomButton borrower_btn;
         private Panel container_pnl;
-        private Button button1;
+        private CustomControls.RJControls.CustomButton logoutButton;
     }
 }
