@@ -49,7 +49,7 @@
             listView1.GridLines = true;
             listView1.Location = new Point(14, 68);
             listView1.Name = "listView1";
-            listView1.Size = new Size(1100, 518);
+            listView1.Size = new Size(1100, 500);
             listView1.Sorting = SortOrder.Ascending;
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
@@ -129,7 +129,7 @@
             Controls.Add(listView1);
             Font = new Font("Quicksand", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "B_Books";
-            Size = new Size(1130, 600);
+            Size = new Size(1130, 590);
             Load += B_Books_Load_1;
             ResumeLayout(false);
             PerformLayout();
