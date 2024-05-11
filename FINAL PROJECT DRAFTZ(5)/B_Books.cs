@@ -34,6 +34,14 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 adapter.Fill(dataTable);
 
                 listView1.View = View.Details;
+                listView1.Columns[0].Width = -1;
+                listView1.Columns[1].Width = 350;
+                listView1.Columns[2].Width = 170;
+                listView1.Columns[3].Width = 170;
+                listView1.Columns[4].Width = 100;
+                listView1.Columns[5].Width = 100;
+                listView1.Columns[6].Width = 100;
+
                 foreach (DataRow dr in dataTable.Rows)
                 {
                     ListViewItem item = new ListViewItem(dr["isbn"].ToString()); 

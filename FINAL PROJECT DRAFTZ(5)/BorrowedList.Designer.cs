@@ -33,10 +33,9 @@
             // 
             // b_Books1
             // 
-            b_Books1.BackColor = SystemColors.ActiveCaption;
-            b_Books1.Dock = DockStyle.Fill;
+            b_Books1.BackColor = Color.FromArgb(201, 173, 167);
+            b_Books1.Font = new Font("Quicksand", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             b_Books1.Location = new Point(0, 0);
-            b_Books1.Margin = new Padding(2, 2, 2, 2);
             b_Books1.Name = "b_Books1";
             b_Books1.Size = new Size(1130, 600);
             b_Books1.TabIndex = 0;
