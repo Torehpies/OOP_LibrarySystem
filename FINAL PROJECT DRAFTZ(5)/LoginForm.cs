@@ -13,10 +13,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
     public partial class LoginForm : Form
     {
         public bool noAccount = false;
-      
+
         public LoginForm()
         {
             InitializeComponent();
+
+            Region = Region.FromHrgn(RoundEdge.CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
             containerPanel.Controls.Add(new AdminLogin() { TopLevel = false, TopMost = true, Dock = DockStyle.None });
             containerPanel.Controls.Add(new AddAccount() { TopLevel = false, TopMost = true, Dock = DockStyle.None });
             if (!LoginDatabase.isUsersEmpty())
@@ -45,7 +47,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             loginButton.Visible = true;
             PasstBox.Visible = true;
             LogintBox.Visible = true;
-            
+
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -86,5 +88,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             containerPanel.Controls[0].Show();
             containerPanel.Controls[1].Hide();
         }
+
     }
 }
