@@ -36,6 +36,7 @@
             Dsplay_namebrwer = new Label();
             panel6 = new Panel();
             panel7 = new Panel();
+            borrowedbooks_tbl = new ListView();
             Dsplay_return = new Label();
             Dsplay_due = new Label();
             Dsplay_author = new Label();
@@ -43,6 +44,10 @@
             Dsplay_borrowedbooks = new Label();
             panel4 = new Panel();
             panel3 = new Panel();
+            lastreturnlbl = new Label();
+            bbcountlbl = new Label();
+            detailslbl = new Label();
+            namelbl = new Label();
             Dsplay_lstreturn = new Label();
             Dsplay_bookcount = new Label();
             Dsplay_details = new Label();
@@ -56,6 +61,7 @@
             panel1.SuspendLayout();
             panel5.SuspendLayout();
             panel6.SuspendLayout();
+            panel7.SuspendLayout();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -89,7 +95,7 @@
             // 
             Dsplay_detailsbrwer.AutoSize = true;
             Dsplay_detailsbrwer.Font = new Font("Quicksand SemiBold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            Dsplay_detailsbrwer.Location = new Point(118, 56);
+            Dsplay_detailsbrwer.Location = new Point(489, 56);
             Dsplay_detailsbrwer.Name = "Dsplay_detailsbrwer";
             Dsplay_detailsbrwer.Size = new Size(82, 31);
             Dsplay_detailsbrwer.TabIndex = 4;
@@ -146,17 +152,27 @@
             panel6.Name = "panel6";
             panel6.Size = new Size(590, 442);
             panel6.TabIndex = 0;
-            panel6.Paint += panel6_Paint;
             // 
             // panel7
             // 
             panel7.AutoScroll = true;
             panel7.BackColor = Color.FromArgb(225, 213, 206);
+            panel7.Controls.Add(borrowedbooks_tbl);
             panel7.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             panel7.Location = new Point(0, 107);
             panel7.Name = "panel7";
             panel7.Size = new Size(590, 335);
             panel7.TabIndex = 7;
+            // 
+            // borrowedbooks_tbl
+            // 
+            borrowedbooks_tbl.Font = new Font("Quicksand", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            borrowedbooks_tbl.GridLines = true;
+            borrowedbooks_tbl.Location = new Point(0, 0);
+            borrowedbooks_tbl.Name = "borrowedbooks_tbl";
+            borrowedbooks_tbl.Size = new Size(590, 335);
+            borrowedbooks_tbl.TabIndex = 1;
+            borrowedbooks_tbl.UseCompatibleStateImageBehavior = false;
             // 
             // Dsplay_return
             // 
@@ -181,7 +197,7 @@
             // Dsplay_author
             // 
             Dsplay_author.AutoSize = true;
-            Dsplay_author.Font = new Font("Quicksand SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            Dsplay_author.Font = new Font("Quicksand Medium", 12F, FontStyle.Bold, GraphicsUnit.Point);
             Dsplay_author.Location = new Point(163, 65);
             Dsplay_author.Name = "Dsplay_author";
             Dsplay_author.Size = new Size(76, 24);
@@ -207,7 +223,6 @@
             Dsplay_borrowedbooks.Size = new Size(234, 40);
             Dsplay_borrowedbooks.TabIndex = 2;
             Dsplay_borrowedbooks.Text = "Borrowed Books";
-            Dsplay_borrowedbooks.Click += label9_Click;
             // 
             // panel4
             // 
@@ -220,6 +235,10 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(242, 233, 228);
+            panel3.Controls.Add(lastreturnlbl);
+            panel3.Controls.Add(bbcountlbl);
+            panel3.Controls.Add(detailslbl);
+            panel3.Controls.Add(namelbl);
             panel3.Controls.Add(Dsplay_lstreturn);
             panel3.Controls.Add(Dsplay_bookcount);
             panel3.Controls.Add(Dsplay_details);
@@ -229,45 +248,81 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(524, 302);
             panel3.TabIndex = 6;
-            panel3.Paint += panel3_Paint;
+            // 
+            // lastreturnlbl
+            // 
+            lastreturnlbl.AutoSize = true;
+            lastreturnlbl.Font = new Font("Quicksand SemiBold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lastreturnlbl.Location = new Point(219, 247);
+            lastreturnlbl.Name = "lastreturnlbl";
+            lastreturnlbl.Size = new Size(0, 28);
+            lastreturnlbl.TabIndex = 14;
+            // 
+            // bbcountlbl
+            // 
+            bbcountlbl.AutoSize = true;
+            bbcountlbl.Font = new Font("Quicksand SemiBold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            bbcountlbl.Location = new Point(303, 205);
+            bbcountlbl.Name = "bbcountlbl";
+            bbcountlbl.RightToLeft = RightToLeft.Yes;
+            bbcountlbl.Size = new Size(0, 28);
+            bbcountlbl.TabIndex = 13;
+            // 
+            // detailslbl
+            // 
+            detailslbl.AutoSize = true;
+            detailslbl.Font = new Font("Quicksand SemiBold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            detailslbl.Location = new Point(149, 166);
+            detailslbl.Name = "detailslbl";
+            detailslbl.Size = new Size(0, 28);
+            detailslbl.TabIndex = 12;
+            // 
+            // namelbl
+            // 
+            namelbl.AutoSize = true;
+            namelbl.Font = new Font("Quicksand SemiBold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            namelbl.Location = new Point(143, 126);
+            namelbl.Name = "namelbl";
+            namelbl.Size = new Size(0, 28);
+            namelbl.TabIndex = 11;
             // 
             // Dsplay_lstreturn
             // 
             Dsplay_lstreturn.AutoSize = true;
-            Dsplay_lstreturn.Font = new Font("Quicksand Medium", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            Dsplay_lstreturn.Font = new Font("Quicksand SemiBold", 15F, FontStyle.Bold, GraphicsUnit.Point);
             Dsplay_lstreturn.Location = new Point(64, 244);
             Dsplay_lstreturn.Name = "Dsplay_lstreturn";
-            Dsplay_lstreturn.Size = new Size(149, 30);
+            Dsplay_lstreturn.Size = new Size(155, 30);
             Dsplay_lstreturn.TabIndex = 10;
             Dsplay_lstreturn.Text = "Last Returned:";
             // 
             // Dsplay_bookcount
             // 
             Dsplay_bookcount.AutoSize = true;
-            Dsplay_bookcount.Font = new Font("Quicksand Medium", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            Dsplay_bookcount.Font = new Font("Quicksand SemiBold", 15F, FontStyle.Bold, GraphicsUnit.Point);
             Dsplay_bookcount.Location = new Point(64, 202);
             Dsplay_bookcount.Name = "Dsplay_bookcount";
-            Dsplay_bookcount.Size = new Size(233, 30);
+            Dsplay_bookcount.Size = new Size(237, 30);
             Dsplay_bookcount.TabIndex = 9;
             Dsplay_bookcount.Text = "Borrowed Books Count:";
             // 
             // Dsplay_details
             // 
             Dsplay_details.AutoSize = true;
-            Dsplay_details.Font = new Font("Quicksand Medium", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            Dsplay_details.Font = new Font("Quicksand SemiBold", 15F, FontStyle.Bold, GraphicsUnit.Point);
             Dsplay_details.Location = new Point(64, 163);
             Dsplay_details.Name = "Dsplay_details";
-            Dsplay_details.Size = new Size(79, 30);
+            Dsplay_details.Size = new Size(84, 30);
             Dsplay_details.TabIndex = 8;
             Dsplay_details.Text = "Details:";
             // 
             // Dsplay_name
             // 
             Dsplay_name.AutoSize = true;
-            Dsplay_name.Font = new Font("Quicksand Medium", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            Dsplay_name.Font = new Font("Quicksand SemiBold", 15F, FontStyle.Bold, GraphicsUnit.Point);
             Dsplay_name.Location = new Point(64, 123);
             Dsplay_name.Name = "Dsplay_name";
-            Dsplay_name.Size = new Size(73, 30);
+            Dsplay_name.Size = new Size(75, 30);
             Dsplay_name.TabIndex = 7;
             Dsplay_name.Text = "Name:";
             // 
@@ -316,6 +371,7 @@
             enterId_btn.TabIndex = 5;
             enterId_btn.Text = "ENTER";
             enterId_btn.UseVisualStyleBackColor = false;
+            enterId_btn.Click += enterId_btn_Click;
             // 
             // id_txtbox
             // 
@@ -350,6 +406,7 @@
             panel5.PerformLayout();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
+            panel7.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel2.ResumeLayout(false);
@@ -384,5 +441,10 @@
         private Button cancel_btn;
         private Button confirm_btn;
         private Label Dsplay_detailsbrwer;
+        private Label namelbl;
+        private Label lastreturnlbl;
+        private Label bbcountlbl;
+        private Label detailslbl;
+        private ListView borrowedbooks_tbl;
     }
 }
