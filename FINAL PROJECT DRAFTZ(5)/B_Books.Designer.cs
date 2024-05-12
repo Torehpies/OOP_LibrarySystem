@@ -34,7 +34,6 @@
             columnHeader9 = new ColumnHeader();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
-            columnHeader3 = new ColumnHeader();
             columnHeader4 = new ColumnHeader();
             textBox1 = new TextBox();
             button1 = new Button();
@@ -45,11 +44,11 @@
             listView1.BackColor = SystemColors.Control;
             listView1.BackgroundImageTiled = true;
             listView1.BorderStyle = BorderStyle.None;
-            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader6, columnHeader8, columnHeader9, columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
+            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader6, columnHeader8, columnHeader9, columnHeader1, columnHeader2, columnHeader4 });
             listView1.GridLines = true;
             listView1.Location = new Point(41, 93);
             listView1.Name = "listView1";
-            listView1.Size = new Size(1100, 500);
+            listView1.Size = new Size(1285, 583);
             listView1.Sorting = SortOrder.Ascending;
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
@@ -79,24 +78,17 @@
             // columnHeader2
             // 
             columnHeader2.Text = "Borrow Date";
-            columnHeader2.Width = 180;
-            // 
-            // columnHeader3
-            // 
-            columnHeader3.DisplayIndex = 6;
-            columnHeader3.Text = "Return Date";
-            columnHeader3.Width = 160;
+            columnHeader2.Width = 250;
             // 
             // columnHeader4
             // 
-            columnHeader4.DisplayIndex = 5;
             columnHeader4.Text = "Due Date";
-            columnHeader4.Width = 170;
+            columnHeader4.Width = 250;
             // 
             // textBox1
             // 
             textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Quicksand", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox1.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             textBox1.Location = new Point(42, 41);
             textBox1.MinimumSize = new Size(327, 31);
             textBox1.Name = "textBox1";
@@ -121,15 +113,15 @@
             // 
             // B_Books
             // 
-            AutoScaleDimensions = new SizeF(9F, 23F);
+            AutoScaleDimensions = new SizeF(12F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(201, 173, 167);
             Controls.Add(button1);
             Controls.Add(textBox1);
             Controls.Add(listView1);
-            Font = new Font("Quicksand", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "B_Books";
-            Size = new Size(1186, 633);
+            Size = new Size(1326, 676);
             Load += B_Books_Load_1;
             ResumeLayout(false);
             PerformLayout();

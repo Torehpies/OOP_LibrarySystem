@@ -29,7 +29,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             using (MySqlConnection con = new MySqlConnection("server=127.0.0.1; user=root; database=test; password=;Convert Zero Datetime=True"))
             {
                 con.Open();
-                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT b.isbn, b.title, b.author, m.name, bb.borrowDate, bb.dueDate, bb.returnDate FROM BorrowedBooks bb INNER JOIN Books b ON bb.bookId = b.id INNER JOIN Members m ON bb.borrowerId = m.id", con);
+                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT b.isbn, b.title, b.author, m.name, bb.borrowDate, bb.dueDate FROM BorrowedBooks bb INNER JOIN Books b ON bb.bookId = b.id INNER JOIN Members m ON bb.borrowerId = m.id", con);
 
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
@@ -39,9 +39,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 listView1.Columns[1].Width = 350;
                 listView1.Columns[2].Width = 170;
                 listView1.Columns[3].Width = 170;
-                listView1.Columns[4].Width = 100;
-                listView1.Columns[5].Width = 100;
-                listView1.Columns[6].Width = 100;
+                listView1.Columns[4].Width = 200;
+                listView1.Columns[5].Width = 200;
+               
 
                 foreach (DataRow dr in dataTable.Rows)
                 {
@@ -50,7 +50,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                     item.SubItems.Add(dr["author"].ToString());
                     item.SubItems.Add(dr["name"].ToString());
                     item.SubItems.Add(((DateTime)dr["borrowDate"]).ToString("yyyy-MM-dd"));
-                    item.SubItems.Add(((DateTime)dr["returnDate"]).ToString("yyyy-MM-dd"));
                     item.SubItems.Add(((DateTime)dr["dueDate"]).ToString("yyyy-MM-dd"));
                     listView1.Items.Add(item);
                 }
@@ -66,10 +65,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 listitem.SubItems.Add(dr["title"].ToString());
                 listitem.SubItems.Add(dr["author"].ToString());
                 listitem.SubItems.Add(dr["name"].ToString());
-                listitem.SubItems.Add(dr["borrowDate"].ToString());
-                listitem.SubItems.Add(dr["returnDate"].ToString());
-                listitem.SubItems.Add(dr["dueDate"].ToString());
-
+                DateTime borrowDate = Convert.ToDateTime(dr["borrowDate"]);
+                DateTime dueDate = Convert.ToDateTime(dr["dueDate"]);
+                listitem.SubItems.Add(borrowDate.ToString("yyyy-MM-dd"));
+                listitem.SubItems.Add(dueDate.ToString("yyyy-MM-dd"));
 
                 listView1.Items.Add(listitem);
             }
@@ -131,7 +130,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                  $"LOWER(b.author) LIKE '%{searchText.ToLower()}%' OR " +
                  $"LOWER(m.name) LIKE '%{searchText.ToLower()}%' OR " +
                  $"DATE_FORMAT(bb.borrowDate, '%Y-%m-%d %H:%i:%s') LIKE '%{searchText.ToLower()}%' OR " +
-                 $"DATE_FORMAT(bb.returnDate, '%Y-%m-%d %H:%i:%s') LIKE '%{searchText.ToLower()}%' OR " +
                  $"DATE_FORMAT(bb.dueDate, '%Y-%m-%d %H:%i:%s') LIKE '%{searchText.ToLower()}%'";
 
 
