@@ -33,6 +33,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             main_pnl = new Panel();
             container_pnl = new Panel();
             navigation_pnl = new Panel();
+            button2 = new Button();
+            button1 = new Button();
             logoutButton = new CustomButton();
             bookinvent_btn = new CustomButton();
             bookreturn_btn = new CustomButton();
@@ -66,6 +68,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // 
             navigation_pnl.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             navigation_pnl.BackColor = Color.FromArgb(74, 78, 105);
+            navigation_pnl.Controls.Add(button2);
+            navigation_pnl.Controls.Add(button1);
             navigation_pnl.Controls.Add(logoutButton);
             navigation_pnl.Controls.Add(bookinvent_btn);
             navigation_pnl.Controls.Add(bookreturn_btn);
@@ -75,6 +79,35 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             navigation_pnl.Name = "navigation_pnl";
             navigation_pnl.Size = new Size(1186, 67);
             navigation_pnl.TabIndex = 0;
+            navigation_pnl.Paint += navigation_pnl_Paint;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.Red;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Quicksand", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.ForeColor = SystemColors.ButtonHighlight;
+            button2.Location = new Point(1127, 3);
+            button2.Name = "button2";
+            button2.Size = new Size(34, 23);
+            button2.TabIndex = 5;
+            button2.Text = "X";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(128, 128, 255);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Quicksand", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = SystemColors.ButtonHighlight;
+            button1.Location = new Point(1097, 3);
+            button1.Name = "button1";
+            button1.Size = new Size(34, 23);
+            button1.TabIndex = 4;
+            button1.Text = "-";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // logoutButton
             // 
@@ -88,7 +121,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             logoutButton.FlatStyle = FlatStyle.Flat;
             logoutButton.Font = new Font("Quicksand SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             logoutButton.ForeColor = Color.White;
-            logoutButton.Location = new Point(1061, 12);
+            logoutButton.Location = new Point(985, 12);
             logoutButton.Name = "logoutButton";
             logoutButton.Size = new Size(93, 40);
             logoutButton.TabIndex = 0;
@@ -214,5 +247,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private CustomButton borrower_btn;
         private Panel container_pnl;
         private CustomControls.RJControls.CustomButton logoutButton;
+        private Button button2;
+        private Button button1;
     }
 }
