@@ -166,7 +166,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // 
             // button2
             // 
-            button2.BackColor = Color.Red;
+            button2.BackColor = Color.FromArgb(192, 0, 0);
+            button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Quicksand", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button2.ForeColor = SystemColors.ButtonHighlight;
@@ -180,11 +181,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // 
             // button1
             // 
-            button1.BackColor = Color.FromArgb(74, 78, 105);
+            button1.BackColor = Color.FromArgb(103, 91, 131);
+            button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Quicksand", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(908, 12);
+            button1.Location = new Point(902, 12);
             button1.Name = "button1";
             button1.Size = new Size(34, 23);
             button1.TabIndex = 11;
