@@ -47,19 +47,14 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             
         }
 
-        
-        private void InitializeButtons()
-        {
-            addbtn.Visible = ShowAddButton;
-            detailsbtn.Visible = ShowRemoveButton;
-        }
 
         private void borrowBtn_Click(object sender, EventArgs e)
         {
             if (this.libraryForm != null)
             {
+                // Test data
                 MessageBox.Show($"The details for this book {Title}");
-                BookDetails bookDetails = new BookDetails(Title, Year);
+                BookDetails bookDetails = new BookDetails(Title, ISBN, Author, Category, Publisher, Year);
                 bookDetails.Show();
 
             } else
@@ -69,13 +64,28 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             
         }
 
+        
+
 
 
         
         static Dictionary<string, int> checkOutList = new Dictionary<string, int>();
+        
         private void button1_Click(object sender, EventArgs e)
         {
-            Books addBook = new Books(Title, Year);
+            Books addBook = new Books(Title, ISBN, Author, Category, Publisher, Year);
+
+            MessageBox.Show($"Bookname: `{Title}` {availCopies} is added to checkout");
+
+
+            bookTitles.Add(Title);
+            checkout.Add(addBook);
+            checkOutList[Title] = availCopies;
+        }
+
+        public void addBook(string Title, string ISBN, string Author, string Category, string Publisher, string Year)
+        {
+            Books addBook = new Books(Title, ISBN, Author, Category, Publisher, Year);
 
             MessageBox.Show($"Bookname: `{Title}` {availCopies} is added to checkout");
 
@@ -100,6 +110,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         #region Properties
 
         private string _title;
+        private string _author;
+        private string _category;
+        private string _publisher;
         private string _year;
         private Image _icon;
         private string _ISBN;
@@ -112,6 +125,27 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         {
             get { return availCopies; }
             set {  availCopies = value; }
+        }
+
+        [Category("Custom Props")]
+        public string Author
+        {
+            get { return _author; }
+            set { _author = value;}
+        }
+
+        [Category("Custom Props")]
+        public string Category
+        {
+            get { return _category; }
+            set { _category = value; }
+        }
+
+        [Category("Custom Props")]
+        public string Publisher
+        {
+            get { return _publisher; }
+            set { _publisher = value; }
         }
 
         [Category("Custom Props")]

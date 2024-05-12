@@ -15,25 +15,35 @@ namespace FINAL_PROJECT_DRAFTZ_5_
     public partial class BookDetails : Form
     {
         string title;
-        string date;
-        public BookDetails(string title, string date)
+        string isbn;
+        string author;
+        string category;
+        string publisher;
+        string published;
+        
+        public BookDetails(string title, string isbn, string author, string category, string publisher, string published)
         {
             InitializeComponent();
             this.title = title;
-            this.date = date;
+            this.isbn = isbn;
+            this.author = author;
+            this.category = category;
+            this.publisher = publisher;
+            this.published = published;
 
-            titleLabel.Text = title;
-            publishedLabel.Text = date;
-
-
-
+            titleLabel.Text = "Title: " +  title;
+            isbn10Label.Text = "ISBN: " + isbn;
+            authorLabel.Text = "Author: " + author;
+            categoryLabel.Text = "Category: " + category;
+            publisherLabel.Text = "Publisher: " + publisher;
+            publishedLabel.Text = "Year: " + published;
         }
 
         public void InitializeUI(Book BookContainerData)
         {
             picture.Image = Image.FromFile(BookContainerData.picturePath);
             titleLabel.Text = title;
-            publishedLabel.Text = date;
+            //publishedLabel.Text = date;
 
             /*
             picture.Image = Image.FromFile(BookContainerData.picturePath);
@@ -59,13 +69,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         }
 
         private void BorrowButton_Click(object sender, EventArgs e)
-        { 
-            /*
-            FormLogin login = new FormLogin();
-            login.TopMost = true;
-            login.ShowDialog();
-            this.Close();
-            */
+        {
+            BookContainer addBooks = new BookContainer();
+            addBooks.addBook(title, isbn, author, category, publisher, published);
+           
+
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
