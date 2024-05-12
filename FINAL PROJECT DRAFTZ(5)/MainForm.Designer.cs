@@ -97,7 +97,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // 
             // button1
             // 
-            button1.BackColor = Color.FromArgb(128, 128, 255);
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Quicksand", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = SystemColors.ButtonHighlight;
