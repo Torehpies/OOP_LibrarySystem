@@ -40,9 +40,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
                 namelbl.Text = borrowerName;
                 detailslbl.Text = details;
-                bbcountlbl.Text = borrowedBookCounts;
-                lastreturnlbl.Text = lastReturn;
-                Dsplay_namebrwer.Text = borrowerName;
                 //Dsplay_detailsbrwer.Text = details;
             }
             catch (Exception ex)
@@ -53,7 +50,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void DisplayBorrowedBooks(string id)
         {
-            
+
             try
             {
                 DataTable borrowedBooksTable = new DataTable();
@@ -121,5 +118,24 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
         }
 
+        private void Dsplay_borrowedbooks_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Dsplay_Id_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void detailslbl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
