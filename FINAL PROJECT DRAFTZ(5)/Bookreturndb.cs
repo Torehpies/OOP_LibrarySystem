@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,6 +60,27 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                         borrowedbookcounts = reader["quantity"].ToString();
                         lastreturn = reader["returnDate"].ToString();
                     }
+                }
+            }
+        }
+
+        public static void DisplayBorrowedBooks(string id, out DataTable borrowedBooksTable)
+        {
+            start();
+
+            borrowedBooksTable = new DataTable();
+
+            string query = "SELECT books.title, books.author, borrowedbooks.dueDate " +
+                           "FROM books " +
+                           "INNER JOIN borrowedbooks ON books.id = borrowedbooks.id " +
+                           "WHERE borrowedbooks.borrowerId = @id;";
+
+            using (MySqlCommand command = new MySqlCommand(query, SQL_SERVER))
+            {
+                command.Parameters.AddWithValue("@id", id);
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    borrowedBooksTable.Load(reader);
                 }
             }
         }

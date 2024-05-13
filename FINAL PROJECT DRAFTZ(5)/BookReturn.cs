@@ -24,6 +24,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             string id = id_txtbox.Text;
 
             DisplayBorrowerInfo(id);
+            DisplayBorrowedBooks(id);
         }
 
         private void DisplayBorrowerInfo(string id)
@@ -50,12 +51,38 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
         }
 
-        private void BookReturn_Load(object sender, EventArgs e)
+        private void DisplayBorrowedBooks(string id)
         {
-            borrowedbooks_tbl.Columns.Add("Title", 80);
-            borrowedbooks_tbl.Columns.Add("Author", 80);
-            borrowedbooks_tbl.Columns.Add("Due Date", 80);
-            borrowedbooks_tbl.Columns.Add("Return", 80);
+            
+            try
+            {
+                DataTable borrowedBooksTable = new DataTable();
+
+                // Call method from Bookreturndb class to get borrowed books info
+                Bookreturndb.DisplayBorrowedBooks(id, out borrowedBooksTable);
+
+                // Populate ListView with borrowed books data
+                PopulateListView(borrowedBooksTable);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error retrieving borrowed books info: " + ex.Message);
+            }
         }
+
+        private void PopulateListView(DataTable borrowedBooksTable)
+        {
+            borrowedbooks_tbl.Items.Clear();
+
+            foreach (DataRow row in borrowedBooksTable.Rows)
+            {
+                ListViewItem item = new ListViewItem(row["title"].ToString());
+                item.SubItems.Add(row["author"].ToString());
+                item.SubItems.Add(row["dueDate"].ToString());
+
+                borrowedbooks_tbl.Items.Add(item);
+            }
+        }
+
     }
 }
