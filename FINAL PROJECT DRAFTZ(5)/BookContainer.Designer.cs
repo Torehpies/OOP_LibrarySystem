@@ -55,6 +55,7 @@
             bookPic.SizeMode = PictureBoxSizeMode.StretchImage;
             bookPic.TabIndex = 17;
             bookPic.TabStop = false;
+            bookPic.Click += bookPic_Click;
             // 
             // bookTitle
             // 

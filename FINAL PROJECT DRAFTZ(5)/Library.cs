@@ -71,8 +71,14 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                                 listItems[i] = new BookContainer(this);
 
                                 listItems[i].Title = row["title"].ToString();
+                                listItems[i].Author = row["author"].ToString();
+                                listItems[i].ISBN = row["isbn"].ToString();
+                                listItems[i].Category = row["category"].ToString();
                                 listItems[i].Year = row["published"].ToString();
+                                listItems[i].TotalCopies = Convert.ToInt32(row["totalCopies"]);
                                 listItems[i].aCopies = Convert.ToInt32(row["availableCopies"]);
+                                string imagePath = row["picturePath"].ToString();
+                                listItems[i].icon = Image.FromFile(imagePath);
 
                                 flowLayoutPanel1.Controls.Add(listItems[i]);
                             }

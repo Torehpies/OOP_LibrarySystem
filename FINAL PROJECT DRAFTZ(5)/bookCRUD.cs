@@ -31,7 +31,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
         }
 
-        public static void AddBooks(string title, string author, string isbn, string category, string publisher, DateTime year, int totalCopies)
+        public static void AddBooks(string title, string author, string isbn, string category, string publisher, int year, int totalCopies, string image)
         {
             start();
             if (totalCopies <= 0)
@@ -39,8 +39,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 MessageBox.Show("Invalid copies of books");
                 return;
             }
-            string query = "INSERT INTO books (title, author, isbn, category, publisher, published, totalCopies, availableCopies) " +
-                "VALUES (@title, @author, @isbn, @category, @publisher, @published, @totalCopies, @availableCopies)";
+            string query = "INSERT INTO books (title, author, isbn, category, publisher, published, totalCopies, availableCopies, picturePath) " +
+                "VALUES (@title, @author, @isbn, @category, @publisher, @published, @totalCopies, @availableCopies, @image)";
 
             MySqlCommand cmd = new MySqlCommand(query, SQL_SERVER);
             cmd.Parameters.AddWithValue("@title", title);
@@ -51,6 +51,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             cmd.Parameters.AddWithValue("@published", year);
             cmd.Parameters.AddWithValue("@totalcopies", totalCopies);
             cmd.Parameters.AddWithValue("@availablecopies", totalCopies);
+            cmd.Parameters.AddWithValue("@image", image);
 
 
             int rowsAffected = cmd.ExecuteNonQuery();

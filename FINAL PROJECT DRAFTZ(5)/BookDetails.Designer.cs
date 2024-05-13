@@ -53,6 +53,7 @@
             picture.SizeMode = PictureBoxSizeMode.StretchImage;
             picture.TabIndex = 0;
             picture.TabStop = false;
+            picture.Click += picture_Click;
             // 
             // publishedLabel
             // 

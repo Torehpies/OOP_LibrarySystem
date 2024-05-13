@@ -64,10 +64,20 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             {
                 BookContainer bookContainer = new BookContainer(this);
                 bookContainer.Title = book.Title;
+                bookContainer.Author = book.Author;
+                bookContainer.ISBN = book.ISBN;
+               
                 bookContainer.Year = book.Date;
+                bookContainer.aCopies = book.AvailableCopies;
+                bookContainer.TotalCopies = book.TotalCopies;
+                bookContainer.icon = book.Icon;
+                
+
 
 
                 flowLayoutPanel1.Controls.Add(bookContainer);
+
+                
             }
         }
 

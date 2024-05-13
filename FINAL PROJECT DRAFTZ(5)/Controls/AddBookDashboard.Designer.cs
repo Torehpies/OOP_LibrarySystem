@@ -29,45 +29,123 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            dateText = new DateTimePicker();
+            bookNoText = new TextBox();
+            label7 = new Label();
+            publisherText = new TextBox();
+            label6 = new Label();
+            categoryText = new TextBox();
+            label1 = new Label();
             button2 = new Button();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
+            isbnText = new TextBox();
+            titleText = new TextBox();
             label2 = new Label();
-            textBox1 = new TextBox();
+            authorText = new TextBox();
             button1 = new Button();
-            AddBookPicture = new PictureBox();
+            pictureBox = new PictureBox();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)AddBookPicture).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.MistyRose;
+            panel1.Controls.Add(dateText);
+            panel1.Controls.Add(bookNoText);
+            panel1.Controls.Add(label7);
+            panel1.Controls.Add(publisherText);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(categoryText);
+            panel1.Controls.Add(label1);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
-            panel1.Controls.Add(textBox4);
-            panel1.Controls.Add(textBox3);
-            panel1.Controls.Add(textBox2);
+            panel1.Controls.Add(isbnText);
+            panel1.Controls.Add(titleText);
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(authorText);
             panel1.Controls.Add(button1);
-            panel1.Controls.Add(AddBookPicture);
+            panel1.Controls.Add(pictureBox);
             panel1.Location = new Point(14, 19);
             panel1.Name = "panel1";
             panel1.Size = new Size(773, 486);
             panel1.TabIndex = 1;
+            panel1.Paint += panel1_Paint;
+            // 
+            // dateText
+            // 
+            dateText.Location = new Point(247, 176);
+            dateText.Name = "dateText";
+            dateText.Size = new Size(189, 23);
+            dateText.TabIndex = 17;
+            // 
+            // bookNoText
+            // 
+            bookNoText.Location = new Point(247, 390);
+            bookNoText.Multiline = true;
+            bookNoText.Name = "bookNoText";
+            bookNoText.Size = new Size(189, 28);
+            bookNoText.TabIndex = 16;
+            bookNoText.Text = "(Number of books in Inventory)";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Location = new Point(87, 393);
+            label7.Name = "label7";
+            label7.Size = new Size(94, 25);
+            label7.TabIndex = 15;
+            label7.Text = "COPIES";
+            // 
+            // publisherText
+            // 
+            publisherText.Location = new Point(247, 338);
+            publisherText.Multiline = true;
+            publisherText.Name = "publisherText";
+            publisherText.Size = new Size(189, 28);
+            publisherText.TabIndex = 14;
+            publisherText.Text = "(ex. Seiffer Publishing House)";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Location = new Point(74, 341);
+            label6.Name = "label6";
+            label6.Size = new Size(131, 25);
+            label6.TabIndex = 13;
+            label6.Text = "PUBLISHER";
+            // 
+            // categoryText
+            // 
+            categoryText.Location = new Point(247, 282);
+            categoryText.Multiline = true;
+            categoryText.Name = "categoryText";
+            categoryText.Size = new Size(189, 28);
+            categoryText.TabIndex = 12;
+            categoryText.Text = "(ex. Horror)";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(74, 285);
+            label1.Name = "label1";
+            label1.Size = new Size(132, 25);
+            label1.TabIndex = 11;
+            label1.Text = "CATEGORY";
+            label1.Click += label1_Click_1;
             // 
             // button2
             // 
             button2.BackColor = Color.PaleTurquoise;
             button2.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.Location = new Point(574, 399);
+            button2.Location = new Point(591, 393);
             button2.Name = "button2";
             button2.Size = new Size(150, 63);
             button2.TabIndex = 10;
@@ -79,7 +157,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(68, 333);
+            label5.Location = new Point(26, 176);
             label5.Name = "label5";
             label5.Size = new Size(203, 25);
             label5.TabIndex = 9;
@@ -90,7 +168,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(129, 387);
+            label4.Location = new Point(87, 230);
             label4.Name = "label4";
             label4.Size = new Size(102, 25);
             label4.TabIndex = 8;
@@ -100,76 +178,73 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(129, 228);
+            label3.Location = new Point(87, 71);
             label3.Name = "label3";
             label3.Size = new Size(72, 25);
             label3.TabIndex = 7;
             label3.Text = "TITLE";
             // 
-            // textBox4
+            // isbnText
             // 
-            textBox4.Location = new Point(289, 277);
-            textBox4.Multiline = true;
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(189, 28);
-            textBox4.TabIndex = 6;
-            textBox4.TextChanged += textBox4_TextChanged;
+            isbnText.Location = new Point(247, 120);
+            isbnText.Multiline = true;
+            isbnText.Name = "isbnText";
+            isbnText.Size = new Size(189, 28);
+            isbnText.TabIndex = 6;
+            isbnText.Text = "(ex. 13692345678)";
+            isbnText.TextChanged += textBox4_TextChanged;
             // 
-            // textBox3
+            // titleText
             // 
-            textBox3.Location = new Point(289, 225);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(189, 28);
-            textBox3.TabIndex = 5;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(289, 330);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(189, 28);
-            textBox2.TabIndex = 4;
+            titleText.Location = new Point(247, 68);
+            titleText.Multiline = true;
+            titleText.Name = "titleText";
+            titleText.Size = new Size(189, 28);
+            titleText.TabIndex = 5;
+            titleText.Text = "(ex. The Lion King)";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(139, 280);
+            label2.Location = new Point(97, 123);
             label2.Name = "label2";
             label2.Size = new Size(62, 25);
             label2.TabIndex = 3;
             label2.Text = "ISBN";
             label2.Click += label2_Click_1;
             // 
-            // textBox1
+            // authorText
             // 
-            textBox1.Location = new Point(289, 384);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(189, 28);
-            textBox1.TabIndex = 2;
+            authorText.Location = new Point(247, 227);
+            authorText.Multiline = true;
+            authorText.Name = "authorText";
+            authorText.Size = new Size(189, 28);
+            authorText.TabIndex = 2;
+            authorText.Text = "(ex. Martin Luther King)";
             // 
             // button1
             // 
             button1.BackColor = Color.PaleTurquoise;
             button1.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(330, 172);
+            button1.Location = new Point(575, 306);
             button1.Name = "button1";
             button1.Size = new Size(109, 34);
             button1.TabIndex = 1;
             button1.Text = "UPLOAD";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
-            // AddBookPicture
+            // pictureBox
             // 
-            AddBookPicture.BackColor = Color.White;
-            AddBookPicture.Location = new Point(289, 14);
-            AddBookPicture.Name = "AddBookPicture";
-            AddBookPicture.Size = new Size(189, 141);
-            AddBookPicture.TabIndex = 0;
-            AddBookPicture.TabStop = false;
-            AddBookPicture.Click += pictureBox1_Click;
+            pictureBox.BackColor = Color.White;
+            pictureBox.InitialImage = Properties.Resources.a_brief_history_of_time;
+            pictureBox.Location = new Point(535, 32);
+            pictureBox.Name = "pictureBox";
+            pictureBox.Size = new Size(189, 268);
+            pictureBox.TabIndex = 0;
+            pictureBox.TabStop = false;
+            pictureBox.Click += pictureBox1_Click;
             // 
             // AddBookDashboard
             // 
@@ -180,22 +255,28 @@
             Size = new Size(800, 532);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)AddBookPicture).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
         private Panel panel1;
         private Button button1;
-        private PictureBox AddBookPicture;
+        private PictureBox pictureBox;
         private Label label2;
-        private TextBox textBox1;
+        private TextBox authorText;
         private Label label5;
         private Label label4;
         private Label label3;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
+        private TextBox isbnText;
+        private TextBox titleText;
         private Button button2;
+        private TextBox categoryText;
+        private Label label1;
+        private TextBox publisherText;
+        private Label label6;
+        private TextBox bookNoText;
+        private Label label7;
+        private DateTimePicker dateText;
     }
 }

@@ -12,10 +12,10 @@ using static System.Windows.Forms.DataFormats;
 
 namespace FINAL_PROJECT_DRAFTZ_5_
 {
-    
+
 
     public partial class BookContainer : UserControl
-    { 
+    {
         Book DetailsData;
         BookData BookDataInstance = BookData.Instance;
         public event EventHandler ButtonClick;
@@ -44,10 +44,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         public BookContainer()
         {
             InitializeComponent();
-            
+
         }
 
-        
+
         private void InitializeButtons()
         {
             addbtn.Visible = ShowAddButton;
@@ -59,23 +59,36 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             if (this.libraryForm != null)
             {
                 MessageBox.Show($"The details for this book {Title}");
-                BookDetails bookDetails = new BookDetails(Title, Year);
+                BookDetails bookDetails = new BookDetails(Title, ISBN, Author, Category, Publisher, Year, icon );
                 bookDetails.Show();
 
-            } else
+            }
+            else
             {
                 checkoutForm.removeCard(this);
             }
-            
+
+        }
+
+        public void addBook(string Title, string ISBN, string Author, string Category, string Publisher, string Year, Image icon)
+        {
+            Books addBook = new Books(Title, ISBN, Author, Category, Publisher, Year, icon);
+
+            MessageBox.Show($"Bookname: `{Title}` {availCopies} is added to checkout");
+
+
+            bookTitles.Add(Title);
+            checkout.Add(addBook);
+            checkOutList[Title] = availCopies;
         }
 
 
 
-        
+
         static Dictionary<string, int> checkOutList = new Dictionary<string, int>();
         private void button1_Click(object sender, EventArgs e)
         {
-            Books addBook = new Books(Title, Year);
+            Books addBook = new Books(Title, ISBN, Author, Category, Publisher, Year, icon);
 
             MessageBox.Show($"Bookname: `{Title}` {availCopies} is added to checkout");
 
@@ -101,17 +114,49 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private string _title;
         private string _year;
+        private string _author;
+        private string _category;
+        private string _publisher;
         private Image _icon;
         private string _ISBN;
         private static List<string> bookTitles = new List<string>();
         private static List<Books> checkout = new List<Books>();
         private int availCopies;
+        private int totalCopies;
+
+        [Category("Custom Props")]
+        public string Publisher
+        {
+            get { return _publisher; }
+            set { _publisher = value; }
+        }
+
+        [Category("Custom Props")]
+        public string Category
+        {
+            get { return _category; }
+            set { _category = value; }
+        }
+
+        [Category("Custom Props")]
+        public string Author
+        {
+            get { return _author; }
+            set { _author = value; }
+        }
 
         [Category("Custom Props")]
         public int aCopies
         {
             get { return availCopies; }
-            set {  availCopies = value; }
+            set { availCopies = value; }
+        }
+
+        [Category("Custom Props")]
+        public int TotalCopies
+        {
+            get { return totalCopies; }
+            set { totalCopies = value; }
         }
 
         [Category("Custom Props")]
@@ -125,7 +170,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         public List<string> checkoutTitles
         {
             get { return bookTitles; }
-            set {  bookTitles = value; }
+            set { bookTitles = value; }
         }
 
         [Category("Custom Props")]
@@ -142,6 +187,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             set { _year = value; bookYear.Text = value; }
         }
 
+
         public string ISBN
         {
             get { return _ISBN; }
@@ -152,7 +198,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         public Image icon
         {
             get { return _icon; }
-            set { _icon = value; }
+            set { _icon = value; bookPic.Image = value; }
         }
 
         #endregion
@@ -169,6 +215,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         {
             // Set the visibility of the button to false when the mouse leaves the user control
             detailsbtn.Visible = false;
+        }
+
+        private void bookPic_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
