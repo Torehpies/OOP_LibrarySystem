@@ -1,11 +1,17 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.VisualBasic;
+using MySql.Data.MySqlClient;
+using Mysqlx.Crud;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
+using static System.Reflection.Metadata.BlobBuilder;
 
 namespace FINAL_PROJECT_DRAFTZ_5_
 {
@@ -41,10 +47,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             borrowedbookcounts = "";
             lastreturn = "";
 
-            string query = "SELECT members.name, members.details, borrowedbooks.quantity, borrowedbooks.returnDate " +
-                    "FROM members " +
-                    "INNER JOIN borrowedbooks ON members.id = borrowedbooks.id " +
-                    "WHERE borrowedbooks.borrowerId = @id AND borrowedbooks.returnDate IS null;";
+            string query = "SELECT `books`.`title`, `books`.`author`, `borrowedbooks`.`dueDate`, `members`.`name`, `members`.`details`, `borrowedbooks`.`quantity`" +
+                           "FROM `books`" +
+                           "LEFT JOIN `borrowedbooks` ON `borrowedbooks`.`bookId` = `books`.`id`" +
+                           "LEFT JOIN `members` ON `borrowedbooks`.`borrowerId` = `members`.`id`" +
+                           "WHERE borrowedbooks.borrowerId = @id;";
 
 
             using (MySqlCommand command = new MySqlCommand(query, SQL_SERVER))
@@ -58,7 +65,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                         borrowerName = reader["name"].ToString();
                         details = reader["details"].ToString();
                         borrowedbookcounts = reader["quantity"].ToString();
-                        lastreturn = reader["returnDate"].ToString();
+                        //lastreturn = reader["returnDate"].ToString();
                     }
                 }
             }
@@ -67,13 +74,13 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         public static void DisplayBorrowedBooks(string id, out DataTable borrowedBooksTable)
         {
             start();
-
             borrowedBooksTable = new DataTable();
 
-            string query = "SELECT books.title, books.author, borrowedbooks.dueDate " +
-                           "FROM books " +
-                           "INNER JOIN borrowedbooks ON books.id = borrowedbooks.id " +
-                           "WHERE borrowedbooks.borrowerId = @id AND borrowedbooks.returnDate IS NULL;";
+            string query = "SELECT `books`.`title`, `books`.`author`, `borrowedbooks`.`dueDate`, `members`.`name`, `members`.`details`, `borrowedbooks`.`quantity`" +
+                           "FROM `books`" +
+                           "LEFT JOIN `borrowedbooks` ON `borrowedbooks`.`bookId` = `books`.`id`" +
+                           "LEFT JOIN `members` ON `borrowedbooks`.`borrowerId` = `members`.`id`" +
+                           "WHERE borrowedbooks.borrowerId = @id AND borrowedbooks.returnDate is null";
 
             using (MySqlCommand command = new MySqlCommand(query, SQL_SERVER))
             {

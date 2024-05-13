@@ -43,7 +43,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 bbcountlbl.Text = borrowedBookCounts;
                 lastreturnlbl.Text = lastReturn;
                 Dsplay_namebrwer.Text = borrowerName;
-                Dsplay_detailsbrwer.Text = details;
+                //Dsplay_detailsbrwer.Text = details;
             }
             catch (Exception ex)
             {
@@ -78,7 +78,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             {
                 ListViewItem item = new ListViewItem(row["title"].ToString());
                 item.SubItems.Add(row["author"].ToString());
-                item.SubItems.Add(row["dueDate"].ToString());
+                item.SubItems.Add(((DateTime)row["dueDate"]).ToString("yyyy-MM-dd"));
 
                 borrowedbooks_tbl.Items.Add(item);
             }
