@@ -1,4 +1,6 @@
-﻿namespace FINAL_PROJECT_DRAFTZ_5_
+﻿using CustomControls.RJControls;
+
+namespace FINAL_PROJECT_DRAFTZ_5_
 {
     partial class LoginForm
     {
@@ -32,12 +34,14 @@
             LogintBox = new TextBox();
             PasstBox = new TextBox();
             label1 = new Label();
-            loginButton = new Button();
-            createAccount = new Button();
+            loginButton = new CustomButton();
+            createAccount = new CustomButton();
             label2 = new Label();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             containerPanel = new Panel();
+            button2 = new Button();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -46,25 +50,27 @@
             // 
             LogintBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             LogintBox.BorderStyle = BorderStyle.None;
-            LogintBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            LogintBox.Location = new Point(618, 304);
+            LogintBox.Font = new Font("Quicksand", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            LogintBox.Location = new Point(618, 299);
             LogintBox.Margin = new Padding(2);
+            LogintBox.MinimumSize = new Size(299, 25);
             LogintBox.Name = "LogintBox";
-            LogintBox.PlaceholderText = "  Username";
-            LogintBox.Size = new Size(299, 22);
+            LogintBox.PlaceholderText = "Username";
+            LogintBox.Size = new Size(299, 25);
             LogintBox.TabIndex = 0;
             // 
             // PasstBox
             // 
             PasstBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             PasstBox.BorderStyle = BorderStyle.None;
-            PasstBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            PasstBox.Location = new Point(618, 340);
+            PasstBox.Font = new Font("Quicksand", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            PasstBox.Location = new Point(618, 330);
             PasstBox.Margin = new Padding(2);
+            PasstBox.MinimumSize = new Size(299, 25);
             PasstBox.Name = "PasstBox";
             PasstBox.PasswordChar = '*';
-            PasstBox.PlaceholderText = "  Password";
-            PasstBox.Size = new Size(299, 22);
+            PasstBox.PlaceholderText = "Password";
+            PasstBox.Size = new Size(299, 25);
             PasstBox.TabIndex = 1;
             PasstBox.UseSystemPasswordChar = true;
             // 
@@ -80,33 +86,44 @@
             // loginButton
             // 
             loginButton.BackColor = Color.FromArgb(34, 34, 59);
+            loginButton.BackgroundColor = Color.FromArgb(34, 34, 59);
+            loginButton.BorderColor = Color.PaleVioletRed;
+            loginButton.BorderRadius = 15;
+            loginButton.BorderSize = 0;
             loginButton.Cursor = Cursors.Hand;
             loginButton.FlatAppearance.BorderSize = 0;
             loginButton.FlatStyle = FlatStyle.Flat;
-            loginButton.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            loginButton.Font = new Font("Quicksand", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             loginButton.ForeColor = Color.Snow;
-            loginButton.Location = new Point(696, 373);
+            loginButton.Location = new Point(692, 366);
             loginButton.Margin = new Padding(2);
             loginButton.Name = "loginButton";
-            loginButton.Size = new Size(142, 38);
+            loginButton.Size = new Size(150, 30);
             loginButton.TabIndex = 2;
             loginButton.Text = "Login";
+            loginButton.TextColor = Color.Snow;
             loginButton.UseVisualStyleBackColor = false;
             loginButton.Click += loginButton_Click;
             // 
             // createAccount
             // 
             createAccount.BackColor = Color.Transparent;
+            createAccount.BackgroundColor = Color.Transparent;
+            createAccount.BorderColor = Color.FromArgb(34, 34, 59);
+            createAccount.BorderRadius = 15;
+            createAccount.BorderSize = 2;
             createAccount.Cursor = Cursors.Hand;
+            createAccount.FlatAppearance.BorderSize = 0;
             createAccount.FlatStyle = FlatStyle.Flat;
-            createAccount.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            createAccount.Font = new Font("Quicksand", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             createAccount.ForeColor = SystemColors.ActiveCaptionText;
-            createAccount.Location = new Point(707, 415);
+            createAccount.Location = new Point(692, 398);
             createAccount.Margin = new Padding(2);
             createAccount.Name = "createAccount";
-            createAccount.Size = new Size(120, 32);
+            createAccount.Size = new Size(150, 30);
             createAccount.TabIndex = 3;
             createAccount.Text = "Create Account";
+            createAccount.TextColor = SystemColors.ActiveCaptionText;
             createAccount.UseVisualStyleBackColor = false;
             createAccount.Click += createAcc_Click;
             // 
@@ -147,12 +164,44 @@
             containerPanel.TabIndex = 10;
             containerPanel.Visible = false;
             // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(242, 233, 228);
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Quicksand", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.ForeColor = Color.FromArgb(34, 34, 59);
+            button2.Location = new Point(938, 11);
+            button2.Name = "button2";
+            button2.Size = new Size(25, 30);
+            button2.TabIndex = 12;
+            button2.Text = "X";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(242, 233, 228);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Quicksand", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = Color.FromArgb(34, 34, 59);
+            button1.Location = new Point(910, 9);
+            button1.Name = "button1";
+            button1.Size = new Size(25, 30);
+            button1.TabIndex = 11;
+            button1.Text = "_";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(242, 233, 228);
             ClientSize = new Size(984, 561);
+            Controls.Add(button2);
+            Controls.Add(button1);
             Controls.Add(containerPanel);
             Controls.Add(pictureBox2);
             Controls.Add(label2);
@@ -163,7 +212,7 @@
             Controls.Add(PasstBox);
             Controls.Add(LogintBox);
             Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
-            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2);
             Name = "LoginForm";
@@ -181,11 +230,13 @@
         private TextBox LogintBox;
         private TextBox PasstBox;
         private Label label1;
-        private Button loginButton;
-        private Button createAccount;
+        private CustomButton loginButton;
+        private CustomButton createAccount;
         private Label label2;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private Panel containerPanel;
+        private Button button2;
+        private Button button1;
     }
 }

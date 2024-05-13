@@ -13,8 +13,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
           
-            MainForm mainForm = new MainForm();
-            Application.Run(mainForm);
+            LoginForm form = new LoginForm();  
+            //MainForm form = new MainForm();
+            Application.Run(form);
         }
     }
 }
