@@ -63,12 +63,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
             
         }
-
-        
-
-
-
-        
+                
         static Dictionary<string, int> checkOutList = new Dictionary<string, int>();
         
         private void button1_Click(object sender, EventArgs e)

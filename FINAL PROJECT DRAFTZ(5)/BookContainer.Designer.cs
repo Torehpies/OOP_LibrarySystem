@@ -42,7 +42,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // 
             bookYear.AutoSize = true;
             bookYear.Font = new Font("Quicksand Medium", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            bookYear.Location = new Point(79, 211);
+            bookYear.Location = new Point(66, 211);
             bookYear.Name = "bookYear";
             bookYear.Size = new Size(41, 23);
             bookYear.TabIndex = 19;
@@ -51,7 +51,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // bookPic
             // 
             bookPic.Image = Properties.Resources.how_to_write_a_lot;
-            bookPic.Location = new Point(34, 12);
+            bookPic.Location = new Point(23, 12);
             bookPic.Name = "bookPic";
             bookPic.Size = new Size(126, 153);
             bookPic.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -63,9 +63,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             bookTitle.AutoEllipsis = true;
             bookTitle.Font = new Font("Quicksand SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             bookTitle.ForeColor = Color.FromArgb(37, 23, 73);
-            bookTitle.Location = new Point(1, 168);
+            bookTitle.Location = new Point(0, 168);
             bookTitle.Name = "bookTitle";
-            bookTitle.Size = new Size(192, 53);
+            bookTitle.Size = new Size(172, 53);
             bookTitle.TabIndex = 18;
             bookTitle.Text = "How to Write a LotHow to Write a LotHow to Write a Lot";
             bookTitle.TextAlign = ContentAlignment.TopCenter;
@@ -84,7 +84,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             detailsbtn.FlatStyle = FlatStyle.Flat;
             detailsbtn.Font = new Font("Quicksand", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             detailsbtn.ForeColor = Color.FromArgb(255, 251, 235);
-            detailsbtn.Location = new Point(28, 232);
+            detailsbtn.Location = new Point(18, 232);
             detailsbtn.Margin = new Padding(0);
             detailsbtn.Name = "detailsbtn";
             detailsbtn.Size = new Size(80, 40);
@@ -106,7 +106,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             addbtn.FlatStyle = FlatStyle.Flat;
             addbtn.Font = new Font("Quicksand", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             addbtn.ForeColor = Color.FromArgb(255, 251, 235);
-            addbtn.Location = new Point(114, 232);
+            addbtn.Location = new Point(104, 232);
             addbtn.Margin = new Padding(0);
             addbtn.Name = "addbtn";
             addbtn.Size = new Size(50, 40);
@@ -126,9 +126,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             Controls.Add(bookYear);
             Controls.Add(bookPic);
             Controls.Add(bookTitle);
-            Margin = new Padding(0);
+            Margin = new Padding(0, 0, 15, 15);
             Name = "BookContainer";
-            Size = new Size(192, 279);
+            Size = new Size(175, 279);
             ((System.ComponentModel.ISupportInitialize)bookPic).EndInit();
             ResumeLayout(false);
             PerformLayout();
