@@ -30,6 +30,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             main_pnl = new Panel();
             container_pnl = new Panel();
             navigation_pnl = new Panel();
@@ -230,6 +231,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             ClientSize = new Size(1184, 700);
             Controls.Add(main_pnl);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MainForm";
