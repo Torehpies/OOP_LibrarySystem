@@ -39,6 +39,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             panel6 = new Panel();
             panel7 = new Panel();
             borrowedbooks_tbl = new ListView();
+            title_column = new ColumnHeader();
+            author_column = new ColumnHeader();
+            dueDate_column = new ColumnHeader();
             Dsplay_return = new Label();
             Dsplay_due = new Label();
             Dsplay_author = new Label();
@@ -60,9 +63,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             enterId_btn = new Button();
             id_txtbox = new TextBox();
             Dsplay_bookreturn = new Label();
-            title_column = new ColumnHeader();
-            author_column = new ColumnHeader();
-            dueDate_column = new ColumnHeader();
             panel1.SuspendLayout();
             panel5.SuspendLayout();
             panel6.SuspendLayout();
@@ -102,9 +102,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             Dsplay_detailsbrwer.Font = new Font("Quicksand SemiBold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             Dsplay_detailsbrwer.Location = new Point(489, 56);
             Dsplay_detailsbrwer.Name = "Dsplay_detailsbrwer";
-            Dsplay_detailsbrwer.Size = new Size(82, 31);
+            Dsplay_detailsbrwer.Size = new Size(0, 31);
             Dsplay_detailsbrwer.TabIndex = 4;
-            Dsplay_detailsbrwer.Text = "Details";
             // 
             // cancel_btn
             // 
@@ -133,6 +132,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             confirm_btn.TabIndex = 2;
             confirm_btn.Text = "CONFIRM";
             confirm_btn.UseVisualStyleBackColor = false;
+            confirm_btn.Click += confirm_btn_Click;
             // 
             // Dsplay_namebrwer
             // 
@@ -140,9 +140,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             Dsplay_namebrwer.Font = new Font("Quicksand SemiBold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             Dsplay_namebrwer.Location = new Point(35, 56);
             Dsplay_namebrwer.Name = "Dsplay_namebrwer";
-            Dsplay_namebrwer.Size = new Size(73, 31);
+            Dsplay_namebrwer.Size = new Size(0, 31);
             Dsplay_namebrwer.TabIndex = 1;
-            Dsplay_namebrwer.Text = "Name";
             // 
             // panel6
             // 
@@ -182,6 +181,24 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             borrowedbooks_tbl.TabIndex = 1;
             borrowedbooks_tbl.UseCompatibleStateImageBehavior = false;
             borrowedbooks_tbl.View = View.Details;
+            // 
+            // title_column
+            // 
+            title_column.Text = "Title";
+            title_column.TextAlign = HorizontalAlignment.Center;
+            title_column.Width = 190;
+            // 
+            // author_column
+            // 
+            author_column.Text = "Author";
+            author_column.TextAlign = HorizontalAlignment.Center;
+            author_column.Width = 190;
+            // 
+            // dueDate_column
+            // 
+            dueDate_column.Text = "Due Date";
+            dueDate_column.TextAlign = HorizontalAlignment.Center;
+            dueDate_column.Width = 190;
             // 
             // Dsplay_return
             // 
@@ -400,24 +417,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             Dsplay_bookreturn.Size = new Size(348, 55);
             Dsplay_bookreturn.TabIndex = 3;
             Dsplay_bookreturn.Text = "BOOK RETURNING";
-            // 
-            // title_column
-            // 
-            title_column.Text = "Title";
-            title_column.TextAlign = HorizontalAlignment.Center;
-            title_column.Width = 190;
-            // 
-            // author_column
-            // 
-            author_column.Text = "Author";
-            author_column.TextAlign = HorizontalAlignment.Center;
-            author_column.Width = 190;
-            // 
-            // dueDate_column
-            // 
-            dueDate_column.Text = "Due Date";
-            dueDate_column.TextAlign = HorizontalAlignment.Center;
-            dueDate_column.Width = 190;
             // 
             // BookReturn
             // 

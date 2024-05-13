@@ -44,7 +44,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             string query = "SELECT members.name, members.details, borrowedbooks.quantity, borrowedbooks.returnDate " +
                     "FROM members " +
                     "INNER JOIN borrowedbooks ON members.id = borrowedbooks.id " +
-                    "WHERE borrowedbooks.borrowerId = @id;";
+                    "WHERE borrowedbooks.borrowerId = @id AND borrowedbooks.returnDate IS NULL;";
 
 
             using (MySqlCommand command = new MySqlCommand(query, SQL_SERVER))
@@ -73,7 +73,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             string query = "SELECT books.title, books.author, borrowedbooks.dueDate " +
                            "FROM books " +
                            "INNER JOIN borrowedbooks ON books.id = borrowedbooks.id " +
-                           "WHERE borrowedbooks.borrowerId = @id;";
+                           "WHERE borrowedbooks.borrowerId = @id AND borrowedbooks.returnDate IS NULL;";
 
             using (MySqlCommand command = new MySqlCommand(query, SQL_SERVER))
             {
@@ -84,5 +84,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 }
             }
         }
+
     }
 }

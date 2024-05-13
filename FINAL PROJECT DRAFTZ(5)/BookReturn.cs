@@ -84,5 +84,42 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
         }
 
+        private void confirm_btn_Click(object sender, EventArgs e)
+        {
+            // Check if an item is selected in the ListView
+            if (borrowedbooks_tbl.SelectedItems.Count > 0)
+            {
+                // Get the selected item
+                ListViewItem selectedItem = borrowedbooks_tbl.SelectedItems[0];
+
+                // Get the title of the selected book
+                string title = selectedItem.SubItems[0].Text;
+
+                // Get the current date
+                DateTime returnDate = DateTime.Now;
+
+                try
+                {
+                    // Update borrowedbooks table with the return date
+                    bookCRUD.UpdateReturnDate(title, returnDate);
+
+                    // Update books table to increment the available copies
+                    bookCRUD.IncrementAvailableCopies(title);
+
+                    // Remove the returned book from the ListView
+                    borrowedbooks_tbl.Items.Remove(selectedItem);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error updating database: " + ex.Message);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Please select a book to confirm return.");
+            }
+        }
+
     }
 }

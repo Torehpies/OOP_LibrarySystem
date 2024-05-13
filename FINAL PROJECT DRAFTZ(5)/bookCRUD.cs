@@ -134,5 +134,77 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 MessageBox.Show("No rows updated.");
             }
         }
+
+        public static void UpdateReturnDate(string title, DateTime returnDate)
+        {
+            start();
+
+            try
+            {
+                string query = "UPDATE borrowedbooks SET returnDate = @returnDate WHERE bookId = (SELECT id FROM books WHERE title = @title)";
+                using (MySqlCommand command = new MySqlCommand(query, SQL_SERVER))
+                {
+                    command.Parameters.AddWithValue("@returnDate", returnDate);
+                    command.Parameters.AddWithValue("@title", title);
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating return date: " + ex.Message);
+            }
+        }
+
+
+        public static void IncrementAvailableCopies(string title)
+        {
+            start();
+
+            try
+            {
+                // Get the current available copies
+                int currentAvailableCopies = GetCurrentAvailableCopies(title);
+
+                // Increment available copies by 1
+                int newAvailableCopies = currentAvailableCopies + 1;
+
+                // Update books table with the new available copies
+                string updateQuery = "UPDATE books SET availableCopies = @availablecopies WHERE title = @title";
+                using (MySqlCommand command = new MySqlCommand(updateQuery, SQL_SERVER))
+                {
+                    command.Parameters.AddWithValue("@availablecopies", newAvailableCopies);
+                    command.Parameters.AddWithValue("@title", title);
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating available copies: " + ex.Message);
+            }
+        }
+
+        public static int GetCurrentAvailableCopies(string title)
+        {
+            start();
+
+            try
+            {
+                string query = "SELECT availableCopies FROM books WHERE title = @title";
+                using (MySqlCommand command = new MySqlCommand(query, SQL_SERVER))
+                {
+                    command.Parameters.AddWithValue("@title", title);
+                    object result = command.ExecuteScalar();
+                    if (result != null && result != DBNull.Value)
+                    {
+                        return Convert.ToInt32(result);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error retrieving current available copies: " + ex.Message);
+            }
+            return 0;
+        }
     }
 }
