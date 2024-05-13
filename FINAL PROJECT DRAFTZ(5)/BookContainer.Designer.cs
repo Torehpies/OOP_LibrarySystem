@@ -1,4 +1,6 @@
-﻿namespace FINAL_PROJECT_DRAFTZ_5_
+﻿using CustomControls.RJControls;
+
+namespace FINAL_PROJECT_DRAFTZ_5_
 {
     partial class BookContainer
     {
@@ -31,25 +33,25 @@
             bookYear = new Label();
             bookPic = new PictureBox();
             bookTitle = new Label();
-            detailsbtn = new Button();
-            addbtn = new Button();
+            detailsbtn = new CustomButton();
+            addbtn = new CustomButton();
             ((System.ComponentModel.ISupportInitialize)bookPic).BeginInit();
             SuspendLayout();
             // 
             // bookYear
             // 
             bookYear.AutoSize = true;
-            bookYear.Font = new Font("Franklin Gothic Medium", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            bookYear.Location = new Point(75, 189);
+            bookYear.Font = new Font("Quicksand Medium", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            bookYear.Location = new Point(79, 211);
             bookYear.Name = "bookYear";
-            bookYear.Size = new Size(45, 20);
+            bookYear.Size = new Size(41, 23);
             bookYear.TabIndex = 19;
             bookYear.Text = "2018";
             // 
             // bookPic
             // 
             bookPic.Image = Properties.Resources.how_to_write_a_lot;
-            bookPic.Location = new Point(38, 12);
+            bookPic.Location = new Point(34, 12);
             bookPic.Name = "bookPic";
             bookPic.Size = new Size(126, 153);
             bookPic.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -59,42 +61,58 @@
             // bookTitle
             // 
             bookTitle.AutoEllipsis = true;
-            bookTitle.Font = new Font("Franklin Gothic Demi Cond", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            bookTitle.Font = new Font("Quicksand SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             bookTitle.ForeColor = Color.FromArgb(37, 23, 73);
-            bookTitle.Location = new Point(38, 168);
+            bookTitle.Location = new Point(1, 168);
             bookTitle.Name = "bookTitle";
-            bookTitle.Size = new Size(126, 21);
+            bookTitle.Size = new Size(192, 53);
             bookTitle.TabIndex = 18;
-            bookTitle.Text = "How to Write a Lot";
+            bookTitle.Text = "How to Write a LotHow to Write a LotHow to Write a Lot";
+            bookTitle.TextAlign = ContentAlignment.TopCenter;
+            bookTitle.UseCompatibleTextRendering = true;
             bookTitle.Click += bookTitle_Click;
             // 
             // detailsbtn
             // 
             detailsbtn.BackColor = Color.FromArgb(38, 49, 89);
+            detailsbtn.BackgroundColor = Color.FromArgb(38, 49, 89);
+            detailsbtn.BorderColor = Color.PaleVioletRed;
+            detailsbtn.BorderRadius = 18;
+            detailsbtn.BorderSize = 0;
             detailsbtn.Cursor = Cursors.Hand;
+            detailsbtn.FlatAppearance.BorderSize = 0;
             detailsbtn.FlatStyle = FlatStyle.Flat;
-            detailsbtn.Font = new Font("Franklin Gothic Book", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            detailsbtn.Font = new Font("Quicksand", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             detailsbtn.ForeColor = Color.FromArgb(255, 251, 235);
-            detailsbtn.Location = new Point(3, 212);
+            detailsbtn.Location = new Point(28, 232);
+            detailsbtn.Margin = new Padding(0);
             detailsbtn.Name = "detailsbtn";
-            detailsbtn.Size = new Size(88, 64);
+            detailsbtn.Size = new Size(80, 40);
             detailsbtn.TabIndex = 20;
             detailsbtn.Text = "DETAILS";
+            detailsbtn.TextColor = Color.FromArgb(255, 251, 235);
             detailsbtn.UseVisualStyleBackColor = false;
             detailsbtn.Click += borrowBtn_Click;
             // 
             // addbtn
             // 
             addbtn.BackColor = Color.FromArgb(38, 49, 89);
+            addbtn.BackgroundColor = Color.FromArgb(38, 49, 89);
+            addbtn.BorderColor = Color.PaleVioletRed;
+            addbtn.BorderRadius = 18;
+            addbtn.BorderSize = 0;
             addbtn.Cursor = Cursors.Hand;
+            addbtn.FlatAppearance.BorderSize = 0;
             addbtn.FlatStyle = FlatStyle.Flat;
-            addbtn.Font = new Font("Franklin Gothic Book", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            addbtn.Font = new Font("Quicksand", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             addbtn.ForeColor = Color.FromArgb(255, 251, 235);
-            addbtn.Location = new Point(97, 212);
+            addbtn.Location = new Point(114, 232);
+            addbtn.Margin = new Padding(0);
             addbtn.Name = "addbtn";
-            addbtn.Size = new Size(92, 64);
+            addbtn.Size = new Size(50, 40);
             addbtn.TabIndex = 21;
             addbtn.Text = "+";
+            addbtn.TextColor = Color.FromArgb(255, 251, 235);
             addbtn.UseVisualStyleBackColor = false;
             addbtn.Click += button1_Click;
             // 
@@ -108,6 +126,7 @@
             Controls.Add(bookYear);
             Controls.Add(bookPic);
             Controls.Add(bookTitle);
+            Margin = new Padding(0);
             Name = "BookContainer";
             Size = new Size(192, 279);
             ((System.ComponentModel.ISupportInitialize)bookPic).EndInit();
@@ -120,7 +139,7 @@
         private Label bookYear;
         private PictureBox bookPic;
         private Label bookTitle;
-        private Button detailsbtn;
-        private Button addbtn;
+        private CustomButton detailsbtn;
+        private CustomButton addbtn;
     }
 }
