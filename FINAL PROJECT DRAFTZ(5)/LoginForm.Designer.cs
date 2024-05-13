@@ -166,14 +166,14 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // 
             // button2
             // 
-            button2.BackColor = Color.FromArgb(192, 0, 0);
+            button2.BackColor = Color.FromArgb(242, 233, 228);
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Quicksand", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = SystemColors.ButtonHighlight;
-            button2.Location = new Point(938, 12);
+            button2.Font = new Font("Quicksand", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.ForeColor = Color.FromArgb(34, 34, 59);
+            button2.Location = new Point(938, 11);
             button2.Name = "button2";
-            button2.Size = new Size(34, 23);
+            button2.Size = new Size(25, 30);
             button2.TabIndex = 12;
             button2.Text = "X";
             button2.UseVisualStyleBackColor = false;
@@ -181,16 +181,16 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // 
             // button1
             // 
-            button1.BackColor = Color.FromArgb(103, 91, 131);
+            button1.BackColor = Color.FromArgb(242, 233, 228);
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Quicksand", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(902, 12);
+            button1.Font = new Font("Quicksand", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = Color.FromArgb(34, 34, 59);
+            button1.Location = new Point(910, 9);
             button1.Name = "button1";
-            button1.Size = new Size(34, 23);
+            button1.Size = new Size(25, 30);
             button1.TabIndex = 11;
-            button1.Text = "-";
+            button1.Text = "_";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
