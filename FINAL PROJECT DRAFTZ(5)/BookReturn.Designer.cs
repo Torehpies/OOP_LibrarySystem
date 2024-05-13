@@ -1,4 +1,6 @@
-﻿namespace FINAL_PROJECT_DRAFTZ_5_
+﻿using System.Windows.Forms;
+
+namespace FINAL_PROJECT_DRAFTZ_5_
 {
     partial class BookReturn
     {
@@ -58,6 +60,9 @@
             enterId_btn = new Button();
             id_txtbox = new TextBox();
             Dsplay_bookreturn = new Label();
+            title_column = new ColumnHeader();
+            author_column = new ColumnHeader();
+            dueDate_column = new ColumnHeader();
             panel1.SuspendLayout();
             panel5.SuspendLayout();
             panel6.SuspendLayout();
@@ -166,6 +171,9 @@
             // 
             // borrowedbooks_tbl
             // 
+            borrowedbooks_tbl.CheckBoxes = true;
+            borrowedbooks_tbl.Columns.AddRange(new ColumnHeader[] { title_column, author_column, dueDate_column });
+            borrowedbooks_tbl.Dock = DockStyle.Fill;
             borrowedbooks_tbl.Font = new Font("Quicksand", 12F, FontStyle.Regular, GraphicsUnit.Point);
             borrowedbooks_tbl.GridLines = true;
             borrowedbooks_tbl.Location = new Point(0, 0);
@@ -173,6 +181,7 @@
             borrowedbooks_tbl.Size = new Size(590, 335);
             borrowedbooks_tbl.TabIndex = 1;
             borrowedbooks_tbl.UseCompatibleStateImageBehavior = false;
+            borrowedbooks_tbl.View = View.Details;
             // 
             // Dsplay_return
             // 
@@ -227,9 +236,9 @@
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(51, 51, 51);
-            panel4.Location = new Point(12, 280);
+            panel4.Location = new Point(9, 279);
             panel4.Name = "panel4";
-            panel4.Size = new Size(500, 3);
+            panel4.Size = new Size(515, 2);
             panel4.TabIndex = 7;
             // 
             // panel3
@@ -386,11 +395,29 @@
             // 
             Dsplay_bookreturn.AutoSize = true;
             Dsplay_bookreturn.Font = new Font("Quicksand", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
-            Dsplay_bookreturn.Location = new Point(94, 9);
+            Dsplay_bookreturn.Location = new Point(84, 9);
             Dsplay_bookreturn.Name = "Dsplay_bookreturn";
             Dsplay_bookreturn.Size = new Size(348, 55);
             Dsplay_bookreturn.TabIndex = 3;
             Dsplay_bookreturn.Text = "BOOK RETURNING";
+            // 
+            // title_column
+            // 
+            title_column.Text = "Title";
+            title_column.TextAlign = HorizontalAlignment.Center;
+            title_column.Width = 190;
+            // 
+            // author_column
+            // 
+            author_column.Text = "Author";
+            author_column.TextAlign = HorizontalAlignment.Center;
+            author_column.Width = 190;
+            // 
+            // dueDate_column
+            // 
+            dueDate_column.Text = "Due Date";
+            dueDate_column.TextAlign = HorizontalAlignment.Center;
+            dueDate_column.Width = 190;
             // 
             // BookReturn
             // 
@@ -400,7 +427,6 @@
             Controls.Add(panel1);
             Name = "BookReturn";
             Text = "BookReturn";
-            Load += BookReturn_Load;
             panel1.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
@@ -446,5 +472,8 @@
         private Label bbcountlbl;
         private Label detailslbl;
         private ListView borrowedbooks_tbl;
+        private ColumnHeader title_column;
+        private ColumnHeader author_column;
+        private ColumnHeader dueDate_column;
     }
 }
