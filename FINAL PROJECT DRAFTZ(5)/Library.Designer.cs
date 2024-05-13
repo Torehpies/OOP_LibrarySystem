@@ -31,16 +31,16 @@
             flowLayoutPanel1 = new FlowLayoutPanel();
             searchBox = new TextBox();
             mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            enterId_btn = new Button();
+            button4 = new Button();
+            button5 = new Button();
             SuspendLayout();
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.Location = new Point(-2, 84);
+            flowLayoutPanel1.Location = new Point(12, 84);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1155, 548);
+            flowLayoutPanel1.Size = new Size(1146, 548);
             flowLayoutPanel1.TabIndex = 0;
             flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
@@ -59,44 +59,60 @@
             mySqlCommand1.EnableCaching = false;
             mySqlCommand1.Transaction = null;
             // 
-            // button1
+            // enterId_btn
             // 
-            button1.Location = new Point(268, 46);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 2;
-            button1.Text = "Search";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            enterId_btn.BackColor = Color.FromArgb(102, 102, 102);
+            enterId_btn.FlatAppearance.BorderColor = Color.FromArgb(242, 233, 228);
+            enterId_btn.FlatStyle = FlatStyle.Flat;
+            enterId_btn.Font = new Font("Quicksand SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            enterId_btn.ForeColor = Color.White;
+            enterId_btn.Location = new Point(268, 42);
+            enterId_btn.Name = "enterId_btn";
+            enterId_btn.Size = new Size(75, 27);
+            enterId_btn.TabIndex = 6;
+            enterId_btn.Text = "Search";
+            enterId_btn.UseVisualStyleBackColor = false;
+            enterId_btn.Click += button1_Click;
             // 
-            // button2
+            // button4
             // 
-            button2.Location = new Point(349, 46);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 3;
-            button2.Text = "Reset";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            button4.BackColor = Color.FromArgb(102, 102, 102);
+            button4.FlatAppearance.BorderColor = Color.FromArgb(242, 233, 228);
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Quicksand SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button4.ForeColor = Color.White;
+            button4.Location = new Point(349, 42);
+            button4.Name = "button4";
+            button4.Size = new Size(75, 27);
+            button4.TabIndex = 7;
+            button4.Text = "Reset";
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button2_Click;
             // 
-            // button3
+            // button5
             // 
-            button3.Location = new Point(430, 46);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 4;
-            button3.Text = "Checkout";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            button5.BackColor = Color.FromArgb(102, 102, 102);
+            button5.FlatAppearance.BorderColor = Color.FromArgb(242, 233, 228);
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.Font = new Font("Quicksand SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button5.ForeColor = Color.White;
+            button5.Location = new Point(1083, 51);
+            button5.Name = "button5";
+            button5.Size = new Size(75, 27);
+            button5.TabIndex = 8;
+            button5.Text = "Checkout";
+            button5.UseVisualStyleBackColor = false;
+            button5.Click += button3_Click;
             // 
             // Library
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(255, 224, 192);
             ClientSize = new Size(1170, 634);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(button5);
+            Controls.Add(button4);
+            Controls.Add(enterId_btn);
             Controls.Add(searchBox);
             Controls.Add(flowLayoutPanel1);
             Name = "Library";
@@ -112,8 +128,8 @@
         private FlowLayoutPanel flowLayoutPanel1;
         private TextBox searchBox;
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
-        private Button button1;
-        private Button button2;
-        private Button button3;
+        private Button enterId_btn;
+        private Button button4;
+        private Button button5;
     }
 }

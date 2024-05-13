@@ -29,33 +29,39 @@
         private void InitializeComponent()
         {
             flowLayoutPanel1 = new FlowLayoutPanel();
-            button1 = new Button();
+            button5 = new Button();
             SuspendLayout();
             // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.Location = new Point(1, 2);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(799, 419);
+            flowLayoutPanel1.Size = new Size(799, 403);
             flowLayoutPanel1.TabIndex = 0;
             flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
-            // button1
+            // button5
             // 
-            button1.Location = new Point(713, 427);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 1;
-            button1.Text = "Checkout";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            button5.BackColor = Color.FromArgb(102, 102, 102);
+            button5.FlatAppearance.BorderColor = Color.FromArgb(242, 233, 228);
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.Font = new Font("Quicksand SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button5.ForeColor = Color.White;
+            button5.Location = new Point(713, 411);
+            button5.Name = "button5";
+            button5.Size = new Size(75, 27);
+            button5.TabIndex = 9;
+            button5.Text = "Checkout";
+            button5.UseVisualStyleBackColor = false;
+            button5.Click += button1_Click;
             // 
             // Checkout
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(255, 224, 192);
             ClientSize = new Size(800, 450);
-            Controls.Add(button1);
+            Controls.Add(button5);
             Controls.Add(flowLayoutPanel1);
             Name = "Checkout";
             Text = "Form7";
@@ -66,6 +72,6 @@
         #endregion
 
         private FlowLayoutPanel flowLayoutPanel1;
-        private Button button1;
+        private Button button5;
     }
 }
