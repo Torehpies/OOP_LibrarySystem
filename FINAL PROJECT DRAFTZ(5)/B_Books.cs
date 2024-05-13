@@ -29,19 +29,18 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             using (MySqlConnection con = new MySqlConnection("server=127.0.0.1; user=root; database=test; password=;Convert Zero Datetime=True"))
             {
                 con.Open();
-                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT b.isbn, b.title, b.author, m.name, bb.borrowDate, bb.dueDate, bb.returnDate FROM BorrowedBooks bb INNER JOIN Books b ON bb.bookId = b.id INNER JOIN Members m ON bb.borrowerId = m.id", con);
+                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT b.isbn, b.title, b.author, m.name, bb.borrowDate, bb.dueDate FROM BorrowedBooks bb INNER JOIN Books b ON bb.bookId = b.id INNER JOIN Members m ON bb.borrowerId = m.id", con);
 
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
 
                 listView1.View = View.Details;
                 listView1.Columns[0].Width = -1;
-                listView1.Columns[1].Width = 350;
+                listView1.Columns[1].Width = 450;
                 listView1.Columns[2].Width = 170;
                 listView1.Columns[3].Width = 170;
                 listView1.Columns[4].Width = 100;
                 listView1.Columns[5].Width = 100;
-                listView1.Columns[6].Width = 100;
 
                 foreach (DataRow dr in dataTable.Rows)
                 {
@@ -50,7 +49,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                     item.SubItems.Add(dr["author"].ToString());
                     item.SubItems.Add(dr["name"].ToString());
                     item.SubItems.Add(((DateTime)dr["borrowDate"]).ToString("yyyy-MM-dd"));
-                    item.SubItems.Add(((DateTime)dr["returnDate"]).ToString("yyyy-MM-dd"));
                     item.SubItems.Add(((DateTime)dr["dueDate"]).ToString("yyyy-MM-dd"));
                     listView1.Items.Add(item);
                 }
@@ -67,7 +65,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 listitem.SubItems.Add(dr["author"].ToString());
                 listitem.SubItems.Add(dr["name"].ToString());
                 listitem.SubItems.Add(dr["borrowDate"].ToString());
-                listitem.SubItems.Add(dr["returnDate"].ToString());
                 listitem.SubItems.Add(dr["dueDate"].ToString());
 
 

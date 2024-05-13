@@ -44,7 +44,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             string query = "SELECT members.name, members.details, borrowedbooks.quantity, borrowedbooks.returnDate " +
                     "FROM members " +
                     "INNER JOIN borrowedbooks ON members.id = borrowedbooks.id " +
-                    "WHERE borrowedbooks.borrowerId = @id AND borrowedbooks.returnDate IS NULL;";
+                    "WHERE borrowedbooks.borrowerId = @id AND borrowedbooks.returnDate IS null;";
 
 
             using (MySqlCommand command = new MySqlCommand(query, SQL_SERVER))
