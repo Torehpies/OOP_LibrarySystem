@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
+using System.Collections.Generic;
+using System.Drawing.Drawing2D;
 
 namespace FINAL_PROJECT_DRAFTZ_5_
 {
@@ -21,10 +24,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         {
             InitializeComponent();
 
-            Region = Region.FromHrgn(RoundEdge.CreateRoundRectRgn(0,0,Width,Height,30,30));
+            Region = Region.FromHrgn(RoundEdge.CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
 
             libPane = new Library() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
-            borrowPane = new BorrowedList() {TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
+            borrowPane = new BorrowedList() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
             bookreturnPane = new BookReturn() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
             bookinventPane = new BookInventory() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
 
@@ -40,10 +43,13 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             borrowPane.Hide();
             bookreturnPane.Hide();
             bookinventPane.Hide();
+
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+
+
 
 
         }
@@ -59,8 +65,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         }
         private void library_btn_Click(object sender, EventArgs e)
         {
-          
-            
+
+
             borrowPane.Show();
             library_btn.BackColor = ColorTranslator.FromHtml("#F2E9E4");
             borrower_btn.BackColor = ColorTranslator.FromHtml("#4A4E69");
@@ -135,5 +141,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             bookinventPane.Show();
             bookinventPane.FormBorderStyle = FormBorderStyle.None;
         }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+   
     }
 }
