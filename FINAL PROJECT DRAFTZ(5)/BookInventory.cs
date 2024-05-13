@@ -43,7 +43,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             abDashboard.Dock = DockStyle.Fill;
         }
 
-        private void BookInventory_Load(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

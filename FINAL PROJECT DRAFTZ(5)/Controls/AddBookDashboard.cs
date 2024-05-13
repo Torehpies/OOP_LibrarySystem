@@ -46,5 +46,15 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
