@@ -40,6 +40,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
                 namelbl.Text = borrowerName;
                 detailslbl.Text = details;
+                bbcountslbl.Text = borrowedBookCounts;
                 //Dsplay_detailsbrwer.Text = details;
             }
             catch (Exception ex)
@@ -118,24 +119,5 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
         }
 
-        private void Dsplay_borrowedbooks_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Dsplay_Id_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void detailslbl_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

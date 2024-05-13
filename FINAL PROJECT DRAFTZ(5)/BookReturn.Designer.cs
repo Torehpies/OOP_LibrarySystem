@@ -39,7 +39,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             title_column = new ColumnHeader();
             author_column = new ColumnHeader();
             dueDate_column = new ColumnHeader();
-            Dsplay_detailsbrwer = new Label();
+            bbcountslbl = new Label();
             Dsplay_borrowedbooks = new Label();
             confirm_btn = new Button();
             enterId_btn = new Button();
@@ -66,7 +66,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             panel5.Controls.Add(detailslbl);
             panel5.Controls.Add(namelbl);
             panel5.Controls.Add(panel2);
-            panel5.Controls.Add(Dsplay_detailsbrwer);
+            panel5.Controls.Add(bbcountslbl);
             panel5.Controls.Add(Dsplay_borrowedbooks);
             panel5.Controls.Add(confirm_btn);
             panel5.Controls.Add(enterId_btn);
@@ -85,7 +85,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             detailslbl.Name = "detailslbl";
             detailslbl.Size = new Size(0, 35);
             detailslbl.TabIndex = 9;
-            detailslbl.Click += detailslbl_Click;
             // 
             // namelbl
             // 
@@ -95,7 +94,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             namelbl.Name = "namelbl";
             namelbl.Size = new Size(0, 35);
             namelbl.TabIndex = 8;
-            namelbl.Click += label1_Click;
             // 
             // panel2
             // 
@@ -137,25 +135,24 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             dueDate_column.TextAlign = HorizontalAlignment.Center;
             dueDate_column.Width = 350;
             // 
-            // Dsplay_detailsbrwer
+            // bbcountslbl
             // 
-            Dsplay_detailsbrwer.AutoSize = true;
-            Dsplay_detailsbrwer.Font = new Font("Quicksand SemiBold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            Dsplay_detailsbrwer.Location = new Point(489, 56);
-            Dsplay_detailsbrwer.Name = "Dsplay_detailsbrwer";
-            Dsplay_detailsbrwer.Size = new Size(0, 31);
-            Dsplay_detailsbrwer.TabIndex = 4;
+            bbcountslbl.AutoSize = true;
+            bbcountslbl.Font = new Font("Quicksand Medium", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            bbcountslbl.Location = new Point(1028, 83);
+            bbcountslbl.Name = "bbcountslbl";
+            bbcountslbl.Size = new Size(0, 35);
+            bbcountslbl.TabIndex = 4;
             // 
             // Dsplay_borrowedbooks
             // 
             Dsplay_borrowedbooks.AutoSize = true;
             Dsplay_borrowedbooks.Font = new Font("Quicksand Medium", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            Dsplay_borrowedbooks.Location = new Point(833, 79);
+            Dsplay_borrowedbooks.Location = new Point(794, 80);
             Dsplay_borrowedbooks.Name = "Dsplay_borrowedbooks";
             Dsplay_borrowedbooks.Size = new Size(209, 35);
             Dsplay_borrowedbooks.TabIndex = 2;
             Dsplay_borrowedbooks.Text = "Borrowed Books:";
-            Dsplay_borrowedbooks.Click += Dsplay_borrowedbooks_Click;
             // 
             // confirm_btn
             // 
@@ -196,7 +193,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             Dsplay_Id.Size = new Size(88, 30);
             Dsplay_Id.TabIndex = 6;
             Dsplay_Id.Text = "Input Id:";
-            Dsplay_Id.Click += Dsplay_Id_Click;
             // 
             // id_txtbox
             // 
@@ -228,7 +224,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private Panel panel5;
         private Label Dsplay_borrowedbooks;
         private Button confirm_btn;
-        private Label Dsplay_detailsbrwer;
+        private Label bbcountslbl;
         private ListView borrowedbooks_tbl;
         private ColumnHeader title_column;
         private ColumnHeader author_column;
