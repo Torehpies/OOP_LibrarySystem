@@ -30,6 +30,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             main_pnl = new Panel();
             container_pnl = new Panel();
             navigation_pnl = new Panel();
@@ -54,7 +55,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             main_pnl.Name = "main_pnl";
             main_pnl.Size = new Size(1186, 700);
             main_pnl.TabIndex = 0;
-            main_pnl.Paint += panel1_Paint;
             // 
             // container_pnl
             // 
@@ -194,7 +194,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             borrower_btn.Name = "borrower_btn";
             borrower_btn.Size = new Size(191, 40);
             borrower_btn.TabIndex = 1;
-            borrower_btn.Text = "BORROWER LIST";
+            borrower_btn.Text = "BORROWED BOOKS";
             borrower_btn.TextColor = Color.White;
             borrower_btn.UseVisualStyleBackColor = false;
             borrower_btn.Click += borrower_btn_Click;
@@ -230,10 +230,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             ClientSize = new Size(1184, 700);
             Controls.Add(main_pnl);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MainForm";
-            Load += MainForm_Load;
             main_pnl.ResumeLayout(false);
             navigation_pnl.ResumeLayout(false);
             ResumeLayout(false);
