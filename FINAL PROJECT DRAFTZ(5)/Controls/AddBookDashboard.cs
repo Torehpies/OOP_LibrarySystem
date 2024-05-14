@@ -66,17 +66,21 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
             bookCRUD.AddBooks(titleText.Text, authorText.Text, isbnText.Text, categoryText.Text, publisherText.Text, year, int.Parse(bookNoText.Text), imagePath);
         }
 
-        private string SaveImageInResourceFolder(Books book, Image image)
+        public string SaveImageInResourceFolder(Books book, Image image)
         {
             string projectDiretory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
             string resourceFolderPath = Path.Combine(projectDiretory, "Resources");
 
-            string imagePath = Path.Combine(resourceFolderPath, book.Title);
+            string imageName = book.Title;
+
+            string imagePath = Path.Combine(resourceFolderPath, imageName);
+            
             MessageBox.Show(imagePath);
+            MessageBox.Show(resourceFolderPath);
             image.Save(imagePath + ".jpg");
 
 
-            return imagePath + ".jpg";
+            return imageName + ".jpg";
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)

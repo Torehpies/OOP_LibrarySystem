@@ -89,6 +89,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
         }
 
+        // Single update
         public static void UpdateBooks(string columnToUpdate, object newValue, string conditionColumn, string conditionValue)
         {
 
@@ -113,6 +114,45 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 }
             }
 
+        }
+
+        // Multi update
+        public static void UpdateInfos(string[] columnsToUpdate, string[] newValue, string conditionColumn, object conditionValue) 
+        {
+            start();
+
+            int columns = columnsToUpdate.Length;
+            StringBuilder query = new StringBuilder($"UPDATE books SET ");
+
+            for (int i = 0; i < columns; i++)
+            {
+                query.AppendLine(columnsToUpdate[i] + " = " + '"' + newValue[i] + '"');
+
+                if ( i < columns - 1)
+                {
+                    query.Append(',');
+                }
+            }
+            query.AppendLine(" WHERE " + conditionColumn + " = " +  '"' + conditionValue + '"');
+            MessageBox.Show(query.ToString());
+
+            using (MySqlCommand cmd = new MySqlCommand(query.ToString(), SQL_SERVER))
+            {
+                int rowsAffected = cmd.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Update success!");
+                }
+                else
+                {
+                    MessageBox.Show("No rows updated.");
+                }
+            }
+
+
+
+            MessageBox.Show(query.ToString());
         }
 
         public static void DeleteBooks(string column, string columnValue)

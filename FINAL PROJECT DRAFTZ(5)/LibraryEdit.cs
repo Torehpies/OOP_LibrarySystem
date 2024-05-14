@@ -1,24 +1,33 @@
-﻿using System.Data;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace FINAL_PROJECT_DRAFTZ_5_
 {
-    public partial class Library : Form
+    public partial class LibraryEdit : Form
     {
-        public static Library Instance { get; private set; }
-       
-        public Library()
+        public static LibraryEdit Instance { get; private set; }
+        public LibraryEdit()
         {
             InitializeComponent();
             Instance = this;
-
-            
         }
 
         
         
-        public void removeCard(BookContainer userControl)
+        public void removeCard(BookContainer userControl, string title)
         {
             flowLayoutPanel1.Controls.Remove(userControl);
+
+            // Remove from database
+            bookCRUD.DeleteBooks("title", title);
         }
 
         private void Library_Load(object sender, EventArgs e)
@@ -37,19 +46,13 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         }
 
+
+
         
-
-
-
-
-
-
-
         public void populateItems()
         {
             string projectDiretory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
             string resourceFolderPath = Path.Combine(projectDiretory, "Resources");
-
 
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.Controls.Clear();
@@ -101,6 +104,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void populateItems(string search)
         {
+
             string projectDiretory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
             string resourceFolderPath = Path.Combine(projectDiretory, "Resources");
 
@@ -132,7 +136,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                                 listItems[i].Year = row["published"].ToString();
                                 listItems[i].TotalCopies = Convert.ToInt32(row["totalCopies"]);
                                 listItems[i].aCopies = Convert.ToInt32(row["availableCopies"]);
-                                string imagePath = resourceFolderPath + "'\'" + row["picturePath"].ToString();
+                                string imagePath = resourceFolderPath + '\\' + row["picturePath"].ToString();
                                 listItems[i].icon = Image.FromFile(imagePath);
 
                                 flowLayoutPanel1.Controls.Add(listItems[i]);
@@ -180,7 +184,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private void button3_Click(object sender, EventArgs e)
         {
             
-            BookContainer bookContainer = new BookContainer(this);
+            BookContainer bookContainer = new BookContainer();
             if (bookContainer.getCheckout.Count == 0)
             {
                 MessageBox.Show("List is empty");

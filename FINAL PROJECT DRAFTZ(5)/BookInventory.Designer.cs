@@ -30,6 +30,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         {
             AddBookBtn = new Button();
             AddBookPanelMain = new Panel();
+            button1 = new Button();
             panel1 = new Panel();
             label1 = new Label();
             panel2 = new Panel();
@@ -57,8 +58,19 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             AddBookPanelMain.TabIndex = 2;
             AddBookPanelMain.Paint += AddBookPanelMain_Paint;
             // 
+            // button1
+            // 
+            button1.Location = new Point(102, 115);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 0;
+            button1.Text = "+";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // panel1
             // 
+            panel1.Controls.Add(button1);
             panel1.Controls.Add(AddBookBtn);
             panel1.Location = new Point(12, 87);
             panel1.Name = "panel1";
@@ -109,5 +121,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private Panel panel1;
         private Label label1;
         private Panel panel2;
+        private Button button1;
     }
 }

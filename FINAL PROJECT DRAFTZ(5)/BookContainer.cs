@@ -21,6 +21,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         public event EventHandler ButtonClick;
         private Library libraryForm;
         private Checkout checkoutForm;
+        private LibraryEdit libraryEditForm;
+        
 
 
         public bool ShowAddButton { get; set; } = true;
@@ -39,6 +41,14 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             this.checkoutForm = parentForm;
             detailsbtn.Text = "Remove";
             addbtn.Visible = false;
+        }
+
+        public BookContainer(LibraryEdit parentForm)
+        {
+            InitializeComponent();
+            this.libraryEditForm = parentForm;
+            detailsbtn.Text = "Remove";
+            addbtn.Text = "Edit";
         }
 
         public BookContainer()
@@ -63,9 +73,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 bookDetails.Show();
 
             }
-            else
+            else if (this.checkoutForm != null)
             {
                 checkoutForm.removeCard(this);
+            } else
+            {
+                libraryEditForm.removeCard(this, Title);
             }
 
         }
@@ -88,14 +101,35 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         static Dictionary<string, int> checkOutList = new Dictionary<string, int>();
         private void button1_Click(object sender, EventArgs e)
         {
-            Books addBook = new Books(Title, ISBN, Author, Category, Publisher, Year, icon);
+            
+            if (this.libraryForm != null)
+            {
+                Books addBook = new Books(Title, Year);
 
-            MessageBox.Show($"Bookname: `{Title}` {availCopies} is added to checkout");
+                MessageBox.Show($"Bookname: `{Title}` {availCopies} is added to checkout");
 
 
-            bookTitles.Add(Title);
-            checkout.Add(addBook);
-            checkOutList[Title] = availCopies;
+                bookTitles.Add(Title);
+                checkout.Add(addBook);
+                checkOutList[Title] = availCopies;
+
+            }
+            else if (this.checkoutForm != null)
+            {
+                Books addBook = new Books(Title, ISBN, Author, Category, Publisher, Year, icon);
+                MessageBox.Show($"Bookname: `{Title}` {availCopies} is added to checkout");
+
+
+                bookTitles.Add(Title);
+                checkout.Add(addBook);
+                checkOutList[Title] = availCopies;
+            }
+            else
+            {
+                Books addBook = new Books(Title, ISBN, Author, Category, Publisher, Year, icon);
+                BookDetails bookDetails = new BookDetails(addBook);
+                bookDetails.Show();
+            }
         }
 
         public Dictionary<string, int> getdictList
