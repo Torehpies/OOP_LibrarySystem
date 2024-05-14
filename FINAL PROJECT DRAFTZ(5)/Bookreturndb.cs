@@ -47,12 +47,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             borrowedbookcounts = "";
             lastreturn = "";
 
-            string query = "SELECT `books`.`title`, `books`.`author`, `borrowedbooks`.`dueDate`, `members`.`name`, `members`.`details`, `borrowedbooks`.`quantity`" +
-                           "FROM `books`" +
-                           "LEFT JOIN `borrowedbooks` ON `borrowedbooks`.`bookId` = `books`.`id`" +
-                           "LEFT JOIN `members` ON `borrowedbooks`.`borrowerId` = `members`.`id`" +
-                           "WHERE borrowedbooks.borrowerId = @id;";
-
+            string query = "SELECT `members`.`name`, `members`.`details`, COUNT(`borrowedbooks`.`bookId`) AS `quantity` " +
+                           "FROM `members` " +
+                           "LEFT JOIN `borrowedbooks` ON `borrowedbooks`.`borrowerId` = `members`.`id` " +
+                           "AND (`borrowedbooks`.`returnDate` IS NULL OR `borrowedbooks`.`returnDate` = '') " +
+                           "WHERE `members`.`id` = @id " +
+                           "GROUP BY `members`.`name`, `members`.`details`;";
 
             using (MySqlCommand command = new MySqlCommand(query, SQL_SERVER))
             {
@@ -65,11 +65,14 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                         borrowerName = reader["name"].ToString();
                         details = reader["details"].ToString();
                         borrowedbookcounts = reader["quantity"].ToString();
-                        //lastreturn = reader["returnDate"].ToString();
+                        // Optionally, you can handle the lastreturn here if needed
+                        // lastreturn = reader["returnDate"].ToString();
                     }
                 }
             }
         }
+
+
 
         public static void DisplayBorrowedBooks(string id, out DataTable borrowedBooksTable)
         {

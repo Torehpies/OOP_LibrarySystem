@@ -1,4 +1,5 @@
 ﻿using System.Windows.Forms;
+using CustomControls.RJControls;
 
 namespace FINAL_PROJECT_DRAFTZ_5_
 {
@@ -41,8 +42,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             dueDate_column = new ColumnHeader();
             bbcountslbl = new Label();
             Dsplay_borrowedbooks = new Label();
-            confirm_btn = new Button();
-            enterId_btn = new Button();
+            confirm_btn = new CustomButton();
+            enterId_btn = new CustomButton();
             Dsplay_Id = new Label();
             id_txtbox = new TextBox();
             panel1.SuspendLayout();
@@ -57,7 +58,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1144, 591);
+            panel1.Size = new Size(1170, 570);
             panel1.TabIndex = 0;
             // 
             // panel5
@@ -72,9 +73,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             panel5.Controls.Add(enterId_btn);
             panel5.Controls.Add(Dsplay_Id);
             panel5.Controls.Add(id_txtbox);
+            panel5.Dock = DockStyle.Fill;
             panel5.Location = new Point(0, 0);
             panel5.Name = "panel5";
-            panel5.Size = new Size(1144, 591);
+            panel5.Size = new Size(1170, 570);
             panel5.TabIndex = 8;
             // 
             // detailslbl
@@ -99,9 +101,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // 
             panel2.BackColor = Color.FromArgb(153, 153, 153);
             panel2.Controls.Add(borrowedbooks_tbl);
-            panel2.Location = new Point(23, 131);
+            panel2.Location = new Point(32, 121);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1097, 402);
+            panel2.Size = new Size(1109, 398);
             panel2.TabIndex = 7;
             // 
             // borrowedbooks_tbl
@@ -112,7 +114,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             borrowedbooks_tbl.GridLines = true;
             borrowedbooks_tbl.Location = new Point(31, 31);
             borrowedbooks_tbl.Name = "borrowedbooks_tbl";
-            borrowedbooks_tbl.Size = new Size(1031, 348);
+            borrowedbooks_tbl.Size = new Size(1042, 348);
             borrowedbooks_tbl.TabIndex = 1;
             borrowedbooks_tbl.UseCompatibleStateImageBehavior = false;
             borrowedbooks_tbl.View = View.Details;
@@ -157,21 +159,30 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // confirm_btn
             // 
             confirm_btn.BackColor = Color.FromArgb(102, 102, 102);
+            confirm_btn.BackgroundColor = Color.FromArgb(102, 102, 102);
+            confirm_btn.BorderColor = Color.PaleVioletRed;
+            confirm_btn.BorderRadius = 25;
+            confirm_btn.BorderSize = 0;
             confirm_btn.FlatAppearance.BorderColor = Color.FromArgb(242, 233, 228);
             confirm_btn.FlatStyle = FlatStyle.Flat;
             confirm_btn.Font = new Font("Quicksand SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             confirm_btn.ForeColor = Color.White;
-            confirm_btn.Location = new Point(973, 547);
+            confirm_btn.Location = new Point(994, 526);
             confirm_btn.Name = "confirm_btn";
             confirm_btn.Size = new Size(126, 44);
             confirm_btn.TabIndex = 2;
             confirm_btn.Text = "CONFIRM";
+            confirm_btn.TextColor = Color.White;
             confirm_btn.UseVisualStyleBackColor = false;
             confirm_btn.Click += confirm_btn_Click;
             // 
             // enterId_btn
             // 
             enterId_btn.BackColor = Color.FromArgb(102, 102, 102);
+            enterId_btn.BackgroundColor = Color.FromArgb(102, 102, 102);
+            enterId_btn.BorderColor = Color.PaleVioletRed;
+            enterId_btn.BorderRadius = 25;
+            enterId_btn.BorderSize = 0;
             enterId_btn.FlatAppearance.BorderColor = Color.FromArgb(242, 233, 228);
             enterId_btn.FlatStyle = FlatStyle.Flat;
             enterId_btn.Font = new Font("Quicksand SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
@@ -181,6 +192,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             enterId_btn.Size = new Size(118, 43);
             enterId_btn.TabIndex = 5;
             enterId_btn.Text = "ENTER";
+            enterId_btn.TextColor = Color.White;
             enterId_btn.UseVisualStyleBackColor = false;
             enterId_btn.Click += enterId_btn_Click;
             // 
@@ -207,7 +219,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1144, 591);
+            ClientSize = new Size(1170, 570);
             Controls.Add(panel1);
             Name = "BookReturn";
             Text = "BookReturn";
@@ -223,14 +235,14 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private Panel panel1;
         private Panel panel5;
         private Label Dsplay_borrowedbooks;
-        private Button confirm_btn;
+        private CustomButton confirm_btn;
         private Label bbcountslbl;
         private ListView borrowedbooks_tbl;
         private ColumnHeader title_column;
         private ColumnHeader author_column;
         private ColumnHeader dueDate_column;
         private Label Dsplay_Id;
-        private Button enterId_btn;
+        private CustomButton enterId_btn;
         private TextBox id_txtbox;
         private Label namelbl;
         private Panel panel2;

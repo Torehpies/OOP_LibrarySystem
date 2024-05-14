@@ -118,6 +118,5 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 MessageBox.Show("Please select a book to confirm return.");
             }
         }
-
     }
 }
