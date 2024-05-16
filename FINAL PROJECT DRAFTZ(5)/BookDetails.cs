@@ -100,6 +100,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 }
 
                 newIcon = picture.Image;
+                
             }
         }
 
@@ -114,9 +115,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 {
                     Books bookToAdd = new Books(title, isbn, author, category, publisher, published);
                     string path = SaveImageInResourceFolder(bookToAdd, newIcon);
+                    
                     string[] columnsToUpdate = { "title", "author", "isbn", "category", "publisher", "published", "picturePath" };
                     string[] newValues = { titleLabel.Text, authorLabel.Text, isbn10Label.Text, categoryLabel.Text, publisherLabel.Text, publishedLabel.Text, path };
                     bookCRUD.UpdateInfos(columnsToUpdate, newValues, "isbn", originalISBN);
+                    newIcon.Dispose();
                 } 
                 else
                 {
@@ -147,14 +150,18 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 Directory.CreateDirectory(resourceFolderPath);
 
             }
-                
 
-            string imagePath = Path.Combine(resourceFolderPath, book.Title + ".jpg");
+            Random random = new Random();
+            string fileName = book.Title + "MODIFIED" + random.Next(1000) + ".jpeg";
+
+
+
+
+            string imagePath = Path.Combine(resourceFolderPath, fileName);
             MessageBox.Show(imagePath);
-            image.Save(imagePath + System.Drawing.Imaging.ImageFormat.Jpeg);
+            image.Save(imagePath);
 
-
-            return book.Title + ".jpg";
+            return fileName;
         }
 
 
