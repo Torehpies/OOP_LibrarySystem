@@ -36,6 +36,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             enterId_btn = new CustomButton();
             button4 = new CustomButton();
             cartButton = new CustomButton();
+            checkout1 = new Checkout();
             SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -119,13 +120,22 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             cartButton.Font = new Font("Quicksand SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             cartButton.ForeColor = Color.White;
             cartButton.Image = Properties.Resources.shopping_cart;
-            cartButton.Location = new Point(1075, 510);
+            cartButton.Location = new Point(1056, 489);
             cartButton.Name = "cartButton";
             cartButton.Size = new Size(76, 76);
             cartButton.TabIndex = 8;
             cartButton.TextColor = Color.White;
             cartButton.UseVisualStyleBackColor = false;
             cartButton.Click += button3_Click;
+            // 
+            // checkout1
+            // 
+            checkout1.BackColor = Color.FromArgb(255, 224, 192);
+            checkout1.Location = new Point(25, 25);
+            checkout1.Name = "checkout1";
+            checkout1.Size = new Size(1136, 559);
+            checkout1.TabIndex = 9;
+            checkout1.Visible = false;
             // 
             // Library
             // 
@@ -134,6 +144,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             BackColor = Color.FromArgb(154, 140, 152);
             ClientSize = new Size(1186, 609);
             Controls.Add(cartButton);
+            Controls.Add(checkout1);
             Controls.Add(button4);
             Controls.Add(enterId_btn);
             Controls.Add(searchBox);
@@ -155,5 +166,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private CustomButton enterId_btn;
         private CustomButton button4;
         private CustomButton cartButton;
+        private Checkout checkout1;
     }
 }

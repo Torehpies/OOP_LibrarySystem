@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace FINAL_PROJECT_DRAFTZ_5_
 {
-    public partial class Checkout : Form
+    public partial class Checkout : UserControl
     {
         List<Books> checkoutList = new List<Books>();
         Dictionary<string, int> keyValuePairs = new Dictionary<string, int>();
@@ -104,7 +104,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 
 
 
-                this.Close();
+                //this.Close();
                 flowLayoutPanel1.Controls.Clear();
                 checkoutList.Clear();
 
@@ -115,7 +115,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             } else
             {
                 MessageBox.Show("Nothing to checkout");
-                this.Close();
+                //this.Close();
 
                 
             }

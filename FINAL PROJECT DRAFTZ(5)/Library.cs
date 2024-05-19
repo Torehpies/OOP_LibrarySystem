@@ -162,16 +162,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
-            BookContainer bookContainer = new BookContainer(this);
-            if (bookContainer.getCheckout.Count == 0)
-            {
-                MessageBox.Show("List is empty");
-                return;
-            }
-            
-            Checkout checkout = new Checkout();
-            checkout.ShowDialog();
+            checkout1.Visible = !checkout1.Visible;
         }
 
         public void refresh()

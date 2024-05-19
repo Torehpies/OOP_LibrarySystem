@@ -36,7 +36,7 @@
             // 
             flowLayoutPanel1.Location = new Point(1, 2);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(799, 403);
+            flowLayoutPanel1.Size = new Size(1135, 503);
             flowLayoutPanel1.TabIndex = 0;
             flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
@@ -47,7 +47,7 @@
             button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("Quicksand SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button5.ForeColor = Color.White;
-            button5.Location = new Point(713, 411);
+            button5.Location = new Point(874, 511);
             button5.Name = "button5";
             button5.Size = new Size(75, 27);
             button5.TabIndex = 9;
@@ -60,11 +60,10 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
-            ClientSize = new Size(800, 450);
             Controls.Add(button5);
             Controls.Add(flowLayoutPanel1);
             Name = "Checkout";
-            Text = "Form7";
+            Size = new Size(1136, 559);
             Load += Checkout_Load;
             ResumeLayout(false);
         }
