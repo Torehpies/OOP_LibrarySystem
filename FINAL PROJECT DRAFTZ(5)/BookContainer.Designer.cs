@@ -93,7 +93,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             detailsbtn.Text = "DETAILS";
             detailsbtn.TextColor = Color.FromArgb(255, 251, 235);
             detailsbtn.UseVisualStyleBackColor = false;
-            detailsbtn.Click += borrowBtn_Click;
+            detailsbtn.Click += detailsbtn_Click;
             // 
             // addbtn
             // 
@@ -115,7 +115,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             addbtn.Text = "+";
             addbtn.TextColor = Color.FromArgb(255, 251, 235);
             addbtn.UseVisualStyleBackColor = false;
-            addbtn.Click += button1_Click;
+            addbtn.Click += addbtn_Click;
             // 
             // BookContainer
             // 

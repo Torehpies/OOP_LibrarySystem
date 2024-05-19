@@ -47,7 +47,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         }
 
 
-        private void borrowBtn_Click(object sender, EventArgs e)
+        private void detailsbtn_Click(object sender, EventArgs e)
         {
             if (this.libraryForm != null)
             {
@@ -65,16 +65,19 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 
         static Dictionary<string, int> checkOutList = new Dictionary<string, int>();
         
-        private void button1_Click(object sender, EventArgs e)
+        private void addbtn_Click(object sender, EventArgs e)
         {
             Books addBook = new Books(Title, ISBN, Author, Category, Publisher, Year);
 
             MessageBox.Show($"Bookname: `{Title}` {availCopies} is added to checkout");
 
-
+            /*
             bookTitles.Add(Title);
             checkout.Add(addBook);
             checkOutList[Title] = availCopies;
+            */
+
+            
         }
 
         public void addBook(string Title, string ISBN, string Author, string Category, string Publisher, string Year)
@@ -98,8 +101,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         {
 
         }
-
-
 
         #region Properties
 
