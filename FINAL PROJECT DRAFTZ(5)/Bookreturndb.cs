@@ -72,6 +72,25 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
         }
 
+        public static int GetCurrentBorrowedBooksCount(string borrowerId)
+        {
+            start();
+
+            int borrowedBooksCount = 0;
+
+            string query = "SELECT COUNT(*) AS `quantity` " +
+                           "FROM `borrowedbooks` " +
+                           "WHERE `borrowerId` = @borrowerId AND `returnDate` IS NULL";
+
+            using (MySqlCommand command = new MySqlCommand(query, SQL_SERVER))
+            {
+                command.Parameters.AddWithValue("@borrowerId", borrowerId);
+
+                borrowedBooksCount = Convert.ToInt32(command.ExecuteScalar());
+            }
+
+            return borrowedBooksCount;
+        }
 
 
         public static void DisplayBorrowedBooks(string id, out DataTable borrowedBooksTable)
@@ -79,7 +98,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             start();
             borrowedBooksTable = new DataTable();
 
-            string query = "SELECT `books`.`title`, `books`.`author`, `borrowedbooks`.`dueDate`, `members`.`name`, `members`.`details`, `borrowedbooks`.`quantity`" +
+            string query = "SELECT `borrowedbooks`.`id`, `books`.`title`, `books`.`author`, `borrowedbooks`.`dueDate`, `members`.`name`, `members`.`details`, `borrowedbooks`.`quantity`" +
                            "FROM `books`" +
                            "LEFT JOIN `borrowedbooks` ON `borrowedbooks`.`bookId` = `books`.`id`" +
                            "LEFT JOIN `members` ON `borrowedbooks`.`borrowerId` = `members`.`id`" +
@@ -93,6 +112,161 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                     borrowedBooksTable.Load(reader);
                 }
             }
+        }
+
+        public static void UpdateReturnDateById(int borrowedBookId, DateTime returnDate)
+        {
+            start();
+
+            try
+            {
+                // Update the returnDate in the borrowedbooks table using the borrowedBookId
+                string updateQuery = "UPDATE borrowedbooks SET returnDate = @returnDate WHERE id = @borrowedBookId AND returnDate IS NULL";
+
+                using (MySqlCommand updateCommand = new MySqlCommand(updateQuery, SQL_SERVER))
+                {
+                    updateCommand.Parameters.AddWithValue("@returnDate", returnDate);
+                    updateCommand.Parameters.AddWithValue("@borrowedBookId", borrowedBookId);
+
+                    int rowsAffected = updateCommand.ExecuteNonQuery();
+
+                    if (rowsAffected == 0)
+                    {
+                        MessageBox.Show("No rows updated. The book might have already been returned.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating return date: " + ex.Message);
+            }
+        }
+
+
+
+        /*public static void UpdateReturnDate(string title, string borrowerId, DateTime returnDate)
+        {
+            start();
+
+            try
+            {
+                // Fetch the bookId for the given title from the books table
+                string bookIdQuery = "SELECT id FROM books WHERE title = @title LIMIT 1";
+                int bookId = 0;
+
+                using (MySqlCommand bookIdCommand = new MySqlCommand(bookIdQuery, SQL_SERVER))
+                {
+                    bookIdCommand.Parameters.AddWithValue("@title", title);
+                    object result = bookIdCommand.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        bookId = Convert.ToInt32(result);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Book title not found in books table.");
+                        return;
+                    }
+                }
+
+                // Check if the row exists before attempting to update
+                string checkQuery = "SELECT COUNT(*) FROM borrowedbooks WHERE bookId = @bookId AND borrowerId = @borrowerId AND returnDate IS NULL";
+                int rowCount = 0;
+
+                using (MySqlCommand checkCommand = new MySqlCommand(checkQuery, SQL_SERVER))
+                {
+                    checkCommand.Parameters.AddWithValue("@bookId", bookId);
+                    checkCommand.Parameters.AddWithValue("@borrowerId", borrowerId);
+
+                    rowCount = Convert.ToInt32(checkCommand.ExecuteScalar());
+                }
+
+                if (rowCount == 0)
+                {
+                    MessageBox.Show("No matching row found in borrowedbooks table. The book might have already been returned or borrower ID is incorrect.");
+                    return;
+                }
+
+                // Update the returnDate in the borrowedbooks table using the fetched bookId and borrowerId
+                string updateQuery = "UPDATE borrowedbooks SET returnDate = @returnDate " +
+                                     "WHERE bookId = @bookId AND borrowerId = @borrowerId AND returnDate IS NULL";
+
+                using (MySqlCommand updateCommand = new MySqlCommand(updateQuery, SQL_SERVER))
+                {
+                    updateCommand.Parameters.AddWithValue("@returnDate", returnDate);
+                    updateCommand.Parameters.AddWithValue("@bookId", bookId);
+                    updateCommand.Parameters.AddWithValue("@borrowerId", borrowerId);
+
+                    int rowsAffected = updateCommand.ExecuteNonQuery();
+
+                    if (rowsAffected == 0)
+                    {
+                        MessageBox.Show("No rows updated. The book might have already been returned or borrower ID is incorrect.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Database Updated.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating return date: " + ex.Message);
+            }
+        }*/
+
+
+
+        public static void IncrementAvailableCopies(string title)
+        {
+            start();
+
+            try
+            {
+                // Get the current available copies
+                int currentAvailableCopies = GetCurrentAvailableCopies(title);
+
+                // Increment available copies by 1
+                int newAvailableCopies = currentAvailableCopies + 1;
+
+                // Update books table with the new available copies
+                string updateQuery = "UPDATE books SET availableCopies = availableCopies + 1 WHERE title = @title";
+                using (MySqlCommand command = new MySqlCommand(updateQuery, SQL_SERVER))
+                {
+                    command.Parameters.AddWithValue("@availablecopies", newAvailableCopies);
+                    command.Parameters.AddWithValue("@title", title);
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating available copies: " + ex.Message);
+            }
+        }
+
+        public static int GetCurrentAvailableCopies(string title)
+        {
+            start();
+
+            try
+            {
+                string query = "SELECT availableCopies FROM books WHERE title = @title";
+                using (MySqlCommand command = new MySqlCommand(query, SQL_SERVER))
+                {
+                    command.Parameters.AddWithValue("@title", title);
+                    object result = command.ExecuteScalar();
+                    if (result != null && result != DBNull.Value)
+                    {
+                        return Convert.ToInt32(result);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error retrieving current available copies: " + ex.Message);
+            }
+            return 0;
         }
 
     }

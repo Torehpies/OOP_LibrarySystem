@@ -109,8 +109,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // borrowedbooks_tbl
             // 
             borrowedbooks_tbl.CheckBoxes = true;
+            borrowedbooks_tbl.ItemChecked += Borrowedbooks_tbl_ItemChecked;
             borrowedbooks_tbl.Columns.AddRange(new ColumnHeader[] { title_column, author_column, dueDate_column });
             borrowedbooks_tbl.Font = new Font("Quicksand", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            borrowedbooks_tbl.FullRowSelect = true;
             borrowedbooks_tbl.GridLines = true;
             borrowedbooks_tbl.Location = new Point(31, 31);
             borrowedbooks_tbl.Name = "borrowedbooks_tbl";
