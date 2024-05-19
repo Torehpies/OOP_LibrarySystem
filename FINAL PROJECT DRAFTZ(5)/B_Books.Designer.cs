@@ -34,7 +34,6 @@
             columnHeader9 = new ColumnHeader();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
-            columnHeader3 = new ColumnHeader();
             columnHeader4 = new ColumnHeader();
             textBox1 = new TextBox();
             button1 = new Button();
@@ -45,7 +44,7 @@
             listView1.BackColor = SystemColors.Control;
             listView1.BackgroundImageTiled = true;
             listView1.BorderStyle = BorderStyle.None;
-            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader6, columnHeader8, columnHeader9, columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
+            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader6, columnHeader8, columnHeader9, columnHeader1, columnHeader2, columnHeader4 });
             listView1.GridLines = true;
             listView1.Location = new Point(41, 93);
             listView1.Name = "listView1";
@@ -59,39 +58,33 @@
             // columnHeader6
             // 
             columnHeader6.Text = "ISBN";
-            columnHeader6.Width = 220;
+            columnHeader6.Width = -1;
             // 
             // columnHeader8
             // 
             columnHeader8.Text = "Title";
-            columnHeader8.Width = 200;
+            columnHeader8.Width = 400;
             // 
             // columnHeader9
             // 
             columnHeader9.Text = "Author";
-            columnHeader9.Width = 200;
+            columnHeader9.Width = 195;
             // 
             // columnHeader1
             // 
             columnHeader1.Text = "Borrowers Name";
-            columnHeader1.Width = 220;
+            columnHeader1.Width = 195;
             // 
             // columnHeader2
             // 
             columnHeader2.Text = "Borrow Date";
-            columnHeader2.Width = 180;
-            // 
-            // columnHeader3
-            // 
-            columnHeader3.DisplayIndex = 6;
-            columnHeader3.Text = "Return Date";
-            columnHeader3.Width = 160;
+            columnHeader2.Width = 100;
             // 
             // columnHeader4
             // 
             columnHeader4.DisplayIndex = 5;
             columnHeader4.Text = "Due Date";
-            columnHeader4.Width = 170;
+            columnHeader4.Width = 100;
             // 
             // textBox1
             // 
@@ -142,7 +135,6 @@
         private ColumnHeader columnHeader6;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
-        private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader4;
         private ColumnHeader columnHeader5;
         private ColumnHeader columnHeader7;
