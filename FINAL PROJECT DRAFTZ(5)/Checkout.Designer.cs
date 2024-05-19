@@ -1,4 +1,6 @@
-﻿namespace FINAL_PROJECT_DRAFTZ_5_
+﻿using CustomControls.RJControls;
+
+namespace FINAL_PROJECT_DRAFTZ_5_
 {
     partial class Checkout
     {
@@ -29,38 +31,44 @@
         private void InitializeComponent()
         {
             flowLayoutPanel1 = new FlowLayoutPanel();
-            button5 = new Button();
+            checkoutBtn = new CustomButton();
             SuspendLayout();
             // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.Location = new Point(1, 2);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1135, 503);
+            flowLayoutPanel1.Size = new Size(1135, 471);
             flowLayoutPanel1.TabIndex = 0;
             flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
-            // button5
+            // checkoutBtn
             // 
-            button5.BackColor = Color.FromArgb(102, 102, 102);
-            button5.FlatAppearance.BorderColor = Color.FromArgb(242, 233, 228);
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Quicksand SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button5.ForeColor = Color.White;
-            button5.Location = new Point(874, 511);
-            button5.Name = "button5";
-            button5.Size = new Size(75, 27);
-            button5.TabIndex = 9;
-            button5.Text = "Checkout";
-            button5.UseVisualStyleBackColor = false;
-            button5.Click += button1_Click;
+            checkoutBtn.BackColor = Color.FromArgb(34, 34, 59);
+            checkoutBtn.BackgroundColor = Color.FromArgb(34, 34, 59);
+            checkoutBtn.BorderColor = Color.PaleVioletRed;
+            checkoutBtn.BorderRadius = 20;
+            checkoutBtn.BorderSize = 0;
+            checkoutBtn.FlatAppearance.BorderColor = Color.FromArgb(242, 233, 228);
+            checkoutBtn.FlatAppearance.BorderSize = 0;
+            checkoutBtn.FlatStyle = FlatStyle.Flat;
+            checkoutBtn.Font = new Font("Quicksand", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            checkoutBtn.ForeColor = Color.White;
+            checkoutBtn.Location = new Point(902, 485);
+            checkoutBtn.Name = "checkoutBtn";
+            checkoutBtn.Size = new Size(119, 38);
+            checkoutBtn.TabIndex = 9;
+            checkoutBtn.Text = "Checkout";
+            checkoutBtn.TextColor = Color.White;
+            checkoutBtn.UseVisualStyleBackColor = false;
+            checkoutBtn.Click += button1_Click;
             // 
             // Checkout
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(255, 224, 192);
-            Controls.Add(button5);
+            BackColor = Color.FromArgb(201, 173, 167);
+            Controls.Add(checkoutBtn);
             Controls.Add(flowLayoutPanel1);
             Name = "Checkout";
             Size = new Size(1136, 559);
@@ -71,6 +79,6 @@
         #endregion
 
         private FlowLayoutPanel flowLayoutPanel1;
-        private Button button5;
+        private CustomButton checkoutBtn;
     }
 }

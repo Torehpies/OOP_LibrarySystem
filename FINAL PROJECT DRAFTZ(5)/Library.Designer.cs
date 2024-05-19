@@ -114,7 +114,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             cartButton.BorderRadius = 38;
             cartButton.BorderSize = 0;
             cartButton.Cursor = Cursors.Hand;
-            cartButton.FlatAppearance.BorderColor = Color.FromArgb(242, 233, 228);
+            cartButton.FlatAppearance.BorderColor = Color.Black;
             cartButton.FlatAppearance.BorderSize = 0;
             cartButton.FlatStyle = FlatStyle.Flat;
             cartButton.Font = new Font("Quicksand SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -130,7 +130,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // 
             // checkout1
             // 
-            checkout1.BackColor = Color.FromArgb(255, 224, 192);
+            checkout1.BackColor = Color.FromArgb(201, 173, 167);
             checkout1.Location = new Point(25, 25);
             checkout1.Name = "checkout1";
             checkout1.Size = new Size(1136, 559);
@@ -141,7 +141,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(154, 140, 152);
+            BackColor = Color.FromArgb(242, 233, 228);
             ClientSize = new Size(1186, 609);
             Controls.Add(cartButton);
             Controls.Add(checkout1);
