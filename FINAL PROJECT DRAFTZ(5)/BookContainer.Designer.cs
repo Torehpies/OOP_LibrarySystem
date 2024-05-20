@@ -36,6 +36,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             bookTitle = new Label();
             detailsbtn = new CustomButton();
             addbtn = new CustomButton();
+            availLabel = new Label();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)bookPic).BeginInit();
             SuspendLayout();
             // 
@@ -43,11 +45,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // 
             bookYear.AutoSize = true;
             bookYear.Font = new Font("Quicksand Medium", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            bookYear.Location = new Point(66, 211);
+            bookYear.Location = new Point(34, 209);
             bookYear.Name = "bookYear";
             bookYear.Size = new Size(41, 23);
             bookYear.TabIndex = 19;
             bookYear.Text = "2018";
+            bookYear.Click += bookYear_Click;
             // 
             // bookPic
             // 
@@ -116,11 +119,35 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             addbtn.UseVisualStyleBackColor = false;
             addbtn.Click += addbtn_Click;
             // 
+            // availLabel
+            // 
+            availLabel.AutoSize = true;
+            availLabel.Font = new Font("Quicksand Medium", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            availLabel.Location = new Point(98, 209);
+            availLabel.Name = "availLabel";
+            availLabel.Size = new Size(51, 23);
+            availLabel.TabIndex = 22;
+            availLabel.Text = "label1";
+            availLabel.Click += label1_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(79, 209);
+            label2.Name = "label2";
+            label2.Size = new Size(13, 20);
+            label2.TabIndex = 23;
+            label2.Text = "|";
+            label2.Click += label2_Click;
+            // 
             // BookContainer
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Ivory;
+            Controls.Add(label2);
+            Controls.Add(availLabel);
             Controls.Add(addbtn);
             Controls.Add(detailsbtn);
             Controls.Add(bookYear);
@@ -130,7 +157,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             Name = "BookContainer";
             Size = new Size(175, 279);
             ((System.ComponentModel.ISupportInitialize)bookPic).EndInit();
-            Region = Region.FromHrgn(RoundEdge.CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
             ResumeLayout(false);
             PerformLayout();
         }
@@ -142,5 +168,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private Label bookTitle;
         private CustomButton detailsbtn;
         private CustomButton addbtn;
+        private Label availLabel;
+        private Label label2;
     }
 }

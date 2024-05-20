@@ -21,8 +21,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         string publisher;
         string published;
         int avail;
+        int total;
 
-        public BookDetails(string title, string isbn, string author, string category, string publisher, string published, int availableCopies)
+        public BookDetails(string title, string isbn, string author, string category, string publisher, string published, int availableCopies, int totalCopies)
         {
             InitializeComponent();
             this.title = title;
@@ -32,6 +33,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             this.publisher = publisher;
             this.published = published;
             this.avail = availableCopies;
+            this.total = totalCopies;
 
             titleLabel.Text = "Title: " + title;
             isbn10Label.Text = "ISBN: " + isbn;
@@ -39,7 +41,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             categoryLabel.Text = "Category: " + category;
             publisherLabel.Text = "Publisher: " + publisher;
             publishedLabel.Text = "Year: " + published;
-            availablecopies.Text = "Available Copies: " + avail;
+            availablecopies.Text = "Available Copies: " + avail + " of " + total;
 
         }
 

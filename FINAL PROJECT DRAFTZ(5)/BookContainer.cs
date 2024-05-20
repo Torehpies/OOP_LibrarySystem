@@ -12,10 +12,10 @@ using static System.Windows.Forms.DataFormats;
 
 namespace FINAL_PROJECT_DRAFTZ_5_
 {
-    
+
 
     public partial class BookContainer : UserControl
-    { 
+    {
         Book DetailsData;
         BookData BookDataInstance = BookData.Instance;
         public event EventHandler ButtonClick;
@@ -52,22 +52,23 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             if (this.libraryForm != null)
             {
                 // Test data
-               // MessageBox.Show($"The details for this book {Title}");
-                BookDetails bookDetails = new BookDetails(Title, ISBN, Author, Category, Publisher, Year, aCopies);
+                // MessageBox.Show($"The details for this book {Title}");
+                BookDetails bookDetails = new BookDetails(Title, ISBN, Author, Category, Publisher, Year, aCopies, tCopies);
                 bookDetails.Show();
 
-            } else
+            }
+            else
             {
                 checkoutForm.removeCard(this);
             }
-            
+
         }
-                
+
         static Dictionary<string, int> checkOutList = new Dictionary<string, int>();
-        
+
         private void addbtn_Click(object sender, EventArgs e)
         {
-            Books addBook = new Books(Title, ISBN, Author, Category, Publisher, Year);
+            Books addBook = new Books(Title, ISBN, Author, Category, Publisher, Year, aCopies, tCopies);
 
             //MessageBox.Show($"Bookname: `{Title}` {availCopies} is added to checkout");
 
@@ -79,6 +80,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             book._year = Year;
             book._category = Category;
             book._ISBN = ISBN;
+            book.availCopies = aCopies; 
             FlowLayoutPanel panel = checkout1.Controls["booksPanel"] as FlowLayoutPanel;
             panel.Controls.Add(book);
 
@@ -86,12 +88,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             checkout.Add(addBook);
 
             checkOutList[Title] = availCopies;
-            
+
         }
 
         public void addBook(string Title, string ISBN, string Author, string Category, string Publisher, string Year)
         {
-            Books addBook = new Books(Title, ISBN, Author, Category, Publisher, Year);
+            Books addBook = new Books(Title, ISBN, Author, Category, Publisher, Year, aCopies, tCopies);
 
             //MessageBox.Show($"Bookname: `{Title}` {availCopies} is added to checkout");
 
@@ -123,19 +125,27 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private static List<string> bookTitles = new List<string>();
         private static List<Books> checkout = new List<Books>();
         private int availCopies;
+        private int totalCopies;
+
+        [Category("Custom Props")]
+        public int tCopies
+        {
+            get { return totalCopies; }
+            set { totalCopies = value; }
+        }
 
         [Category("Custom Props")]
         public int aCopies
         {
             get { return availCopies; }
-            set {  availCopies = value; }
+            set { availCopies = value; availLabel.Text = value + " left"; }
         }
 
         [Category("Custom Props")]
         public string Author
         {
             get { return _author; }
-            set { _author = value;}
+            set { _author = value; }
         }
 
         [Category("Custom Props")]
@@ -151,7 +161,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             get { return _publisher; }
             set { _publisher = value; }
         }
-        
+
         [Category("Custom Props")]
         public List<Books> getCheckout
         {
@@ -163,7 +173,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         public List<string> checkoutTitles
         {
             get { return bookTitles; }
-            set {  bookTitles = value; }
+            set { bookTitles = value; }
         }
 
         [Category("Custom Props")]
@@ -207,6 +217,21 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         {
             // Set the visibility of the button to false when the mouse leaves the user control
             detailsbtn.Visible = false;
+        }
+
+        private void bookYear_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

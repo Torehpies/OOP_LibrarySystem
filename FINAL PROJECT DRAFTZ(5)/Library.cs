@@ -77,6 +77,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                                 listItems[i].Publisher = row["publisher"].ToString();
                                 listItems[i].Year = row["published"].ToString();
                                 listItems[i].aCopies = Convert.ToInt32(row["availableCopies"]);
+                                listItems[i].tCopies = Convert.ToInt32(row["totalCopies"]);
 
                                 flowLayoutPanel1.Controls.Add(listItems[i]);
                             }
@@ -117,13 +118,20 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                                 listItems[i] = new BookContainer(this);
 
                                 listItems[i].Title = row["title"].ToString();
+                                listItems[i].Author = row["author"].ToString();
+                                listItems[i].ISBN = row["isbn"].ToString();
+                                listItems[i].Category = row["category"].ToString();
+                                listItems[i].Publisher = row["publisher"].ToString();
                                 listItems[i].Year = row["published"].ToString();
                                 listItems[i].aCopies = Convert.ToInt32(row["availableCopies"]);
+                                listItems[i].tCopies = Convert.ToInt32(row["totalCopies"]);
+
+                                flowLayoutPanel1.Controls.Add(listItems[i]);
                             }
 
 
 
-                            flowLayoutPanel1.Controls.Add(listItems[i]);
+                            
 
 
 
