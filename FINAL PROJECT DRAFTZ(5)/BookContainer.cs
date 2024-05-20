@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,16 +13,15 @@ using static System.Windows.Forms.DataFormats;
 
 namespace FINAL_PROJECT_DRAFTZ_5_
 {
-    
+
 
     public partial class BookContainer : UserControl
-    { 
+    {
         Book DetailsData;
         BookData BookDataInstance = BookData.Instance;
         public event EventHandler ButtonClick;
         private Library libraryForm;
         private Checkout checkoutForm;
-
 
         public bool ShowAddButton { get; set; } = true;
         public bool ShowRemoveButton { get; set; } = true;
@@ -52,25 +52,27 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             if (this.libraryForm != null)
             {
                 // Test data
-               // MessageBox.Show($"The details for this book {Title}");
+                // MessageBox.Show($"The details for this book {Title}");
                 BookDetails bookDetails = new BookDetails(Title, ISBN, Author, Category, Publisher, Year);
                 bookDetails.Show();
 
-            } else
+            }
+            else
             {
                 checkoutForm.removeCard(this);
             }
-            
+
         }
-                
+
         static Dictionary<string, int> checkOutList = new Dictionary<string, int>();
-        
+
         private void addbtn_Click(object sender, EventArgs e)
         {
             Books addBook = new Books(Title, ISBN, Author, Category, Publisher, Year);
 
             //MessageBox.Show($"Bookname: `{Title}` {availCopies} is added to checkout");
 
+            /*
             Checkout checkout1 = (this.ParentForm as Library).Controls["checkout1"] as Checkout;
             BookContainer book = new BookContainer();
             book._title = Title;
@@ -81,12 +83,13 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             book._ISBN = ISBN;
             FlowLayoutPanel panel = checkout1.Controls["booksPanel"] as FlowLayoutPanel;
             panel.Controls.Add(book);
+            */
 
             bookTitles.Add(Title);
             checkout.Add(addBook);
 
             checkOutList[Title] = availCopies;
-            
+
         }
 
         public void addBook(string Title, string ISBN, string Author, string Category, string Publisher, string Year)
@@ -128,14 +131,14 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         public int aCopies
         {
             get { return availCopies; }
-            set {  availCopies = value; }
+            set { availCopies = value; }
         }
 
         [Category("Custom Props")]
         public string Author
         {
             get { return _author; }
-            set { _author = value;}
+            set { _author = value; }
         }
 
         [Category("Custom Props")]
@@ -151,7 +154,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             get { return _publisher; }
             set { _publisher = value; }
         }
-        
+
         [Category("Custom Props")]
         public List<Books> getCheckout
         {
@@ -163,7 +166,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         public List<string> checkoutTitles
         {
             get { return bookTitles; }
-            set {  bookTitles = value; }
+            set { bookTitles = value; }
         }
 
         [Category("Custom Props")]
@@ -194,19 +197,5 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         }
 
         #endregion
-
-        // Event handler for MouseEnter
-        private void MyUserControl_MouseEnter(object sender, EventArgs e)
-        {
-            // Set the visibility of the button to true when the mouse enters the user control
-            detailsbtn.Visible = true;
-        }
-
-        // Event handler for MouseLeave
-        private void MyUserControl_MouseLeave(object sender, EventArgs e)
-        {
-            // Set the visibility of the button to false when the mouse leaves the user control
-            detailsbtn.Visible = false;
-        }
     }
 }

@@ -126,11 +126,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             Controls.Add(bookYear);
             Controls.Add(bookPic);
             Controls.Add(bookTitle);
-            Margin = new Padding(15, 0, 0, 15);
+            Margin = new Padding(15, 15, 0, 0);
             Name = "BookContainer";
             Size = new Size(175, 279);
             ((System.ComponentModel.ISupportInitialize)bookPic).EndInit();
-            Region = Region.FromHrgn(RoundEdge.CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
             ResumeLayout(false);
             PerformLayout();
         }

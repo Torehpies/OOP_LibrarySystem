@@ -149,8 +149,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             {
                 populateItems(searchbox);
             }
-
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -158,35 +156,13 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             populateItems();
         }
 
-
-
         private void button3_Click(object sender, EventArgs e)
         {
             BookContainer bookContainer = new BookContainer(this);
-            /*
-            if (bookContainer.getCheckout.Count == 0)
-            {
-                MessageBox.Show("List is empty");
-                return;
-            }
-            */
+           
+            checkout1.refresh();
             checkout1.Visible = !checkout1.Visible;
-            if (checkout1.Visible)
-            {
-                checkout1.refresh();
-            }
+            
         }
-
-        private void closeCheckout()
-        {
-
-        }
-
-        public void refresh()
-        {
-            this.Refresh();
-        }
-
-        
     }
 }

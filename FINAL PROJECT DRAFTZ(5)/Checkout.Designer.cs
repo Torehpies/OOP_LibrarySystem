@@ -40,7 +40,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             booksPanel.Name = "booksPanel";
             booksPanel.Size = new Size(1135, 471);
             booksPanel.TabIndex = 0;
-            booksPanel.Paint += flowLayoutPanel1_Paint;
             // 
             // checkoutBtn
             // 
