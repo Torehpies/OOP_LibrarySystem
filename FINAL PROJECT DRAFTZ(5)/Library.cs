@@ -20,8 +20,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             Instance = this;
         }
 
-        
-        
+
+
         public void removeCard(BookContainer userControl)
         {
             flowLayoutPanel1.Controls.Remove(userControl);
@@ -45,7 +45,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
 
 
-        
+
         public void populateItems()
         {
             flowLayoutPanel1.AutoScroll = true;
@@ -80,7 +80,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
                                 flowLayoutPanel1.Controls.Add(listItems[i]);
                             }
-                            
+
 
 
 
@@ -120,7 +120,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                                 listItems[i].Year = row["published"].ToString();
                                 listItems[i].aCopies = Convert.ToInt32(row["availableCopies"]);
                             }
-                            
+
 
 
                             flowLayoutPanel1.Controls.Add(listItems[i]);
@@ -171,11 +171,22 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
             */
             checkout1.Visible = !checkout1.Visible;
+            if (checkout1.Visible)
+            {
+                checkout1.refresh();
+            }
+        }
+
+        private void closeCheckout()
+        {
+
         }
 
         public void refresh()
         {
             this.Refresh();
         }
+
+        
     }
 }

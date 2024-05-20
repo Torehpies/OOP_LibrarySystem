@@ -29,12 +29,15 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void Checkout_Load(object sender, EventArgs e)
         {
+            refresh();
+        }
+
+        public void refresh()
+        {
             populatecheckout();
         }
 
-        
-        
-
+       
         public void removeCard(BookContainer userControl)
         {
             string titleToRemove = userControl.Title;
@@ -73,10 +76,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
 
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        
 
        
 
