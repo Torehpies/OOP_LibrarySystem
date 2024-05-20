@@ -16,6 +16,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         public void start()
         {
+            bool isConnected = false;
+
+         
             // DATABASE SPECIFICATION
             string SERVER = "127.0.0.1";
             string DATABASE = "test";
@@ -23,16 +26,38 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             string PASSWORD = "";
 
             SQL_SERVER = new MySqlConnection("server=" + SERVER + "; user=" + USER + "; database=" + DATABASE + "; password=" + PASSWORD + ";");
-            try
+
+            while (!isConnected)
             {
-                SQL_SERVER.Open();
-            } catch (Exception ex)
-            {
-                MessageBox.Show("Connection to database failed!");
-            } 
+                try
+                {
+                    SQL_SERVER.Open();
+                    isConnected = true;
+                    break;
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("Retrying connection....");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Connection to database failed!");
+                }
+            }
+             
         }
 
-        
+        public bool isOpen()
+        {
+            
+            if (SQL_SERVER == null)
+            {
+                return false;
+            }
+            return true;
+        }
+
+
         public bool checkLogin(string username, string password)
         {
             if (SQL_SERVER == null)
