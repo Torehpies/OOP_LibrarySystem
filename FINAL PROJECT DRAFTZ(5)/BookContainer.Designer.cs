@@ -34,18 +34,18 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             bookYear = new Label();
             bookPic = new PictureBox();
             bookTitle = new Label();
-            detailsbtn = new CustomButton();
             addbtn = new CustomButton();
-            availLabel = new Label();
-            label2 = new Label();
+            availLabel = new CustomButton();
+            numericUpDown2 = new NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)bookPic).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
             SuspendLayout();
             // 
             // bookYear
             // 
             bookYear.AutoSize = true;
             bookYear.Font = new Font("Quicksand Medium", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            bookYear.Location = new Point(34, 209);
+            bookYear.Location = new Point(68, 209);
             bookYear.Name = "bookYear";
             bookYear.Size = new Size(41, 23);
             bookYear.TabIndex = 19;
@@ -75,28 +75,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             bookTitle.TextAlign = ContentAlignment.TopCenter;
             bookTitle.UseCompatibleTextRendering = true;
             // 
-            // detailsbtn
-            // 
-            detailsbtn.BackColor = Color.FromArgb(38, 49, 89);
-            detailsbtn.BackgroundColor = Color.FromArgb(38, 49, 89);
-            detailsbtn.BorderColor = Color.PaleVioletRed;
-            detailsbtn.BorderRadius = 18;
-            detailsbtn.BorderSize = 0;
-            detailsbtn.Cursor = Cursors.Hand;
-            detailsbtn.FlatAppearance.BorderSize = 0;
-            detailsbtn.FlatStyle = FlatStyle.Flat;
-            detailsbtn.Font = new Font("Quicksand", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            detailsbtn.ForeColor = Color.FromArgb(255, 251, 235);
-            detailsbtn.Location = new Point(18, 232);
-            detailsbtn.Margin = new Padding(0);
-            detailsbtn.Name = "detailsbtn";
-            detailsbtn.Size = new Size(80, 40);
-            detailsbtn.TabIndex = 20;
-            detailsbtn.Text = "DETAILS";
-            detailsbtn.TextColor = Color.FromArgb(255, 251, 235);
-            detailsbtn.UseVisualStyleBackColor = false;
-            detailsbtn.Click += detailsbtn_Click;
-            // 
             // addbtn
             // 
             addbtn.BackColor = Color.FromArgb(38, 49, 89);
@@ -107,7 +85,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             addbtn.Cursor = Cursors.Hand;
             addbtn.FlatAppearance.BorderSize = 0;
             addbtn.FlatStyle = FlatStyle.Flat;
-            addbtn.Font = new Font("Quicksand", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            addbtn.Font = new Font("Quicksand", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             addbtn.ForeColor = Color.FromArgb(255, 251, 235);
             addbtn.Location = new Point(104, 232);
             addbtn.Margin = new Padding(0);
@@ -121,35 +99,42 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // 
             // availLabel
             // 
-            availLabel.AutoSize = true;
-            availLabel.Font = new Font("Quicksand Medium", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            availLabel.Location = new Point(98, 209);
+            availLabel.BackColor = Color.FromArgb(38, 49, 89);
+            availLabel.BackgroundColor = Color.FromArgb(38, 49, 89);
+            availLabel.BorderColor = Color.PaleVioletRed;
+            availLabel.BorderRadius = 18;
+            availLabel.BorderSize = 0;
+            availLabel.Cursor = Cursors.Hand;
+            availLabel.FlatAppearance.BorderSize = 0;
+            availLabel.FlatStyle = FlatStyle.Flat;
+            availLabel.Font = new Font("Quicksand", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            availLabel.ForeColor = Color.FromArgb(255, 251, 235);
+            availLabel.Location = new Point(18, 232);
+            availLabel.Margin = new Padding(0);
             availLabel.Name = "availLabel";
-            availLabel.Size = new Size(51, 23);
-            availLabel.TabIndex = 22;
-            availLabel.Text = "label1";
-            availLabel.Click += label1_Click;
+            availLabel.Size = new Size(80, 40);
+            availLabel.TabIndex = 20;
+            availLabel.Text = "DETAILS";
+            availLabel.TextColor = Color.FromArgb(255, 251, 235);
+            availLabel.UseVisualStyleBackColor = false;
+            availLabel.Click += detailsbtn_Click;
             // 
-            // label2
+            // numericUpDown2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(79, 209);
-            label2.Name = "label2";
-            label2.Size = new Size(13, 20);
-            label2.TabIndex = 23;
-            label2.Text = "|";
-            label2.Click += label2_Click;
+            numericUpDown2.Location = new Point(117, 243);
+            numericUpDown2.Name = "numericUpDown2";
+            numericUpDown2.Size = new Size(32, 23);
+            numericUpDown2.TabIndex = 22;
+            numericUpDown2.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // BookContainer
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Ivory;
-            Controls.Add(label2);
-            Controls.Add(availLabel);
+            Controls.Add(numericUpDown2);
             Controls.Add(addbtn);
-            Controls.Add(detailsbtn);
+            Controls.Add(availLabel);
             Controls.Add(bookYear);
             Controls.Add(bookPic);
             Controls.Add(bookTitle);
@@ -157,6 +142,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             Name = "BookContainer";
             Size = new Size(175, 279);
             ((System.ComponentModel.ISupportInitialize)bookPic).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -166,9 +152,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private Label bookYear;
         private PictureBox bookPic;
         private Label bookTitle;
-        private CustomButton detailsbtn;
         private CustomButton addbtn;
-        private Label availLabel;
-        private Label label2;
+        private CustomButton availLabel;
+        public NumericUpDown numericUpDown2;
     }
 }

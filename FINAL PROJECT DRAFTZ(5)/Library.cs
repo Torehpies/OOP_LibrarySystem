@@ -60,7 +60,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 {
                     BookContainer[] listItems = new BookContainer[data.Rows.Count];
 
-                    int index = 0;
+                    
 
                     for (int i = 0; i < 1; i++)
                     {
@@ -80,6 +80,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                                 listItems[i].tCopies = Convert.ToInt32(row["totalCopies"]);
 
                                 flowLayoutPanel1.Controls.Add(listItems[i]);
+
+                                
+
+
                             }
 
 
@@ -131,7 +135,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
 
 
-                            
+
 
 
 
@@ -170,7 +174,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void button3_Click(object sender, EventArgs e)
         {
-            BookContainer bookContainer = new BookContainer(this);
+            // Give checkout pane
+
             /*
             if (bookContainer.getCheckout.Count == 0)
             {
@@ -178,11 +183,17 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 return;
             }
             */
+
+            BookContainer bookContainer = new BookContainer(checkout1);
+            Checkout checkout = new Checkout();
+            checkout.Visible = true;
             checkout1.Visible = !checkout1.Visible;
             if (checkout1.Visible)
             {
                 checkout1.refresh();
             }
+            
+
         }
 
         private void closeCheckout()
@@ -195,6 +206,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             this.Refresh();
         }
 
-        
+        private void checkout1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

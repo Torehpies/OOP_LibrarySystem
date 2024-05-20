@@ -30,16 +30,29 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         {
             InitializeComponent();
             this.libraryForm = parentForm;
-            detailsbtn.Text = "Details";
-        }
+            //detailsbtn.Text = "Details";
+            numericUpDown2.Visible = false;
 
+            
+            
+            
+        }
+        
+        private NumericUpDown numericUpDown1;
         public BookContainer(Checkout parentForm)
         {
             InitializeComponent();
             this.checkoutForm = parentForm;
-            detailsbtn.Text = "Remove";
+            availLabel.Text = "Remove";
+
+            
+            numericUpDown2.Visible = true;
             addbtn.Visible = false;
+
+
         }
+
+        
 
         public BookContainer()
         {
@@ -49,18 +62,24 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void detailsbtn_Click(object sender, EventArgs e)
         {
+            
             if (this.libraryForm != null)
             {
                 // Test data
                 // MessageBox.Show($"The details for this book {Title}");
+
+                /*
                 BookDetails bookDetails = new BookDetails(Title, ISBN, Author, Category, Publisher, Year, aCopies, tCopies);
                 bookDetails.Show();
+                */
 
+                MessageBox.Show("Hello");
             }
             else
             {
                 checkoutForm.removeCard(this);
             }
+            
 
         }
 
@@ -68,6 +87,13 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void addbtn_Click(object sender, EventArgs e)
         {
+
+            BookDetails bookDetails = new BookDetails(Title, ISBN, Author, Category, Publisher, Year, aCopies, tCopies);
+            bookDetails.Show();
+            
+
+
+            /* Dating add button to
             Books addBook = new Books(Title, ISBN, Author, Category, Publisher, Year, aCopies, tCopies);
 
             //MessageBox.Show($"Bookname: `{Title}` {availCopies} is added to checkout");
@@ -88,30 +114,23 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             checkout.Add(addBook);
 
             checkOutList[Title] = availCopies;
+            */
 
         }
 
-        public void addBook(string Title, string ISBN, string Author, string Category, string Publisher, string Year)
+        public void addBook(string Title, string ISBN, string Author, string Category, string Publisher, string Year, int aCopies, int tCopies, int booksToBorrow)
         {
-            Books addBook = new Books(Title, ISBN, Author, Category, Publisher, Year, aCopies, tCopies);
-
+            Books addBook = new Books(Title, ISBN, Author, Category, Publisher, Year, aCopies, tCopies, booksToBorrow);
             //MessageBox.Show($"Bookname: `{Title}` {availCopies} is added to checkout");
 
 
             bookTitles.Add(Title);
             checkout.Add(addBook);
             checkOutList[Title] = availCopies;
-        }
-
-        public Dictionary<string, int> getdictList
-        {
-            get { return checkOutList; }
-        }
-
-        private void bookTitle_Click(object sender, EventArgs e)
-        {
 
         }
+
+        
 
         #region Properties
 
@@ -126,6 +145,20 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private static List<Books> checkout = new List<Books>();
         private int availCopies;
         private int totalCopies;
+        private int booksToBorrow;
+
+       
+        public Dictionary<string, int> getdictList
+        {
+            get { return checkOutList; }
+        }
+
+        [Category("Custom Props")]
+        public int BorrowCount
+        {
+            get { return booksToBorrow; }
+            set { booksToBorrow = value;}
+        }
 
         [Category("Custom Props")]
         public int tCopies
@@ -138,8 +171,16 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         public int aCopies
         {
             get { return availCopies; }
-            set { availCopies = value; availLabel.Text = value + " left"; }
+            set { availCopies = value; 
+                if (libraryForm != null) availLabel.Text = availCopies + " left";
+
+                
+            }
         }
+
+        
+
+
 
         [Category("Custom Props")]
         public string Author
@@ -209,14 +250,14 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private void MyUserControl_MouseEnter(object sender, EventArgs e)
         {
             // Set the visibility of the button to true when the mouse enters the user control
-            detailsbtn.Visible = true;
+            //detailsbtn.Visible = true;
         }
 
         // Event handler for MouseLeave
         private void MyUserControl_MouseLeave(object sender, EventArgs e)
         {
             // Set the visibility of the button to false when the mouse leaves the user control
-            detailsbtn.Visible = false;
+            //detailsbtn.Visible = false;
         }
 
         private void bookYear_Click(object sender, EventArgs e)

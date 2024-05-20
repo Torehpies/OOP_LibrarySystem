@@ -38,11 +38,13 @@
             authorLabel = new Label();
             isbn10Label = new Label();
             panel1 = new Panel();
+            borrownumber = new NumericUpDown();
+            availablecopies = new Label();
             statusLabel = new Label();
             exitButton = new Button();
-            availablecopies = new Label();
             ((System.ComponentModel.ISupportInitialize)picture).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)borrownumber).BeginInit();
             SuspendLayout();
             // 
             // picture
@@ -142,6 +144,7 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.AutoSize = true;
+            panel1.Controls.Add(borrownumber);
             panel1.Controls.Add(availablecopies);
             panel1.Controls.Add(statusLabel);
             panel1.Controls.Add(picture);
@@ -159,6 +162,27 @@
             panel1.Size = new Size(660, 390);
             panel1.TabIndex = 23;
             panel1.Paint += panel1_Paint;
+            // 
+            // borrownumber
+            // 
+            borrownumber.BorderStyle = BorderStyle.None;
+            borrownumber.Location = new Point(234, 341);
+            borrownumber.Name = "borrownumber";
+            borrownumber.Size = new Size(47, 19);
+            borrownumber.TabIndex = 24;
+            borrownumber.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            borrownumber.ValueChanged += numericUpDown1_ValueChanged;
+            // 
+            // availablecopies
+            // 
+            availablecopies.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            availablecopies.ForeColor = Color.FromArgb(73, 85, 121);
+            availablecopies.Location = new Point(244, 285);
+            availablecopies.Name = "availablecopies";
+            availablecopies.Size = new Size(303, 26);
+            availablecopies.TabIndex = 23;
+            availablecopies.Text = "AVAILABLE COPIES: 0 ";
+            availablecopies.Click += label1_Click;
             // 
             // statusLabel
             // 
@@ -186,17 +210,6 @@
             exitButton.UseVisualStyleBackColor = false;
             exitButton.Click += exitButton_Click;
             // 
-            // availablecopies
-            // 
-            availablecopies.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            availablecopies.ForeColor = Color.FromArgb(73, 85, 121);
-            availablecopies.Location = new Point(244, 285);
-            availablecopies.Name = "availablecopies";
-            availablecopies.Size = new Size(303, 26);
-            availablecopies.TabIndex = 23;
-            availablecopies.Text = "AVAILABLE COPIES: 0 ";
-            availablecopies.Click += label1_Click;
-            // 
             // BookDetails
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -212,8 +225,10 @@
             Padding = new Padding(20);
             StartPosition = FormStartPosition.CenterScreen;
             TopMost = true;
+            Load += populateDetails;
             ((System.ComponentModel.ISupportInitialize)picture).EndInit();
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)borrownumber).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -233,5 +248,6 @@
         private Button exitButton;
         private Label statusLabel;
         private Label availablecopies;
+        private NumericUpDown borrownumber;
     }
 }

@@ -136,7 +136,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             checkout1.Size = new Size(1136, 559);
             checkout1.TabIndex = 9;
             checkout1.Visible = false;
-            
+            checkout1.Load += checkout1_Load;
             // 
             // Library
             // 
