@@ -20,8 +20,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         string category;
         string publisher;
         string published;
-        
-        public BookDetails(string title, string isbn, string author, string category, string publisher, string published)
+        int avail;
+
+        public BookDetails(string title, string isbn, string author, string category, string publisher, string published, int availableCopies)
         {
             InitializeComponent();
             this.title = title;
@@ -30,13 +31,16 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             this.category = category;
             this.publisher = publisher;
             this.published = published;
+            this.avail = availableCopies;
 
-            titleLabel.Text = "Title: " +  title;
+            titleLabel.Text = "Title: " + title;
             isbn10Label.Text = "ISBN: " + isbn;
             authorLabel.Text = "Author: " + author;
             categoryLabel.Text = "Category: " + category;
             publisherLabel.Text = "Publisher: " + publisher;
             publishedLabel.Text = "Year: " + published;
+            availablecopies.Text = "Available Copies: " + avail;
+
         }
 
         public void InitializeUI(Book BookContainerData)
@@ -72,12 +76,17 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         {
             BookContainer addBooks = new BookContainer();
             addBooks.addBook(title, isbn, author, category, publisher, published);
-           
+
 
 
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

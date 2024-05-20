@@ -40,6 +40,7 @@
             panel1 = new Panel();
             statusLabel = new Label();
             exitButton = new Button();
+            availablecopies = new Label();
             ((System.ComponentModel.ISupportInitialize)picture).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -58,7 +59,7 @@
             // 
             publishedLabel.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             publishedLabel.ForeColor = Color.FromArgb(73, 85, 121);
-            publishedLabel.Location = new Point(244, 268);
+            publishedLabel.Location = new Point(244, 259);
             publishedLabel.Name = "publishedLabel";
             publishedLabel.Size = new Size(303, 26);
             publishedLabel.TabIndex = 21;
@@ -81,7 +82,7 @@
             // 
             publisherLabel.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             publisherLabel.ForeColor = Color.FromArgb(73, 85, 121);
-            publisherLabel.Location = new Point(244, 242);
+            publisherLabel.Location = new Point(244, 233);
             publisherLabel.Name = "publisherLabel";
             publisherLabel.Size = new Size(324, 26);
             publisherLabel.TabIndex = 20;
@@ -101,7 +102,7 @@
             // 
             categoryLabel.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             categoryLabel.ForeColor = Color.FromArgb(73, 85, 121);
-            categoryLabel.Location = new Point(244, 216);
+            categoryLabel.Location = new Point(244, 207);
             categoryLabel.Name = "categoryLabel";
             categoryLabel.Size = new Size(303, 26);
             categoryLabel.TabIndex = 19;
@@ -111,7 +112,7 @@
             // 
             isbn13Label.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             isbn13Label.ForeColor = Color.FromArgb(73, 85, 121);
-            isbn13Label.Location = new Point(244, 138);
+            isbn13Label.Location = new Point(244, 129);
             isbn13Label.Name = "isbn13Label";
             isbn13Label.Size = new Size(303, 17);
             isbn13Label.TabIndex = 15;
@@ -121,7 +122,7 @@
             // 
             authorLabel.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             authorLabel.ForeColor = Color.FromArgb(73, 85, 121);
-            authorLabel.Location = new Point(244, 190);
+            authorLabel.Location = new Point(244, 181);
             authorLabel.Name = "authorLabel";
             authorLabel.Size = new Size(303, 26);
             authorLabel.TabIndex = 18;
@@ -131,7 +132,7 @@
             // 
             isbn10Label.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             isbn10Label.ForeColor = Color.FromArgb(73, 85, 121);
-            isbn10Label.Location = new Point(244, 164);
+            isbn10Label.Location = new Point(244, 155);
             isbn10Label.Name = "isbn10Label";
             isbn10Label.Size = new Size(303, 17);
             isbn10Label.TabIndex = 16;
@@ -141,6 +142,7 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.AutoSize = true;
+            panel1.Controls.Add(availablecopies);
             panel1.Controls.Add(statusLabel);
             panel1.Controls.Add(picture);
             panel1.Controls.Add(publishedLabel);
@@ -184,6 +186,17 @@
             exitButton.UseVisualStyleBackColor = false;
             exitButton.Click += exitButton_Click;
             // 
+            // availablecopies
+            // 
+            availablecopies.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            availablecopies.ForeColor = Color.FromArgb(73, 85, 121);
+            availablecopies.Location = new Point(244, 285);
+            availablecopies.Name = "availablecopies";
+            availablecopies.Size = new Size(303, 26);
+            availablecopies.TabIndex = 23;
+            availablecopies.Text = "AVAILABLE COPIES: 0 ";
+            availablecopies.Click += label1_Click;
+            // 
             // BookDetails
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -219,5 +232,6 @@
         private Panel panel1;
         private Button exitButton;
         private Label statusLabel;
+        private Label availablecopies;
     }
 }

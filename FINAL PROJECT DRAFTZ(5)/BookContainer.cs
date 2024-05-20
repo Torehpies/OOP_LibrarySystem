@@ -53,7 +53,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             {
                 // Test data
                // MessageBox.Show($"The details for this book {Title}");
-                BookDetails bookDetails = new BookDetails(Title, ISBN, Author, Category, Publisher, Year);
+                BookDetails bookDetails = new BookDetails(Title, ISBN, Author, Category, Publisher, Year, aCopies);
                 bookDetails.Show();
 
             } else
