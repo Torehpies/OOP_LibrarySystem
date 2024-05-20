@@ -12,10 +12,18 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+
+            // Check if database is active
+            Database database = new Database();
+            database.start();
+            
           
             //LoginForm form = new LoginForm();  
             MainForm form = new MainForm();
             Application.Run(form);
+
+            
+            
         }
     }
 }
