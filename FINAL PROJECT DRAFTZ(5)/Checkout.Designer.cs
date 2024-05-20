@@ -30,17 +30,17 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         /// </summary>
         private void InitializeComponent()
         {
-            flowLayoutPanel1 = new FlowLayoutPanel();
+            booksPanel = new FlowLayoutPanel();
             checkoutBtn = new CustomButton();
             SuspendLayout();
             // 
-            // flowLayoutPanel1
+            // booksPanel
             // 
-            flowLayoutPanel1.Location = new Point(1, 2);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1135, 471);
-            flowLayoutPanel1.TabIndex = 0;
-            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
+            booksPanel.Location = new Point(1, 2);
+            booksPanel.Name = "booksPanel";
+            booksPanel.Size = new Size(1135, 471);
+            booksPanel.TabIndex = 0;
+            booksPanel.Paint += flowLayoutPanel1_Paint;
             // 
             // checkoutBtn
             // 
@@ -69,7 +69,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(201, 173, 167);
             Controls.Add(checkoutBtn);
-            Controls.Add(flowLayoutPanel1);
+            Controls.Add(booksPanel);
             Name = "Checkout";
             Size = new Size(1136, 559);
             Load += Checkout_Load;
@@ -78,7 +78,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         #endregion
 
-        private FlowLayoutPanel flowLayoutPanel1;
+        private FlowLayoutPanel booksPanel;
         private CustomButton checkoutBtn;
     }
 }

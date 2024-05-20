@@ -71,7 +71,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             bookTitle.Text = "How to Write a LotHow to Write a LotHow to Write a Lot";
             bookTitle.TextAlign = ContentAlignment.TopCenter;
             bookTitle.UseCompatibleTextRendering = true;
-            bookTitle.Click += bookTitle_Click;
             // 
             // detailsbtn
             // 

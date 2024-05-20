@@ -47,15 +47,15 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 MessageBox.Show($"Removed: {bookToRemove.Title}");
                 MessageBox.Show($"Dict count: {keyValuePairs.Count}");
             }
-            flowLayoutPanel1.Controls.Remove(userControl);
+            booksPanel.Controls.Remove(userControl);
         }
 
 
 
         private void populatecheckout()
         {
-            flowLayoutPanel1.AutoScroll = true;
-            flowLayoutPanel1.Controls.Clear();
+            booksPanel.AutoScroll = true;
+            booksPanel.Controls.Clear();
 
             BookContainer retrieveCheckout = new BookContainer();
             checkoutList = retrieveCheckout.getCheckout;
@@ -67,7 +67,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 bookContainer.Year = book.Date;
 
 
-                flowLayoutPanel1.Controls.Add(bookContainer);
+                booksPanel.Controls.Add(bookContainer);
             }
         }
 
@@ -105,7 +105,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
 
                 //this.Close();
-                flowLayoutPanel1.Controls.Clear();
+                booksPanel.Controls.Clear();
                 checkoutList.Clear();
 
                 

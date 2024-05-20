@@ -52,7 +52,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             if (this.libraryForm != null)
             {
                 // Test data
-                MessageBox.Show($"The details for this book {Title}");
+               // MessageBox.Show($"The details for this book {Title}");
                 BookDetails bookDetails = new BookDetails(Title, ISBN, Author, Category, Publisher, Year);
                 bookDetails.Show();
 
@@ -69,14 +69,23 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         {
             Books addBook = new Books(Title, ISBN, Author, Category, Publisher, Year);
 
-            MessageBox.Show($"Bookname: `{Title}` {availCopies} is added to checkout");
+            //MessageBox.Show($"Bookname: `{Title}` {availCopies} is added to checkout");
 
-            /*
+            Checkout checkout1 = (this.ParentForm as Library).Controls["checkout1"] as Checkout;
+            BookContainer book = new BookContainer();
+            book._title = Title;
+            book._author = Author;
+            book._publisher = Publisher;
+            book._year = Year;
+            book._category = Category;
+            book._ISBN = ISBN;
+            FlowLayoutPanel panel = checkout1.Controls["booksPanel"] as FlowLayoutPanel;
+            panel.Controls.Add(book);
+
             bookTitles.Add(Title);
             checkout.Add(addBook);
-            checkOutList[Title] = availCopies;
-            */
 
+            checkOutList[Title] = availCopies;
             
         }
 
@@ -84,7 +93,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         {
             Books addBook = new Books(Title, ISBN, Author, Category, Publisher, Year);
 
-            MessageBox.Show($"Bookname: `{Title}` {availCopies} is added to checkout");
+            //MessageBox.Show($"Bookname: `{Title}` {availCopies} is added to checkout");
 
 
             bookTitles.Add(Title);
@@ -142,7 +151,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             get { return _publisher; }
             set { _publisher = value; }
         }
-
+        
         [Category("Custom Props")]
         public List<Books> getCheckout
         {
