@@ -68,6 +68,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 BookContainer bookContainer = new BookContainer(this);
                 bookContainer.Title = book.Title;
                 bookContainer.Year = book.Date;
+                bookContainer.aCopies = book.AvailableCopies;
+                bookContainer.tCopies = book.AvailableCopies;
 
 
                 booksPanel.Controls.Add(bookContainer);

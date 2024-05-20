@@ -53,7 +53,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             {
                 // Test data
                 // MessageBox.Show($"The details for this book {Title}");
-                BookDetails bookDetails = new BookDetails(Title, ISBN, Author, Category, Publisher, Year);
+                BookDetails bookDetails = new BookDetails(Title, ISBN, Author, Category, Publisher, Year, aCopies, tCopies);
                 bookDetails.Show();
 
             }
@@ -68,7 +68,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void addbtn_Click(object sender, EventArgs e)
         {
-            Books addBook = new Books(Title, ISBN, Author, Category, Publisher, Year);
+            Books addBook = new Books(Title, ISBN, Author, Category, Publisher, Year, aCopies, tCopies);
 
             //MessageBox.Show($"Bookname: `{Title}` {availCopies} is added to checkout");
 
@@ -81,6 +81,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             book._year = Year;
             book._category = Category;
             book._ISBN = ISBN;
+            book.availCopies = aCopies; 
             FlowLayoutPanel panel = checkout1.Controls["booksPanel"] as FlowLayoutPanel;
             panel.Controls.Add(book);
             */
@@ -94,7 +95,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         public void addBook(string Title, string ISBN, string Author, string Category, string Publisher, string Year)
         {
-            Books addBook = new Books(Title, ISBN, Author, Category, Publisher, Year);
+            Books addBook = new Books(Title, ISBN, Author, Category, Publisher, Year, aCopies, tCopies);
 
             //MessageBox.Show($"Bookname: `{Title}` {availCopies} is added to checkout");
 
@@ -126,12 +127,20 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private static List<string> bookTitles = new List<string>();
         private static List<Books> checkout = new List<Books>();
         private int availCopies;
+        private int totalCopies;
+
+        [Category("Custom Props")]
+        public int tCopies
+        {
+            get { return totalCopies; }
+            set { totalCopies = value; }
+        }
 
         [Category("Custom Props")]
         public int aCopies
         {
             get { return availCopies; }
-            set { availCopies = value; }
+            set { availCopies = value; availLabel.Text = value + " left"; }
         }
 
         [Category("Custom Props")]

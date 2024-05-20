@@ -14,8 +14,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         string category;
         string publisher;
         string published;
+        int availableCopies;
+        int totalCopies;
 
-        public Books(string title, string isbn, string author, string category, string publisher, string published)
+        public Books(string title, string isbn, string author, string category, string publisher, string published, int availableCopies, int totalCopies)
         {
             this.title = title;
             this.isbn = isbn;
@@ -23,6 +25,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             this.category = category;
             this.publisher = publisher;
             this.published = published;
+            this.availableCopies = availableCopies;
+            this.totalCopies = totalCopies;
         }
 
         public string Title { get { return title; } }
@@ -33,5 +37,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         public string Published { get { return published; } }
 
         public string Date { get { return published; } }
+        public int AvailableCopies { get {  return availableCopies; } }
+        public int TotalCopies { get {  return totalCopies; } }
     }
 }
