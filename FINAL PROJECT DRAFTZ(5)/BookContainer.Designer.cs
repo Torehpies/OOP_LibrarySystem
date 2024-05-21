@@ -50,7 +50,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             bookYear.Size = new Size(41, 23);
             bookYear.TabIndex = 19;
             bookYear.Text = "2018";
-            bookYear.Click += bookYear_Click;
+            //bookYear.Click += bookYear_Click;
             // 
             // bookPic
             // 
@@ -128,7 +128,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             availLabel.Size = new Size(51, 23);
             availLabel.TabIndex = 22;
             availLabel.Text = "label1";
-            availLabel.Click += label1_Click;
+            //availLabel.Click += label1_Click;
             // 
             // label2
             // 
@@ -139,7 +139,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             label2.Size = new Size(13, 20);
             label2.TabIndex = 23;
             label2.Text = "|";
-            label2.Click += label2_Click;
+            //label2.Click += label2_Click;
             // 
             // BookContainer
             // 
