@@ -37,6 +37,7 @@
             confirmButton = new CustomControls.RJControls.CustomButton();
             panel1 = new Panel();
             cancelButton = new CustomControls.RJControls.CustomButton();
+            warningText = new Label();
             SuspendLayout();
             // 
             // idPrompt
@@ -165,11 +166,25 @@
             cancelButton.TextColor = Color.FromArgb(34, 34, 59);
             cancelButton.UseVisualStyleBackColor = false;
             // 
+            // warningText
+            // 
+            warningText.AutoSize = true;
+            warningText.Font = new Font("Quicksand", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            warningText.ForeColor = Color.DarkRed;
+            warningText.Location = new Point(106, 119);
+            warningText.Name = "warningText";
+            warningText.Size = new Size(182, 24);
+            warningText.TabIndex = 9;
+            warningText.Text = "Member doesn't exists";
+            warningText.TextAlign = ContentAlignment.MiddleCenter;
+            warningText.Visible = false;
+            // 
             // BorrowerDetails
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(242, 233, 228);
+            Controls.Add(warningText);
             Controls.Add(cancelButton);
             Controls.Add(confirmButton);
             Controls.Add(idLabel);
@@ -196,5 +211,6 @@
         private CustomControls.RJControls.CustomButton confirmButton;
         private Panel panel1;
         private CustomControls.RJControls.CustomButton cancelButton;
+        private Label warningText;
     }
 }
