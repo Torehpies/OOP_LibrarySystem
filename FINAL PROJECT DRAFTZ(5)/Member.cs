@@ -8,7 +8,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 {
     internal class Member
     {
-        Member(int id, string name, string details, string department, string type) 
+        internal Member() { }
+        internal Member(string id, string name, string details, string department, string type) 
         {
             Id = id;
             Name = name;
@@ -17,7 +18,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             Type = type;
         }
 
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string Name { get; set; }
         public string Details { get; set; }
         public string Department { get; set; }

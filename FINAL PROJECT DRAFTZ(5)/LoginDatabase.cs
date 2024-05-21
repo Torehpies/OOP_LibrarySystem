@@ -12,7 +12,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 {
     internal class LoginDatabase
     {
-        static MySqlConnection SQL_SERVER;
+        public static MySqlConnection SQL_SERVER;
 
         public static void start()
         {
