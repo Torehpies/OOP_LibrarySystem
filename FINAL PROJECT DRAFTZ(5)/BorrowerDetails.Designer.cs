@@ -36,6 +36,7 @@
             idLabel = new Label();
             confirmButton = new CustomControls.RJControls.CustomButton();
             panel1 = new Panel();
+            cancelButton = new CustomControls.RJControls.CustomButton();
             SuspendLayout();
             // 
             // idPrompt
@@ -127,7 +128,7 @@
             confirmButton.FlatStyle = FlatStyle.Flat;
             confirmButton.Font = new Font("Quicksand", 12F, FontStyle.Bold, GraphicsUnit.Point);
             confirmButton.ForeColor = Color.White;
-            confirmButton.Location = new Point(102, 232);
+            confirmButton.Location = new Point(102, 233);
             confirmButton.Name = "confirmButton";
             confirmButton.Size = new Size(190, 40);
             confirmButton.TabIndex = 6;
@@ -144,11 +145,32 @@
             panel1.Size = new Size(395, 62);
             panel1.TabIndex = 7;
             // 
+            // cancelButton
+            // 
+            cancelButton.Anchor = AnchorStyles.Bottom;
+            cancelButton.BackColor = Color.FromArgb(242, 233, 228);
+            cancelButton.BackgroundColor = Color.FromArgb(242, 233, 228);
+            cancelButton.BorderColor = Color.FromArgb(34, 34, 59);
+            cancelButton.BorderRadius = 20;
+            cancelButton.BorderSize = 3;
+            cancelButton.FlatAppearance.BorderSize = 0;
+            cancelButton.FlatStyle = FlatStyle.Flat;
+            cancelButton.Font = new Font("Quicksand", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            cancelButton.ForeColor = Color.FromArgb(34, 34, 59);
+            cancelButton.Location = new Point(102, 277);
+            cancelButton.Name = "cancelButton";
+            cancelButton.Size = new Size(190, 40);
+            cancelButton.TabIndex = 8;
+            cancelButton.Text = "Cancel";
+            cancelButton.TextColor = Color.FromArgb(34, 34, 59);
+            cancelButton.UseVisualStyleBackColor = false;
+            // 
             // BorrowerDetails
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(242, 233, 228);
+            Controls.Add(cancelButton);
             Controls.Add(confirmButton);
             Controls.Add(idLabel);
             Controls.Add(detailsLabel);
@@ -158,7 +180,7 @@
             Controls.Add(idPrompt);
             Controls.Add(panel1);
             Name = "BorrowerDetails";
-            Size = new Size(395, 294);
+            Size = new Size(395, 328);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -173,5 +195,6 @@
         private Label idLabel;
         private CustomControls.RJControls.CustomButton confirmButton;
         private Panel panel1;
+        private CustomControls.RJControls.CustomButton cancelButton;
     }
 }
