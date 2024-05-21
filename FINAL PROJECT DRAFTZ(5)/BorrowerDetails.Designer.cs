@@ -55,7 +55,7 @@
             label1.BackColor = Color.FromArgb(34, 34, 59);
             label1.Font = new Font("Quicksand", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.FromArgb(242, 233, 228);
-            label1.Location = new Point(107, 17);
+            label1.Location = new Point(105, 17);
             label1.Name = "label1";
             label1.Size = new Size(185, 31);
             label1.TabIndex = 1;
@@ -88,7 +88,7 @@
             // 
             nameLabel.AutoSize = true;
             nameLabel.Font = new Font("Quicksand SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            nameLabel.Location = new Point(165, 119);
+            nameLabel.Location = new Point(164, 128);
             nameLabel.Name = "nameLabel";
             nameLabel.Size = new Size(66, 28);
             nameLabel.TabIndex = 3;
@@ -99,7 +99,7 @@
             // 
             detailsLabel.AutoSize = true;
             detailsLabel.Font = new Font("Quicksand SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            detailsLabel.Location = new Point(161, 148);
+            detailsLabel.Location = new Point(160, 157);
             detailsLabel.Name = "detailsLabel";
             detailsLabel.Size = new Size(74, 28);
             detailsLabel.TabIndex = 4;
@@ -109,7 +109,7 @@
             // 
             idLabel.AutoSize = true;
             idLabel.Font = new Font("Quicksand SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            idLabel.Location = new Point(131, 177);
+            idLabel.Location = new Point(130, 186);
             idLabel.Name = "idLabel";
             idLabel.Size = new Size(134, 28);
             idLabel.TabIndex = 5;
@@ -125,11 +125,11 @@
             confirmButton.BorderSize = 0;
             confirmButton.FlatAppearance.BorderSize = 0;
             confirmButton.FlatStyle = FlatStyle.Flat;
-            confirmButton.Font = new Font("Quicksand", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            confirmButton.Font = new Font("Quicksand", 12F, FontStyle.Bold, GraphicsUnit.Point);
             confirmButton.ForeColor = Color.White;
-            confirmButton.Location = new Point(124, 230);
+            confirmButton.Location = new Point(102, 232);
             confirmButton.Name = "confirmButton";
-            confirmButton.Size = new Size(150, 40);
+            confirmButton.Size = new Size(190, 40);
             confirmButton.TabIndex = 6;
             confirmButton.Text = "Confirm Checkout";
             confirmButton.TextColor = Color.White;
