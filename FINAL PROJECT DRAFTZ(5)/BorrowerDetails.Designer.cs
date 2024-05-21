@@ -38,15 +38,16 @@
             panel1 = new Panel();
             cancelButton = new CustomControls.RJControls.CustomButton();
             warningText = new Label();
+            checkIDBtn = new CustomControls.RJControls.CustomButton();
             SuspendLayout();
             // 
             // idPrompt
             // 
             idPrompt.AutoSize = true;
-            idPrompt.Font = new Font("Quicksand", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            idPrompt.Location = new Point(20, 87);
+            idPrompt.Font = new Font("Quicksand", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            idPrompt.Location = new Point(10, 87);
             idPrompt.Name = "idPrompt";
-            idPrompt.Size = new Size(116, 24);
+            idPrompt.Size = new Size(113, 23);
             idPrompt.TabIndex = 0;
             idPrompt.Text = "Borrower's ID:";
             // 
@@ -71,9 +72,9 @@
             customTextbox1.BorderFocusColor = Color.HotPink;
             customTextbox1.BorderRadius = 15;
             customTextbox1.BorderSize = 2;
-            customTextbox1.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            customTextbox1.Font = new Font("Quicksand", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             customTextbox1.ForeColor = Color.FromArgb(64, 64, 64);
-            customTextbox1.Location = new Point(143, 84);
+            customTextbox1.Location = new Point(122, 79);
             customTextbox1.Margin = new Padding(4);
             customTextbox1.Multiline = false;
             customTextbox1.Name = "customTextbox1";
@@ -81,7 +82,7 @@
             customTextbox1.PasswordChar = false;
             customTextbox1.PlaceholderColor = Color.DarkGray;
             customTextbox1.PlaceholderText = "";
-            customTextbox1.Size = new Size(223, 31);
+            customTextbox1.Size = new Size(159, 38);
             customTextbox1.TabIndex = 2;
             customTextbox1.Texts = "";
             customTextbox1.UnderlinedStyle = false;
@@ -96,6 +97,7 @@
             nameLabel.TabIndex = 3;
             nameLabel.Text = "Name";
             nameLabel.TextAlign = ContentAlignment.MiddleCenter;
+            nameLabel.Visible = false;
             // 
             // detailsLabel
             // 
@@ -106,6 +108,7 @@
             detailsLabel.Size = new Size(74, 28);
             detailsLabel.TabIndex = 4;
             detailsLabel.Text = "Details";
+            detailsLabel.Visible = false;
             // 
             // idLabel
             // 
@@ -116,6 +119,7 @@
             idLabel.Size = new Size(134, 28);
             idLabel.TabIndex = 5;
             idLabel.Text = "Borrower's ID";
+            idLabel.Visible = false;
             // 
             // confirmButton
             // 
@@ -129,7 +133,7 @@
             confirmButton.FlatStyle = FlatStyle.Flat;
             confirmButton.Font = new Font("Quicksand", 12F, FontStyle.Bold, GraphicsUnit.Point);
             confirmButton.ForeColor = Color.White;
-            confirmButton.Location = new Point(102, 233);
+            confirmButton.Location = new Point(102, 157);
             confirmButton.Name = "confirmButton";
             confirmButton.Size = new Size(190, 40);
             confirmButton.TabIndex = 6;
@@ -158,20 +162,21 @@
             cancelButton.FlatStyle = FlatStyle.Flat;
             cancelButton.Font = new Font("Quicksand", 12F, FontStyle.Bold, GraphicsUnit.Point);
             cancelButton.ForeColor = Color.FromArgb(34, 34, 59);
-            cancelButton.Location = new Point(102, 277);
+            cancelButton.Location = new Point(102, 198);
             cancelButton.Name = "cancelButton";
             cancelButton.Size = new Size(190, 40);
             cancelButton.TabIndex = 8;
             cancelButton.Text = "Cancel";
             cancelButton.TextColor = Color.FromArgb(34, 34, 59);
             cancelButton.UseVisualStyleBackColor = false;
+            cancelButton.Click += cancelButton_Click;
             // 
             // warningText
             // 
             warningText.AutoSize = true;
             warningText.Font = new Font("Quicksand", 12F, FontStyle.Bold, GraphicsUnit.Point);
             warningText.ForeColor = Color.DarkRed;
-            warningText.Location = new Point(106, 119);
+            warningText.Location = new Point(106, 123);
             warningText.Name = "warningText";
             warningText.Size = new Size(182, 24);
             warningText.TabIndex = 9;
@@ -179,11 +184,32 @@
             warningText.TextAlign = ContentAlignment.MiddleCenter;
             warningText.Visible = false;
             // 
+            // checkIDBtn
+            // 
+            checkIDBtn.Anchor = AnchorStyles.Bottom;
+            checkIDBtn.BackColor = Color.FromArgb(34, 34, 59);
+            checkIDBtn.BackgroundColor = Color.FromArgb(34, 34, 59);
+            checkIDBtn.BorderColor = Color.PaleVioletRed;
+            checkIDBtn.BorderRadius = 20;
+            checkIDBtn.BorderSize = 0;
+            checkIDBtn.FlatAppearance.BorderSize = 0;
+            checkIDBtn.FlatStyle = FlatStyle.Flat;
+            checkIDBtn.Font = new Font("Quicksand", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            checkIDBtn.ForeColor = Color.White;
+            checkIDBtn.Location = new Point(288, 80);
+            checkIDBtn.Name = "checkIDBtn";
+            checkIDBtn.Size = new Size(98, 37);
+            checkIDBtn.TabIndex = 10;
+            checkIDBtn.Text = "Check ID";
+            checkIDBtn.TextColor = Color.White;
+            checkIDBtn.UseVisualStyleBackColor = false;
+            // 
             // BorrowerDetails
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(242, 233, 228);
+            Controls.Add(checkIDBtn);
             Controls.Add(warningText);
             Controls.Add(cancelButton);
             Controls.Add(confirmButton);
@@ -212,5 +238,6 @@
         private Panel panel1;
         private CustomControls.RJControls.CustomButton cancelButton;
         private Label warningText;
+        private CustomControls.RJControls.CustomButton checkIDBtn;
     }
 }
