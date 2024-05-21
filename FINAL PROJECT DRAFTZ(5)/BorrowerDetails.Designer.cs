@@ -30,7 +30,7 @@
         {
             idPrompt = new Label();
             label1 = new Label();
-            customTextbox1 = new CustomTextbox();
+            idTextbox = new CustomTextbox();
             nameLabel = new Label();
             detailsLabel = new Label();
             idLabel = new Label();
@@ -65,27 +65,27 @@
             label1.Text = "Borrower Details";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // customTextbox1
+            // idTextbox
             // 
-            customTextbox1.BackColor = SystemColors.Window;
-            customTextbox1.BorderColor = Color.FromArgb(34, 34, 59);
-            customTextbox1.BorderFocusColor = Color.HotPink;
-            customTextbox1.BorderRadius = 15;
-            customTextbox1.BorderSize = 2;
-            customTextbox1.Font = new Font("Quicksand", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            customTextbox1.ForeColor = Color.FromArgb(64, 64, 64);
-            customTextbox1.Location = new Point(122, 79);
-            customTextbox1.Margin = new Padding(4);
-            customTextbox1.Multiline = false;
-            customTextbox1.Name = "customTextbox1";
-            customTextbox1.Padding = new Padding(10, 7, 10, 7);
-            customTextbox1.PasswordChar = false;
-            customTextbox1.PlaceholderColor = Color.DarkGray;
-            customTextbox1.PlaceholderText = "";
-            customTextbox1.Size = new Size(159, 38);
-            customTextbox1.TabIndex = 2;
-            customTextbox1.Texts = "";
-            customTextbox1.UnderlinedStyle = false;
+            idTextbox.BackColor = SystemColors.Window;
+            idTextbox.BorderColor = Color.FromArgb(34, 34, 59);
+            idTextbox.BorderFocusColor = Color.HotPink;
+            idTextbox.BorderRadius = 15;
+            idTextbox.BorderSize = 2;
+            idTextbox.Font = new Font("Quicksand", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            idTextbox.ForeColor = Color.FromArgb(64, 64, 64);
+            idTextbox.Location = new Point(122, 79);
+            idTextbox.Margin = new Padding(4);
+            idTextbox.Multiline = false;
+            idTextbox.Name = "idTextbox";
+            idTextbox.Padding = new Padding(10, 7, 10, 7);
+            idTextbox.PasswordChar = false;
+            idTextbox.PlaceholderColor = Color.DarkGray;
+            idTextbox.PlaceholderText = "";
+            idTextbox.Size = new Size(159, 38);
+            idTextbox.TabIndex = 2;
+            idTextbox.Texts = "";
+            idTextbox.UnderlinedStyle = false;
             // 
             // nameLabel
             // 
@@ -203,6 +203,7 @@
             checkIDBtn.Text = "Check ID";
             checkIDBtn.TextColor = Color.White;
             checkIDBtn.UseVisualStyleBackColor = false;
+            checkIDBtn.Click += checkIDBtn_Click;
             // 
             // BorrowerDetails
             // 
@@ -216,7 +217,7 @@
             Controls.Add(idLabel);
             Controls.Add(detailsLabel);
             Controls.Add(nameLabel);
-            Controls.Add(customTextbox1);
+            Controls.Add(idTextbox);
             Controls.Add(label1);
             Controls.Add(idPrompt);
             Controls.Add(panel1);
@@ -230,7 +231,7 @@
 
         private Label idPrompt;
         private Label label1;
-        private CustomTextbox customTextbox1;
+        private CustomTextbox idTextbox;
         private Label nameLabel;
         private Label detailsLabel;
         private Label idLabel;

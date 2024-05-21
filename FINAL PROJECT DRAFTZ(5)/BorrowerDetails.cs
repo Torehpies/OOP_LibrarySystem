@@ -36,6 +36,20 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             cancelButton.Location = new Point(cancelButton.Location.Y + 76, cancelButton.Location.Y);
         }
 
-  
+        private void checkIDBtn_Click(object sender, EventArgs e)
+        {
+            if (!BorrowerDB.DoesMemberExists(idTextbox.Texts))
+            {
+                warningText.Visible = true;
+                return;
+            }
+
+            Member member = BorrowerDB.GetMemberDetails(idTextbox.Texts);
+            nameLabel.Text = member.Name;
+            detailsLabel.Text = member.Department + " " + member.Details;
+            idLabel.Text = member.Id;
+            confirmBorrowMode();
+
+        }
     }
 }
