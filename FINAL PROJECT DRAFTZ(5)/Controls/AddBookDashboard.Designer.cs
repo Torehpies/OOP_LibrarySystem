@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            button3 = new Button();
             dateText = new DateTimePicker();
             bookNoText = new TextBox();
             label7 = new Label();
@@ -53,6 +54,7 @@
             // panel1
             // 
             panel1.BackColor = Color.MistyRose;
+            panel1.Controls.Add(button3);
             panel1.Controls.Add(dateText);
             panel1.Controls.Add(bookNoText);
             panel1.Controls.Add(label7);
@@ -72,20 +74,31 @@
             panel1.Controls.Add(pictureBox);
             panel1.Location = new Point(14, 19);
             panel1.Name = "panel1";
-            panel1.Size = new Size(773, 486);
+            panel1.Size = new Size(1196, 593);
             panel1.TabIndex = 1;
             panel1.Paint += panel1_Paint;
             // 
+            // button3
+            // 
+            button3.BackColor = Color.PaleTurquoise;
+            button3.Location = new Point(11, 7);
+            button3.Name = "button3";
+            button3.Size = new Size(125, 23);
+            button3.TabIndex = 18;
+            button3.Text = "Return to Inventory";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
             // dateText
             // 
-            dateText.Location = new Point(247, 176);
+            dateText.Location = new Point(395, 231);
             dateText.Name = "dateText";
             dateText.Size = new Size(189, 23);
             dateText.TabIndex = 17;
             // 
             // bookNoText
             // 
-            bookNoText.Location = new Point(247, 390);
+            bookNoText.Location = new Point(395, 445);
             bookNoText.Multiline = true;
             bookNoText.Name = "bookNoText";
             bookNoText.Size = new Size(189, 28);
@@ -96,7 +109,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(87, 393);
+            label7.Location = new Point(235, 448);
             label7.Name = "label7";
             label7.Size = new Size(94, 25);
             label7.TabIndex = 15;
@@ -104,7 +117,7 @@
             // 
             // publisherText
             // 
-            publisherText.Location = new Point(247, 338);
+            publisherText.Location = new Point(395, 393);
             publisherText.Multiline = true;
             publisherText.Name = "publisherText";
             publisherText.Size = new Size(189, 28);
@@ -115,7 +128,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(74, 341);
+            label6.Location = new Point(222, 396);
             label6.Name = "label6";
             label6.Size = new Size(131, 25);
             label6.TabIndex = 13;
@@ -123,7 +136,7 @@
             // 
             // categoryText
             // 
-            categoryText.Location = new Point(247, 282);
+            categoryText.Location = new Point(395, 337);
             categoryText.Multiline = true;
             categoryText.Name = "categoryText";
             categoryText.Size = new Size(189, 28);
@@ -134,7 +147,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(74, 285);
+            label1.Location = new Point(222, 340);
             label1.Name = "label1";
             label1.Size = new Size(132, 25);
             label1.TabIndex = 11;
@@ -145,7 +158,7 @@
             // 
             button2.BackColor = Color.PaleTurquoise;
             button2.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.Location = new Point(591, 393);
+            button2.Location = new Point(739, 448);
             button2.Name = "button2";
             button2.Size = new Size(150, 63);
             button2.TabIndex = 10;
@@ -157,7 +170,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(26, 176);
+            label5.Location = new Point(174, 231);
             label5.Name = "label5";
             label5.Size = new Size(203, 25);
             label5.TabIndex = 9;
@@ -168,7 +181,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(87, 230);
+            label4.Location = new Point(235, 285);
             label4.Name = "label4";
             label4.Size = new Size(102, 25);
             label4.TabIndex = 8;
@@ -178,7 +191,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(87, 71);
+            label3.Location = new Point(235, 126);
             label3.Name = "label3";
             label3.Size = new Size(72, 25);
             label3.TabIndex = 7;
@@ -186,7 +199,7 @@
             // 
             // isbnText
             // 
-            isbnText.Location = new Point(247, 120);
+            isbnText.Location = new Point(395, 175);
             isbnText.Multiline = true;
             isbnText.Name = "isbnText";
             isbnText.Size = new Size(189, 28);
@@ -196,7 +209,7 @@
             // 
             // titleText
             // 
-            titleText.Location = new Point(247, 68);
+            titleText.Location = new Point(395, 123);
             titleText.Multiline = true;
             titleText.Name = "titleText";
             titleText.Size = new Size(189, 28);
@@ -207,7 +220,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(97, 123);
+            label2.Location = new Point(245, 178);
             label2.Name = "label2";
             label2.Size = new Size(62, 25);
             label2.TabIndex = 3;
@@ -216,7 +229,7 @@
             // 
             // authorText
             // 
-            authorText.Location = new Point(247, 227);
+            authorText.Location = new Point(395, 282);
             authorText.Multiline = true;
             authorText.Name = "authorText";
             authorText.Size = new Size(189, 28);
@@ -227,7 +240,7 @@
             // 
             button1.BackColor = Color.PaleTurquoise;
             button1.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(575, 306);
+            button1.Location = new Point(723, 361);
             button1.Name = "button1";
             button1.Size = new Size(109, 34);
             button1.TabIndex = 1;
@@ -239,7 +252,7 @@
             // 
             pictureBox.BackColor = Color.White;
             pictureBox.InitialImage = Properties.Resources.a_brief_history_of_time;
-            pictureBox.Location = new Point(535, 32);
+            pictureBox.Location = new Point(683, 87);
             pictureBox.Name = "pictureBox";
             pictureBox.Size = new Size(189, 268);
             pictureBox.TabIndex = 0;
@@ -252,7 +265,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panel1);
             Name = "AddBookDashboard";
-            Size = new Size(800, 532);
+            Size = new Size(1234, 633);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox).EndInit();
@@ -278,5 +291,6 @@
         private TextBox bookNoText;
         private Label label7;
         private DateTimePicker dateText;
+        private Button button3;
     }
 }

@@ -18,10 +18,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         {
             InitializeComponent();
             Instance = this;
+            this.TopLevel = false;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Dock = DockStyle.Fill;
         }
 
-        
-        
         public void removeCard(BookContainer userControl, string title)
         {
             flowLayoutPanel1.Controls.Remove(userControl);
@@ -30,7 +31,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             bookCRUD.DeleteBooks("title", title);
         }
 
-        private void Library_Load(object sender, EventArgs e)
+        public void Library_Load(object sender, EventArgs e)
         {
             populateItems();
         }
@@ -72,7 +73,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                     {
                         foreach (DataRow row in data.Rows)
                         {
-                            if (Convert.ToInt32(row["availableCopies"]) > 0)
+                            if (Convert.ToInt32(row["availableCopies"]) <= 0)
                             {
                                 listItems[i] = new BookContainer(this);
 
@@ -89,6 +90,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
                                 flowLayoutPanel1.Controls.Add(listItems[i]);
                             }
+
+                            
                             
 
 
@@ -124,7 +127,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                     {
                         foreach (DataRow row in data.Rows)
                         {
-                            if (Convert.ToInt32(row["availableCopies"]) > 0)
+                            if (Convert.ToInt32(row["availableCopies"]) <= 0)
                             {
                                 listItems[i] = new BookContainer(this);
 

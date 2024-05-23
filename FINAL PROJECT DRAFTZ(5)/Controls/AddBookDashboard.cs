@@ -15,6 +15,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
 {
     public partial class AddBookDashboard : UserControl
     {
+        public event EventHandler ReturnToBookInventory;
         public AddBookDashboard()
         {
             InitializeComponent();
@@ -74,7 +75,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
             string imageName = book.Title;
 
             string imagePath = Path.Combine(resourceFolderPath, imageName);
-            
+
             MessageBox.Show(imagePath);
             MessageBox.Show(resourceFolderPath);
             image.Save(imagePath + ".jpg");
@@ -116,6 +117,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
