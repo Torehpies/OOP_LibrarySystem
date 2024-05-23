@@ -153,7 +153,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private PictureBox bookPic;
         private Label bookTitle;
         private CustomButton addbtn;
-        private CustomButton availLabel;
         public NumericUpDown numericUpDown2;
+        public CustomButton availLabel;
     }
 }

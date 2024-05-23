@@ -58,37 +58,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             
         }
 
-        public void refresh(int newAvail)
-        {
-            availablecopies.Text = "Available Copies: " + newAvail + " of " + total;
-        }
-
-        
-
-        public void InitializeUI(Book BookContainerData)
-        {
-            picture.Image = Image.FromFile(BookContainerData.picturePath);
-            titleLabel.Text = title;
-            //publishedLabel.Text = date;
-
-            /*
-            picture.Image = Image.FromFile(BookContainerData.picturePath);
-            titleLabel.Text = BookContainerData.title;
-            publishedLabel.Text = "Published: " + BookContainerData.published;
-            isbn10Label.Text = "ISBN-10: " + BookContainerData.isbn10;
-            isbn13Label.Text = "ISBN-13: " + BookContainerData.isbn13;
-            publisherLabel.Text = "Publisher: " + BookContainerData.publisher;
-            authorLabel.Text = "Author: " + BookContainerData.author;
-            categoryLabel.Text = "Category: " + BookContainerData.category;
-            statusLabel.Text = "STATUS: " + BookContainerData.status;
-            if (BookContainerData.status == Book.BookType.Borrowed)
-            {
-                BorrowButton.Enabled = false;
-                BorrowButton.BackColor = Color.White;
-                BorrowButton.Text = "NOT AVAILABLE";
-            }
-            */
-        }
         private void exitButton_Click(object sender, EventArgs e)
         {
             Close();
@@ -101,26 +70,41 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private void BorrowButton_Click(object sender, EventArgs e)
         {
             this.booksToBorrow = Convert.ToInt32(borrownumber.Value);
+            if (booksToBorrow <= 0)
+            {
+                MessageBox.Show("Invalid amount");
+                return;
+            }
+
             Books addBook = new Books(title, isbn, author, category, publisher, published, avail, total, Convert.ToInt32(borrownumber.Value));
 
             //MessageBox.Show($"Bookname: `{Title}` {availCopies} is added to checkout");
             BookContainer book = new BookContainer();
+
             book.Title = title;
             book.ISBN = isbn;
             book.Author = author;
             book.Publisher = publisher;
             book.Year = published;
             book.Category = category;
+
+            
             book.aCopies = avail;
             book.BorrowCount = Convert.ToInt32(borrownumber.Value);
+
+            // Books that are actually left
+            int bookLeftUpdate = Convert.ToInt32(borrownumber.Value) - avail;
+            book.aCopies = bookLeftUpdate;
+
+
    
             bookTitles.Add(title);
             checkout.Add(addBook);
             checkOutList[title] = avail;
 
+
+
             MessageBox.Show($"Bookname : `{title}` borrowed {booksToBorrow} books is added to checkout");
-
-
         }
 
         public static List<Books> getCheckout

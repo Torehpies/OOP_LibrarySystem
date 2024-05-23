@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -32,6 +33,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             populateItems();
         }
 
+        
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -43,6 +46,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         }
 
+
+        public void refresh()
+        {
+            populateItems();
+            
+        }
 
 
 
@@ -66,7 +75,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                     {
                         foreach (DataRow row in data.Rows)
                         {
-                            if (Convert.ToInt32(row["availableCopies"]) > 0)
+                            if (Convert.ToInt32(row["availableCopies"]) >= 0)
                             {
                                 listItems[i] = new BookContainer(this);
 
@@ -80,22 +89,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                                 listItems[i].tCopies = Convert.ToInt32(row["totalCopies"]);
 
                                 flowLayoutPanel1.Controls.Add(listItems[i]);
-
-                                
-
-
                             }
-
-
-
-
-
                         }
                     }
                 }
             }
-
-
         }
 
         private void populateItems(string search)
@@ -117,7 +115,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                     {
                         foreach (DataRow row in data.Rows)
                         {
-                            if (Convert.ToInt32(row["availableCopies"]) > 0)
+                            if (Convert.ToInt32(row["availableCopies"]) >= 0)
                             {
                                 listItems[i] = new BookContainer(this);
 
@@ -165,10 +163,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            populateItems();
-        }
+        
 
 
 
@@ -201,10 +196,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         }
 
-        public void refresh()
-        {
-            this.Refresh();
-        }
+        
 
         private void checkout1_Load(object sender, EventArgs e)
         {

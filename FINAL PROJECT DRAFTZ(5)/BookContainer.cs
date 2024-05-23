@@ -23,19 +23,14 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private Checkout checkoutForm;
 
 
-        public bool ShowAddButton { get; set; } = true;
-        public bool ShowRemoveButton { get; set; } = true;
-
+        
+        
         public BookContainer(Library parentForm)
         {
             InitializeComponent();
             this.libraryForm = parentForm;
             //detailsbtn.Text = "Details";
-            numericUpDown2.Visible = false;
-
-            
-            
-            
+            numericUpDown2.Visible = false; 
         }
         
         private NumericUpDown numericUpDown1;
@@ -48,11 +43,17 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             
             numericUpDown2.Visible = true;
             addbtn.Visible = false;
-
-
         }
 
-        
+        public string booksLeft
+        {
+            get { return availLabel.Text; }
+            set { availLabel.Text = value; }
+        }
+
+
+
+
 
         public BookContainer()
         {
@@ -177,10 +178,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 
             }
         }
-
-        
-
-
 
         [Category("Custom Props")]
         public string Author

@@ -17,13 +17,20 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         Dictionary<string, int> keyValuePairs = new Dictionary<string, int>();
         BookContainer getList = new BookContainer();
 
+        
+     
+
+
         public Checkout()
         {
             InitializeComponent();
             keyValuePairs = getList.getdictList;
+            
 
 
         }
+
+       
 
 
 
@@ -67,6 +74,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             Dictionary<string, int> bookTitleCount = new Dictionary<string, int>();
             foreach (Books book in checkoutList)
             {
+                BookContainer bookContainer = new BookContainer(this);
                 // Gawa tayo ng list ng mga duplicates.
                 if (bookTitleCount.ContainsKey(book.Title))
                 {
@@ -84,12 +92,13 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 if (bookTitleCount[book.Title] > 1)
                 {
                     // May duplicated
+                    bookContainer.BorrowCount += book.BooksToborrow;
                     break;
 
                 }
 
                 // Gawin yung pane
-                BookContainer bookContainer = new BookContainer(this);
+                
                 bookContainer.Title = book.Title;
                 bookContainer.Year = book.Date;
                 bookContainer.aCopies = book.AvailableCopies;
@@ -104,6 +113,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 
             }
         }
+
+
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -140,6 +152,15 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
                     // Reset para gamitin ule
                     keyValuePair.Clear();
+                    checkoutList.Clear();
+
+                    // Refresh pagkatapos
+                    Library.Instance.populateItems();
+
+                    
+                    
+                    
+                    
 
 
 

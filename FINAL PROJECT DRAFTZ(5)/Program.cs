@@ -16,6 +16,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             //LoginForm form = new LoginForm();  
             MainForm form = new MainForm();
             Application.Run(form);
+
+            
         }
     }
 }
