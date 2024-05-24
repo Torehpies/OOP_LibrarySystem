@@ -55,6 +55,13 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             publishedLabel.Text = "Year: " + published;
             availablecopies.Text = "Available Copies: " + avail + " of " + total;
             borrownumber.Maximum = avail;
+
+            if (avail <= 0)
+            {
+                BorrowButton.Enabled = false;
+                BorrowButton.BackColor = Color.White;
+
+            }
             
         }
 

@@ -64,23 +64,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private void detailsbtn_Click(object sender, EventArgs e)
         {
             
-            if (this.libraryForm != null)
-            {
-                // Test data
-                // MessageBox.Show($"The details for this book {Title}");
-
-                /*
-                BookDetails bookDetails = new BookDetails(Title, ISBN, Author, Category, Publisher, Year, aCopies, tCopies);
-                bookDetails.Show();
-                */
-
-                MessageBox.Show("Hello");
-            }
-            else
-            {
-                checkoutForm.removeCard(this);
-            }
-            
 
         }
 
