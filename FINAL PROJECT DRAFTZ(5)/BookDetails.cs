@@ -61,7 +61,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             publishedLabel.Text = published;
 
 
-            
+
             picture.Image = icon;
         }
 
@@ -100,7 +100,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 }
 
                 newIcon = picture.Image;
-                
+
             }
         }
 
@@ -109,18 +109,29 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             if (editBook != null)
             {
 
-                grabLabelTexts(modified);
+
+                if (!grabLabelTexts(modified))
+                {
+                    return;
+                };
+
+                // Check kung may empty na fields
+                if (titleLabel.Text.Length <= 0 || authorLabel.Text.Length <= 0 || isbn10Label.Text.Length <= 0 || categoryLabel.Text.Length <= 0 || categoryLabel.Text.Length <= 0 || publisherLabel.Text.Length <= 0 || publishedLabel.Text.Length <= 0)
+                {
+                    MessageBox.Show("Make sure that the fields are not empty!");
+                    return;
+                }
 
                 if (newIcon != null)
                 {
                     Books bookToAdd = new Books(title, isbn, author, category, publisher, published);
                     string path = SaveImageInResourceFolder(bookToAdd, newIcon);
-                    
+
                     string[] columnsToUpdate = { "title", "author", "isbn", "category", "publisher", "published", "picturePath" };
                     string[] newValues = { titleLabel.Text, authorLabel.Text, isbn10Label.Text, categoryLabel.Text, publisherLabel.Text, publishedLabel.Text, path };
                     bookCRUD.UpdateInfos(columnsToUpdate, newValues, "isbn", originalISBN);
                     newIcon.Dispose();
-                } 
+                }
                 else
                 {
                     string[] columnsToUpdate = { "title", "author", "isbn", "category", "publisher", "published" };
@@ -129,7 +140,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
                 }
 
-                
+                // Refresh
+                LibraryEdit.Instance.populateItems();
+
+
             }
             else
             {
@@ -167,12 +181,20 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
 
         List<TextBox> modified = new List<TextBox>();
-        private void grabLabelTexts(List<TextBox> textBoxes)
+        private bool grabLabelTexts(List<TextBox> textBoxes)
         {
             foreach (TextBox textBox in textBoxes)
             {
                 Label label = new Label();
+
+                if (textBox.Text.Length <= 0)
+                {
+                    MessageBox.Show("Make sure to fill up the information required!");
+                    return false;
+                }
+
                 label.Text = textBox.Text;
+
                 label.Location = textBox.Location;
                 label.Size = label.Size;
 
@@ -181,7 +203,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 label.BringToFront();
                 textBox.Visible = false;
                 label.Focus();
+
+
             }
+
+            return true;
 
         }
         private void labelToTextbox(Label label)
@@ -272,6 +298,20 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picture_MouseHover(object sender, EventArgs e)
+        {
+            if (editBook != null)
+            {
+                Cursor = Cursors.Hand;
+                toolTip1.SetToolTip(picture, "Upload new image!");
+            }
+        }
+
+        private void toolStripTextBox1_Click(object sender, EventArgs e)
         {
 
         }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             picture = new PictureBox();
             publishedLabel = new Label();
             BorrowButton = new Button();
@@ -37,13 +38,16 @@
             authorLabel = new Label();
             isbn10Label = new Label();
             panel1 = new Panel();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
             statusLabel = new Label();
             exitButton = new Button();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
+            toolTip1 = new ToolTip(components);
+            toolTip2 = new ToolTip(components);
+            toolTip3 = new ToolTip(components);
             ((System.ComponentModel.ISupportInitialize)picture).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -58,6 +62,7 @@
             picture.TabIndex = 0;
             picture.TabStop = false;
             picture.Click += picture_Click;
+            picture.MouseHover += picture_MouseHover;
             // 
             // publishedLabel
             // 
@@ -163,6 +168,62 @@
             panel1.TabIndex = 23;
             panel1.Paint += panel1_Paint;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Franklin Gothic Medium Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.ForeColor = Color.FromArgb(73, 85, 121);
+            label5.Location = new Point(243, 281);
+            label5.Name = "label5";
+            label5.Size = new Size(84, 21);
+            label5.TabIndex = 27;
+            label5.Text = "PUBLISHED:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Franklin Gothic Medium Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.FromArgb(73, 85, 121);
+            label4.Location = new Point(244, 244);
+            label4.Name = "label4";
+            label4.Size = new Size(83, 21);
+            label4.TabIndex = 26;
+            label4.Text = "PUBLISHER:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Franklin Gothic Medium Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.FromArgb(73, 85, 121);
+            label3.Location = new Point(244, 207);
+            label3.Name = "label3";
+            label3.Size = new Size(76, 21);
+            label3.TabIndex = 25;
+            label3.Text = "CATEGORY:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Franklin Gothic Medium Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.FromArgb(73, 85, 121);
+            label2.Location = new Point(244, 172);
+            label2.Name = "label2";
+            label2.Size = new Size(63, 21);
+            label2.TabIndex = 24;
+            label2.Text = "AUTHOR:";
+            label2.Click += label2_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Franklin Gothic Medium Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.FromArgb(73, 85, 121);
+            label1.Location = new Point(244, 144);
+            label1.Name = "label1";
+            label1.Size = new Size(47, 21);
+            label1.TabIndex = 23;
+            label1.Text = "ISBN: ";
+            // 
             // statusLabel
             // 
             statusLabel.BackColor = Color.Ivory;
@@ -188,62 +249,6 @@
             exitButton.TextAlign = ContentAlignment.MiddleLeft;
             exitButton.UseVisualStyleBackColor = false;
             exitButton.Click += exitButton_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Franklin Gothic Medium Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.FromArgb(73, 85, 121);
-            label1.Location = new Point(244, 144);
-            label1.Name = "label1";
-            label1.Size = new Size(47, 21);
-            label1.TabIndex = 23;
-            label1.Text = "ISBN: ";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Franklin Gothic Medium Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor = Color.FromArgb(73, 85, 121);
-            label2.Location = new Point(244, 172);
-            label2.Name = "label2";
-            label2.Size = new Size(63, 21);
-            label2.TabIndex = 24;
-            label2.Text = "AUTHOR:";
-            label2.Click += label2_Click;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Franklin Gothic Medium Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = Color.FromArgb(73, 85, 121);
-            label3.Location = new Point(244, 207);
-            label3.Name = "label3";
-            label3.Size = new Size(76, 21);
-            label3.TabIndex = 25;
-            label3.Text = "CATEGORY:";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Franklin Gothic Medium Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.ForeColor = Color.FromArgb(73, 85, 121);
-            label4.Location = new Point(244, 244);
-            label4.Name = "label4";
-            label4.Size = new Size(83, 21);
-            label4.TabIndex = 26;
-            label4.Text = "PUBLISHER:";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Franklin Gothic Medium Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.ForeColor = Color.FromArgb(73, 85, 121);
-            label5.Location = new Point(243, 281);
-            label5.Name = "label5";
-            label5.Size = new Size(84, 21);
-            label5.TabIndex = 27;
-            label5.Text = "PUBLISHED:";
             // 
             // BookDetails
             // 
@@ -285,5 +290,8 @@
         private Label label3;
         private Label label2;
         private Label label1;
+        private ToolTip toolTip1;
+        private ToolTip toolTip2;
+        private ToolTip toolTip3;
     }
 }
