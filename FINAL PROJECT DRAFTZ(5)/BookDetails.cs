@@ -78,7 +78,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
             Books addBook = new Books(title, isbn, author, category, publisher, published, avail, total, Convert.ToInt32(borrownumber.Value));
 
-            //MessageBox.Show($"Bookname: `{Title}` {availCopies} is added to checkout");
+            
             BookContainer book = new BookContainer();
 
             book.Title = title;
@@ -92,19 +92,17 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             book.aCopies = avail;
             book.BorrowCount = Convert.ToInt32(borrownumber.Value);
 
-            // Books that are actually left
-            int bookLeftUpdate = Convert.ToInt32(borrownumber.Value) - avail;
-            book.aCopies = bookLeftUpdate;
-
-
-   
+        
             bookTitles.Add(title);
             checkout.Add(addBook);
             checkOutList[title] = avail;
 
+            
+
 
 
             MessageBox.Show($"Bookname : `{title}` borrowed {booksToBorrow} books is added to checkout");
+            this.Close();
         }
 
         public static List<Books> getCheckout

@@ -104,7 +104,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 bookContainer.aCopies = book.AvailableCopies;
                 bookContainer.tCopies = book.TotalCopies;
                 bookContainer.BorrowCount = book.BooksToborrow;
-                MessageBox.Show("Books to borrow: " + book.BooksToborrow);
+                //MessageBox.Show("Books to borrow: " + book.BooksToborrow);
                 bookContainer.numericUpDown2.Value = book.BooksToborrow;
                 bookContainer.numericUpDown2.Maximum = book.AvailableCopies;
 
@@ -136,7 +136,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                             int newAvailBooks = bookContainer.aCopies - Convert.ToInt32(bookContainer.numericUpDown2.Value);
                             keyValuePair[title] = newAvailBooks;
 
-                            MessageBox.Show("Title: " + title + " borrowing: " + bookContainer.numericUpDown2.Value + " new available book total is: " + newAvailBooks);
+                            //MessageBox.Show("Title: " + title + " borrowing: " + bookContainer.numericUpDown2.Value + " new available book total is: " + newAvailBooks);
 
                             removeCard(bookContainer);
                         }
@@ -152,10 +152,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
                     // Reset para gamitin ule
                     keyValuePair.Clear();
-                    checkoutList.Clear();
+                    
 
-                    // Refresh pagkatapos
-                    Library.Instance.populateItems();
+                    
+                    
 
                     
                     
@@ -175,8 +175,13 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
                 }
 
+                
+
             }
-            
+
+            // Refresh yung library items
+            Library.Instance.populateItems();
+
         }
     }
 }

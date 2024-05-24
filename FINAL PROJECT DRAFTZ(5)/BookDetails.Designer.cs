@@ -76,7 +76,7 @@
             BorrowButton.Name = "BorrowButton";
             BorrowButton.Size = new Size(225, 56);
             BorrowButton.TabIndex = 7;
-            BorrowButton.Text = "BORROW";
+            BorrowButton.Text = "ADD TO CHECKOUT";
             BorrowButton.UseVisualStyleBackColor = false;
             BorrowButton.Click += BorrowButton_Click;
             // 
@@ -171,6 +171,7 @@
             borrownumber.Size = new Size(47, 19);
             borrownumber.TabIndex = 24;
             borrownumber.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            borrownumber.Visible = false;
             borrownumber.ValueChanged += numericUpDown1_ValueChanged;
             // 
             // availablecopies

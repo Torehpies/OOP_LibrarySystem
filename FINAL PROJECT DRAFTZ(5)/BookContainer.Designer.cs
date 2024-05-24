@@ -122,6 +122,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // numericUpDown2
             // 
             numericUpDown2.Location = new Point(117, 243);
+            numericUpDown2.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numericUpDown2.Name = "numericUpDown2";
             numericUpDown2.Size = new Size(32, 23);
             numericUpDown2.TabIndex = 22;
