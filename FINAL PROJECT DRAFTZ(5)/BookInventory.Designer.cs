@@ -56,10 +56,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // 
             // addBookDashboard1
             // 
-            addBookDashboard1.Location = new Point(107, 21);
+            addBookDashboard1.Location = new Point(111, 28);
             addBookDashboard1.Name = "addBookDashboard1";
             addBookDashboard1.Size = new Size(925, 547);
             addBookDashboard1.TabIndex = 2;
+            addBookDashboard1.Load += addBookDashboard1_Load;
             // 
             // BookInventory
             // 

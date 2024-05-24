@@ -32,8 +32,6 @@
             searchBox = new TextBox();
             mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
             SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -69,37 +67,15 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // button2
-            // 
-            button2.Location = new Point(349, 46);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 3;
-            button2.Text = "Reset";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(430, 46);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 4;
-            button3.Text = "Checkout";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
-            // 
-            // Library
+            // LibraryEdit
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1170, 634);
-            Controls.Add(button3);
-            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(searchBox);
             Controls.Add(flowLayoutPanel1);
-            Name = "Library";
+            Name = "LibraryEdit";
             Text = "Library";
             Load += Library_Load;
             ResumeLayout(false);
@@ -113,7 +89,5 @@
         private TextBox searchBox;
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
         private Button button1;
-        private Button button2;
-        private Button button3;
     }
 }

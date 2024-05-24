@@ -27,7 +27,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             //AddBookPanelMain.Visible = false;
             InitializeLibraryEditForm();
 
-            
+
+
 
         }
 
@@ -41,13 +42,14 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             libraryEditForm.Show();
         }
 
-        
+
 
         public void ShowEditLibrary()
         {
             //AddBookPanelMain.Visible = false;
             libraryEditForm.populateItems();
             libraryeditpanel.Visible = true;
+
         }
 
         private void ShowAddBooks()
@@ -55,26 +57,25 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             //AddBookPanelMain.Visible = true;
         }
 
-        
+
 
 
 
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            
-            abDashboard.Visible = true;
-            //AddBookPanelMain.Visible = true;
-            //AddBookPanelMain.Controls.Clear();
-            //AddBookPanelMain.Controls.Add(abDashboard);
 
-            abDashboard.Dock = DockStyle.Fill;
+            AddBookDashboard addBooks = new AddBookDashboard();
+            addBooks.Visible = false;
+            addBookDashboard1.Visible = !addBookDashboard1.Visible;
+            if (addBookDashboard1.Visible)
+            {
+                ShowEditLibrary();
 
-            addBookDashboard1.Visible = true;
+            }
 
-            addBookDashboard = new AddBookDashboard();
-            
-            addBookDashboard.Visible = true;
+
+
         }
 
         public void closeAddBook()
@@ -116,6 +117,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private void button1_Click_2(object sender, EventArgs e)
         {
             closeAddBook();
+        }
+
+        private void addBookDashboard1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -53,6 +53,21 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
 
         private void button2_Click(object sender, EventArgs e)
         {
+            // Retrieve kung meron na ba itong book na ito.
+            Database checkBook = new Database();
+            if (checkBook.checkBook(titleText.Text))
+            {
+                MessageBox.Show("Book Title exists within the database!");
+                return;
+            }
+
+            if (checkBook.checkBook(isbnText.Text))
+            {
+                MessageBox.Show("ISBN already exists within the database!");
+                return;
+            }
+           
+
             if (titleText.Text.Length == 0 || isbnText.Text.Length == 0 || authorText.Text.Length == 0 || dateText.Text.Length == 0 || categoryText.Text.Length == 0 || publisherText.Text.Length == 0 || bookNoText.Text.Length == 0)
             {
                 MessageBox.Show("Make sure that everything is filled.");
@@ -65,6 +80,22 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
             bookToAdd.ImagePath = imagePath;
             var year = DateTime.Parse(dateText.Text).Year;
             bookCRUD.AddBooks(titleText.Text, authorText.Text, isbnText.Text, categoryText.Text, publisherText.Text, year, int.Parse(bookNoText.Text), imagePath);
+
+            LibraryEdit.Instance.populateItems();
+
+            // Reset the textfields
+            titleText.ResetText();
+            isbnText.ResetText();
+            authorText.ResetText();
+            dateText.ResetText();
+            categoryText.ResetText();
+            publisherText.ResetText();
+            bookNoText.ResetText();
+
+
+
+
+
         }
 
         public string SaveImageInResourceFolder(Books book, Image image)

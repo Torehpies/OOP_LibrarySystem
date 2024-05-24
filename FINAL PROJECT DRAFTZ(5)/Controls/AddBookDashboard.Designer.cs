@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            button3 = new Button();
             dateText = new DateTimePicker();
             bookNoText = new TextBox();
             label7 = new Label();
@@ -54,7 +53,6 @@
             // panel1
             // 
             panel1.BackColor = Color.MistyRose;
-            panel1.Controls.Add(button3);
             panel1.Controls.Add(dateText);
             panel1.Controls.Add(bookNoText);
             panel1.Controls.Add(label7);
@@ -72,22 +70,11 @@
             panel1.Controls.Add(authorText);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(pictureBox);
-            panel1.Location = new Point(14, 19);
+            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1196, 593);
+            panel1.Size = new Size(1209, 611);
             panel1.TabIndex = 1;
             panel1.Paint += panel1_Paint;
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.PaleTurquoise;
-            button3.Location = new Point(11, 7);
-            button3.Name = "button3";
-            button3.Size = new Size(125, 23);
-            button3.TabIndex = 18;
-            button3.Text = "Return to Inventory";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
             // 
             // dateText
             // 
@@ -265,7 +252,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panel1);
             Name = "AddBookDashboard";
-            Size = new Size(1234, 633);
+            Size = new Size(1209, 611);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox).EndInit();
@@ -291,6 +278,5 @@
         private TextBox bookNoText;
         private Label label7;
         private DateTimePicker dateText;
-        private Button button3;
     }
 }

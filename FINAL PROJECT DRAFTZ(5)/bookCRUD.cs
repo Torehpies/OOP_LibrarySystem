@@ -65,7 +65,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
         }
 
-        public static DataTable ReadBooks()
+        public static DataTable ReadBooks(string keyword)
         {
             if (SQL_SERVER == null)
             {
@@ -73,7 +73,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
 
 
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM books", SQL_SERVER);
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM books WHERE title = " + keyword, SQL_SERVER);
             try
             {
                 using (MySqlDataAdapter sda = new MySqlDataAdapter(cmd))

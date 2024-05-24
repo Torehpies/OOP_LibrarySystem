@@ -21,6 +21,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             this.TopLevel = false;
             this.FormBorderStyle = FormBorderStyle.None;
             this.Dock = DockStyle.Fill;
+            
         }
 
         public void removeCard(BookContainer userControl, string title)
@@ -73,7 +74,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                     {
                         foreach (DataRow row in data.Rows)
                         {
-                            if (Convert.ToInt32(row["availableCopies"]) <= 0)
+                            if (Convert.ToInt32(row["availableCopies"]) >= 0)
                             {
                                 listItems[i] = new BookContainer(this);
 
@@ -127,7 +128,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                     {
                         foreach (DataRow row in data.Rows)
                         {
-                            if (Convert.ToInt32(row["availableCopies"]) <= 0)
+                            if (Convert.ToInt32(row["availableCopies"]) >= 0)
                             {
                                 listItems[i] = new BookContainer(this);
 

@@ -74,7 +74,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             return false;
         }
 
-        public bool checkAccount(string username)
+        public bool checkBook(string book)
         {
             if (SQL_SERVER == null)
             {
@@ -82,8 +82,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
             
 
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM users WHERE username = @username", SQL_SERVER);
-            cmd.Parameters.AddWithValue("@username", username);
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM books WHERE title = @booktitle", SQL_SERVER);
+            cmd.Parameters.AddWithValue("@booktitle", book);
     
             using (MySqlDataReader reader = cmd.ExecuteReader())
             {
@@ -199,6 +199,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 throw;
             }
         }
+
+        
 
     }
 }
