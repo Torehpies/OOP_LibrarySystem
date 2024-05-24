@@ -66,6 +66,16 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
                 MessageBox.Show("ISBN already exists within the database!");
                 return;
             }
+
+            int n;
+            bool isNumeric = int.TryParse(bookNoText.Text, out n);
+
+            if (!isNumeric)
+            {
+                MessageBox.Show("Invalid number!");
+                return;
+
+            }
            
 
             if (titleText.Text.Length == 0 || isbnText.Text.Length == 0 || authorText.Text.Length == 0 || dateText.Text.Length == 0 || categoryText.Text.Length == 0 || publisherText.Text.Length == 0 || bookNoText.Text.Length == 0)
@@ -73,6 +83,14 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
                 MessageBox.Show("Make sure that everything is filled.");
                 return;
             }
+
+            if (pictureBox.Image == null)
+            {
+                MessageBox.Show("Make sure to include the book cover!");
+                return;
+            }
+
+            
 
 
             Books bookToAdd = new Books(titleText.Text, isbnText.Text, authorText.Text, categoryText.Text, publisherText.Text, dateText.Text);

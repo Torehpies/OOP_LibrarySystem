@@ -76,10 +76,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         public bool checkBook(string book)
         {
-            if (SQL_SERVER == null)
-            {
-                start();
-            }
+            
+            start();
+            
             
 
             MySqlCommand cmd = new MySqlCommand("SELECT * FROM books WHERE title = @booktitle", SQL_SERVER);
