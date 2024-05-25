@@ -38,6 +38,14 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             this.editBook = book;
             loadDetails(book.Title, book.ISBN, book.Author, book.Category, book.Publisher, book.Published, book.Icon);
             BorrowButton.Text = "Save Changes";
+
+            // Make labels to textboxes
+            labelToTextbox(titleLabel);
+            labelToTextbox(isbn10Label);
+            labelToTextbox(authorLabel);
+            labelToTextbox(categoryLabel);
+            labelToTextbox(publisherLabel);
+            labelToTextbox(publishedLabel);
         }
 
         // Original information for insertion into database
@@ -215,7 +223,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             TextBox textBox = new TextBox();
 
             // Properties when converting
-            textBox.Text = "";
+            textBox.Text = label.Text;
             textBox.Location = label.Location;
             textBox.Size = label.Size;
 
@@ -312,6 +320,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         }
 
         private void toolStripTextBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }

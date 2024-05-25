@@ -70,7 +70,7 @@
             publishedLabel.ForeColor = Color.FromArgb(73, 85, 121);
             publishedLabel.Location = new Point(334, 281);
             publishedLabel.Name = "publishedLabel";
-            publishedLabel.Size = new Size(303, 20);
+            publishedLabel.Size = new Size(258, 20);
             publishedLabel.TabIndex = 21;
             publishedLabel.Text = "2018 ";
             publishedLabel.Click += publishedLabel_Click;
@@ -94,7 +94,7 @@
             publisherLabel.ForeColor = Color.FromArgb(73, 85, 121);
             publisherLabel.Location = new Point(333, 244);
             publisherLabel.Name = "publisherLabel";
-            publisherLabel.Size = new Size(324, 26);
+            publisherLabel.Size = new Size(259, 26);
             publisherLabel.TabIndex = 20;
             publisherLabel.Text = "American Psychological Association";
             publisherLabel.Click += publisherLabel_Click;
@@ -105,7 +105,7 @@
             titleLabel.ForeColor = Color.FromArgb(38, 49, 89);
             titleLabel.Location = new Point(244, 17);
             titleLabel.Name = "titleLabel";
-            titleLabel.Size = new Size(345, 69);
+            titleLabel.Size = new Size(345, 83);
             titleLabel.TabIndex = 8;
             titleLabel.Text = "How to Write a Lot: A Practical Guide to Productive Academic Writing";
             titleLabel.Click += titleLabel_Click;
@@ -116,7 +116,7 @@
             categoryLabel.ForeColor = Color.FromArgb(73, 85, 121);
             categoryLabel.Location = new Point(334, 207);
             categoryLabel.Name = "categoryLabel";
-            categoryLabel.Size = new Size(303, 26);
+            categoryLabel.Size = new Size(258, 21);
             categoryLabel.TabIndex = 19;
             categoryLabel.Text = "Academic";
             categoryLabel.Click += categoryLabel_Click;
@@ -127,7 +127,7 @@
             authorLabel.ForeColor = Color.FromArgb(73, 85, 121);
             authorLabel.Location = new Point(333, 172);
             authorLabel.Name = "authorLabel";
-            authorLabel.Size = new Size(303, 21);
+            authorLabel.Size = new Size(259, 21);
             authorLabel.TabIndex = 18;
             authorLabel.Text = "Paul J. Silvia";
             authorLabel.Click += authorLabel_Click;
@@ -138,7 +138,7 @@
             isbn10Label.ForeColor = Color.FromArgb(73, 85, 121);
             isbn10Label.Location = new Point(334, 144);
             isbn10Label.Name = "isbn10Label";
-            isbn10Label.Size = new Size(303, 21);
+            isbn10Label.Size = new Size(258, 21);
             isbn10Label.TabIndex = 16;
             isbn10Label.Text = "1433829789";
             isbn10Label.Click += isbn10Label_Click;
