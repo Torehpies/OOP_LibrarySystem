@@ -167,9 +167,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         
 
-        public Dictionary<string, int> getBookAndQuantity()
+        public List<Books> getBookAndQuantity()
         {
-            return keyValuePairs;
+            return checkoutList;
         }
 
         private void borrowerDetails1_Load(object sender, EventArgs e)

@@ -86,22 +86,51 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void confirmButton_Click(object sender, EventArgs e)
         {
-          
+
             //Checkout checkout = new Checkout();
+
+            /*
 
             Checkout checkout = this.Parent as Checkout;
 
             Dictionary<string, int> checkoutBooks = checkout.getBookAndQuantity();
-
             Database database = new Database();
+
+            MessageBox.Show("hello");
             
             foreach (KeyValuePair<string, int> books in checkoutBooks)
             {
+                MessageBox.Show(books.Key);
                 
                 database.addBorrowedBooks(books.Key, currentMember.Id, books.Value);
             }
+            */
+
+
+
+            // Gumagana to ng maayos //
+            Checkout checkout = this.Parent as Checkout;
+            //checkout.actualcheckout("testing"); 
+            List<Books> books = checkout.getBookAndQuantity();
+
+            Database database = new Database();
+            foreach (Books book in books)
+            {
+                if (book != null)
+                {
+                    //database.addBorrowedBooks(book.Title, currentMember.Id, 5);
+                    MessageBox.Show(book.Title + " is the title and the member id is " + currentMember.Id);
+                }
+            }
+
+
+
+
+
+
+
+
             
-            checkout.actualcheckout("testing");
             
 
         }
