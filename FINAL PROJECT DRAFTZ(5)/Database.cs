@@ -13,7 +13,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 {
     internal class Database
     {
-        MySqlConnection SQL_SERVER = null;
+        MySqlConnection SQL_SERVER;
 
         public void start()
         {
@@ -170,15 +170,18 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             {
                 while (reader.Read())
                 {
-                    id = reader.GetString(0);
+                    Thread.Sleep(1000);
+                    int idInt = reader.GetInt32(0);
+                    id = idInt.ToString();
                     MessageBox.Show(id);
+                    
                     return id;
                 }
             }
             finally
             {
                 reader.Close();
-                SQL_SERVER.Close();
+                
             }
 
             return id;
@@ -186,6 +189,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         public void addBorrowedBooks(string title, string borrowerId, int quantity)
         {
+            
+
             if (SQL_SERVER == null)
             {
                 start();
@@ -200,8 +205,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             cmd.Parameters.AddWithValue("@borrowerId", borrowerId);
             cmd.Parameters.AddWithValue("@quantity", quantity);
             cmd.Parameters.AddWithValue("@borrowDate", DateTime.Now.ToString("yyyy-MM-dd"));
-            cmd.Parameters.AddWithValue("@borrowDate", DateTime.Now.AddDays(14).ToString("yyyy-MM-dd"));
+            cmd.Parameters.AddWithValue("@dueDate", DateTime.Now.AddDays(14).ToString("yyyy-MM-dd"));
 
+
+            
             cmd.ExecuteNonQuery();
             SQL_SERVER.Close();
         }

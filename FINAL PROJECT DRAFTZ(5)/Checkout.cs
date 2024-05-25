@@ -124,6 +124,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             borrowerDetails1.Visible = true;
         }
 
+        List<Books> books = new List<Books>() ;
+
         public void actualcheckout(string borrowerId)
         {
             while (booksPanel.Controls.Count > 0)
@@ -141,6 +143,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
                             int newAvailBooks = bookContainer.aCopies - Convert.ToInt32(bookContainer.numericUpDown2.Value);
                             keyValuePairs.Add(title, newAvailBooks);
+
+                            // Gawa tayo ng book for the purpose lang ng borrowedbooks
+                            Books forCheckout = new Books(bookContainer.Title, bookContainer.ISBN,bookContainer.Author, bookContainer.Category, bookContainer.Publisher, bookContainer.Year, bookContainer.aCopies, bookContainer.tCopies, Convert.ToInt32(bookContainer.numericUpDown2.Value));
+                            books.Add(forCheckout);
 
                             Database update = new Database();
                             foreach (var pairs in keyValuePairs)
@@ -164,12 +170,14 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
         }
 
+        
+
 
         
 
         public List<Books> getBookAndQuantity()
         {
-            return checkoutList;
+            return books;
         }
 
         private void borrowerDetails1_Load(object sender, EventArgs e)
