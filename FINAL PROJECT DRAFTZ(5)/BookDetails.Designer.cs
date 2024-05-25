@@ -38,6 +38,7 @@
             authorLabel = new Label();
             isbn10Label = new Label();
             panel1 = new Panel();
+            button1 = new Button();
             totalcopies = new Label();
             label7 = new Label();
             label6 = new Label();
@@ -85,7 +86,7 @@
             BorrowButton.BackColor = Color.FromArgb(38, 49, 89);
             BorrowButton.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             BorrowButton.ForeColor = Color.FromArgb(255, 251, 235);
-            BorrowButton.Location = new Point(3, 321);
+            BorrowButton.Location = new Point(3, 329);
             BorrowButton.Name = "BorrowButton";
             BorrowButton.Size = new Size(225, 56);
             BorrowButton.TabIndex = 7;
@@ -148,6 +149,7 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.AutoSize = true;
+            panel1.Controls.Add(button1);
             panel1.Controls.Add(totalcopies);
             panel1.Controls.Add(label7);
             panel1.Controls.Add(label6);
@@ -169,8 +171,22 @@
             panel1.Location = new Point(20, 20);
             panel1.Name = "panel1";
             panel1.Padding = new Padding(10);
-            panel1.Size = new Size(670, 390);
+            panel1.Size = new Size(670, 398);
             panel1.TabIndex = 23;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(38, 49, 89);
+            button1.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.ForeColor = Color.FromArgb(255, 251, 235);
+            button1.Location = new Point(52, 280);
+            button1.Name = "button1";
+            button1.Size = new Size(137, 38);
+            button1.TabIndex = 32;
+            button1.Text = "Upload new Image";
+            button1.UseVisualStyleBackColor = false;
+            button1.Visible = false;
+            button1.Click += picture_Click;
             // 
             // totalcopies
             // 
@@ -358,5 +374,6 @@
         private Label label6;
         private Label totalcopies;
         private Label label7;
+        private Button button1;
     }
 }

@@ -59,6 +59,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             this.editBook = book;
             loadDetails(book.Title, book.ISBN, book.Author, book.Category, book.Publisher, book.Published, book.Icon);
             BorrowButton.Text = "Save Changes";
+            button1.Visible = true;
 
 
             // Make labels to textboxes
@@ -70,7 +71,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             labelToTextbox(publishedLabel);
             labelToTextbox(availablecopies);
             labelToTextbox(totalcopies);
-            
+
 
 
         }
@@ -191,7 +192,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
                 if (newIcon != null)
                 {
-                    
+
                     Books bookToAdd = new Books(title, isbn, author, category, publisher, published, Convert.ToInt32(avail), Convert.ToInt32(total), icon);
                     string path = SaveImageInResourceFolder(bookToAdd, newIcon);
 
@@ -360,7 +361,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             if (editBook != null)
             {
                 labelToTextbox(isbn10Label);
-                
+
 
             }
         }
