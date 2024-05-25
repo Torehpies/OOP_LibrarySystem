@@ -36,15 +36,15 @@
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.Location = new Point(-2, 84);
+            flowLayoutPanel1.Location = new Point(0, 60);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1160, 551);
+            flowLayoutPanel1.Size = new Size(1171, 512);
             flowLayoutPanel1.TabIndex = 0;
             flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
             // searchBox
             // 
-            searchBox.Location = new Point(12, 46);
+            searchBox.Location = new Point(12, 16);
             searchBox.Name = "searchBox";
             searchBox.Size = new Size(250, 23);
             searchBox.TabIndex = 1;
@@ -59,7 +59,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(268, 46);
+            button1.Location = new Point(268, 14);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 2;
@@ -71,7 +71,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1170, 634);
+            ClientSize = new Size(1170, 570);
             Controls.Add(button1);
             Controls.Add(searchBox);
             Controls.Add(flowLayoutPanel1);

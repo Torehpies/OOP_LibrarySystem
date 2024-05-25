@@ -72,7 +72,7 @@
             panel1.Controls.Add(pictureBox);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1209, 611);
+            panel1.Size = new Size(1136, 559);
             panel1.TabIndex = 1;
             panel1.Paint += panel1_Paint;
             // 
@@ -253,7 +253,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panel1);
             Name = "AddBookDashboard";
-            Size = new Size(1209, 611);
+            Size = new Size(1136, 559);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox).EndInit();

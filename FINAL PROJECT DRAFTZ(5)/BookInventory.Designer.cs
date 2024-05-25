@@ -58,7 +58,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             AddBookBtn.Font = new Font("Quicksand SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             AddBookBtn.ForeColor = Color.White;
             AddBookBtn.Image = Properties.Resources.plus_icon__1_;
-            AddBookBtn.Location = new Point(998, 499);
+            AddBookBtn.Location = new Point(1056, 489);
             AddBookBtn.Name = "AddBookBtn";
             AddBookBtn.Size = new Size(76, 76);
             AddBookBtn.TabIndex = 9;
@@ -72,7 +72,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             addBookDashboard1.Name = "addBookDashboard1";
             addBookDashboard1.Size = new Size(925, 547);
             addBookDashboard1.TabIndex = 2;
-            addBookDashboard1.Visible = false;
             addBookDashboard1.Load += addBookDashboard1_Load;
             // 
             // BookInventory

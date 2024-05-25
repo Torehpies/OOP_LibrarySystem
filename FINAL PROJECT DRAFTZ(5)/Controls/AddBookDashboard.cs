@@ -93,8 +93,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
 
 
 
-            
-            Books bookToAdd = new Books(titleText.Text, isbnText.Text, authorText.Text, categoryText.Text, publisherText.Text, dateText.Text, Convert.ToInt32(bookNoText.Text), pictureBox.Image);
+
+            Books bookToAdd = new Books(titleText.Text, isbnText.Text, authorText.Text, categoryText.Text, publisherText.Text, dateText.Text);
             string imagePath = SaveImageInResourceFolder(bookToAdd, pictureBox.Image);
             //bookToAdd.ImagePath = imagePath;
             //bookToAdd.ImagePath = imagePath;

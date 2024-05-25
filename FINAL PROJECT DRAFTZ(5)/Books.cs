@@ -32,6 +32,20 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             
         }
 
+       
+       public Books(string Title, string ISBN, string Author, string Category, string Publisher, string Date)
+        {
+            this.title = Title;
+            this.isbn = ISBN;
+            this.author = Author;
+            this.category = Category;
+            this.publisher = Publisher;
+            this.published = Date;
+            
+
+        }
+        
+
         public Books(string title, string isbn, string author, string category, string publisher, string published, string ImagePath)
         {
             this.title = title;
