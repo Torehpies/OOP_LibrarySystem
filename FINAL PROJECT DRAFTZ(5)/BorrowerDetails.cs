@@ -84,16 +84,16 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void confirmButton_Click(object sender, EventArgs e)
         {
-            if (idTextbox.Texts.Length <= 0)
-            {
-                warningText.Text = "Please input required fields";
-                warningText.Visible = true;
-                return;
-            }
-
+          
             Checkout checkout = new Checkout();
-            Dictionary<string, int> bookAndQuantity = checkout.getBookAndQuantity();
+            Dictionary<string, int> checkoutBooks = checkout.getBookAndQuantity();
 
+            Database database = new Database();
+            
+            foreach (KeyValuePair<string, int> books in checkoutBooks)
+            {
+                database.addBorrowedBooks(books.Key, currentMember.Id, books.Value);
+            }
             
             checkout.actualcheckout("testing");
             
