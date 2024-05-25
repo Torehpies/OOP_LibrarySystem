@@ -66,10 +66,13 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 return;
             }
 
-            string studentID = idTextbox.Texts;
+            //string studentID = idTextbox.Texts;
+            //Checkout checkout = new Checkout();
+            //Dictionary<string, int> bookAndQuanity = checkout.getBookAndQuanity();
+           
 
+            
 
-            Checkout checkout = new Checkout();
             
 
 

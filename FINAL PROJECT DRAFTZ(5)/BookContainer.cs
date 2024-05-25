@@ -117,6 +117,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         #region Properties
 
+        private int bookid;
         private string _title;
         private string _author;
         private string _category;
@@ -128,6 +129,13 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private static List<Books> checkout = new List<Books>();
         private int availCopies;
         private int totalCopies;
+
+        [Category("Custom Props")]
+        public int BookId
+        {
+            get { return bookid; }
+            set { bookid = value; }
+        }
 
         [Category("Custom Props")]
         public int tCopies

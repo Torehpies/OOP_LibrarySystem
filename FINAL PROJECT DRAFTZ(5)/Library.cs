@@ -70,6 +70,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                             {
                                 listItems[i] = new BookContainer(this);
 
+                                listItems[i].BookId = Convert.ToInt32(row["id"]);
                                 listItems[i].Title = row["title"].ToString();
                                 listItems[i].Author = row["author"].ToString();
                                 listItems[i].ISBN = row["isbn"].ToString();
@@ -117,6 +118,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                             {
                                 listItems[i] = new BookContainer(this);
 
+                                listItems[i].BookId = Convert.ToInt32(row["id"]);
                                 listItems[i].Title = row["title"].ToString();
                                 listItems[i].Author = row["author"].ToString();
                                 listItems[i].ISBN = row["isbn"].ToString();
