@@ -160,9 +160,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             confirm_btn.BackColor = Color.FromArgb(102, 102, 102);
             confirm_btn.BackgroundColor = Color.FromArgb(102, 102, 102);
             confirm_btn.BorderColor = Color.PaleVioletRed;
-            confirm_btn.BorderRadius = 25;
+            confirm_btn.BorderRadius = 22;
             confirm_btn.BorderSize = 0;
             confirm_btn.FlatAppearance.BorderColor = Color.FromArgb(242, 233, 228);
+            confirm_btn.FlatAppearance.BorderSize = 0;
             confirm_btn.FlatStyle = FlatStyle.Flat;
             confirm_btn.Font = new Font("Quicksand SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             confirm_btn.ForeColor = Color.White;
@@ -180,9 +181,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             enterId_btn.BackColor = Color.FromArgb(102, 102, 102);
             enterId_btn.BackgroundColor = Color.FromArgb(102, 102, 102);
             enterId_btn.BorderColor = Color.PaleVioletRed;
-            enterId_btn.BorderRadius = 25;
+            enterId_btn.BorderRadius = 22;
             enterId_btn.BorderSize = 0;
             enterId_btn.FlatAppearance.BorderColor = Color.FromArgb(242, 233, 228);
+            enterId_btn.FlatAppearance.BorderSize = 0;
             enterId_btn.FlatStyle = FlatStyle.Flat;
             enterId_btn.Font = new Font("Quicksand SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             enterId_btn.ForeColor = Color.White;
