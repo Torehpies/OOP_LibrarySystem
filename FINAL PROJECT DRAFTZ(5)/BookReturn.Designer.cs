@@ -76,9 +76,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             errorMsg.Font = new Font("Quicksand", 12F, FontStyle.Regular, GraphicsUnit.Point);
             errorMsg.Location = new Point(653, 26);
             errorMsg.Name = "errorMsg";
-            errorMsg.Size = new Size(53, 24);
+            errorMsg.Size = new Size(0, 24);
             errorMsg.TabIndex = 10;
-            errorMsg.Text = "label1";
             // 
             // detailslbl
             // 
@@ -227,6 +226,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             id_txtbox.Size = new Size(308, 26);
             id_txtbox.TabIndex = 4;
             id_txtbox.TextAlign = HorizontalAlignment.Center;
+            //id_txtbox.TextChanged += id_txtbox_TextChanged;
+            //id_txtbox.KeyPress += id_txtbox_KeyPress;
             // 
             // BookReturn
             // 
