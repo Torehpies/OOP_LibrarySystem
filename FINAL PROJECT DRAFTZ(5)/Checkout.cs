@@ -114,9 +114,20 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         }
 
 
-        
+
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            if (checkoutList.Count <= 0)
+            {
+                MessageBox.Show("Nothing to checkout");
+                return;
+            }
+            
+            borrowerDetails1.Visible = true;
+        }
+
+        public void actualcheckout(string borrowerId)
         {
             while (booksPanel.Controls.Count > 0)
             {
@@ -142,7 +153,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
                     }
 
-
                     Database update = new Database();
                     foreach (var pairs in keyValuePair)
                     {
@@ -151,36 +161,18 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
                     // Reset para gamitin ule
                     keyValuePair.Clear();
-                    
-
-                    
-                    
-
-                    
-                    
-                    
-                    
-                checkoutList.Clear();
-                
-
-
-            }
-            else
-            {
-                MessageBox.Show("Nothing to checkout");
-                //this.Close();
+                    checkoutList.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Nothing to checkout");
+                    //this.Close();
+                }
             }
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (checkoutList.Count <= 0)
-            {
-                MessageBox.Show("Nothing to checkout");
-                return;
-            }
-                //this.Close();
-            borrowerDetails1.Visible = true;
-        }
+
+
+        
 
         public Dictionary<string, int> getBookAndQuanity()
         {
