@@ -180,12 +180,14 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             return id;
         }
 
-        public void addBorrowedBooks(string bookId, string borrowerId, int quantity)
+        public void addBorrowedBooks(string title, string borrowerId, int quantity)
         {
             if (SQL_SERVER == null)
             {
                 start();
             }
+
+            string bookId = getBookId(title);
 
             MySqlCommand cmd = new MySqlCommand("INSERT INTO borrowedBooks (bookId, borrowerId, quantity, borrowDate, dueDate) " +
                                                 "VALUES(@bookId, @borrowerId, @quantity, @borrowDate, @dueDate)", SQL_SERVER);
@@ -193,6 +195,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             cmd.Parameters.AddWithValue("@bookId", bookId);
             cmd.Parameters.AddWithValue("@borrowerId", borrowerId);
             cmd.Parameters.AddWithValue("@quantity", quantity);
+            cmd.Parameters.AddWithValue("@borrowDate", DateTime.Now.ToString("yyyy-MM-dd"));
+            cmd.Parameters.AddWithValue("@borrowDate", DateTime.Now.AddDays(14).ToString("yyyy-MM-dd"));
+
+            cmd.ExecuteNonQuery();
+            SQL_SERVER.Close();
         }
 
         public DataTable retrieveData()
