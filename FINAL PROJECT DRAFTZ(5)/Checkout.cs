@@ -17,6 +17,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         Dictionary<string, int> keyValuePairs = new Dictionary<string, int>();
         BookContainer getList = new BookContainer();
 
+        
+     
+
+
         public Checkout()
         {
             InitializeComponent();
@@ -24,6 +28,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             borrowerDetails1.Visible = false;
 
         }
+
+       
 
 
 
@@ -35,6 +41,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         public void refresh()
         {
             populatecheckout();
+            
         }
 
 
@@ -57,55 +64,104 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void populatecheckout()
         {
+            
             booksPanel.AutoScroll = true;
             booksPanel.Controls.Clear();
+            checkoutList = BookDetails.getCheckout;
 
-            BookContainer retrieveCheckout = new BookContainer();
-            checkoutList = retrieveCheckout.getCheckout;
-
+            int borrowCount = 0;
+            Dictionary<string, int> bookTitleCount = new Dictionary<string, int>();
             foreach (Books book in checkoutList)
             {
                 BookContainer bookContainer = new BookContainer(this);
+                // Gawa tayo ng list ng mga duplicates.
+                if (bookTitleCount.ContainsKey(book.Title))
+                {
+                    // May duplicated
+                    bookTitleCount[book.Title]++;
+                    borrowCount = book.BooksToborrow + borrowCount;
+                }
+                else
+                {
+                    // Unique
+                    bookTitleCount[book.Title] = 1;
+                }
+
+                // Check natin yung libro kung duplicated
+                if (bookTitleCount[book.Title] > 1)
+                {
+                    // May duplicated
+                    bookContainer.BorrowCount += book.BooksToborrow;
+                    break;
+
+                }
+
+                // Gawin yung pane
+                
                 bookContainer.Title = book.Title;
                 bookContainer.Year = book.Date;
                 bookContainer.aCopies = book.AvailableCopies;
-                bookContainer.tCopies = book.AvailableCopies;
+                bookContainer.tCopies = book.TotalCopies;
+                bookContainer.BorrowCount = book.BooksToborrow;
+                //MessageBox.Show("Books to borrow: " + book.BooksToborrow);
+                bookContainer.numericUpDown2.Value = book.BooksToborrow;
+                bookContainer.numericUpDown2.Maximum = book.AvailableCopies;
 
-
+                // Add the value pair in a dictionary
                 booksPanel.Controls.Add(bookContainer);
+                
             }
         }
 
 
+        
 
-
-
-        private void checkout()
+        private void button1_Click(object sender, EventArgs e)
         {
-            if (checkoutList.Count > 0)
+            while (booksPanel.Controls.Count > 0)
             {
-                foreach (var key in keyValuePairs.Keys)
+
+                if (checkoutList.Count > 0)
                 {
-                    keyValuePairs[key]--;
-                }
+                    Dictionary<string, int> keyValuePair = new Dictionary<string, int>();
+                    foreach (Control control in booksPanel.Controls)
+                    {
 
-                Database update = new Database();
-                foreach (var pairs in keyValuePairs)
-                {
-                    update.updateDatabase(pairs);
-                }
-
-                // Di ako sure dito kung ganito mag refresh
-                if (Library.Instance != null)
-                {
-                    Library.Instance.populateItems();
-                }
+                        if (control is BookContainer bookContainer)
+                        {
+                            string title = bookContainer.Title;
 
 
-                //this.Close();
-                booksPanel.Controls.Clear();
+                            int newAvailBooks = bookContainer.aCopies - Convert.ToInt32(bookContainer.numericUpDown2.Value);
+                            keyValuePair[title] = newAvailBooks;
+
+                            //MessageBox.Show("Title: " + title + " borrowing: " + bookContainer.numericUpDown2.Value + " new available book total is: " + newAvailBooks);
+
+                            removeCard(bookContainer);
+                        }
+
+                    }
+
+
+                    Database update = new Database();
+                    foreach (var pairs in keyValuePair)
+                    {
+                        update.updateDatabase(pairs);
+                    }
+
+                    // Reset para gamitin ule
+                    keyValuePair.Clear();
+                    
+
+                    
+                    
+
+                    
+                    
+                    
+                    
                 checkoutList.Clear();
-
+                
 
 
             }
@@ -115,7 +171,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 //this.Close();
             }
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             if (checkoutList.Count <= 0)
@@ -123,7 +178,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 MessageBox.Show("Nothing to checkout");
                 return;
             }
-
+                //this.Close();
             borrowerDetails1.Visible = true;
         }
 
@@ -135,6 +190,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private void borrowerDetails1_Load(object sender, EventArgs e)
         {
 
+            
         }
     }
 }

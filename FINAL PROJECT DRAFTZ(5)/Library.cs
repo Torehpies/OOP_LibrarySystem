@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -32,6 +33,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             populateItems();
         }
 
+        
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -43,6 +46,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         }
 
+
+        public void refresh()
+        {
+            populateItems();
+            
+        }
 
 
 
@@ -60,13 +69,13 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 {
                     BookContainer[] listItems = new BookContainer[data.Rows.Count];
 
-                    int index = 0;
+                    
 
                     for (int i = 0; i < 1; i++)
                     {
                         foreach (DataRow row in data.Rows)
                         {
-                            if (Convert.ToInt32(row["availableCopies"]) > 0)
+                            if (Convert.ToInt32(row["availableCopies"]) >= 0)
                             {
                                 listItems[i] = new BookContainer(this);
 
@@ -82,17 +91,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
                                 flowLayoutPanel1.Controls.Add(listItems[i]);
                             }
-
-
-
-
-
                         }
                     }
                 }
             }
-
-
         }
 
         private void populateItems(string search)
@@ -114,7 +116,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                     {
                         foreach (DataRow row in data.Rows)
                         {
-                            if (Convert.ToInt32(row["availableCopies"]) > 0)
+                            if (Convert.ToInt32(row["availableCopies"]) >= 0)
                             {
                                 listItems[i] = new BookContainer(this);
 
@@ -133,7 +135,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
 
 
-                            
+
 
 
 
@@ -161,18 +163,44 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            populateItems();
-        }
+        
+
+
 
         private void button3_Click(object sender, EventArgs e)
         {
-            BookContainer bookContainer = new BookContainer(this);
-           
-            checkout1.refresh();
+            // Give checkout pane
+
+            /*
+            if (bookContainer.getCheckout.Count == 0)
+            {
+                MessageBox.Show("List is empty");
+                return;
+            }
+            */
+
+            BookContainer bookContainer = new BookContainer(checkout1);
+            Checkout checkout = new Checkout();
+            checkout.Visible = true;
             checkout1.Visible = !checkout1.Visible;
+            if (checkout1.Visible)
+            {
+                checkout1.refresh();
+            }
             
+
+        }
+
+        private void closeCheckout()
+        {
+
+        }
+
+        
+
+        private void checkout1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -134,7 +134,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 cmd.Parameters.AddWithValue(@"AvailableCopies", keyValuePairs.Value);
 
 
-                MessageBox.Show(query);
+                //MessageBox.Show(query);
                 int rowsAffected = cmd.ExecuteNonQuery();
 
                 if (rowsAffected > 0)

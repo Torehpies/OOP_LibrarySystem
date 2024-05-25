@@ -34,7 +34,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             searchBox = new TextBox();
             mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             enterId_btn = new CustomButton();
-            button4 = new CustomButton();
             cartButton = new CustomButton();
             checkout1 = new Checkout();
             SuspendLayout();
@@ -84,27 +83,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             enterId_btn.UseVisualStyleBackColor = false;
             enterId_btn.Click += button1_Click;
             // 
-            // button4
-            // 
-            button4.BackColor = Color.FromArgb(34, 34, 59);
-            button4.BackgroundColor = Color.FromArgb(34, 34, 59);
-            button4.BorderColor = Color.PaleVioletRed;
-            button4.BorderRadius = 15;
-            button4.BorderSize = 0;
-            button4.FlatAppearance.BorderColor = Color.FromArgb(242, 233, 228);
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Quicksand SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.ForeColor = Color.White;
-            button4.Location = new Point(326, 14);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 30);
-            button4.TabIndex = 7;
-            button4.Text = "Reset";
-            button4.TextColor = Color.White;
-            button4.UseVisualStyleBackColor = false;
-            button4.Click += button2_Click;
-            // 
             // cartButton
             // 
             cartButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
@@ -136,7 +114,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             checkout1.Size = new Size(1136, 559);
             checkout1.TabIndex = 9;
             checkout1.Visible = false;
-            
+            checkout1.Load += checkout1_Load;
             // 
             // Library
             // 
@@ -146,7 +124,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             ClientSize = new Size(1186, 609);
             Controls.Add(cartButton);
             Controls.Add(checkout1);
-            Controls.Add(button4);
             Controls.Add(enterId_btn);
             Controls.Add(searchBox);
             Controls.Add(flowLayoutPanel1);
@@ -165,7 +142,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private TextBox searchBox;
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
         private CustomButton enterId_btn;
-        private CustomButton button4;
         private CustomButton cartButton;
         private Checkout checkout1;
     }
