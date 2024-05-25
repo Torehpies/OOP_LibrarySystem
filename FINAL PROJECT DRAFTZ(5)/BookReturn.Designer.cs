@@ -151,7 +151,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // 
             bbcountslbl.AutoSize = true;
             bbcountslbl.Font = new Font("Quicksand Medium", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            bbcountslbl.Location = new Point(1028, 83);
+            bbcountslbl.Location = new Point(1028, 82);
             bbcountslbl.Name = "bbcountslbl";
             bbcountslbl.Size = new Size(0, 35);
             bbcountslbl.TabIndex = 4;
@@ -226,8 +226,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             id_txtbox.Size = new Size(308, 26);
             id_txtbox.TabIndex = 4;
             id_txtbox.TextAlign = HorizontalAlignment.Center;
-            //id_txtbox.TextChanged += id_txtbox_TextChanged;
-            //id_txtbox.KeyPress += id_txtbox_KeyPress;
             // 
             // BookReturn
             // 

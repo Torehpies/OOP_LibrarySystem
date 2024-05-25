@@ -19,6 +19,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             InitializeComponent();
             /*id_txtbox.KeyPress += new KeyPressEventHandler(id_txtbox_KeyPress);
             id_txtbox.TextChanged += new EventHandler(id_txtbox_TextChanged);*/
+
+            Dsplay_borrowedbooks.Visible = false;
         }
 
         private void enterId_btn_Click(object sender, EventArgs e)
@@ -35,7 +37,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
             if (!int.TryParse(id, out _))
             {
-                errorMsg.Text = "Please enter a valid borrower ID (numeric).";
+                errorMsg.Text = "Please enter a valid borrower ID.";
                 return;
             }
 
@@ -60,12 +62,14 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                     namelbl.Text = "";
                     detailslbl.Text = "";
                     bbcountslbl.Text = "";
+                    Dsplay_borrowedbooks.Visible = false;
                     return;
                 }
 
                 namelbl.Text = borrowerName;
                 detailslbl.Text = details;
                 bbcountslbl.Text = borrowedBookCounts;
+                Dsplay_borrowedbooks.Visible = true;
                 //Dsplay_detailsbrwer.Text = details;
             }
             catch (Exception ex)
