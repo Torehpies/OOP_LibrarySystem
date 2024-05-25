@@ -98,11 +98,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             start();
             borrowedBooksTable = new DataTable();
 
-            string query = "SELECT `borrowedbooks`.`id`, `books`.`title`, `books`.`author`, `borrowedbooks`.`dueDate`, `members`.`name`, `members`.`details`, `borrowedbooks`.`quantity`" +
-                           "FROM `books`" +
-                           "LEFT JOIN `borrowedbooks` ON `borrowedbooks`.`bookId` = `books`.`id`" +
-                           "LEFT JOIN `members` ON `borrowedbooks`.`borrowerId` = `members`.`id`" +
-                           "WHERE borrowedbooks.borrowerId = @id AND borrowedbooks.returnDate is null";
+            string query = "SELECT `borrowedbooks`.`id`, `books`.`title`, `books`.`author`, `borrowedbooks`.`dueDate`, `members`.`name`, `members`.`details`, `borrowedbooks`.`quantity`, `borrowedbooks`.`borrowDate` " +
+                   "FROM `books` " +
+                   "LEFT JOIN `borrowedbooks` ON `borrowedbooks`.`bookId` = `books`.`id` " +
+                   "LEFT JOIN `members` ON `borrowedbooks`.`borrowerId` = `members`.`id` " +
+                   "WHERE `borrowedbooks`.`borrowerId` = @id AND `borrowedbooks`.`returnDate` IS NULL";
 
             using (MySqlCommand command = new MySqlCommand(query, SQL_SERVER))
             {

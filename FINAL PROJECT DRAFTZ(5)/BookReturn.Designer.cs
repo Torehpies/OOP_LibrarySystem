@@ -1,19 +1,13 @@
 ﻿using System.Windows.Forms;
 using CustomControls.RJControls;
+using FINAL_PROJECT_DRAFTZ_5_;
 
 namespace FINAL_PROJECT_DRAFTZ_5_
 {
     partial class BookReturn
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -23,22 +17,17 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             panel1 = new Panel();
             panel5 = new Panel();
             detailslbl = new Label();
             namelbl = new Label();
-            panel2 = new Panel();
+            panel2 = new RoundedPanel();
             borrowedbooks_tbl = new ListView();
             title_column = new ColumnHeader();
             author_column = new ColumnHeader();
+            borrowDate_column = new ColumnHeader();
             dueDate_column = new ColumnHeader();
             bbcountslbl = new Label();
             Dsplay_borrowedbooks = new Label();
@@ -100,6 +89,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(153, 153, 153);
+            panel2.BorderColor = Color.FromArgb(153, 153, 153);
+            panel2.BorderRadius = 20;
+            panel2.BorderSize = 2;
             panel2.Controls.Add(borrowedbooks_tbl);
             panel2.Location = new Point(32, 121);
             panel2.Name = "panel2";
@@ -109,35 +101,40 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // borrowedbooks_tbl
             // 
             borrowedbooks_tbl.CheckBoxes = true;
-            borrowedbooks_tbl.ItemChecked += Borrowedbooks_tbl_ItemChecked;
-            borrowedbooks_tbl.Columns.AddRange(new ColumnHeader[] { title_column, author_column, dueDate_column });
+            borrowedbooks_tbl.Columns.AddRange(new ColumnHeader[] { title_column, author_column, borrowDate_column, dueDate_column });
             borrowedbooks_tbl.Font = new Font("Quicksand", 12F, FontStyle.Regular, GraphicsUnit.Point);
             borrowedbooks_tbl.FullRowSelect = true;
             borrowedbooks_tbl.GridLines = true;
-            borrowedbooks_tbl.Location = new Point(31, 31);
+            borrowedbooks_tbl.Location = new Point(33, 26);
             borrowedbooks_tbl.Name = "borrowedbooks_tbl";
-            borrowedbooks_tbl.Size = new Size(1042, 348);
+            borrowedbooks_tbl.Size = new Size(1044, 348);
             borrowedbooks_tbl.TabIndex = 1;
             borrowedbooks_tbl.UseCompatibleStateImageBehavior = false;
             borrowedbooks_tbl.View = View.Details;
+            borrowedbooks_tbl.ItemChecked += Borrowedbooks_tbl_ItemChecked;
             // 
             // title_column
             // 
             title_column.Text = "Title";
-            title_column.TextAlign = HorizontalAlignment.Center;
-            title_column.Width = 350;
+            title_column.Width = 320;
             // 
             // author_column
             // 
             author_column.Text = "Author";
             author_column.TextAlign = HorizontalAlignment.Center;
-            author_column.Width = 325;
+            author_column.Width = 320;
+            // 
+            // borrowDate_column
+            // 
+            borrowDate_column.Text = "Borrow Date";
+            borrowDate_column.TextAlign = HorizontalAlignment.Center;
+            borrowDate_column.Width = 200;
             // 
             // dueDate_column
             // 
             dueDate_column.Text = "Due Date";
             dueDate_column.TextAlign = HorizontalAlignment.Center;
-            dueDate_column.Width = 350;
+            dueDate_column.Width = 200;
             // 
             // bbcountslbl
             // 
@@ -232,8 +229,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             ResumeLayout(false);
         }
 
-        #endregion
-
         private Panel panel1;
         private Panel panel5;
         private Label Dsplay_borrowedbooks;
@@ -247,7 +242,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private CustomButton enterId_btn;
         private TextBox id_txtbox;
         private Label namelbl;
-        private Panel panel2;
+        private RoundedPanel panel2;
         private Label detailslbl;
+        private ColumnHeader borrowDate_column;
     }
 }

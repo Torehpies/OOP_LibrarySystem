@@ -89,6 +89,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 ListViewItem item = new ListViewItem(row["title"].ToString());
                 item.SubItems.Add(row["author"].ToString());
                 item.SubItems.Add(((DateTime)row["dueDate"]).ToString("yyyy-MM-dd"));
+                item.SubItems.Add(((DateTime)row["borrowDate"]).ToString("yyyy-MM-dd"));
                 item.Tag = row["id"];  // Store the borrowedbook ID in the Tag property
 
                 borrowedbooks_tbl.Items.Add(item);
