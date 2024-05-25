@@ -121,6 +121,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         public void updateDatabase(KeyValuePair<string, int> keyValuePairs)
         {
+            //MessageBox.Show("updateDB");
             if (SQL_SERVER == null)
             {
                 start();
@@ -138,6 +139,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 MessageBox.Show(query);
                 int rowsAffected = cmd.ExecuteNonQuery();
 
+                /*
                 if (rowsAffected > 0)
                 {
                     MessageBox.Show("Update success!");
@@ -146,6 +148,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 {
                     MessageBox.Show("No rows updated.");
                 }
+                */
             }
 
         }

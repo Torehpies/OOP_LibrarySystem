@@ -97,6 +97,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             
             foreach (KeyValuePair<string, int> books in checkoutBooks)
             {
+                
                 database.addBorrowedBooks(books.Key, currentMember.Id, books.Value);
             }
             

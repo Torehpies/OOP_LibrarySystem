@@ -24,7 +24,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         public Checkout()
         {
             InitializeComponent();
-            keyValuePairs = getList.getdictList;
+           // keyValuePairs = getList.getdictList;
             borrowerDetails1.Visible = false;
 
         }
@@ -64,7 +64,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void populatecheckout()
         {
-            
+
             booksPanel.AutoScroll = true;
             booksPanel.Controls.Clear();
             checkoutList = BookDetails.getCheckout;
@@ -97,7 +97,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 }
 
                 // Gawin yung pane
-                
+
                 bookContainer.Title = book.Title;
                 bookContainer.Year = book.Date;
                 bookContainer.aCopies = book.AvailableCopies;
@@ -109,12 +109,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
                 // Add the value pair in a dictionary
                 booksPanel.Controls.Add(bookContainer);
-                
+
             }
         }
-
-
-
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -134,7 +131,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
                 if (checkoutList.Count > 0)
                 {
-                    Dictionary<string, int> keyValuePair = new Dictionary<string, int>();
+                    
                     foreach (Control control in booksPanel.Controls)
                     {
 
@@ -143,16 +140,15 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                             string title = bookContainer.Title;
 
                             int newAvailBooks = bookContainer.aCopies - Convert.ToInt32(bookContainer.numericUpDown2.Value);
-                            keyValuePairs[title] = newAvailBooks;
-
-                            removeCard(bookContainer);
+                            keyValuePairs.Add(title, newAvailBooks);
 
                             Database update = new Database();
                             foreach (var pairs in keyValuePairs)
                             {
+                                //MessageBox.Show("wtf");
                                 update.updateDatabase(pairs);
                             }
-
+                            removeCard(bookContainer);
                             MessageBox.Show("Title: " + title + " borrowing: " + bookContainer.numericUpDown2.Value + " new available book total is: " + newAvailBooks);
                         }
                     }
