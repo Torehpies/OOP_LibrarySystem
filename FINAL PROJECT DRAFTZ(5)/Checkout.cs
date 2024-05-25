@@ -134,7 +134,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
                 if (checkoutList.Count > 0)
                 {
-                    Dictionary<string, int> keyValuePair = new Dictionary<string, int>();
+                    //Dictionary<string, int> keyValuePair = new Dictionary<string, int>();
                     foreach (Control control in booksPanel.Controls)
                     {
 
@@ -144,7 +144,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
 
                             int newAvailBooks = bookContainer.aCopies - Convert.ToInt32(bookContainer.numericUpDown2.Value);
-                            keyValuePair[title] = newAvailBooks;
+                            keyValuePairs[title] = newAvailBooks;
 
                             //MessageBox.Show("Title: " + title + " borrowing: " + bookContainer.numericUpDown2.Value + " new available book total is: " + newAvailBooks);
 
@@ -154,13 +154,13 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                     }
 
                     Database update = new Database();
-                    foreach (var pairs in keyValuePair)
+                    foreach (var pairs in keyValuePairs)
                     {
                         update.updateDatabase(pairs);
                     }
 
                     // Reset para gamitin ule
-                    keyValuePair.Clear();
+                    keyValuePairs.Clear();
                     checkoutList.Clear();
                 }
                 else
@@ -174,7 +174,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         
 
-        public Dictionary<string, int> getBookAndQuantity()
+        public Dictionary<string, int> getBookAndQuanity()
         {
             return keyValuePairs;
         }
