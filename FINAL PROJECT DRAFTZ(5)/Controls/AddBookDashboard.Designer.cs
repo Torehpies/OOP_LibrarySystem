@@ -48,13 +48,17 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
             authorText = new CustomTextbox();
             button1 = new CustomButton();
             pictureBox = new PictureBox();
+            label8 = new Label();
+            panel2 = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(225, 213, 206);
+            panel1.Controls.Add(panel2);
             panel1.Controls.Add(dateText);
             panel1.Controls.Add(bookNoText);
             panel1.Controls.Add(label7);
@@ -191,11 +195,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
             // 
             // button2
             // 
-            button2.BackColor = SystemColors.InactiveCaptionText;
-            button2.BackgroundColor = SystemColors.InactiveCaptionText;
+            button2.BackColor = Color.FromArgb(34, 34, 59);
+            button2.BackgroundColor = Color.FromArgb(34, 34, 59);
             button2.BorderColor = Color.PaleVioletRed;
             button2.BorderRadius = 32;
             button2.BorderSize = 0;
+            button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Quicksand", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             button2.ForeColor = Color.White;
@@ -320,8 +325,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
             // 
             // button1
             // 
-            button1.BackColor = Color.FromArgb(102, 102, 102);
-            button1.BackgroundColor = Color.FromArgb(102, 102, 102);
+            button1.BackColor = Color.FromArgb(74, 78, 105);
+            button1.BackgroundColor = Color.FromArgb(74, 78, 105);
             button1.BorderColor = Color.PaleVioletRed;
             button1.BorderRadius = 22;
             button1.BorderSize = 0;
@@ -349,6 +354,27 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
             pictureBox.TabIndex = 0;
             pictureBox.TabStop = false;
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Quicksand", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.ForeColor = SystemColors.ButtonFace;
+            label8.Location = new Point(12, 7);
+            label8.Name = "label8";
+            label8.Size = new Size(123, 31);
+            label8.TabIndex = 18;
+            label8.Text = "ADD BOOK";
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(74, 78, 105);
+            panel2.Controls.Add(label8);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(883, 48);
+            panel2.TabIndex = 19;
+            // 
             // AddBookDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -359,6 +385,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -381,5 +409,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
         private CustomTextbox bookNoText;
         private Label label7;
         private DateTimePicker dateText;
+        private Panel panel2;
+        private Label label8;
     }
 }
