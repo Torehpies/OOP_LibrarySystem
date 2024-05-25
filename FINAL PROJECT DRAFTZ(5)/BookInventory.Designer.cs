@@ -41,7 +41,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             libraryeditpanel.Controls.Add(addBookDashboard1);
             libraryeditpanel.Location = new Point(-2, -2);
             libraryeditpanel.Name = "libraryeditpanel";
-            libraryeditpanel.Size = new Size(1161, 613);
+            libraryeditpanel.Size = new Size(1186, 609);
             libraryeditpanel.TabIndex = 5;
             // 
             // AddBookBtn
@@ -59,7 +59,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             AddBookBtn.Font = new Font("Quicksand SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             AddBookBtn.ForeColor = Color.White;
             AddBookBtn.Image = Properties.Resources.plus_icon__1_;
-            AddBookBtn.Location = new Point(1056, 489);
+            AddBookBtn.Location = new Point(1081, 485);
             AddBookBtn.Name = "AddBookBtn";
             AddBookBtn.Size = new Size(76, 76);
             AddBookBtn.TabIndex = 9;
@@ -72,7 +72,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             addBookDashboard1.BackColor = Color.Transparent;
             addBookDashboard1.Location = new Point(136, 23);
             addBookDashboard1.Name = "addBookDashboard1";
-            addBookDashboard1.Size = new Size(886, 557);
+            addBookDashboard1.Size = new Size(883, 559);
             addBookDashboard1.TabIndex = 2;
             addBookDashboard1.Load += addBookDashboard1_Load;
             // 
@@ -81,7 +81,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
-            ClientSize = new Size(1171, 623);
+            ClientSize = new Size(1186, 609);
             Controls.Add(libraryeditpanel);
             FormBorderStyle = FormBorderStyle.None;
             Name = "BookInventory";

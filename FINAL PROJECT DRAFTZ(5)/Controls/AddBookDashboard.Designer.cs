@@ -31,6 +31,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            panel2 = new Panel();
+            label8 = new Label();
             dateText = new DateTimePicker();
             bookNoText = new CustomTextbox();
             label7 = new Label();
@@ -48,11 +50,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
             authorText = new CustomTextbox();
             button1 = new CustomButton();
             pictureBox = new PictureBox();
-            label8 = new Label();
-            panel2 = new Panel();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -79,9 +79,30 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(883, 648);
+            panel1.Size = new Size(883, 559);
             panel1.TabIndex = 1;
             panel1.Paint += panel1_Paint;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(74, 78, 105);
+            panel2.Controls.Add(label8);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(883, 48);
+            panel2.TabIndex = 19;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Quicksand", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.ForeColor = SystemColors.ButtonFace;
+            label8.Location = new Point(12, 7);
+            label8.Name = "label8";
+            label8.Size = new Size(123, 31);
+            label8.TabIndex = 18;
+            label8.Text = "ADD BOOK";
             // 
             // dateText
             // 
@@ -354,27 +375,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
             pictureBox.TabIndex = 0;
             pictureBox.TabStop = false;
             // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Quicksand", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.ForeColor = SystemColors.ButtonFace;
-            label8.Location = new Point(12, 7);
-            label8.Name = "label8";
-            label8.Size = new Size(123, 31);
-            label8.TabIndex = 18;
-            label8.Text = "ADD BOOK";
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.FromArgb(74, 78, 105);
-            panel2.Controls.Add(label8);
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(0, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(883, 48);
-            panel2.TabIndex = 19;
-            // 
             // AddBookDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -384,9 +384,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
             Size = new Size(882, 559);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox).EndInit();
             ResumeLayout(false);
         }
 
