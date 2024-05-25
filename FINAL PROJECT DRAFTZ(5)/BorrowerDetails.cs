@@ -20,27 +20,51 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private void cancelButton_Click(object sender, EventArgs e)
         {
             Visible = false;
-            Refresh();
+            warningText.Hide();
+            idTextbox.Texts = string.Empty;
+            inputIdMode();
         }
 
         private void inputIdMode()
         {
-            confirmButton.Visible = false;
-            cancelButton.Location = new Point(cancelButton.Location.Y - 76, cancelButton.Location.Y);
+            nameLabel.Hide();
+            detailsLabel.Hide();
+            idLabel.Hide();
+            confirmButton.Hide();
+            cancelButton.Location = new Point(cancelButton.Location.X, 157);
         }
 
         private void confirmBorrowMode()
         {
-            confirmButton.Visible = true;
-            confirmButton.Location = new Point(confirmButton.Location.Y + 76, confirmButton.Location.Y);
-            cancelButton.Location = new Point(cancelButton.Location.Y + 76, cancelButton.Location.Y);
+            nameLabel.Show();
+            detailsLabel.Show();
+            idLabel.Show();
+
+            confirmButton.Show();
+            confirmButton.Location = new Point(confirmButton.Location.X, 223);
+            cancelButton.Location = new Point(cancelButton.Location.X, cancelButton.Location.Y + 106);
         }
 
         private void checkIDBtn_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(idTextbox.Texts))
+            {
+                warningText.Text = "Please enter a borrower ID";
+                warningText.Show();
+                return;
+            }
+
+            if (!int.TryParse(idTextbox.Texts, out _))
+            {
+                warningText.Text = "Please enter a valid ID";
+                warningText.Show();
+                return;
+            }
+
             if (!BorrowerDB.DoesMemberExists(idTextbox.Texts))
             {
-                warningText.Visible = true;
+                warningText.Text = "ID doesn't exist";
+                warningText.Show();
                 return;
             }
 
@@ -66,31 +90,13 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 return;
             }
 
-
-
-
-
-            //string studentID = idTextbox.Texts;
-            //Checkout checkout = new Checkout();
-            //Dictionary<string, int> bookAndQuanity = checkout.getBookAndQuanity();
-
+            string studentID = idTextbox.Texts;
             Checkout checkout = new Checkout();
+            Dictionary<string, int> bookAndQuanity = checkout.getBookAndQuanity();
+
+            
             checkout.actualcheckout("testing");
             
-           
-
-            
-
-            
-
-
-
-
-           
-
-
-
-
 
         }
     }

@@ -68,9 +68,9 @@
             // idTextbox
             // 
             idTextbox.BackColor = SystemColors.Window;
-            idTextbox.BorderColor = Color.FromArgb(34, 34, 59);
-            idTextbox.BorderFocusColor = Color.HotPink;
-            idTextbox.BorderRadius = 15;
+            idTextbox.BorderColor = Color.FromArgb(70, 70, 70);
+            idTextbox.BorderFocusColor = Color.FromArgb(34, 34, 59);
+            idTextbox.BorderRadius = 18;
             idTextbox.BorderSize = 2;
             idTextbox.Font = new Font("Quicksand", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             idTextbox.ForeColor = Color.FromArgb(64, 64, 64);
@@ -114,11 +114,13 @@
             // 
             idLabel.AutoSize = true;
             idLabel.Font = new Font("Quicksand SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            idLabel.Location = new Point(130, 186);
+            idLabel.Location = new Point(122, 186);
+            idLabel.MinimumSize = new Size(150, 28);
             idLabel.Name = "idLabel";
-            idLabel.Size = new Size(134, 28);
+            idLabel.Size = new Size(150, 28);
             idLabel.TabIndex = 5;
             idLabel.Text = "Borrower's ID";
+            idLabel.TextAlign = ContentAlignment.MiddleCenter;
             idLabel.Visible = false;
             // 
             // confirmButton
@@ -140,6 +142,7 @@
             confirmButton.Text = "Confirm Checkout";
             confirmButton.TextColor = Color.White;
             confirmButton.UseVisualStyleBackColor = false;
+            confirmButton.Visible = false;
             confirmButton.Click += confirmButton_Click;
             // 
             // panel1
@@ -163,7 +166,7 @@
             cancelButton.FlatStyle = FlatStyle.Flat;
             cancelButton.Font = new Font("Quicksand", 12F, FontStyle.Bold, GraphicsUnit.Point);
             cancelButton.ForeColor = Color.FromArgb(34, 34, 59);
-            cancelButton.Location = new Point(102, 198);
+            cancelButton.Location = new Point(102, 157);
             cancelButton.Name = "cancelButton";
             cancelButton.Size = new Size(190, 40);
             cancelButton.TabIndex = 8;
@@ -177,9 +180,10 @@
             warningText.AutoSize = true;
             warningText.Font = new Font("Quicksand", 12F, FontStyle.Bold, GraphicsUnit.Point);
             warningText.ForeColor = Color.DarkRed;
-            warningText.Location = new Point(106, 123);
+            warningText.Location = new Point(96, 123);
+            warningText.MinimumSize = new Size(200, 24);
             warningText.Name = "warningText";
-            warningText.Size = new Size(182, 24);
+            warningText.Size = new Size(200, 24);
             warningText.TabIndex = 9;
             warningText.Text = "Member doesn't exists";
             warningText.TextAlign = ContentAlignment.MiddleCenter;
@@ -191,7 +195,7 @@
             checkIDBtn.BackColor = Color.FromArgb(34, 34, 59);
             checkIDBtn.BackgroundColor = Color.FromArgb(34, 34, 59);
             checkIDBtn.BorderColor = Color.PaleVioletRed;
-            checkIDBtn.BorderRadius = 20;
+            checkIDBtn.BorderRadius = 18;
             checkIDBtn.BorderSize = 0;
             checkIDBtn.FlatAppearance.BorderSize = 0;
             checkIDBtn.FlatStyle = FlatStyle.Flat;

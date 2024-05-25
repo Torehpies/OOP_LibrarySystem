@@ -1,16 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Net.NetworkInformation;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace FINAL_PROJECT_DRAFTZ_5_
+﻿namespace FINAL_PROJECT_DRAFTZ_5_
 {
 
 
@@ -37,7 +25,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             this.published = published;
             this.avail = availableCopies;
             this.total = totalCopies;
-            
+
         }
 
         public void populateDetails(object sender, EventArgs e)
@@ -62,7 +50,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 BorrowButton.BackColor = Color.White;
 
             }
-            
+
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -85,7 +73,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
             Books addBook = new Books(title, isbn, author, category, publisher, published, avail, total, Convert.ToInt32(borrownumber.Value));
 
-            
+
             BookContainer book = new BookContainer();
 
             book.Title = title;
@@ -95,20 +83,20 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             book.Year = published;
             book.Category = category;
 
-            
+
             book.aCopies = avail;
             book.BorrowCount = Convert.ToInt32(borrownumber.Value);
 
-        
+
             bookTitles.Add(title);
             checkout.Add(addBook);
             checkOutList[title] = avail;
 
-            
 
 
 
-            MessageBox.Show($"Bookname : `{title}` borrowed {booksToBorrow} books is added to checkout");
+
+            //MessageBox.Show($"Bookname : `{title}` borrowed {booksToBorrow} books is added to checkout");
             this.Close();
         }
 
