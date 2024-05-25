@@ -51,11 +51,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             Books bookToRemove = checkoutList.FirstOrDefault(book => book.Title == titleToRemove);
             if (bookToRemove != null)
             {
-                MessageBox.Show($"Removed from checkout book: {titleToRemove}");
+                //MessageBox.Show($"Removed from checkout book: {titleToRemove}");
                 checkoutList.Remove(bookToRemove);
                 keyValuePairs.Remove(bookToRemove.Title);
-                MessageBox.Show($"Removed: {bookToRemove.Title}");
-                MessageBox.Show($"Dict count: {keyValuePairs.Count}");
+                //MessageBox.Show($"Removed: {bookToRemove.Title}");
+                //MessageBox.Show($"Dict count: {keyValuePairs.Count}");
             }
             booksPanel.Controls.Remove(userControl);
         }
@@ -145,8 +145,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                             int newAvailBooks = bookContainer.aCopies - Convert.ToInt32(bookContainer.numericUpDown2.Value);
                             keyValuePairs[title] = newAvailBooks;
 
-                            MessageBox.Show("Title: " + title + " borrowing: " + bookContainer.numericUpDown2.Value + " new available book total is: " + newAvailBooks);
-
                             removeCard(bookContainer);
 
                             Database update = new Database();
@@ -154,6 +152,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                             {
                                 update.updateDatabase(pairs);
                             }
+
+                            MessageBox.Show("Title: " + title + " borrowing: " + bookContainer.numericUpDown2.Value + " new available book total is: " + newAvailBooks);
                         }
                     }
                     // Reset para gamitin ule
