@@ -123,16 +123,32 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void confirm_btn_Click(object sender, EventArgs e)
         {
-            if (borrowedbooks_tbl.SelectedItems.Count > 0)
+            // Check if items are checked in the ListView
+            if (borrowedbooks_tbl.CheckedItems.Count > 0)
             {
+                // Get the borrower ID from the input
                 string borrowerId = id_txtbox.Text;
+
+                // Get the current date
                 DateTime returnDate = DateTime.Now;
 
-                foreach (ListViewItem selectedItem in borrowedbooks_tbl.SelectedItems)
+                // Initialize total returned books count
+                int totalReturnedBooks = 0;
+
+                // Iterate over each checked item
+                foreach (ListViewItem checkedItem in borrowedbooks_tbl.CheckedItems)
                 {
-                    string title = selectedItem.SubItems[0].Text;
-                    int quantity = int.Parse(selectedItem.SubItems[2].Text);
-                    int borrowedBookId = (int)selectedItem.Tag;
+                    // Get the title of the checked book
+                    string title = checkedItem.SubItems[0].Text;
+
+                    // Get the quantity of the checked book
+                    int quantity = int.Parse(checkedItem.SubItems[2].Text);
+
+                    // Add the quantity to the total returned books count
+                    totalReturnedBooks += quantity;
+
+                    // Get the borrowedbook ID from the Tag property
+                    int borrowedBookId = (int)checkedItem.Tag;
 
                     try
                     {
@@ -160,6 +176,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 MessageBox.Show("Please select a book to confirm return.");
             }
         }
+
 
 
         /*private void id_txtbox_KeyPress(object sender, KeyPressEventArgs e)
