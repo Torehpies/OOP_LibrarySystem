@@ -65,6 +65,18 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private void button1_Click_1(object sender, EventArgs e)
         {
 
+            /*
+             * BookContainer bookContainer = new BookContainer(checkout1);
+            Checkout checkout = new Checkout();
+            checkout.Visible = true;
+            checkout1.Visible = !checkout1.Visible;
+            if (checkout1.Visible)
+            {
+                checkout1.refresh();
+            }
+             */
+
+            /*
             AddBookDashboard addBooks = new AddBookDashboard();
             addBooks.Visible = false;
             addBookDashboard1.Visible = !addBookDashboard1.Visible;
@@ -73,6 +85,19 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 ShowEditLibrary();
 
             }
+            */
+
+            BookContainer bookContainer = new BookContainer(addBookDashboard1);
+            AddBookDashboard add = new AddBookDashboard();
+            add.Visible = true;
+            addBookDashboard1.Visible = ! addBookDashboard1.Visible;
+            if (!addBookDashboard1.Visible)
+            {
+                ShowEditLibrary();
+            }
+
+
+
 
 
 

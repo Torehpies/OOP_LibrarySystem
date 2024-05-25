@@ -29,8 +29,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private void InitializeComponent()
         {
             libraryeditpanel = new Panel();
-            addBookDashboard1 = new Controls.AddBookDashboard();
             AddBookBtn = new CustomControls.RJControls.CustomButton();
+            addBookDashboard1 = new Controls.AddBookDashboard();
             libraryeditpanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -42,14 +42,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             libraryeditpanel.Name = "libraryeditpanel";
             libraryeditpanel.Size = new Size(1161, 613);
             libraryeditpanel.TabIndex = 5;
-            // 
-            // addBookDashboard1
-            // 
-            addBookDashboard1.Location = new Point(111, 28);
-            addBookDashboard1.Name = "addBookDashboard1";
-            addBookDashboard1.Size = new Size(925, 547);
-            addBookDashboard1.TabIndex = 2;
-            addBookDashboard1.Load += addBookDashboard1_Load;
             // 
             // AddBookBtn
             // 
@@ -66,13 +58,22 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             AddBookBtn.Font = new Font("Quicksand SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             AddBookBtn.ForeColor = Color.White;
             AddBookBtn.Image = Properties.Resources.plus_icon__1_;
-            AddBookBtn.Location = new Point(1011, 523);
+            AddBookBtn.Location = new Point(998, 499);
             AddBookBtn.Name = "AddBookBtn";
             AddBookBtn.Size = new Size(76, 76);
             AddBookBtn.TabIndex = 9;
             AddBookBtn.TextColor = Color.White;
             AddBookBtn.UseVisualStyleBackColor = false;
             AddBookBtn.Click += button1_Click_1;
+            // 
+            // addBookDashboard1
+            // 
+            addBookDashboard1.Location = new Point(111, 28);
+            addBookDashboard1.Name = "addBookDashboard1";
+            addBookDashboard1.Size = new Size(925, 547);
+            addBookDashboard1.TabIndex = 2;
+            addBookDashboard1.Visible = false;
+            addBookDashboard1.Load += addBookDashboard1_Load;
             // 
             // BookInventory
             // 

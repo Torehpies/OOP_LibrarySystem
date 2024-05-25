@@ -1,4 +1,5 @@
-﻿using Org.BouncyCastle.Pkix;
+﻿using FINAL_PROJECT_DRAFTZ_5_.Controls;
+using Org.BouncyCastle.Pkix;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,7 +23,13 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private Library libraryForm;
         private Checkout checkoutForm;
         private LibraryEdit libraryEditForm;
-        
+        private AddBookDashboard addbookdashboard;
+
+        public BookContainer(AddBookDashboard addbookdashboard)
+        {
+            InitializeComponent();
+            this.addbookdashboard = addbookdashboard;
+        }
 
         
         
@@ -184,8 +191,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             get { return availCopies; }
             set { availCopies = value; 
                 if (libraryForm != null) availLabel.Text = availCopies + " left";
-
-                
             }
         }
 
