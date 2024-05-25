@@ -17,6 +17,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             InitializeComponent();
         }
 
+        Member currentMember;
         private void cancelButton_Click(object sender, EventArgs e)
         {
             Visible = false;
@@ -68,10 +69,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 return;
             }
 
-            Member member = BorrowerDB.GetMemberDetails(idTextbox.Texts);
-            nameLabel.Text = member.Name;
-            detailsLabel.Text = member.Department + " " + member.Details;
-            idLabel.Text = member.Id;
+            currentMember = BorrowerDB.GetMemberDetails(idTextbox.Texts);
+            nameLabel.Text = currentMember.Name;
+            detailsLabel.Text = currentMember.Department + " " + currentMember.Details;
+            idLabel.Text = currentMember.Id;
             confirmBorrowMode();
 
         }
@@ -90,9 +91,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 return;
             }
 
-            string studentID = idTextbox.Texts;
             Checkout checkout = new Checkout();
-            Dictionary<string, int> bookAndQuanity = checkout.getBookAndQuanity();
+            Dictionary<string, int> bookAndQuantity = checkout.getBookAndQuantity();
 
             
             checkout.actualcheckout("testing");

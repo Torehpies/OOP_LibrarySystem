@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms.VisualStyles;
 using MySql.Data.MySqlClient;
 using BCrypt.Net;
+using System.Net;
 
 namespace FINAL_PROJECT_DRAFTZ_5_
 {
@@ -147,6 +148,51 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 }
             }
 
+        }
+
+        public string getBookId(string title)
+        {
+            if (SQL_SERVER == null)
+            {
+                start();
+            }
+
+            MySqlCommand cmd = new MySqlCommand("SELECT id FROM books WHERE title = @title", SQL_SERVER);
+            cmd.Parameters.AddWithValue("@title", title);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            string id = "0";
+            try
+            {
+                while (reader.Read())
+                {
+                    id = reader.GetString(0);
+                    return id;
+                }
+            }
+            finally
+            {
+                reader.Close();
+                SQL_SERVER.Close();
+            }
+
+            return id;
+        }
+
+        public void addBorrowedBooks(string bookId, string borrowerId, int quantity)
+        {
+            if (SQL_SERVER == null)
+            {
+                start();
+            }
+
+            MySqlCommand cmd = new MySqlCommand("INSERT INTO borrowedBooks (bookId, borrowerId, quantity, borrowDate, dueDate) " +
+                                                "VALUES(@bookId, @borrowerId, @quantity, @borrowDate, @dueDate)", SQL_SERVER);
+
+            cmd.Parameters.AddWithValue("@bookId", bookId);
+            cmd.Parameters.AddWithValue("@borrowerId", borrowerId);
+            cmd.Parameters.AddWithValue("@quantity", quantity);
         }
 
         public DataTable retrieveData()

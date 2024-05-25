@@ -174,7 +174,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         
 
-        public Dictionary<string, int> getBookAndQuanity()
+        public Dictionary<string, int> getBookAndQuantity()
         {
             return keyValuePairs;
         }
