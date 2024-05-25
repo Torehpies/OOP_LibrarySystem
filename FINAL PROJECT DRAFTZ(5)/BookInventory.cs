@@ -90,7 +90,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             BookContainer bookContainer = new BookContainer(addBookDashboard1);
             AddBookDashboard add = new AddBookDashboard();
             add.Visible = true;
-            addBookDashboard1.Visible = ! addBookDashboard1.Visible;
+            addBookDashboard1.Visible = !addBookDashboard1.Visible;
             if (!addBookDashboard1.Visible)
             {
                 ShowEditLibrary();
