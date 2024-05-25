@@ -38,14 +38,17 @@
             authorLabel = new Label();
             isbn10Label = new Label();
             panel1 = new Panel();
+            totalcopies = new Label();
+            label7 = new Label();
+            label6 = new Label();
+            availablecopies = new Label();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            borrownumber = new NumericUpDown();
-            availablecopies = new Label();
             statusLabel = new Label();
+            borrownumber = new NumericUpDown();
             exitButton = new Button();
             toolTip1 = new ToolTip(components);
             toolTip2 = new ToolTip(components);
@@ -58,7 +61,7 @@
             // picture
             // 
             picture.Image = Properties.Resources.how_to_write_a_lot;
-            picture.Location = new Point(3, 17);
+            picture.Location = new Point(3, 24);
             picture.Name = "picture";
             picture.Size = new Size(225, 285);
             picture.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -71,11 +74,10 @@
             // 
             publishedLabel.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             publishedLabel.ForeColor = Color.FromArgb(73, 85, 121);
-            publishedLabel.Location = new Point(334, 281);
+            publishedLabel.Location = new Point(335, 241);
             publishedLabel.Name = "publishedLabel";
-            publishedLabel.Size = new Size(258, 20);
+            publishedLabel.Size = new Size(228, 20);
             publishedLabel.TabIndex = 21;
-            publishedLabel.Text = "2018 ";
             publishedLabel.Click += publishedLabel_Click;
             // 
             // BorrowButton
@@ -83,7 +85,7 @@
             BorrowButton.BackColor = Color.FromArgb(38, 49, 89);
             BorrowButton.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             BorrowButton.ForeColor = Color.FromArgb(255, 251, 235);
-            BorrowButton.Location = new Point(3, 318);
+            BorrowButton.Location = new Point(3, 321);
             BorrowButton.Name = "BorrowButton";
             BorrowButton.Size = new Size(225, 56);
             BorrowButton.TabIndex = 7;
@@ -95,11 +97,10 @@
             // 
             publisherLabel.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             publisherLabel.ForeColor = Color.FromArgb(73, 85, 121);
-            publisherLabel.Location = new Point(333, 244);
+            publisherLabel.Location = new Point(334, 214);
             publisherLabel.Name = "publisherLabel";
-            publisherLabel.Size = new Size(259, 26);
+            publisherLabel.Size = new Size(229, 26);
             publisherLabel.TabIndex = 20;
-            publisherLabel.Text = "American Psychological Association";
             publisherLabel.Click += publisherLabel_Click;
             // 
             // titleLabel
@@ -117,49 +118,40 @@
             // 
             categoryLabel.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             categoryLabel.ForeColor = Color.FromArgb(73, 85, 121);
-            categoryLabel.Location = new Point(334, 207);
+            categoryLabel.Location = new Point(335, 184);
             categoryLabel.Name = "categoryLabel";
-            categoryLabel.Size = new Size(258, 21);
+            categoryLabel.Size = new Size(228, 21);
             categoryLabel.TabIndex = 19;
-            categoryLabel.Text = "Academic";
             categoryLabel.Click += categoryLabel_Click;
-            // 
-            // isbn13Label
-            // 
-            isbn13Label.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            isbn13Label.ForeColor = Color.FromArgb(73, 85, 121);
-            isbn13Label.Location = new Point(244, 129);
-            isbn13Label.Name = "isbn13Label";
-            isbn13Label.Size = new Size(303, 17);
-            isbn13Label.TabIndex = 15;
-            isbn13Label.Text = "ISBN-13:  9781433829789";
             // 
             // authorLabel
             // 
             authorLabel.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             authorLabel.ForeColor = Color.FromArgb(73, 85, 121);
-            authorLabel.Location = new Point(333, 172);
+            authorLabel.Location = new Point(334, 155);
             authorLabel.Name = "authorLabel";
-            authorLabel.Size = new Size(259, 21);
+            authorLabel.Size = new Size(229, 21);
             authorLabel.TabIndex = 18;
-            authorLabel.Text = "Paul J. Silvia";
             authorLabel.Click += authorLabel_Click;
             // 
             // isbn10Label
             // 
             isbn10Label.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             isbn10Label.ForeColor = Color.FromArgb(73, 85, 121);
-            isbn10Label.Location = new Point(334, 144);
+            isbn10Label.Location = new Point(335, 127);
             isbn10Label.Name = "isbn10Label";
-            isbn10Label.Size = new Size(258, 21);
+            isbn10Label.Size = new Size(228, 21);
             isbn10Label.TabIndex = 16;
-            isbn10Label.Text = "1433829789";
             isbn10Label.Click += isbn10Label_Click;
             // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.AutoSize = true;
+            panel1.Controls.Add(totalcopies);
+            panel1.Controls.Add(label7);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(availablecopies);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
@@ -179,14 +171,55 @@
             panel1.Padding = new Padding(10);
             panel1.Size = new Size(670, 390);
             panel1.TabIndex = 23;
-            panel1.Paint += panel1_Paint;
+            // 
+            // totalcopies
+            // 
+            totalcopies.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            totalcopies.ForeColor = Color.FromArgb(73, 85, 121);
+            totalcopies.Location = new Point(347, 298);
+            totalcopies.Name = "totalcopies";
+            totalcopies.Size = new Size(229, 20);
+            totalcopies.TabIndex = 31;
+            totalcopies.Click += totalcopies_Click;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Franklin Gothic Medium Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.ForeColor = Color.FromArgb(73, 85, 121);
+            label7.Location = new Point(244, 297);
+            label7.Name = "label7";
+            label7.Size = new Size(97, 21);
+            label7.TabIndex = 30;
+            label7.Text = "TOTAL COPIES:";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Franklin Gothic Medium Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.ForeColor = Color.FromArgb(73, 85, 121);
+            label6.Location = new Point(244, 272);
+            label6.Name = "label6";
+            label6.Size = new Size(126, 21);
+            label6.TabIndex = 29;
+            label6.Text = "AVAILABLE COPIES:";
+            // 
+            // availablecopies
+            // 
+            availablecopies.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            availablecopies.ForeColor = Color.FromArgb(73, 85, 121);
+            availablecopies.Location = new Point(376, 273);
+            availablecopies.Name = "availablecopies";
+            availablecopies.Size = new Size(229, 20);
+            availablecopies.TabIndex = 28;
+            availablecopies.Click += availablecopies_Click;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Franklin Gothic Medium Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.FromArgb(73, 85, 121);
-            label5.Location = new Point(243, 281);
+            label5.Location = new Point(243, 241);
             label5.Name = "label5";
             label5.Size = new Size(84, 21);
             label5.TabIndex = 27;
@@ -197,7 +230,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Franklin Gothic Medium Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.FromArgb(73, 85, 121);
-            label4.Location = new Point(244, 244);
+            label4.Location = new Point(244, 214);
             label4.Name = "label4";
             label4.Size = new Size(83, 21);
             label4.TabIndex = 26;
@@ -208,7 +241,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Franklin Gothic Medium Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.FromArgb(73, 85, 121);
-            label3.Location = new Point(244, 207);
+            label3.Location = new Point(244, 184);
             label3.Name = "label3";
             label3.Size = new Size(76, 21);
             label3.TabIndex = 25;
@@ -219,7 +252,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Franklin Gothic Medium Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.FromArgb(73, 85, 121);
-            label2.Location = new Point(244, 172);
+            label2.Location = new Point(244, 155);
             label2.Name = "label2";
             label2.Size = new Size(63, 21);
             label2.TabIndex = 24;
@@ -231,33 +264,11 @@
             label1.AutoSize = true;
             label1.Font = new Font("Franklin Gothic Medium Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.FromArgb(73, 85, 121);
-            label1.Location = new Point(244, 144);
+            label1.Location = new Point(245, 127);
             label1.Name = "label1";
             label1.Size = new Size(47, 21);
             label1.TabIndex = 23;
             label1.Text = "ISBN: ";
-            // 
-            // borrownumber
-            // 
-            borrownumber.BorderStyle = BorderStyle.None;
-            borrownumber.Location = new Point(234, 341);
-            borrownumber.Name = "borrownumber";
-            borrownumber.Size = new Size(47, 19);
-            borrownumber.TabIndex = 24;
-            borrownumber.Value = new decimal(new int[] { 1, 0, 0, 0 });
-            borrownumber.Visible = false;
-            borrownumber.ValueChanged += numericUpDown1_ValueChanged;
-            // 
-            // availablecopies
-            // 
-            availablecopies.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            availablecopies.ForeColor = Color.FromArgb(73, 85, 121);
-            availablecopies.Location = new Point(244, 285);
-            availablecopies.Name = "availablecopies";
-            availablecopies.Size = new Size(303, 26);
-            availablecopies.TabIndex = 23;
-            availablecopies.Text = "AVAILABLE COPIES: 0 ";
-            availablecopies.Click += label1_Click;
             // 
             // statusLabel
             // 
@@ -270,6 +281,17 @@
             statusLabel.TabIndex = 22;
             statusLabel.Text = "STATUS: ";
             statusLabel.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // borrownumber
+            // 
+            borrownumber.BorderStyle = BorderStyle.None;
+            borrownumber.Location = new Point(234, 341);
+            borrownumber.Name = "borrownumber";
+            borrownumber.Size = new Size(47, 19);
+            borrownumber.TabIndex = 24;
+            borrownumber.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            borrownumber.Visible = false;
+            borrownumber.ValueChanged += numericUpDown1_ValueChanged;
             // 
             // exitButton
             // 
@@ -330,7 +352,11 @@
         private ToolTip toolTip1;
         private ToolTip toolTip2;
         private ToolTip toolTip3;
-        private Label availablecopies;
+        
         private NumericUpDown borrownumber;
+        private Label availablecopies;
+        private Label label6;
+        private Label totalcopies;
+        private Label label7;
     }
 }

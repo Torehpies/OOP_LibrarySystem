@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Reflection;
 using System.Web;
+using System.Security.Policy;
 
 namespace FINAL_PROJECT_DRAFTZ_5_.Controls
 {
@@ -76,7 +77,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
                 return;
 
             }
-           
+
 
             if (titleText.Text.Length == 0 || isbnText.Text.Length == 0 || authorText.Text.Length == 0 || dateText.Text.Length == 0 || categoryText.Text.Length == 0 || publisherText.Text.Length == 0 || bookNoText.Text.Length == 0)
             {
@@ -90,12 +91,13 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
                 return;
             }
 
+
+
             
-
-
-            Books bookToAdd = new Books(titleText.Text, isbnText.Text, authorText.Text, categoryText.Text, publisherText.Text, dateText.Text);
+            Books bookToAdd = new Books(titleText.Text, isbnText.Text, authorText.Text, categoryText.Text, publisherText.Text, dateText.Text, Convert.ToInt32(bookNoText.Text), pictureBox.Image);
             string imagePath = SaveImageInResourceFolder(bookToAdd, pictureBox.Image);
-            bookToAdd.ImagePath = imagePath;
+            //bookToAdd.ImagePath = imagePath;
+            //bookToAdd.ImagePath = imagePath;
             var year = DateTime.Parse(dateText.Text).Year;
             bookCRUD.AddBooks(titleText.Text, authorText.Text, isbnText.Text, categoryText.Text, publisherText.Text, year, int.Parse(bookNoText.Text), imagePath);
 
@@ -171,6 +173,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
         private void button3_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void bookNoText_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

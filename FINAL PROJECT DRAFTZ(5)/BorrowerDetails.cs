@@ -52,10 +52,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         }
 
-        public Book[] booksToBorrow(Book[] book)
-        {
-            return null;
-        }
+        
 
         private void confirmButton_Click(object sender, EventArgs e)
         {

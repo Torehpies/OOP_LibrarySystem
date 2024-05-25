@@ -91,6 +91,7 @@
             bookNoText.Size = new Size(189, 28);
             bookNoText.TabIndex = 16;
             bookNoText.Text = "(Number of books in Inventory)";
+            bookNoText.TextChanged += bookNoText_TextChanged;
             // 
             // label7
             // 

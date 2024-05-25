@@ -50,7 +50,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             bookYear.Size = new Size(41, 23);
             bookYear.TabIndex = 19;
             bookYear.Text = "2018";
-            //bookYear.Click += bookYear_Click;
             // 
             // bookPic
             // 
@@ -118,7 +117,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             availLabel.Text = "DETAILS";
             availLabel.TextColor = Color.FromArgb(255, 251, 235);
             availLabel.UseVisualStyleBackColor = false;
-            availLabel.Click += detailsbtn_Click;
+            availLabel.Click += borrowBtn_Click;
             // 
             // numericUpDown2
             // 

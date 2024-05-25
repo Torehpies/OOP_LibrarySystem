@@ -18,8 +18,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         int availableCopies;
         int totalCopies;
         int booksToborrow;
+        string imagePath;
+        Image icon;
 
-        public Books(string title, string isbn, string author, string category, string publisher, string published)
+        public Books(string title, string isbn, string author, string category, string publisher, string published, int aCopies)
         {
             this.title = title;
             this.isbn = isbn;
@@ -28,12 +30,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             this.publisher = publisher;
             this.published = published;
             
-        }
-
-        public Books(string title, string published)
-        {
-            this.title = title;
-            this.published = published; 
         }
 
         public Books(string title, string isbn, string author, string category, string publisher, string published, string ImagePath)
@@ -60,19 +56,41 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             this.booksToborrow = booksToborrow;
         }
 
-        Image icon;
-        public Books(string title, string isbn, string author, string category, string publisher, string published, Image ImagePath)
+        
+        public Books(string Title, string ISBN, string Author, string Category, string Publisher, string Year, int aCopies, int tCopies, Image icon)
         {
             this.title = title;
-            this.isbn = isbn;
-            this.author = author;
-            this.category = category;
-            this.publisher = publisher;
-            this.published = published;
-            this.icon = ImagePath;
+            this.isbn = ISBN;
+            this.author = Author;
+            this.category = Category;
+            this.publisher = Publisher;
+            this.published = Year;
+            this.availableCopies = aCopies;
+            this.totalCopies = tCopies;
+            this.icon = icon;
+
         }
 
-        
+        public Books(string Title, string ISBN, string Author, string Category, string Publisher, string Year, int tCopies, Image icon)
+        {
+            this.title = title;
+            this.isbn = ISBN;
+            this.author = Author;
+            this.category = Category;
+            this.publisher = Publisher;
+            this.published = Year;
+            this.totalCopies = tCopies;
+            this.icon = icon;
+
+        }
+
+
+
+
+
+
+
+
 
         public string Title { get { return title; } }
         public string ISBN { get { return isbn; } }
@@ -84,5 +102,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         public int TotalCopies { get { return totalCopies; } }
         public int BooksToborrow { get { return booksToborrow; } }
         public Image Icon { get { return icon; } }
+        public string ImagePath { get { return imagePath; } }
     }
 }

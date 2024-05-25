@@ -103,6 +103,26 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap edit_icon {
+            get {
+                object obj = ResourceManager.GetObject("edit-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("edit-icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap how_to_write_a_lot {
             get {
                 object obj = ResourceManager.GetObject("how to write a lot", resourceCulture);
@@ -176,6 +196,26 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Properties {
         internal static System.Drawing.Bitmap orientalism {
             get {
                 object obj = ResourceManager.GetObject("orientalism", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plus_icon {
+            get {
+                object obj = ResourceManager.GetObject("plus-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plus_icon__1_ {
+            get {
+                object obj = ResourceManager.GetObject("plus-icon (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

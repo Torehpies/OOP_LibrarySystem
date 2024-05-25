@@ -30,13 +30,13 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         Image icon;
 
         string date;
-        public BookDetails(string title, string date)
+        public BookDetails(string title, string date, Image icon)
         {
             InitializeComponent();
             loadDetails(title, isbn, author, category, publisher, published, icon);
         }
 
-        public BookDetails(string title, string isbn, string author, string category, string publisher, string published, int availableCopies, int totalCopies)
+        public BookDetails(string title, string isbn, string author, string category, string publisher, string published, int availableCopies, int totalCopies, Image icon)
         {
             InitializeComponent();
             this.title = title;
@@ -47,6 +47,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             this.published = published;
             this.avail = availableCopies;
             this.total = totalCopies;
+
+            loadDetails(title, isbn, author, category, publisher, published, icon);
         }
 
         // Edit constructor
@@ -58,6 +60,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             loadDetails(book.Title, book.ISBN, book.Author, book.Category, book.Publisher, book.Published, book.Icon);
             BorrowButton.Text = "Save Changes";
 
+
             // Make labels to textboxes
             labelToTextbox(titleLabel);
             labelToTextbox(isbn10Label);
@@ -65,6 +68,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             labelToTextbox(categoryLabel);
             labelToTextbox(publisherLabel);
             labelToTextbox(publishedLabel);
+            labelToTextbox(availablecopies);
+            labelToTextbox(totalcopies);
+            
+
+
         }
 
         // Original information for insertion into database
@@ -86,9 +94,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             categoryLabel.Text = category;
             publisherLabel.Text = publisher;
             publishedLabel.Text = published;
-
-
-
             picture.Image = icon;
         }
 
@@ -97,25 +102,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             populateDetails();
         }
 
-        public void populateDetails()
-        {
-            titleLabel.Text = "Title: " + title;
-            isbn10Label.Text = "ISBN: " + isbn;
-            authorLabel.Text = "Author: " + author;
-            categoryLabel.Text = "Category: " + category;
-            publisherLabel.Text = "Publisher: " + publisher;
-            publishedLabel.Text = "Year: " + published;
-            availablecopies.Text = "Available Copies: " + avail + " of " + total;
-            borrownumber.Maximum = avail;
-
-            if (avail <= 0)
-            {
-                BorrowButton.Enabled = false;
-                BorrowButton.BackColor = Color.White;
-
-            }
-
-        }
 
         public void populateDetails()
         {
@@ -125,27 +111,31 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             categoryLabel.Text = "Category: " + category;
             publisherLabel.Text = "Publisher: " + publisher;
             publishedLabel.Text = "Year: " + published;
-            availablecopies.Text = "Available Copies: " + avail + " of " + total;
+            availablecopies.Text = avail.ToString();
+            totalcopies.Text = total.ToString();
             borrownumber.Maximum = avail;
 
-            if (avail <= 0)
+            if (avail <= 0 && editBook == null)
             {
                 BorrowButton.Enabled = false;
                 BorrowButton.BackColor = Color.White;
 
             }
-            
+
         }
 
         private void exitButton_Click(object sender, EventArgs e)
         {
             Close();
-
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
+
+        static Dictionary<string, int> checkOutList = new Dictionary<string, int>();
+        public static List<Books> getCheckout
+        {
+            get { return checkout; }
+            set { checkout = value; }
+        }
+
 
         Image newIcon;
         private void picture_Click(object sender, EventArgs e)
@@ -174,12 +164,14 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
         }
 
-        static Dictionary<string, int> checkOutList = new Dictionary<string, int>();
+
         private static List<string> bookTitles = new List<string>();
         private static List<Books> checkout = new List<Books>();
 
         private void BorrowButton_Click(object sender, EventArgs e)
         {
+            BorrowButton.Enabled = true;
+
             if (editBook != null)
             {
 
@@ -190,7 +182,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 };
 
                 // Check kung may empty na fields
-                if (titleLabel.Text.Length <= 0 || authorLabel.Text.Length <= 0 || isbn10Label.Text.Length <= 0 || categoryLabel.Text.Length <= 0 || categoryLabel.Text.Length <= 0 || publisherLabel.Text.Length <= 0 || publishedLabel.Text.Length <= 0)
+                if (titleLabel.Text.Length <= 0 || authorLabel.Text.Length <= 0 || isbn10Label.Text.Length <= 0 || categoryLabel.Text.Length <= 0 || categoryLabel.Text.Length <= 0 || publisherLabel.Text.Length <= 0 || publishedLabel.Text.Length <= 0 || availablecopies.Text.Length <= 0 || totalcopies.Text.Length <= 0)
+
                 {
                     MessageBox.Show("Make sure that the fields are not empty!");
                     return;
@@ -198,18 +191,19 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
                 if (newIcon != null)
                 {
-                    Books bookToAdd = new Books(title, isbn, author, category, publisher, published);
+                    
+                    Books bookToAdd = new Books(title, isbn, author, category, publisher, published, Convert.ToInt32(avail), Convert.ToInt32(total), icon);
                     string path = SaveImageInResourceFolder(bookToAdd, newIcon);
 
-                    string[] columnsToUpdate = { "title", "author", "isbn", "category", "publisher", "published", "picturePath" };
-                    string[] newValues = { titleLabel.Text, authorLabel.Text, isbn10Label.Text, categoryLabel.Text, publisherLabel.Text, publishedLabel.Text, path };
+                    string[] columnsToUpdate = { "title", "author", "isbn", "category", "publisher", "published", "totalCopies", "availableCopies", "picturePath" };
+                    string[] newValues = { titleLabel.Text, authorLabel.Text, isbn10Label.Text, categoryLabel.Text, publisherLabel.Text, totalcopies.Text, availablecopies.Text, publishedLabel.Text, path };
                     bookCRUD.UpdateInfos(columnsToUpdate, newValues, "isbn", originalISBN);
                     newIcon.Dispose();
                 }
                 else
                 {
-                    string[] columnsToUpdate = { "title", "author", "isbn", "category", "publisher", "published" };
-                    string[] newValues = { titleLabel.Text, authorLabel.Text, isbn10Label.Text, categoryLabel.Text, publisherLabel.Text, publishedLabel.Text };
+                    string[] columnsToUpdate = { "title", "author", "isbn", "category", "publisher", "published", "totalCopies", "availableCopies" };
+                    string[] newValues = { titleLabel.Text, authorLabel.Text, isbn10Label.Text, categoryLabel.Text, publisherLabel.Text, publishedLabel.Text, totalcopies.Text, availablecopies.Text, };
                     bookCRUD.UpdateInfos(columnsToUpdate, newValues, "isbn", originalISBN);
 
                 }
@@ -219,46 +213,49 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
 
             }
+
+
             else
             {
                 //BookContainer addBooks = new BookContainer();
                 //addBooks.addBook(title, isbn, author, category, publisher, published, icon);
-                
-                    this.booksToBorrow = Convert.ToInt32(borrownumber.Value);
-                    if (booksToBorrow <= 0)
-                    {
-                        MessageBox.Show("Invalid amount");
-                        return;
-                    }
 
-                    Books addBook = new Books(title, isbn, author, category, publisher, published, avail, total, Convert.ToInt32(borrownumber.Value));
+                this.booksToBorrow = Convert.ToInt32(borrownumber.Value);
+                if (booksToBorrow <= 0)
+                {
+                    MessageBox.Show("Invalid amount");
+                    return;
+                }
 
-
-                    BookContainer book = new BookContainer();
-
-                    book.Title = title;
-                    book.ISBN = isbn;
-                    book.Author = author;
-                    book.Publisher = publisher;
-                    book.Year = published;
-                    book.Category = category;
+                Books addBook = new Books(title, isbn, author, category, publisher, published, avail, total, Convert.ToInt32(borrownumber.Value));
 
 
-                    book.aCopies = avail;
-                    book.BorrowCount = Convert.ToInt32(borrownumber.Value);
+                BookContainer book = new BookContainer();
+
+                book.Title = title;
+                book.ISBN = isbn;
+                book.Author = author;
+                book.Publisher = publisher;
+                book.Year = published;
+                book.Category = category;
 
 
-                    bookTitles.Add(title);
-                    checkout.Add(addBook);
-                    checkOutList[title] = avail;
+                book.aCopies = avail;
+                book.BorrowCount = Convert.ToInt32(borrownumber.Value);
+                book.icon = icon;
+
+
+                bookTitles.Add(title);
+                checkout.Add(addBook);
+                //checkOutList[title] = avail;
 
 
 
 
 
-                    MessageBox.Show($"Bookname : `{title}` borrowed {booksToBorrow} books is added to checkout");
-                    this.Close();
-                
+                MessageBox.Show($"Bookname : `{title}` borrowed {booksToBorrow} books is added to checkout");
+                this.Close();
+
 
             }
 
@@ -363,6 +360,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             if (editBook != null)
             {
                 labelToTextbox(isbn10Label);
+                
 
             }
         }
@@ -439,6 +437,27 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void available_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void totalcopies_Click(object sender, EventArgs e)
+        {
+            if (editBook != null)
+            {
+                labelToTextbox(totalcopies);
+            }
+        }
+
+        private void availablecopies_Click(object sender, EventArgs e)
+        {
+            if (editBook != null)
+            {
+                labelToTextbox(availablecopies);
+            }
         }
     }
 }

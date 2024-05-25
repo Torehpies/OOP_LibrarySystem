@@ -84,7 +84,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                                 listItems[i].Category = row["category"].ToString();
                                 listItems[i].Publisher = row["publisher"].ToString();
                                 listItems[i].Year = row["published"].ToString();
-                                listItems[i].TotalCopies = Convert.ToInt32(row["totalCopies"]);
+                                //listItems[i].TotalCopies = Convert.ToInt32(row["totalCopies"]);
                                 listItems[i].aCopies = Convert.ToInt32(row["availableCopies"]);
                                 string imagePath = resourceFolderPath + '\\' + row["picturePath"].ToString();
                                 listItems[i].icon = Image.FromFile(imagePath);
@@ -138,7 +138,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                                 listItems[i].Category = row["category"].ToString();
                                 listItems[i].Publisher = row["publisher"].ToString();
                                 listItems[i].Year = row["published"].ToString();
-                                listItems[i].TotalCopies = Convert.ToInt32(row["totalCopies"]);
+                                //listItems[i].TotalCopies = Convert.ToInt32(row["totalCopies"]);
                                 listItems[i].aCopies = Convert.ToInt32(row["availableCopies"]);
                                 string imagePath = resourceFolderPath + '\\' + row["picturePath"].ToString();
                                 listItems[i].icon = Image.FromFile(imagePath);
@@ -196,7 +196,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
             
             Checkout checkout = new Checkout();
-            checkout.ShowDialog();
+            //checkout.ShowDialog();
         }
 
         public void refresh()

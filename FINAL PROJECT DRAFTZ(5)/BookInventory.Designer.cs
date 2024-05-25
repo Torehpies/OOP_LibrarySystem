@@ -28,22 +28,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         /// </summary>
         private void InitializeComponent()
         {
-            AddBookBtn = new Button();
             libraryeditpanel = new Panel();
             addBookDashboard1 = new Controls.AddBookDashboard();
+            AddBookBtn = new CustomControls.RJControls.CustomButton();
             libraryeditpanel.SuspendLayout();
             SuspendLayout();
-            // 
-            // AddBookBtn
-            // 
-            AddBookBtn.BackColor = Color.MistyRose;
-            AddBookBtn.Location = new Point(977, 552);
-            AddBookBtn.Name = "AddBookBtn";
-            AddBookBtn.Size = new Size(170, 47);
-            AddBookBtn.TabIndex = 1;
-            AddBookBtn.Text = "ADD BOOK";
-            AddBookBtn.UseVisualStyleBackColor = false;
-            AddBookBtn.Click += button1_Click_1;
             // 
             // libraryeditpanel
             // 
@@ -62,6 +51,29 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             addBookDashboard1.TabIndex = 2;
             addBookDashboard1.Load += addBookDashboard1_Load;
             // 
+            // AddBookBtn
+            // 
+            AddBookBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            AddBookBtn.BackColor = Color.FromArgb(34, 34, 59);
+            AddBookBtn.BackgroundColor = Color.FromArgb(34, 34, 59);
+            AddBookBtn.BorderColor = Color.PaleVioletRed;
+            AddBookBtn.BorderRadius = 38;
+            AddBookBtn.BorderSize = 0;
+            AddBookBtn.Cursor = Cursors.Hand;
+            AddBookBtn.FlatAppearance.BorderColor = Color.Black;
+            AddBookBtn.FlatAppearance.BorderSize = 0;
+            AddBookBtn.FlatStyle = FlatStyle.Flat;
+            AddBookBtn.Font = new Font("Quicksand SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            AddBookBtn.ForeColor = Color.White;
+            AddBookBtn.Image = Properties.Resources.plus_icon__1_;
+            AddBookBtn.Location = new Point(1011, 523);
+            AddBookBtn.Name = "AddBookBtn";
+            AddBookBtn.Size = new Size(76, 76);
+            AddBookBtn.TabIndex = 9;
+            AddBookBtn.TextColor = Color.White;
+            AddBookBtn.UseVisualStyleBackColor = false;
+            AddBookBtn.Click += button1_Click_1;
+            // 
             // BookInventory
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -77,8 +89,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         }
 
         #endregion
-        private Button AddBookBtn;
         private Panel libraryeditpanel;
         private Controls.AddBookDashboard addBookDashboard1;
+        private CustomControls.RJControls.CustomButton AddBookBtn;
     }
 }

@@ -17,8 +17,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
     public partial class BookContainer : UserControl
     {
-        Book DetailsData;
-        BookData BookDataInstance = BookData.Instance;
+        
         public event EventHandler ButtonClick;
         private Library libraryForm;
         private Checkout checkoutForm;
@@ -51,8 +50,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         {
             InitializeComponent();
             this.libraryEditForm = parentForm;
-            detailsbtn.Text = "Remove";
+            //detailsbtn.Text = "Remove";
             addbtn.Text = "Edit";
+            numericUpDown2.Visible = false;
+            availLabel.Text = "Remove";
         }
 
         public BookContainer()
@@ -67,9 +68,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         {
             if (this.libraryForm != null)
             {
-                MessageBox.Show($"The details for this book {Title}");
-                BookDetails bookDetails = new BookDetails(Title, ISBN, Author, Category, Publisher, Year, icon );
-                bookDetails.Show();
+                return;
 
             }
             else if (this.checkoutForm != null)
@@ -82,23 +81,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         }
 
-        public void addBook(string Title, string ISBN, string Author, string Category, string Publisher, string Year, Image icon)
-        {
-            Books addBook = new Books(Title, ISBN, Author, Category, Publisher, Year, icon);
-
-            MessageBox.Show($"Bookname: `{Title}` {availCopies} is added to checkout");
-
-
-            bookTitles.Add(Title);
-            checkout.Add(addBook);
-            checkOutList[Title] = availCopies;
-        }
-
-        private void detailsbtn_Click(object sender, EventArgs e)
-        {
-            
-
-        }
+        
 
         static Dictionary<string, int> checkOutList = new Dictionary<string, int>();
 
@@ -107,6 +90,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             
             if (this.libraryForm != null)
             {
+                /*
                 Books addBook = new Books(Title, Year);
 
                 MessageBox.Show($"Bookname: `{Title}` {availCopies} is added to checkout");
@@ -115,11 +99,15 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 bookTitles.Add(Title);
                 checkout.Add(addBook);
                 checkOutList[Title] = availCopies;
+                */
+
+                BookDetails bookDetails = new BookDetails(Title, ISBN, Author, Category, Publisher, Year, aCopies, tCopies, icon);
+                bookDetails.Show();
 
             }
             else if (this.checkoutForm != null)
             {
-                Books addBook = new Books(Title, ISBN, Author, Category, Publisher, Year, icon);
+                Books addBook = new Books(Title, ISBN, Author, Category, Publisher, Year, aCopies, tCopies, icon);
                 MessageBox.Show($"Bookname: `{Title}` {availCopies} is added to checkout");
 
 
@@ -129,7 +117,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
             else
             {
-                Books addBook = new Books(Title, ISBN, Author, Category, Publisher, Year, icon);
+                Books addBook = new Books(Title, ISBN, Author, Category, Publisher, Year, aCopies, tCopies, icon);
                 BookDetails bookDetails = new BookDetails(addBook);
                 bookDetails.Show();
             }
@@ -140,17 +128,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             get { return checkOutList; }
         }
 
-        public void addBook(string Title, string ISBN, string Author, string Category, string Publisher, string Year, int aCopies, int tCopies, int booksToBorrow)
-        {
-            Books addBook = new Books(Title, ISBN, Author, Category, Publisher, Year, aCopies, tCopies, booksToBorrow);
-            //MessageBox.Show($"Bookname: `{Title}` {availCopies} is added to checkout");
-
-
-            bookTitles.Add(Title);
-            checkout.Add(addBook);
-            checkOutList[Title] = availCopies;
-
-        }
+        
 
         
 
@@ -169,12 +147,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private int availCopies;
         private int totalCopies;
         private int booksToBorrow;
-
-       
-        public Dictionary<string, int> getdictList
-        {
-            get { return checkOutList; }
-        }
+        private string iconPath;
+      
 
         [Category("Custom Props")]
         public int BorrowCount
@@ -213,13 +187,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
                 
             }
-        }
-
-        [Category("Custom Props")]
-        public string Author
-        {
-            get { return _author; }
-            set { _author = value; }
         }
 
         [Category("Custom Props")]
@@ -276,6 +243,13 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         {
             get { return _icon; }
             set { _icon = value; bookPic.Image = value; }
+        }
+
+        [Category("Custom Props")]
+        public string IconPath
+        {
+            get { return iconPath; }
+            set { iconPath = value;; }
         }
 
         #endregion
