@@ -43,6 +43,8 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            borrownumber = new NumericUpDown();
+            availablecopies = new Label();
             statusLabel = new Label();
             exitButton = new Button();
             toolTip1 = new ToolTip(components);
@@ -50,6 +52,7 @@
             toolTip3 = new ToolTip(components);
             ((System.ComponentModel.ISupportInitialize)picture).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)borrownumber).BeginInit();
             SuspendLayout();
             // 
             // picture
@@ -84,7 +87,7 @@
             BorrowButton.Name = "BorrowButton";
             BorrowButton.Size = new Size(225, 56);
             BorrowButton.TabIndex = 7;
-            BorrowButton.Text = "BORROW";
+            BorrowButton.Text = "ADD TO CHECKOUT";
             BorrowButton.UseVisualStyleBackColor = false;
             BorrowButton.Click += BorrowButton_Click;
             // 
@@ -120,6 +123,16 @@
             categoryLabel.TabIndex = 19;
             categoryLabel.Text = "Academic";
             categoryLabel.Click += categoryLabel_Click;
+            // 
+            // isbn13Label
+            // 
+            isbn13Label.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            isbn13Label.ForeColor = Color.FromArgb(73, 85, 121);
+            isbn13Label.Location = new Point(244, 129);
+            isbn13Label.Name = "isbn13Label";
+            isbn13Label.Size = new Size(303, 17);
+            isbn13Label.TabIndex = 15;
+            isbn13Label.Text = "ISBN-13:  9781433829789";
             // 
             // authorLabel
             // 
@@ -224,6 +237,28 @@
             label1.TabIndex = 23;
             label1.Text = "ISBN: ";
             // 
+            // borrownumber
+            // 
+            borrownumber.BorderStyle = BorderStyle.None;
+            borrownumber.Location = new Point(234, 341);
+            borrownumber.Name = "borrownumber";
+            borrownumber.Size = new Size(47, 19);
+            borrownumber.TabIndex = 24;
+            borrownumber.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            borrownumber.Visible = false;
+            borrownumber.ValueChanged += numericUpDown1_ValueChanged;
+            // 
+            // availablecopies
+            // 
+            availablecopies.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            availablecopies.ForeColor = Color.FromArgb(73, 85, 121);
+            availablecopies.Location = new Point(244, 285);
+            availablecopies.Name = "availablecopies";
+            availablecopies.Size = new Size(303, 26);
+            availablecopies.TabIndex = 23;
+            availablecopies.Text = "AVAILABLE COPIES: 0 ";
+            availablecopies.Click += label1_Click;
+            // 
             // statusLabel
             // 
             statusLabel.BackColor = Color.Ivory;
@@ -265,9 +300,11 @@
             Padding = new Padding(20);
             StartPosition = FormStartPosition.CenterScreen;
             TopMost = true;
+            Load += populateDetails;
             ((System.ComponentModel.ISupportInitialize)picture).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)borrownumber).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -293,5 +330,7 @@
         private ToolTip toolTip1;
         private ToolTip toolTip2;
         private ToolTip toolTip3;
+        private Label availablecopies;
+        private NumericUpDown borrownumber;
     }
 }

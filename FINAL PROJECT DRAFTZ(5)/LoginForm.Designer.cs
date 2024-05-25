@@ -40,6 +40,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             containerPanel = new Panel();
+            button2 = new Button();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -162,12 +164,44 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             containerPanel.TabIndex = 10;
             containerPanel.Visible = false;
             // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(242, 233, 228);
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Quicksand", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.ForeColor = Color.FromArgb(34, 34, 59);
+            button2.Location = new Point(938, 11);
+            button2.Name = "button2";
+            button2.Size = new Size(25, 30);
+            button2.TabIndex = 12;
+            button2.Text = "X";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(242, 233, 228);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Quicksand", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = Color.FromArgb(34, 34, 59);
+            button1.Location = new Point(910, 9);
+            button1.Name = "button1";
+            button1.Size = new Size(25, 30);
+            button1.TabIndex = 11;
+            button1.Text = "_";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(242, 233, 228);
             ClientSize = new Size(984, 561);
+            Controls.Add(button2);
+            Controls.Add(button1);
             Controls.Add(containerPanel);
             Controls.Add(pictureBox2);
             Controls.Add(label2);
@@ -202,5 +236,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private Panel containerPanel;
+        private Button button2;
+        private Button button1;
     }
 }

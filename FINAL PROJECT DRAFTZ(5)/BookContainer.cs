@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,22 +25,25 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private LibraryEdit libraryEditForm;
         
 
-
-        public bool ShowAddButton { get; set; } = true;
-        public bool ShowRemoveButton { get; set; } = true;
-
+        
+        
         public BookContainer(Library parentForm)
         {
             InitializeComponent();
             this.libraryForm = parentForm;
-            detailsbtn.Text = "Details";
+            //detailsbtn.Text = "Details";
+            numericUpDown2.Visible = false; 
         }
-
+        
+        private NumericUpDown numericUpDown1;
         public BookContainer(Checkout parentForm)
         {
             InitializeComponent();
             this.checkoutForm = parentForm;
-            detailsbtn.Text = "Remove";
+            availLabel.Text = "Remove";
+
+            
+            numericUpDown2.Visible = true;
             addbtn.Visible = false;
         }
 
@@ -58,11 +62,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         }
 
 
-        private void InitializeButtons()
-        {
-            addbtn.Visible = ShowAddButton;
-            detailsbtn.Visible = ShowRemoveButton;
-        }
 
         private void borrowBtn_Click(object sender, EventArgs e)
         {
@@ -95,11 +94,15 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             checkOutList[Title] = availCopies;
         }
 
+        private void detailsbtn_Click(object sender, EventArgs e)
+        {
+            
 
-
+        }
 
         static Dictionary<string, int> checkOutList = new Dictionary<string, int>();
-        private void button1_Click(object sender, EventArgs e)
+
+        private void addbtn_Click(object sender, EventArgs e)
         {
             
             if (this.libraryForm != null)
@@ -137,39 +140,61 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             get { return checkOutList; }
         }
 
-        private void bookTitle_Click(object sender, EventArgs e)
+        public void addBook(string Title, string ISBN, string Author, string Category, string Publisher, string Year, int aCopies, int tCopies, int booksToBorrow)
         {
+            Books addBook = new Books(Title, ISBN, Author, Category, Publisher, Year, aCopies, tCopies, booksToBorrow);
+            //MessageBox.Show($"Bookname: `{Title}` {availCopies} is added to checkout");
+
+
+            bookTitles.Add(Title);
+            checkout.Add(addBook);
+            checkOutList[Title] = availCopies;
 
         }
 
-
+        
 
         #region Properties
 
+        private int bookid;
         private string _title;
-        private string _year;
         private string _author;
         private string _category;
         private string _publisher;
+        private string _year;
         private Image _icon;
         private string _ISBN;
         private static List<string> bookTitles = new List<string>();
         private static List<Books> checkout = new List<Books>();
         private int availCopies;
         private int totalCopies;
+        private int booksToBorrow;
 
-        [Category("Custom Props")]
-        public string Publisher
+       
+        public Dictionary<string, int> getdictList
         {
-            get { return _publisher; }
-            set { _publisher = value; }
+            get { return checkOutList; }
         }
 
         [Category("Custom Props")]
-        public string Category
+        public int BorrowCount
         {
-            get { return _category; }
-            set { _category = value; }
+            get { return booksToBorrow; }
+            set { booksToBorrow = value;}
+        }
+
+        [Category("Custom Props")]
+        public int BookId
+        {
+            get { return bookid; }
+            set { bookid = value; }
+        }
+
+        [Category("Custom Props")]
+        public int tCopies
+        {
+            get { return totalCopies; }
+            set { totalCopies = value; }
         }
 
         [Category("Custom Props")]
@@ -183,14 +208,32 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         public int aCopies
         {
             get { return availCopies; }
-            set { availCopies = value; }
+            set { availCopies = value; 
+                if (libraryForm != null) availLabel.Text = availCopies + " left";
+
+                
+            }
         }
 
         [Category("Custom Props")]
-        public int TotalCopies
+        public string Author
         {
-            get { return totalCopies; }
-            set { totalCopies = value; }
+            get { return _author; }
+            set { _author = value; }
+        }
+
+        [Category("Custom Props")]
+        public string Category
+        {
+            get { return _category; }
+            set { _category = value; }
+        }
+
+        [Category("Custom Props")]
+        public string Publisher
+        {
+            get { return _publisher; }
+            set { _publisher = value; }
         }
 
         [Category("Custom Props")]
@@ -241,14 +284,29 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private void MyUserControl_MouseEnter(object sender, EventArgs e)
         {
             // Set the visibility of the button to true when the mouse enters the user control
-            detailsbtn.Visible = true;
+            //detailsbtn.Visible = true;
         }
 
         // Event handler for MouseLeave
         private void MyUserControl_MouseLeave(object sender, EventArgs e)
         {
             // Set the visibility of the button to false when the mouse leaves the user control
-            detailsbtn.Visible = false;
+            //detailsbtn.Visible = false;
+        }
+
+        private void bookYear_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void bookPic_Click(object sender, EventArgs e)

@@ -1,4 +1,11 @@
 ﻿using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace FINAL_PROJECT_DRAFTZ_5_
 {
@@ -14,8 +21,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             
         }
 
-        
-        
+
+
         public void removeCard(BookContainer userControl)
         {
             flowLayoutPanel1.Controls.Remove(userControl);
@@ -25,6 +32,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         {
             populateItems();
         }
+
+        
 
 
         private void label1_Click(object sender, EventArgs e)
@@ -37,11 +46,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         }
 
-        
 
-
-
-
+        public void refresh()
+        {
+            populateItems();
+            
+        }
 
 
 
@@ -63,16 +73,17 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 {
                     BookContainer[] listItems = new BookContainer[data.Rows.Count];
 
-                    int index = 0;
+                    
 
                     for (int i = 0; i < 1; i++)
                     {
                         foreach (DataRow row in data.Rows)
                         {
-                            if (Convert.ToInt32(row["availableCopies"]) > 0)
+                            if (Convert.ToInt32(row["availableCopies"]) >= 0)
                             {
                                 listItems[i] = new BookContainer(this);
 
+                                listItems[i].BookId = Convert.ToInt32(row["id"]);
                                 listItems[i].Title = row["title"].ToString();
                                 listItems[i].Author = row["author"].ToString();
                                 listItems[i].ISBN = row["isbn"].ToString();
@@ -81,22 +92,14 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                                 listItems[i].Year = row["published"].ToString();
                                 listItems[i].TotalCopies = Convert.ToInt32(row["totalCopies"]);
                                 listItems[i].aCopies = Convert.ToInt32(row["availableCopies"]);
-                                string imagePath = resourceFolderPath + '\\' + row["picturePath"].ToString();
-                                listItems[i].icon = Image.FromFile(imagePath);
+                                listItems[i].tCopies = Convert.ToInt32(row["totalCopies"]);
 
                                 flowLayoutPanel1.Controls.Add(listItems[i]);
                             }
-                            
-
-
-
-
                         }
                     }
                 }
             }
-
-
         }
 
         private void populateItems(string search)
@@ -120,10 +123,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                     {
                         foreach (DataRow row in data.Rows)
                         {
-                            if (Convert.ToInt32(row["availableCopies"]) > 0)
+                            if (Convert.ToInt32(row["availableCopies"]) >= 0)
                             {
                                 listItems[i] = new BookContainer(this);
 
+                                listItems[i].BookId = Convert.ToInt32(row["id"]);
                                 listItems[i].Title = row["title"].ToString();
                                 listItems[i].Author = row["author"].ToString();
                                 listItems[i].ISBN = row["isbn"].ToString();
@@ -132,15 +136,14 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                                 listItems[i].Year = row["published"].ToString();
                                 listItems[i].TotalCopies = Convert.ToInt32(row["totalCopies"]);
                                 listItems[i].aCopies = Convert.ToInt32(row["availableCopies"]);
-                                string imagePath = resourceFolderPath + "'\'" + row["picturePath"].ToString();
-                                listItems[i].icon = Image.FromFile(imagePath);
+                                listItems[i].tCopies = Convert.ToInt32(row["totalCopies"]);
 
                                 flowLayoutPanel1.Controls.Add(listItems[i]);
                             }
-                            
 
 
-                            flowLayoutPanel1.Controls.Add(listItems[i]);
+
+
 
 
 
@@ -166,34 +169,46 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             {
                 populateItems(searchbox);
             }
-
-
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            populateItems();
-        }
+        
 
 
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
-            BookContainer bookContainer = new BookContainer(this);
+            // Give checkout pane
+
+            /*
             if (bookContainer.getCheckout.Count == 0)
             {
                 MessageBox.Show("List is empty");
                 return;
             }
-            
+            */
+
+            BookContainer bookContainer = new BookContainer(checkout1);
             Checkout checkout = new Checkout();
-            checkout.ShowDialog();
+            checkout.Visible = true;
+            checkout1.Visible = !checkout1.Visible;
+            if (checkout1.Visible)
+            {
+                checkout1.refresh();
+            }
+            
+
         }
 
-        public void refresh()
+        private void closeCheckout()
         {
-            this.Refresh();
+
+        }
+
+        
+
+        private void checkout1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

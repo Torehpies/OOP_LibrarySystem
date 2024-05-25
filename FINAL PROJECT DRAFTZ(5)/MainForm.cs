@@ -46,23 +46,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-
-
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
         private void library_btn_Click(object sender, EventArgs e)
         {
 
@@ -146,6 +129,27 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         {
             Application.Restart();
         }
-   
+
+        private void navigation_pnl_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Minimized;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

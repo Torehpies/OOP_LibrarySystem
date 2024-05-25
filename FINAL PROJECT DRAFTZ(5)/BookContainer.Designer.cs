@@ -1,4 +1,6 @@
-﻿namespace FINAL_PROJECT_DRAFTZ_5_
+﻿using CustomControls.RJControls;
+
+namespace FINAL_PROJECT_DRAFTZ_5_
 {
     partial class BookContainer
     {
@@ -20,6 +22,7 @@
             base.Dispose(disposing);
         }
 
+
         #region Component Designer generated code
 
         /// <summary> 
@@ -31,25 +34,28 @@
             bookYear = new Label();
             bookPic = new PictureBox();
             bookTitle = new Label();
-            detailsbtn = new Button();
-            addbtn = new Button();
+            addbtn = new CustomButton();
+            availLabel = new CustomButton();
+            numericUpDown2 = new NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)bookPic).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
             SuspendLayout();
             // 
             // bookYear
             // 
             bookYear.AutoSize = true;
-            bookYear.Font = new Font("Franklin Gothic Medium", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            bookYear.Location = new Point(75, 189);
+            bookYear.Font = new Font("Quicksand Medium", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            bookYear.Location = new Point(68, 209);
             bookYear.Name = "bookYear";
-            bookYear.Size = new Size(45, 20);
+            bookYear.Size = new Size(41, 23);
             bookYear.TabIndex = 19;
             bookYear.Text = "2018";
+            //bookYear.Click += bookYear_Click;
             // 
             // bookPic
             // 
             bookPic.Image = Properties.Resources.how_to_write_a_lot;
-            bookPic.Location = new Point(38, 12);
+            bookPic.Location = new Point(23, 12);
             bookPic.Name = "bookPic";
             bookPic.Size = new Size(126, 153);
             bookPic.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -60,58 +66,85 @@
             // bookTitle
             // 
             bookTitle.AutoEllipsis = true;
-            bookTitle.Font = new Font("Franklin Gothic Demi Cond", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            bookTitle.Font = new Font("Quicksand SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             bookTitle.ForeColor = Color.FromArgb(37, 23, 73);
-            bookTitle.Location = new Point(38, 168);
+            bookTitle.Location = new Point(0, 168);
             bookTitle.Name = "bookTitle";
-            bookTitle.Size = new Size(126, 21);
+            bookTitle.Size = new Size(172, 53);
             bookTitle.TabIndex = 18;
-            bookTitle.Text = "How to Write a Lot";
-            bookTitle.Click += bookTitle_Click;
-            // 
-            // detailsbtn
-            // 
-            detailsbtn.BackColor = Color.FromArgb(38, 49, 89);
-            detailsbtn.Cursor = Cursors.Hand;
-            detailsbtn.FlatStyle = FlatStyle.Flat;
-            detailsbtn.Font = new Font("Franklin Gothic Book", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            detailsbtn.ForeColor = Color.FromArgb(255, 251, 235);
-            detailsbtn.Location = new Point(3, 212);
-            detailsbtn.Name = "detailsbtn";
-            detailsbtn.Size = new Size(88, 64);
-            detailsbtn.TabIndex = 20;
-            detailsbtn.Text = "DETAILS";
-            detailsbtn.UseVisualStyleBackColor = false;
-            detailsbtn.Click += borrowBtn_Click;
+            bookTitle.Text = "How to Write a LotHow to Write a LotHow to Write a Lot";
+            bookTitle.TextAlign = ContentAlignment.TopCenter;
+            bookTitle.UseCompatibleTextRendering = true;
             // 
             // addbtn
             // 
             addbtn.BackColor = Color.FromArgb(38, 49, 89);
+            addbtn.BackgroundColor = Color.FromArgb(38, 49, 89);
+            addbtn.BorderColor = Color.PaleVioletRed;
+            addbtn.BorderRadius = 18;
+            addbtn.BorderSize = 0;
             addbtn.Cursor = Cursors.Hand;
+            addbtn.FlatAppearance.BorderSize = 0;
             addbtn.FlatStyle = FlatStyle.Flat;
-            addbtn.Font = new Font("Franklin Gothic Book", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            addbtn.Font = new Font("Quicksand", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             addbtn.ForeColor = Color.FromArgb(255, 251, 235);
-            addbtn.Location = new Point(97, 212);
+            addbtn.Location = new Point(104, 232);
+            addbtn.Margin = new Padding(0);
             addbtn.Name = "addbtn";
-            addbtn.Size = new Size(92, 64);
+            addbtn.Size = new Size(50, 40);
             addbtn.TabIndex = 21;
             addbtn.Text = "+";
+            addbtn.TextColor = Color.FromArgb(255, 251, 235);
             addbtn.UseVisualStyleBackColor = false;
-            addbtn.Click += button1_Click;
+            addbtn.Click += addbtn_Click;
+            // 
+            // availLabel
+            // 
+            availLabel.BackColor = Color.FromArgb(38, 49, 89);
+            availLabel.BackgroundColor = Color.FromArgb(38, 49, 89);
+            availLabel.BorderColor = Color.PaleVioletRed;
+            availLabel.BorderRadius = 18;
+            availLabel.BorderSize = 0;
+            availLabel.Cursor = Cursors.Hand;
+            availLabel.FlatAppearance.BorderSize = 0;
+            availLabel.FlatStyle = FlatStyle.Flat;
+            availLabel.Font = new Font("Quicksand", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            availLabel.ForeColor = Color.FromArgb(255, 251, 235);
+            availLabel.Location = new Point(18, 232);
+            availLabel.Margin = new Padding(0);
+            availLabel.Name = "availLabel";
+            availLabel.Size = new Size(80, 40);
+            availLabel.TabIndex = 20;
+            availLabel.Text = "DETAILS";
+            availLabel.TextColor = Color.FromArgb(255, 251, 235);
+            availLabel.UseVisualStyleBackColor = false;
+            availLabel.Click += detailsbtn_Click;
+            // 
+            // numericUpDown2
+            // 
+            numericUpDown2.Location = new Point(117, 243);
+            numericUpDown2.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown2.Name = "numericUpDown2";
+            numericUpDown2.Size = new Size(32, 23);
+            numericUpDown2.TabIndex = 22;
+            numericUpDown2.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // BookContainer
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Ivory;
+            Controls.Add(numericUpDown2);
             Controls.Add(addbtn);
-            Controls.Add(detailsbtn);
+            Controls.Add(availLabel);
             Controls.Add(bookYear);
             Controls.Add(bookPic);
             Controls.Add(bookTitle);
+            Margin = new Padding(15, 15, 0, 0);
             Name = "BookContainer";
-            Size = new Size(192, 279);
+            Size = new Size(175, 279);
             ((System.ComponentModel.ISupportInitialize)bookPic).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -121,7 +154,8 @@
         private Label bookYear;
         private PictureBox bookPic;
         private Label bookTitle;
-        private Button detailsbtn;
-        private Button addbtn;
+        private CustomButton addbtn;
+        public NumericUpDown numericUpDown2;
+        public CustomButton availLabel;
     }
 }

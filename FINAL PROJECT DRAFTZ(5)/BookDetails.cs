@@ -6,6 +6,8 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net.NetworkInformation;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,12 +24,29 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         string category;
         string publisher;
         string published;
+        int avail;
+        int total;
+        int booksToBorrow;
         Image icon;
 
-        public BookDetails(string title, string isbn, string author, string category, string publisher, string published, Image icon)
+        string date;
+        public BookDetails(string title, string date)
         {
             InitializeComponent();
             loadDetails(title, isbn, author, category, publisher, published, icon);
+        }
+
+        public BookDetails(string title, string isbn, string author, string category, string publisher, string published, int availableCopies, int totalCopies)
+        {
+            InitializeComponent();
+            this.title = title;
+            this.isbn = isbn;
+            this.author = author;
+            this.category = category;
+            this.publisher = publisher;
+            this.published = published;
+            this.avail = availableCopies;
+            this.total = totalCopies;
         }
 
         // Edit constructor
@@ -73,11 +92,54 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             picture.Image = icon;
         }
 
+        public void populateDetails(object sender, EventArgs e)
+        {
+            populateDetails();
+        }
+
+        public void populateDetails()
+        {
+            titleLabel.Text = "Title: " + title;
+            isbn10Label.Text = "ISBN: " + isbn;
+            authorLabel.Text = "Author: " + author;
+            categoryLabel.Text = "Category: " + category;
+            publisherLabel.Text = "Publisher: " + publisher;
+            publishedLabel.Text = "Year: " + published;
+            availablecopies.Text = "Available Copies: " + avail + " of " + total;
+            borrownumber.Maximum = avail;
+
+            if (avail <= 0)
+            {
+                BorrowButton.Enabled = false;
+                BorrowButton.BackColor = Color.White;
+
+            }
+
+        }
+
+        public void populateDetails()
+        {
+            titleLabel.Text = "Title: " + title;
+            isbn10Label.Text = "ISBN: " + isbn;
+            authorLabel.Text = "Author: " + author;
+            categoryLabel.Text = "Category: " + category;
+            publisherLabel.Text = "Publisher: " + publisher;
+            publishedLabel.Text = "Year: " + published;
+            availablecopies.Text = "Available Copies: " + avail + " of " + total;
+            borrownumber.Maximum = avail;
+
+            if (avail <= 0)
+            {
+                BorrowButton.Enabled = false;
+                BorrowButton.BackColor = Color.White;
+
+            }
+            
+        }
+
         private void exitButton_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
 
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -111,6 +173,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
             }
         }
+
+        static Dictionary<string, int> checkOutList = new Dictionary<string, int>();
+        private static List<string> bookTitles = new List<string>();
+        private static List<Books> checkout = new List<Books>();
 
         private void BorrowButton_Click(object sender, EventArgs e)
         {
@@ -155,8 +221,44 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
             else
             {
-                BookContainer addBooks = new BookContainer();
-                addBooks.addBook(title, isbn, author, category, publisher, published, icon);
+                //BookContainer addBooks = new BookContainer();
+                //addBooks.addBook(title, isbn, author, category, publisher, published, icon);
+                
+                    this.booksToBorrow = Convert.ToInt32(borrownumber.Value);
+                    if (booksToBorrow <= 0)
+                    {
+                        MessageBox.Show("Invalid amount");
+                        return;
+                    }
+
+                    Books addBook = new Books(title, isbn, author, category, publisher, published, avail, total, Convert.ToInt32(borrownumber.Value));
+
+
+                    BookContainer book = new BookContainer();
+
+                    book.Title = title;
+                    book.ISBN = isbn;
+                    book.Author = author;
+                    book.Publisher = publisher;
+                    book.Year = published;
+                    book.Category = category;
+
+
+                    book.aCopies = avail;
+                    book.BorrowCount = Convert.ToInt32(borrownumber.Value);
+
+
+                    bookTitles.Add(title);
+                    checkout.Add(addBook);
+                    checkOutList[title] = avail;
+
+
+
+
+
+                    MessageBox.Show($"Bookname : `{title}` borrowed {booksToBorrow} books is added to checkout");
+                    this.Close();
+                
 
             }
 
@@ -325,6 +427,16 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
 
         }

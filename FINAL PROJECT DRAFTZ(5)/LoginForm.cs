@@ -89,5 +89,21 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             containerPanel.Controls[1].Hide();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Minimized;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
