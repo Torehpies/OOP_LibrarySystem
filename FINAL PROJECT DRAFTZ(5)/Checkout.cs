@@ -21,7 +21,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         {
             InitializeComponent();
             keyValuePairs = getList.getdictList;
-
+            borrowerDetails1.Visible = false;
 
         }
 
@@ -37,7 +37,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             populatecheckout();
         }
 
-       
+
         public void removeCard(BookContainer userControl)
         {
             string titleToRemove = userControl.Title;
@@ -78,13 +78,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
 
 
-        
 
-       
 
-        private void button1_Click(object sender, EventArgs e)
+        private void checkout()
         {
-            if ( checkoutList.Count > 0)
+            if (checkoutList.Count > 0)
             {
                 foreach (var key in keyValuePairs.Keys)
                 {
@@ -101,27 +99,42 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 if (Library.Instance != null)
                 {
                     Library.Instance.populateItems();
-
                 }
-                
 
 
                 //this.Close();
                 booksPanel.Controls.Clear();
                 checkoutList.Clear();
 
-                
 
 
-
-            } else
+            }
+            else
             {
                 MessageBox.Show("Nothing to checkout");
                 //this.Close();
-
-                
             }
-            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (checkoutList.Count <= 0)
+            {
+                MessageBox.Show("Nothing to checkout");
+                return;
+            }
+
+            borrowerDetails1.Visible = true;
+        }
+
+        public Dictionary<string, int> getBookAndQuanity()
+        {
+            return keyValuePairs;
+        }
+
+        private void borrowerDetails1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

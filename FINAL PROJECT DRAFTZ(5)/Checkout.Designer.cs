@@ -31,6 +31,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private void InitializeComponent()
         {
             booksPanel = new FlowLayoutPanel();
+            borrowerDetails1 = new BorrowerDetails();
             checkoutBtn = new CustomButton();
             SuspendLayout();
             // 
@@ -40,6 +41,15 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             booksPanel.Name = "booksPanel";
             booksPanel.Size = new Size(1135, 471);
             booksPanel.TabIndex = 0;
+            // 
+            // borrowerDetails1
+            // 
+            borrowerDetails1.BackColor = Color.FromArgb(242, 233, 228);
+            borrowerDetails1.Location = new Point(404, 84);
+            borrowerDetails1.Name = "borrowerDetails1";
+            borrowerDetails1.Size = new Size(395, 328);
+            borrowerDetails1.TabIndex = 0;
+            borrowerDetails1.Load += borrowerDetails1_Load;
             // 
             // checkoutBtn
             // 
@@ -67,6 +77,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(201, 173, 167);
+            Controls.Add(borrowerDetails1);
             Controls.Add(checkoutBtn);
             Controls.Add(booksPanel);
             Name = "Checkout";
@@ -79,5 +90,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private FlowLayoutPanel booksPanel;
         private CustomButton checkoutBtn;
+        private BorrowerDetails borrowerDetails1;
     }
 }

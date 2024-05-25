@@ -51,5 +51,36 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             confirmBorrowMode();
 
         }
+
+        public Book[] booksToBorrow(Book[] book)
+        {
+            return null;
+        }
+
+        private void confirmButton_Click(object sender, EventArgs e)
+        {
+            if (idTextbox.Texts.Length <= 0)
+            {
+                warningText.Text = "Please input required fields";
+                warningText.Visible = true;
+                return;
+            }
+
+            string studentID = idTextbox.Texts;
+
+
+            Checkout checkout = new Checkout();
+            
+
+
+
+
+           
+
+
+
+
+
+        }
     }
 }

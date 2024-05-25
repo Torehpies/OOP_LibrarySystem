@@ -47,7 +47,7 @@
             textBox1.MouseEnter += textBox1_MouseEnter;
             textBox1.MouseLeave += textBox1_MouseLeave;
             // 
-            // RJTextBox
+            // CustomTextbox
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = SystemColors.Window;

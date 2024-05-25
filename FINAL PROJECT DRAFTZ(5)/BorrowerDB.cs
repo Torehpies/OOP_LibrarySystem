@@ -12,10 +12,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_
     {
         public static bool DoesMemberExists(string id)
         {
+            LoginDatabase.start();
             MySqlCommand cmd = new MySqlCommand("SELECT * FROM members WHERE id = @id", LoginDatabase.SQL_SERVER);
             cmd.Parameters.AddWithValue("@id", id);
 
-            LoginDatabase.start();
+            
             MySqlDataReader reader = cmd.ExecuteReader();
 
             try
@@ -32,11 +33,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         }
         public static Member GetMemberDetails(string id)
         {
+            LoginDatabase.start();
 
             MySqlCommand cmd = new MySqlCommand("SELECT * FROM members WHERE id = @id", LoginDatabase.SQL_SERVER);
             cmd.Parameters.AddWithValue("@id", id);
 
-            LoginDatabase.start();
+            
             MySqlDataReader reader = cmd.ExecuteReader();
 
             try

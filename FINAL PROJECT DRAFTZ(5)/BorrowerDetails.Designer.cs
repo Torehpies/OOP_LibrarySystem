@@ -140,6 +140,7 @@
             confirmButton.Text = "Confirm Checkout";
             confirmButton.TextColor = Color.White;
             confirmButton.UseVisualStyleBackColor = false;
+            confirmButton.Click += confirmButton_Click;
             // 
             // panel1
             // 
