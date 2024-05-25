@@ -21,6 +21,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         {
             panel1 = new Panel();
             panel5 = new Panel();
+            errorMsg = new Label();
             detailslbl = new Label();
             namelbl = new Label();
             panel2 = new RoundedPanel();
@@ -53,6 +54,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // panel5
             // 
             panel5.BackColor = Color.FromArgb(225, 213, 206);
+            panel5.Controls.Add(errorMsg);
             panel5.Controls.Add(detailslbl);
             panel5.Controls.Add(namelbl);
             panel5.Controls.Add(panel2);
@@ -67,6 +69,16 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             panel5.Name = "panel5";
             panel5.Size = new Size(1170, 570);
             panel5.TabIndex = 8;
+            // 
+            // errorMsg
+            // 
+            errorMsg.AutoSize = true;
+            errorMsg.Font = new Font("Quicksand", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            errorMsg.Location = new Point(653, 26);
+            errorMsg.Name = "errorMsg";
+            errorMsg.Size = new Size(53, 24);
+            errorMsg.TabIndex = 10;
+            errorMsg.Text = "label1";
             // 
             // detailslbl
             // 
@@ -245,5 +257,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private RoundedPanel panel2;
         private Label detailslbl;
         private ColumnHeader borrowDate_column;
+        private Label errorMsg;
     }
 }

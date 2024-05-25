@@ -21,18 +21,19 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void enterId_btn_Click(object sender, EventArgs e)
         {
+            errorMsg.Text = ""; // Clear previous error messages
             string id = id_txtbox.Text;
 
             // Validate input
             if (string.IsNullOrWhiteSpace(id))
             {
-                MessageBox.Show("Please enter a borrower ID.");
+                errorMsg.Text = "Please enter a borrower ID.";
                 return;
             }
 
             if (!int.TryParse(id, out _))
             {
-                MessageBox.Show("Please enter a valid borrower ID.");
+                errorMsg.Text = "Please enter a valid borrower ID (numeric).";
                 return;
             }
 
@@ -51,6 +52,15 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             {
                 Bookreturndb.DisplayBorrowerInfo(id, out borrowerName, out details, out borrowedBookCounts, out lastReturn);
 
+                if (string.IsNullOrEmpty(borrowerName))
+                {
+                    errorMsg.Text = "No matching borrower ID found.";
+                    namelbl.Text = "";
+                    detailslbl.Text = "";
+                    bbcountslbl.Text = "";
+                    return;
+                }
+
                 namelbl.Text = borrowerName;
                 detailslbl.Text = details;
                 bbcountslbl.Text = borrowedBookCounts;
@@ -58,7 +68,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error retrieving borrower info: " + ex.Message);
+                errorMsg.Text = "Error retrieving borrower info: " + ex.Message;
             }
         }
 
