@@ -47,7 +47,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             borrowedbookcounts = "";
             lastreturn = "";
 
-            string query = "SELECT `members`.`name`, `members`.`details`, COUNT(`borrowedbooks`.`bookId`) AS `quantity` " +
+            string query = "SELECT `members`.`name`, `members`.`details`, IFNULL(SUM(`borrowedbooks`.`quantity`), 0) AS `quantity` " +
                            "FROM `members` " +
                            "LEFT JOIN `borrowedbooks` ON `borrowedbooks`.`borrowerId` = `members`.`id` " +
                            "AND (`borrowedbooks`.`returnDate` IS NULL OR `borrowedbooks`.`returnDate` = '') " +
@@ -120,14 +120,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
             try
             {
-                // Update the returnDate in the borrowedbooks table using the borrowedBookId
                 string updateQuery = "UPDATE borrowedbooks SET returnDate = @returnDate WHERE id = @borrowedBookId AND returnDate IS NULL";
-
                 using (MySqlCommand updateCommand = new MySqlCommand(updateQuery, SQL_SERVER))
                 {
                     updateCommand.Parameters.AddWithValue("@returnDate", returnDate);
                     updateCommand.Parameters.AddWithValue("@borrowedBookId", borrowedBookId);
-
                     int rowsAffected = updateCommand.ExecuteNonQuery();
 
                     if (rowsAffected == 0)
@@ -218,23 +215,17 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
 
 
-        public static void IncrementAvailableCopies(string title)
+        public static void IncrementAvailableCopies(string title, int quantity)
         {
             start();
 
             try
             {
-                // Get the current available copies
-                int currentAvailableCopies = GetCurrentAvailableCopies(title);
-
-                // Increment available copies by 1
-                int newAvailableCopies = currentAvailableCopies + 1;
-
-                // Update books table with the new available copies
-                string updateQuery = "UPDATE books SET availableCopies = availableCopies + 1 WHERE title = @title";
+                // Increment available copies by the quantity
+                string updateQuery = "UPDATE books SET availableCopies = availableCopies + @quantity WHERE title = @title";
                 using (MySqlCommand command = new MySqlCommand(updateQuery, SQL_SERVER))
                 {
-                    command.Parameters.AddWithValue("@availablecopies", newAvailableCopies);
+                    command.Parameters.AddWithValue("@quantity", quantity);
                     command.Parameters.AddWithValue("@title", title);
                     command.ExecuteNonQuery();
                 }
@@ -267,6 +258,30 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 MessageBox.Show("Error retrieving current available copies: " + ex.Message);
             }
             return 0;
+        }
+
+        public static int GetCurrentTotalBorrowedBooksCount(string borrowerId)
+        {
+            start();
+
+            int totalBorrowedBooksCount = 0;
+
+            string query = "SELECT IFNULL(SUM(quantity), 0) AS totalQuantity " +
+                           "FROM borrowedbooks " +
+                           "WHERE borrowerId = @borrowerId AND returnDate IS NULL";
+
+            using (MySqlCommand command = new MySqlCommand(query, SQL_SERVER))
+            {
+                command.Parameters.AddWithValue("@borrowerId", borrowerId);
+
+                object result = command.ExecuteScalar();
+                if (result != null && result != DBNull.Value)
+                {
+                    totalBorrowedBooksCount = Convert.ToInt32(result);
+                }
+            }
+
+            return totalBorrowedBooksCount;
         }
 
     }

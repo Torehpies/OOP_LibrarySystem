@@ -104,6 +104,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             {
                 ListViewItem item = new ListViewItem(row["title"].ToString());
                 item.SubItems.Add(row["author"].ToString());
+                item.SubItems.Add(row["quantity"].ToString());
                 item.SubItems.Add(((DateTime)row["dueDate"]).ToString("yyyy-MM-dd"));
                 item.SubItems.Add(((DateTime)row["borrowDate"]).ToString("yyyy-MM-dd"));
                 item.Tag = row["id"];  // Store the borrowedbook ID in the Tag property
@@ -122,22 +123,15 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void confirm_btn_Click(object sender, EventArgs e)
         {
-            // Check if items are selected in the ListView
             if (borrowedbooks_tbl.SelectedItems.Count > 0)
             {
-                // Get the borrower ID from the input
                 string borrowerId = id_txtbox.Text;
-
-                // Get the current date
                 DateTime returnDate = DateTime.Now;
 
-                // Iterate over each selected item
                 foreach (ListViewItem selectedItem in borrowedbooks_tbl.SelectedItems)
                 {
-                    // Get the title of the selected book
                     string title = selectedItem.SubItems[0].Text;
-
-                    // Get the borrowedbook ID from the Tag property
+                    int quantity = int.Parse(selectedItem.SubItems[2].Text);
                     int borrowedBookId = (int)selectedItem.Tag;
 
                     try
@@ -146,7 +140,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                         Bookreturndb.UpdateReturnDateById(borrowedBookId, returnDate);
 
                         // Update books table to increment the available copies
-                        Bookreturndb.IncrementAvailableCopies(title);
+                        Bookreturndb.IncrementAvailableCopies(title, quantity);
                     }
                     catch (Exception ex)
                     {
@@ -157,8 +151,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 // Refresh the ListView to reflect the updated data
                 DisplayBorrowedBooks(borrowerId);
 
-                // Update the borrowed books count label
-                int currentBorrowedBooksCount = Bookreturndb.GetCurrentBorrowedBooksCount(borrowerId);
+                // Recalculate and update the total borrowed books count
+                int currentBorrowedBooksCount = Bookreturndb.GetCurrentTotalBorrowedBooksCount(borrowerId);
                 bbcountslbl.Text = currentBorrowedBooksCount.ToString();
             }
             else
@@ -166,6 +160,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 MessageBox.Show("Please select a book to confirm return.");
             }
         }
+
 
         /*private void id_txtbox_KeyPress(object sender, KeyPressEventArgs e)
         {

@@ -36,6 +36,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             enterId_btn = new CustomButton();
             Dsplay_Id = new Label();
             id_txtbox = new TextBox();
+            quantity = new ColumnHeader();
             panel1.SuspendLayout();
             panel5.SuspendLayout();
             panel2.SuspendLayout();
@@ -112,7 +113,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // borrowedbooks_tbl
             // 
             borrowedbooks_tbl.CheckBoxes = true;
-            borrowedbooks_tbl.Columns.AddRange(new ColumnHeader[] { title_column, author_column, borrowDate_column, dueDate_column });
+            borrowedbooks_tbl.Columns.AddRange(new ColumnHeader[] { title_column, author_column, quantity, borrowDate_column, dueDate_column });
             borrowedbooks_tbl.Font = new Font("Quicksand", 12F, FontStyle.Regular, GraphicsUnit.Point);
             borrowedbooks_tbl.FullRowSelect = true;
             borrowedbooks_tbl.GridLines = true;
@@ -139,13 +140,13 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // 
             borrowDate_column.Text = "Borrow Date";
             borrowDate_column.TextAlign = HorizontalAlignment.Center;
-            borrowDate_column.Width = 200;
+            borrowDate_column.Width = 150;
             // 
             // dueDate_column
             // 
             dueDate_column.Text = "Due Date";
             dueDate_column.TextAlign = HorizontalAlignment.Center;
-            dueDate_column.Width = 200;
+            dueDate_column.Width = 150;
             // 
             // bbcountslbl
             // 
@@ -227,6 +228,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             id_txtbox.TabIndex = 4;
             id_txtbox.TextAlign = HorizontalAlignment.Center;
             // 
+            // quantity
+            // 
+            quantity.Text = "Quantity";
+            quantity.TextAlign = HorizontalAlignment.Center;
+            quantity.Width = 100;
+            // 
             // BookReturn
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -259,5 +266,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private Label detailslbl;
         private ColumnHeader borrowDate_column;
         private Label errorMsg;
+        private ColumnHeader quantity;
     }
 }
