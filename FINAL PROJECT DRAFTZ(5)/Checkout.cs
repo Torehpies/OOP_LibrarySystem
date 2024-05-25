@@ -134,7 +134,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
                 if (checkoutList.Count > 0)
                 {
-                    //Dictionary<string, int> keyValuePair = new Dictionary<string, int>();
+                    Dictionary<string, int> keyValuePair = new Dictionary<string, int>();
                     foreach (Control control in booksPanel.Controls)
                     {
 
@@ -142,23 +142,20 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                         {
                             string title = bookContainer.Title;
 
-
                             int newAvailBooks = bookContainer.aCopies - Convert.ToInt32(bookContainer.numericUpDown2.Value);
                             keyValuePairs[title] = newAvailBooks;
 
-                            //MessageBox.Show("Title: " + title + " borrowing: " + bookContainer.numericUpDown2.Value + " new available book total is: " + newAvailBooks);
+                            MessageBox.Show("Title: " + title + " borrowing: " + bookContainer.numericUpDown2.Value + " new available book total is: " + newAvailBooks);
 
                             removeCard(bookContainer);
+
+                            Database update = new Database();
+                            foreach (var pairs in keyValuePairs)
+                            {
+                                update.updateDatabase(pairs);
+                            }
                         }
-
                     }
-
-                    Database update = new Database();
-                    foreach (var pairs in keyValuePairs)
-                    {
-                        update.updateDatabase(pairs);
-                    }
-
                     // Reset para gamitin ule
                     keyValuePairs.Clear();
                     checkoutList.Clear();
@@ -174,7 +171,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         
 
-        public Dictionary<string, int> getBookAndQuanity()
+        public Dictionary<string, int> getBookAndQuantity()
         {
             return keyValuePairs;
         }

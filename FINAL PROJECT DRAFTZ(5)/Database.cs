@@ -135,7 +135,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 cmd.Parameters.AddWithValue(@"AvailableCopies", keyValuePairs.Value);
 
 
-                //MessageBox.Show(query);
+                MessageBox.Show(query);
                 int rowsAffected = cmd.ExecuteNonQuery();
 
                 if (rowsAffected > 0)
@@ -168,6 +168,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 while (reader.Read())
                 {
                     id = reader.GetString(0);
+                    MessageBox.Show(id);
                     return id;
                 }
             }

@@ -12,6 +12,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 {
     public partial class BorrowerDetails : UserControl
     {
+        //public Dictionary<string, int> checkoutBooks;
+
         public BorrowerDetails()
         {
             InitializeComponent();
@@ -85,7 +87,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private void confirmButton_Click(object sender, EventArgs e)
         {
           
-            Checkout checkout = new Checkout();
+            //Checkout checkout = new Checkout();
+
+            Checkout checkout = this.Parent as Checkout;
+
             Dictionary<string, int> checkoutBooks = checkout.getBookAndQuantity();
 
             Database database = new Database();
