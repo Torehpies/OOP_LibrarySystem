@@ -163,7 +163,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                                 update.updateDatabase(pairs);
                             }
                             removeCard(bookContainer);
-                            MessageBox.Show("Title: " + title + " borrowing: " + bookContainer.numericUpDown2.Value + " new available book total is: " + newAvailBooks);
+                            //MessageBox.Show("Title: " + title + " borrowing: " + bookContainer.numericUpDown2.Value + " new available book total is: " + newAvailBooks);
                         }
                     }
                     // Reset para gamitin ule

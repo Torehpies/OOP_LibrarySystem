@@ -73,7 +73,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void borrower_btn_Click(object sender, EventArgs e)
         {
-
+            B_Books borrow = new B_Books();
+            borrow.LoadUsersData();
             library_btn.BackColor = ColorTranslator.FromHtml("#4A4E69");
             borrower_btn.BackColor = ColorTranslator.FromHtml("#F2E9E4");
             bookreturn_btn.BackColor = ColorTranslator.FromHtml("#4A4E69");

@@ -134,7 +134,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 }
             }
             query.AppendLine(" WHERE " + conditionColumn + " = " +  '"' + conditionValue + '"');
-            MessageBox.Show(query.ToString());
+           // MessageBox.Show(query.ToString());
 
             using (MySqlCommand cmd = new MySqlCommand(query.ToString(), SQL_SERVER))
             {
@@ -152,7 +152,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
 
 
-            MessageBox.Show(query.ToString());
+            //MessageBox.Show(query.ToString());
         }
 
         public static void DeleteBooks(string column, string columnValue)

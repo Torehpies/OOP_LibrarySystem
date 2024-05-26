@@ -24,7 +24,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             LoadUsersData();
         }
 
-        private void LoadUsersData()
+        public void LoadUsersData()
         {
             using (MySqlConnection con = new MySqlConnection("server=127.0.0.1; user=root; database=test; password=;Convert Zero Datetime=True"))
             {

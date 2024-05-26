@@ -14,6 +14,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
     {
         public static MySqlConnection SQL_SERVER;
 
+        public static string currentUser;
+
         public static void start()
         {
             // DATABASE SPECIFICATION
@@ -67,7 +69,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 
             hashPasswordDB = reader.GetString("password");
             SQL_SERVER.Close();
-            if (BCrypt.Net.BCrypt.EnhancedVerify(password, hashPasswordDB)) return true;
+            if (BCrypt.Net.BCrypt.EnhancedVerify(password, hashPasswordDB))
+            {
+                currentUser = username;
+                return true;
+            }
             else return false;
             
         }
