@@ -347,35 +347,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         }
 
-        private void selectedDateChange(object sender, EventArgs e)
-        {
-            MessageBox.Show(datepicker.Value + " is the date");
-
-            string query = $"SELECT bb.bookId, bb.borrowerId, " +
-                     $"DATE_FORMAT(bb.borrowDate, '%Y-%m-%d %H:%i:%s') AS borrowDate, " +
-                     $"DATE_FORMAT(bb.returnDate, '%Y-%m-%d %H:%i:%s') AS returnDate, " +
-                     $"DATE_FORMAT(bb.dueDate, '%Y-%m-%d %H:%i:%s') AS dueDate, " +
-                     $"b.isbn AS ISBN, b.title AS Title, b.author AS Author, " +
-                     $"m.name AS Name " +
-                     $"FROM borrowedbooks bb " +
-                     $"INNER JOIN books b ON bb.bookId = b.id " +
-                     $"INNER JOIN members m ON bb.borrowerId = m.id " +
-                     $"WHERE " +
-                     $"DATE_FORMAT(bb.borrowDate, '%Y-%m-%d %H:%i:%s') LIKE '%{datepicker.Text.ToLower()}%' OR " +
-                     $"DATE_FORMAT(bb.returnDate, '%Y-%m-%d %H:%i:%s') LIKE '%{datepicker.Text.ToLower()}%' OR " +
-                     $"DATE_FORMAT(bb.dueDate, '%Y-%m-%d %H:%i:%s') LIKE '%{datepicker.Text.ToLower()}%'";
-
-            using (MySqlConnection con = new MySqlConnection("server=127.0.0.1; user=root; database=test; password="))
-            {
-                using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, con))
-                {
-
-                    DataTable filteredDataTable = new DataTable();
-                    adapter.Fill(filteredDataTable);
-
-                    UpdateListView(filteredDataTable);
-                }
-            }
-        }
+        
     }
 }
