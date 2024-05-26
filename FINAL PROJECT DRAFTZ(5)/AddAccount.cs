@@ -52,7 +52,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
             LoginDatabase.addAccount(Usertbox1.Text, passwordHash, isAdmin);
 
-            MessageBox.Show("Account: " + Usertbox1.Text + " is created.");
+            LoginForm parent = this.ParentForm as LoginForm;
+            parent.noAccount = false;
+
+            //MessageBox.Show("Account: " + Usertbox1.Text + " is created.");
             ClearTextBoxes(Parent.Controls);
             Parent.Visible = false;
         }
@@ -61,6 +64,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         {
             ClearTextBoxes(this.Parent.Controls);
             this.Parent.Visible = false;
+            LoginForm parent = this.ParentForm as LoginForm;
+            parent.disableLogin();
         }
 
         private void ClearTextBoxes(System.Windows.Forms.Control.ControlCollection controls)
@@ -69,6 +74,29 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 tb.Text = string.Empty;
             foreach (Control c in controls)
                 ClearTextBoxes(c.Controls);
+        }
+
+        bool hidden = false;
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (hidden)
+            {
+                passwordtbox.UseSystemPasswordChar = true;
+                passwordtbox1.UseSystemPasswordChar = true;
+                hidden = false;
+            }
+            else
+            {
+                passwordtbox.UseSystemPasswordChar = false;
+                passwordtbox1.UseSystemPasswordChar = false;
+                hidden = true;
+            }
+
+        }
+
+        private void passwordtbox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

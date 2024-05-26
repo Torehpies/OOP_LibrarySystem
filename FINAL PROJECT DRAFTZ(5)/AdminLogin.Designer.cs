@@ -38,6 +38,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             label1 = new Label();
             loginButton = new CustomButton();
             cancelButton = new CustomButton();
+            checkBox1 = new CheckBox();
             SuspendLayout();
             // 
             // Adminuser
@@ -62,6 +63,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             Adminpass.Size = new Size(299, 25);
             Adminpass.TabIndex = 1;
             Adminpass.UseSystemPasswordChar = true;
+            Adminpass.TextChanged += Adminpass_TextChanged;
             // 
             // label1
             // 
@@ -84,7 +86,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             loginButton.FlatStyle = FlatStyle.Flat;
             loginButton.Font = new Font("Quicksand", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             loginButton.ForeColor = Color.FromArgb(242, 233, 228);
-            loginButton.Location = new Point(80, 104);
+            loginButton.Location = new Point(82, 138);
             loginButton.Margin = new Padding(2);
             loginButton.Name = "loginButton";
             loginButton.Size = new Size(150, 30);
@@ -105,7 +107,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             cancelButton.FlatStyle = FlatStyle.Flat;
             cancelButton.Font = new Font("Quicksand", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             cancelButton.ForeColor = Color.FromArgb(34, 34, 59);
-            cancelButton.Location = new Point(80, 135);
+            cancelButton.Location = new Point(82, 169);
             cancelButton.Margin = new Padding(0);
             cancelButton.Name = "cancelButton";
             cancelButton.Size = new Size(150, 30);
@@ -115,12 +117,24 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             cancelButton.UseVisualStyleBackColor = false;
             cancelButton.Click += cancelButton_Click;
             // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(8, 105);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(108, 19);
+            checkBox1.TabIndex = 9;
+            checkBox1.Text = "Show Password";
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            // 
             // AdminLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(242, 233, 228);
             ClientSize = new Size(306, 283);
+            Controls.Add(checkBox1);
             Controls.Add(cancelButton);
             Controls.Add(loginButton);
             Controls.Add(label1);
@@ -140,5 +154,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private Label label1;
         private CustomButton loginButton;
         private CustomButton cancelButton;
+        private CheckBox checkBox1;
     }
 }
