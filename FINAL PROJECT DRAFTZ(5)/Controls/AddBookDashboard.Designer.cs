@@ -111,7 +111,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
             dateText.MinimumSize = new Size(300, 30);
             dateText.Name = "dateText";
             dateText.Size = new Size(300, 30);
-            dateText.TabIndex = 17;
+            dateText.TabIndex = 2;
             // 
             // bookNoText
             // 
@@ -123,10 +123,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
             bookNoText.MinimumSize = new Size(300, 30);
             bookNoText.Multiline = true;
             bookNoText.Name = "bookNoText";
-            bookNoText.Padding = new Padding(10, 7, 10, 7);
-            bookNoText.PlaceholderText = "";
             bookNoText.Size = new Size(300, 36);
-            bookNoText.TabIndex = 16;
+            bookNoText.TabIndex = 6;
             bookNoText.TextChanged += bookNoText_TextChanged;
             // 
             // label7
@@ -149,10 +147,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
             publisherText.MinimumSize = new Size(300, 30);
             publisherText.Multiline = true;
             publisherText.Name = "publisherText";
-            publisherText.Padding = new Padding(10, 7, 10, 7);
-            publisherText.PlaceholderText = "";
             publisherText.Size = new Size(300, 36);
-            publisherText.TabIndex = 14;
+            publisherText.TabIndex = 5;
             // 
             // label6
             // 
@@ -174,10 +170,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
             categoryText.MinimumSize = new Size(300, 30);
             categoryText.Multiline = true;
             categoryText.Name = "categoryText";
-            categoryText.Padding = new Padding(10, 7, 10, 7);
-            categoryText.PlaceholderText = "";
             categoryText.Size = new Size(300, 36);
-            categoryText.TabIndex = 12;
+            categoryText.TabIndex = 4;
             // 
             // label1
             // 
@@ -201,11 +195,15 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Quicksand", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             button2.ForeColor = Color.White;
+            button2.Image = Properties.Resources.diskette;
+            button2.ImageAlign = ContentAlignment.MiddleLeft;
             button2.Location = new Point(640, 479);
             button2.Name = "button2";
+            button2.Padding = new Padding(20, 0, 15, 0);
             button2.Size = new Size(150, 63);
-            button2.TabIndex = 10;
+            button2.TabIndex = 8;
             button2.Text = "SAVE";
+            button2.TextAlign = ContentAlignment.MiddleRight;
             button2.TextColor = Color.White;
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
@@ -250,13 +248,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
             isbnText.MinimumSize = new Size(300, 30);
             isbnText.Multiline = true;
             isbnText.Name = "isbnText";
-            isbnText.Padding = new Padding(10, 7, 10, 7);
-          
-          
-            isbnText.PlaceholderText = "";
             isbnText.Size = new Size(300, 36);
-            isbnText.TabIndex = 6;
-          
+            isbnText.TabIndex = 1;
             isbnText.TextChanged += textBox4_TextChanged;
             // 
             // titleText
@@ -269,10 +262,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
             titleText.MinimumSize = new Size(300, 30);
             titleText.Multiline = true;
             titleText.Name = "titleText";
-            titleText.Padding = new Padding(10, 7, 10, 7);
-            titleText.PlaceholderText = "";
             titleText.Size = new Size(300, 36);
-            titleText.TabIndex = 5;
+            titleText.TabIndex = 0;
             // 
             // label2
             // 
@@ -294,14 +285,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
             authorText.MinimumSize = new Size(300, 30);
             authorText.Multiline = true;
             authorText.Name = "authorText";
-            authorText.Padding = new Padding(10, 7, 10, 7);
-          
-            
-            authorText.PlaceholderText = "";
             authorText.Size = new Size(300, 36);
-            authorText.TabIndex = 2;
-            authorText.Text = "";
-            
+            authorText.TabIndex = 3;
             // 
             // button1
             // 
@@ -318,7 +303,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
             button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
             button1.Size = new Size(179, 41);
-            button1.TabIndex = 1;
+            button1.TabIndex = 7;
             button1.Text = "UPLOAD PHOTO";
             button1.TextColor = Color.White;
             button1.UseVisualStyleBackColor = false;
@@ -331,6 +316,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
             pictureBox.Location = new Point(604, 64);
             pictureBox.Name = "pictureBox";
             pictureBox.Size = new Size(222, 329);
+            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox.TabIndex = 0;
             pictureBox.TabStop = false;
             // 
