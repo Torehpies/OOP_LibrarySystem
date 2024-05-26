@@ -41,20 +41,22 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
             int n;
             bool isNumeric = int.TryParse(bookNoText.Text, out n);
 
+            
             if (!isNumeric)
             {
                 MessageBox.Show("Invalid number!");
                 return;
 
             }
+            
 
-
+            
             if (titleText.Text.Length == 0 || isbnText.Text.Length == 0 || authorText.Text.Length == 0 || dateText.Text.Length == 0 || categoryText.Text.Length == 0 || publisherText.Text.Length == 0 || bookNoText.Text.Length == 0)
             {
                 MessageBox.Show("Make sure that everything is filled.");
                 return;
             }
-
+            
             if (pictureBox.Image == null)
             {
                 MessageBox.Show("Make sure to include the book cover!");
@@ -69,7 +71,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
             //bookToAdd.ImagePath = imagePath;
             //bookToAdd.ImagePath = imagePath;
             var year = DateTime.Parse(dateText.Text).Year;
-            bookCRUD.AddBooks(titleText.Text, authorText.Text, isbnText.Text, categoryText.Text, publisherText.Text, year, int.Parse(bookNoText.Text), imagePath);
+            bookCRUD.AddBooks(titleText.Text, authorText.Text, isbnText.Text, categoryText.Text, publisherText.Text, Convert.ToInt32(year), Convert.ToInt32(bookNoText.Text), imagePath);
 
             LibraryEdit.Instance.populateItems();
 

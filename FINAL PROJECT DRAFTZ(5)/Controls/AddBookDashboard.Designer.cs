@@ -34,20 +34,20 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
             panel2 = new Panel();
             label8 = new Label();
             dateText = new DateTimePicker();
-            bookNoText = new CustomTextbox();
+            bookNoText = new TextBox();
             label7 = new Label();
-            publisherText = new CustomTextbox();
+            publisherText = new TextBox();
             label6 = new Label();
-            categoryText = new CustomTextbox();
+            categoryText = new TextBox();
             label1 = new Label();
             button2 = new CustomButton();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
-            isbnText = new CustomTextbox();
-            titleText = new CustomTextbox();
+            isbnText = new TextBox();
+            titleText = new TextBox();
             label2 = new Label();
-            authorText = new CustomTextbox();
+            authorText = new TextBox();
             button1 = new CustomButton();
             pictureBox = new PictureBox();
             panel1.SuspendLayout();
@@ -116,10 +116,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
             // bookNoText
             // 
             bookNoText.BackColor = SystemColors.Window;
-            bookNoText.BorderColor = Color.FromArgb(102, 102, 102);
-            bookNoText.BorderFocusColor = SystemColors.ActiveCaptionText;
-            bookNoText.BorderRadius = 18;
-            bookNoText.BorderSize = 2;
             bookNoText.Font = new Font("Quicksand", 12F, FontStyle.Regular, GraphicsUnit.Point);
             bookNoText.ForeColor = Color.FromArgb(64, 64, 64);
             bookNoText.Location = new Point(235, 442);
@@ -128,13 +124,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
             bookNoText.Multiline = true;
             bookNoText.Name = "bookNoText";
             bookNoText.Padding = new Padding(10, 7, 10, 7);
-            bookNoText.PasswordChar = false;
-            bookNoText.PlaceholderColor = Color.DarkGray;
             bookNoText.PlaceholderText = "";
             bookNoText.Size = new Size(300, 36);
             bookNoText.TabIndex = 16;
-            bookNoText.Texts = "";
-            bookNoText.UnderlinedStyle = false;
             bookNoText.TextChanged += bookNoText_TextChanged;
             // 
             // label7
@@ -150,10 +142,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
             // publisherText
             // 
             publisherText.BackColor = SystemColors.Window;
-            publisherText.BorderColor = Color.FromArgb(102, 102, 102);
-            publisherText.BorderFocusColor = SystemColors.ActiveCaptionText;
-            publisherText.BorderRadius = 18;
-            publisherText.BorderSize = 2;
             publisherText.Font = new Font("Quicksand", 12F, FontStyle.Regular, GraphicsUnit.Point);
             publisherText.ForeColor = Color.FromArgb(64, 64, 64);
             publisherText.Location = new Point(235, 379);
@@ -162,13 +150,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
             publisherText.Multiline = true;
             publisherText.Name = "publisherText";
             publisherText.Padding = new Padding(10, 7, 10, 7);
-            publisherText.PasswordChar = false;
-            publisherText.PlaceholderColor = Color.DarkGray;
             publisherText.PlaceholderText = "";
             publisherText.Size = new Size(300, 36);
             publisherText.TabIndex = 14;
-            publisherText.Texts = "";
-            publisherText.UnderlinedStyle = false;
             // 
             // label6
             // 
@@ -183,10 +167,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
             // categoryText
             // 
             categoryText.BackColor = SystemColors.Window;
-            categoryText.BorderColor = Color.FromArgb(102, 102, 102);
-            categoryText.BorderFocusColor = SystemColors.ActiveCaptionText;
-            categoryText.BorderRadius = 18;
-            categoryText.BorderSize = 2;
             categoryText.Font = new Font("Quicksand", 12F, FontStyle.Regular, GraphicsUnit.Point);
             categoryText.ForeColor = Color.FromArgb(64, 64, 64);
             categoryText.Location = new Point(235, 316);
@@ -195,13 +175,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
             categoryText.Multiline = true;
             categoryText.Name = "categoryText";
             categoryText.Padding = new Padding(10, 7, 10, 7);
-            categoryText.PasswordChar = false;
-            categoryText.PlaceholderColor = Color.DarkGray;
             categoryText.PlaceholderText = "";
             categoryText.Size = new Size(300, 36);
             categoryText.TabIndex = 12;
-            categoryText.Texts = "";
-            categoryText.UnderlinedStyle = false;
             // 
             // label1
             // 
@@ -267,10 +243,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
             // isbnText
             // 
             isbnText.BackColor = SystemColors.Window;
-            isbnText.BorderColor = Color.FromArgb(102, 102, 102);
-            isbnText.BorderFocusColor = SystemColors.ActiveCaptionText;
-            isbnText.BorderRadius = 18;
-            isbnText.BorderSize = 2;
             isbnText.Font = new Font("Quicksand", 12F, FontStyle.Regular, GraphicsUnit.Point);
             isbnText.ForeColor = Color.FromArgb(64, 64, 64);
             isbnText.Location = new Point(235, 127);
@@ -279,22 +251,17 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
             isbnText.Multiline = true;
             isbnText.Name = "isbnText";
             isbnText.Padding = new Padding(10, 7, 10, 7);
-            isbnText.PasswordChar = false;
-            isbnText.PlaceholderColor = Color.DarkGray;
+          
+          
             isbnText.PlaceholderText = "";
             isbnText.Size = new Size(300, 36);
             isbnText.TabIndex = 6;
-            isbnText.Texts = "";
-            isbnText.UnderlinedStyle = false;
+          
             isbnText.TextChanged += textBox4_TextChanged;
             // 
             // titleText
             // 
             titleText.BackColor = SystemColors.Window;
-            titleText.BorderColor = Color.FromArgb(102, 102, 102);
-            titleText.BorderFocusColor = SystemColors.ActiveCaptionText;
-            titleText.BorderRadius = 18;
-            titleText.BorderSize = 2;
             titleText.Font = new Font("Quicksand", 12F, FontStyle.Regular, GraphicsUnit.Point);
             titleText.ForeColor = Color.FromArgb(64, 64, 64);
             titleText.Location = new Point(235, 64);
@@ -303,13 +270,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
             titleText.Multiline = true;
             titleText.Name = "titleText";
             titleText.Padding = new Padding(10, 7, 10, 7);
-            titleText.PasswordChar = false;
-            titleText.PlaceholderColor = Color.DarkGray;
             titleText.PlaceholderText = "";
             titleText.Size = new Size(300, 36);
             titleText.TabIndex = 5;
-            titleText.Texts = "";
-            titleText.UnderlinedStyle = false;
             // 
             // label2
             // 
@@ -324,10 +287,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
             // authorText
             // 
             authorText.BackColor = SystemColors.Window;
-            authorText.BorderColor = Color.FromArgb(102, 102, 102);
-            authorText.BorderFocusColor = SystemColors.ActiveCaptionText;
-            authorText.BorderRadius = 18;
-            authorText.BorderSize = 2;
             authorText.Font = new Font("Quicksand", 12F, FontStyle.Regular, GraphicsUnit.Point);
             authorText.ForeColor = Color.FromArgb(64, 64, 64);
             authorText.Location = new Point(235, 253);
@@ -336,13 +295,13 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
             authorText.Multiline = true;
             authorText.Name = "authorText";
             authorText.Padding = new Padding(10, 7, 10, 7);
-            authorText.PasswordChar = false;
-            authorText.PlaceholderColor = Color.DarkGray;
+          
+            
             authorText.PlaceholderText = "";
             authorText.Size = new Size(300, 36);
             authorText.TabIndex = 2;
-            authorText.Texts = "";
-            authorText.UnderlinedStyle = false;
+            authorText.Text = "";
+            
             // 
             // button1
             // 
@@ -395,18 +354,18 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
         private CustomButton button1;
         private PictureBox pictureBox;
         private Label label2;
-        private CustomTextbox authorText;
+        private TextBox authorText;
         private Label label5;
         private Label label4;
         private Label label3;
-        private CustomTextbox isbnText;
-        private CustomTextbox titleText;
+        private TextBox isbnText;
+        private TextBox titleText;
         private CustomButton button2;
-        private CustomTextbox categoryText;
+        private TextBox categoryText;
         private Label label1;
-        private CustomTextbox publisherText;
+        private TextBox publisherText;
         private Label label6;
-        private CustomTextbox bookNoText;
+        private TextBox bookNoText;
         private Label label7;
         private DateTimePicker dateText;
         private Panel panel2;
