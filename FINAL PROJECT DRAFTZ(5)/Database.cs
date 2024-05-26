@@ -313,7 +313,20 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             cmd.Parameters.AddWithValue("@id", id);
             cmd.ExecuteNonQuery();
             SQL_SERVER.Close();
-        } 
+        }
+
+        public void addStudent(string id, string username, string details, string department, string type)
+        {
+            start();
+            MySqlCommand cmd = new MySqlCommand("INSERT INTO members VALUES (@id, @username, @details, @department, @type)", SQL_SERVER);
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@username", username);
+            cmd.Parameters.AddWithValue("@details", details);
+            cmd.Parameters.AddWithValue("@department", department);
+            cmd.Parameters.AddWithValue("@type", type);
+            cmd.ExecuteNonQuery();
+            SQL_SERVER.Close();
+        }
 
         
 

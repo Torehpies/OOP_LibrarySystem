@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using ExcelDataReader;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Z.Dapper.Plus;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FINAL_PROJECT_DRAFTZ_5_
@@ -80,9 +82,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         }
 
+        
         private void customButton1_Click(object sender, EventArgs e)
         {
-
+            StudentFillUp studentFillUp = new StudentFillUp();
+            studentFillUp.Show();
+            
         }
     }
 }
