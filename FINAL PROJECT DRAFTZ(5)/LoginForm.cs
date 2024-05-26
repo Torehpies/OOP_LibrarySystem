@@ -67,6 +67,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 MainForm mainForm = new MainForm();
                 mainForm.ShowDialog();
                 this.Close();
+                LoginDatabase.isAdmin(username);
             }
             else
             {

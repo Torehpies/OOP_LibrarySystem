@@ -34,6 +34,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             main_pnl = new Panel();
             container_pnl = new Panel();
             navigation_pnl = new Panel();
+            manageAcc = new Button();
             label2 = new Label();
             pictureBox1 = new PictureBox();
             welcomeLbl = new Label();
@@ -73,6 +74,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // 
             navigation_pnl.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             navigation_pnl.BackColor = Color.FromArgb(74, 78, 105);
+            navigation_pnl.Controls.Add(manageAcc);
             navigation_pnl.Controls.Add(label2);
             navigation_pnl.Controls.Add(pictureBox1);
             navigation_pnl.Controls.Add(welcomeLbl);
@@ -89,6 +91,16 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             navigation_pnl.Size = new Size(1186, 93);
             navigation_pnl.TabIndex = 0;
             navigation_pnl.Paint += navigation_pnl_Paint;
+            // 
+            // manageAcc
+            // 
+            manageAcc.Location = new Point(155, 8);
+            manageAcc.Name = "manageAcc";
+            manageAcc.Size = new Size(75, 23);
+            manageAcc.TabIndex = 10;
+            manageAcc.Text = "button3";
+            manageAcc.UseVisualStyleBackColor = true;
+            manageAcc.Click += manageAcc_Click;
             // 
             // label2
             // 
@@ -313,5 +325,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private Label welcomeLbl;
         private PictureBox pictureBox1;
         private Label label2;
+        private Button manageAcc;
     }
 }

@@ -39,6 +39,7 @@
             b_Books1.Name = "b_Books1";
             b_Books1.Size = new Size(1186, 633);
             b_Books1.TabIndex = 0;
+            b_Books1.Load += b_Books1_Load;
             // 
             // BorrowedList
             // 
