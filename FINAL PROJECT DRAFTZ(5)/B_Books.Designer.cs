@@ -78,7 +78,7 @@
             // columnHeader2
             // 
             columnHeader2.Text = "Borrow Date";
-            columnHeader2.Width = 100;
+            columnHeader2.Width = 180;
             // 
             // columnHeader4
             // 
