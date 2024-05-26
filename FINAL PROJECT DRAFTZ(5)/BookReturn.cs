@@ -17,8 +17,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         public BookReturn()
         {
             InitializeComponent();
-            /*id_txtbox.KeyPress += new KeyPressEventHandler(id_txtbox_KeyPress);
-            id_txtbox.TextChanged += new EventHandler(id_txtbox_TextChanged);*/
+            id_txtbox.KeyPress += new KeyPressEventHandler(id_txtbox_KeyPress);
+            id_txtbox.TextChanged += new EventHandler(id_txtbox_TextChanged);
 
             Dsplay_borrowedbooks.Visible = false;
         }
@@ -179,7 +179,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
 
 
-        /*private void id_txtbox_KeyPress(object sender, KeyPressEventArgs e)
+        private void id_txtbox_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Check if the key pressed is a number or a control key (e.g., backspace)
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -196,6 +196,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 id_txtbox.Text = id_txtbox.Text.Substring(0, 15);
                 id_txtbox.SelectionStart = id_txtbox.Text.Length; // Move the cursor to the end
             }
-        }*/
+        }
     }
 }
