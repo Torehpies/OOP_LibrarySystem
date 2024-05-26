@@ -17,6 +17,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         public void start()
         {
+            bool isConnected = false;
+
+         
             // DATABASE SPECIFICATION
             string SERVER = "127.0.0.1";
             string DATABASE = "test";
@@ -24,16 +27,38 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             string PASSWORD = "";
 
             SQL_SERVER = new MySqlConnection("server=" + SERVER + "; user=" + USER + "; database=" + DATABASE + "; password=" + PASSWORD + ";");
-            try
+
+            while (!isConnected)
             {
-                SQL_SERVER.Open();
-            } catch (Exception ex)
-            {
-                MessageBox.Show("Connection to database failed!");
-            } 
+                try
+                {
+                    SQL_SERVER.Open();
+                    isConnected = true;
+                    break;
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("Retrying connection....");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Connection to database failed!");
+                }
+            }
+             
         }
 
-        
+        public bool isOpen()
+        {
+            
+            if (SQL_SERVER == null)
+            {
+                return false;
+            }
+            return true;
+        }
+
+
         public bool checkLogin(string username, string password)
         {
             if (SQL_SERVER == null)
@@ -75,16 +100,15 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             return false;
         }
 
-        public bool checkAccount(string username)
+        public bool checkBook(string book)
         {
-            if (SQL_SERVER == null)
-            {
-                start();
-            }
+            
+            start();
+            
             
 
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM users WHERE username = @username", SQL_SERVER);
-            cmd.Parameters.AddWithValue("@username", username);
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM books WHERE title = @booktitle", SQL_SERVER);
+            cmd.Parameters.AddWithValue("@booktitle", book);
     
             using (MySqlDataReader reader = cmd.ExecuteReader())
             {
@@ -263,6 +287,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 throw;
             }
         }
+
+        
 
     }
 }

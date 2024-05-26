@@ -31,7 +31,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
         }
 
-        public static void AddBooks(string title, string author, string isbn, string category, string publisher, DateTime year, int totalCopies)
+        public static void AddBooks(string title, string author, string isbn, string category, string publisher, int year, int totalCopies, string image)
         {
             start();
             if (totalCopies <= 0)
@@ -39,8 +39,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 MessageBox.Show("Invalid copies of books");
                 return;
             }
-            string query = "INSERT INTO books (title, author, isbn, category, publisher, published, totalCopies, availableCopies) " +
-                "VALUES (@title, @author, @isbn, @category, @publisher, @published, @totalCopies, @availableCopies)";
+            string query = "INSERT INTO books (title, author, isbn, category, publisher, published, totalCopies, availableCopies, picturePath) " +
+                "VALUES (@title, @author, @isbn, @category, @publisher, @published, @totalCopies, @availableCopies, @image)";
 
             MySqlCommand cmd = new MySqlCommand(query, SQL_SERVER);
             cmd.Parameters.AddWithValue("@title", title);
@@ -51,6 +51,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             cmd.Parameters.AddWithValue("@published", year);
             cmd.Parameters.AddWithValue("@totalcopies", totalCopies);
             cmd.Parameters.AddWithValue("@availablecopies", totalCopies);
+            cmd.Parameters.AddWithValue("@image", image);
 
 
             int rowsAffected = cmd.ExecuteNonQuery();
@@ -64,7 +65,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
         }
 
-        public static DataTable ReadBooks()
+        public static DataTable ReadBooks(string keyword)
         {
             if (SQL_SERVER == null)
             {
@@ -72,7 +73,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
 
 
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM books", SQL_SERVER);
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM books WHERE title = " + keyword, SQL_SERVER);
             try
             {
                 using (MySqlDataAdapter sda = new MySqlDataAdapter(cmd))
@@ -88,6 +89,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
         }
 
+        // Single update
         public static void UpdateBooks(string columnToUpdate, object newValue, string conditionColumn, string conditionValue)
         {
 
@@ -112,6 +114,45 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 }
             }
 
+        }
+
+        // Multi update
+        public static void UpdateInfos(string[] columnsToUpdate, string[] newValue, string conditionColumn, object conditionValue) 
+        {
+            start();
+
+            int columns = columnsToUpdate.Length;
+            StringBuilder query = new StringBuilder($"UPDATE books SET ");
+
+            for (int i = 0; i < columns; i++)
+            {
+                query.AppendLine(columnsToUpdate[i] + " = " + '"' + newValue[i] + '"');
+
+                if ( i < columns - 1)
+                {
+                    query.Append(',');
+                }
+            }
+            query.AppendLine(" WHERE " + conditionColumn + " = " +  '"' + conditionValue + '"');
+            MessageBox.Show(query.ToString());
+
+            using (MySqlCommand cmd = new MySqlCommand(query.ToString(), SQL_SERVER))
+            {
+                int rowsAffected = cmd.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Update success!");
+                }
+                else
+                {
+                    MessageBox.Show("No rows updated.");
+                }
+            }
+
+
+
+            MessageBox.Show(query.ToString());
         }
 
         public static void DeleteBooks(string column, string columnValue)

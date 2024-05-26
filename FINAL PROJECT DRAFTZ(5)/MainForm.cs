@@ -66,6 +66,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             borrowPane.Hide();
             bookreturnPane.Hide();
             bookinventPane.Hide();
+
+            // Reload yung mga kailangan ireload
+            Library.Instance.populateItems();
         }
 
         private void borrower_btn_Click(object sender, EventArgs e)

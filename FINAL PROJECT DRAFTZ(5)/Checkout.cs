@@ -99,13 +99,21 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 // Gawin yung pane
 
                 bookContainer.Title = book.Title;
-                bookContainer.Year = book.Date;
+                bookContainer.Author = book.Author;
+                bookContainer.ISBN = book.ISBN;
+               
+                bookContainer.Year = book.Published;
                 bookContainer.aCopies = book.AvailableCopies;
                 bookContainer.tCopies = book.TotalCopies;
                 bookContainer.BorrowCount = book.BooksToborrow;
                 //MessageBox.Show("Books to borrow: " + book.BooksToborrow);
                 bookContainer.numericUpDown2.Value = book.BooksToborrow;
                 bookContainer.numericUpDown2.Maximum = book.AvailableCopies;
+
+                // Set natin yung pictures
+                
+                
+
 
                 // Add the value pair in a dictionary
                 booksPanel.Controls.Add(bookContainer);

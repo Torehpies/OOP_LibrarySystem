@@ -10,11 +10,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="bookData.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
     <PackageReference Include="MySql.Data" Version="8.4.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="LibraryEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

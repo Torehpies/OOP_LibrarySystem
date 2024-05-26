@@ -1,4 +1,6 @@
-﻿namespace FINAL_PROJECT_DRAFTZ_5_.Controls
+﻿using CustomControls.RJControls;
+using System.Windows.Forms;
+namespace FINAL_PROJECT_DRAFTZ_5_.Controls
 {
     partial class AddBookDashboard
     {
@@ -29,147 +31,308 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            button2 = new Button();
+            panel2 = new Panel();
+            label8 = new Label();
+            dateText = new DateTimePicker();
+            bookNoText = new TextBox();
+            label7 = new Label();
+            publisherText = new TextBox();
+            label6 = new Label();
+            categoryText = new TextBox();
+            label1 = new Label();
+            button2 = new CustomButton();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
+            isbnText = new TextBox();
+            titleText = new TextBox();
             label2 = new Label();
-            textBox1 = new TextBox();
-            button1 = new Button();
-            AddBookPicture = new PictureBox();
+            authorText = new TextBox();
+            button1 = new CustomButton();
+            pictureBox = new PictureBox();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)AddBookPicture).BeginInit();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackColor = Color.MistyRose;
+            panel1.BackColor = Color.FromArgb(225, 213, 206);
+            panel1.Controls.Add(panel2);
+            panel1.Controls.Add(dateText);
+            panel1.Controls.Add(bookNoText);
+            panel1.Controls.Add(label7);
+            panel1.Controls.Add(publisherText);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(categoryText);
+            panel1.Controls.Add(label1);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
-            panel1.Controls.Add(textBox4);
-            panel1.Controls.Add(textBox3);
-            panel1.Controls.Add(textBox2);
+            panel1.Controls.Add(isbnText);
+            panel1.Controls.Add(titleText);
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(authorText);
             panel1.Controls.Add(button1);
-            panel1.Controls.Add(AddBookPicture);
-            panel1.Location = new Point(14, 19);
+            panel1.Controls.Add(pictureBox);
+            panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(773, 486);
+            panel1.Size = new Size(883, 559);
             panel1.TabIndex = 1;
+            panel1.Paint += panel1_Paint;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(74, 78, 105);
+            panel2.Controls.Add(label8);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(883, 48);
+            panel2.TabIndex = 19;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Quicksand", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.ForeColor = SystemColors.ButtonFace;
+            label8.Location = new Point(12, 7);
+            label8.Name = "label8";
+            label8.Size = new Size(123, 31);
+            label8.TabIndex = 18;
+            label8.Text = "ADD BOOK";
+            // 
+            // dateText
+            // 
+            dateText.Font = new Font("Quicksand", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dateText.Location = new Point(235, 190);
+            dateText.MinimumSize = new Size(300, 30);
+            dateText.Name = "dateText";
+            dateText.Size = new Size(300, 30);
+            dateText.TabIndex = 17;
+            // 
+            // bookNoText
+            // 
+            bookNoText.BackColor = SystemColors.Window;
+            bookNoText.Font = new Font("Quicksand", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            bookNoText.ForeColor = Color.FromArgb(64, 64, 64);
+            bookNoText.Location = new Point(235, 442);
+            bookNoText.Margin = new Padding(4);
+            bookNoText.MinimumSize = new Size(300, 30);
+            bookNoText.Multiline = true;
+            bookNoText.Name = "bookNoText";
+            bookNoText.Padding = new Padding(10, 7, 10, 7);
+            bookNoText.PlaceholderText = "";
+            bookNoText.Size = new Size(300, 36);
+            bookNoText.TabIndex = 16;
+            bookNoText.TextChanged += bookNoText_TextChanged;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Quicksand", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Location = new Point(128, 442);
+            label7.Name = "label7";
+            label7.Size = new Size(76, 28);
+            label7.TabIndex = 16;
+            label7.Text = "COPIES";
+            // 
+            // publisherText
+            // 
+            publisherText.BackColor = SystemColors.Window;
+            publisherText.Font = new Font("Quicksand", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            publisherText.ForeColor = Color.FromArgb(64, 64, 64);
+            publisherText.Location = new Point(235, 379);
+            publisherText.Margin = new Padding(4);
+            publisherText.MinimumSize = new Size(300, 30);
+            publisherText.Multiline = true;
+            publisherText.Name = "publisherText";
+            publisherText.Padding = new Padding(10, 7, 10, 7);
+            publisherText.PlaceholderText = "";
+            publisherText.Size = new Size(300, 36);
+            publisherText.TabIndex = 14;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Quicksand", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Location = new Point(91, 379);
+            label6.Name = "label6";
+            label6.Size = new Size(113, 28);
+            label6.TabIndex = 14;
+            label6.Text = "PUBLISHER";
+            // 
+            // categoryText
+            // 
+            categoryText.BackColor = SystemColors.Window;
+            categoryText.Font = new Font("Quicksand", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            categoryText.ForeColor = Color.FromArgb(64, 64, 64);
+            categoryText.Location = new Point(235, 316);
+            categoryText.Margin = new Padding(4);
+            categoryText.MinimumSize = new Size(300, 30);
+            categoryText.Multiline = true;
+            categoryText.Name = "categoryText";
+            categoryText.Padding = new Padding(10, 7, 10, 7);
+            categoryText.PlaceholderText = "";
+            categoryText.Size = new Size(300, 36);
+            categoryText.TabIndex = 12;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Quicksand", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(95, 316);
+            label1.Name = "label1";
+            label1.Size = new Size(109, 28);
+            label1.TabIndex = 13;
+            label1.Text = "CATEGORY";
+            label1.Click += label1_Click_1;
             // 
             // button2
             // 
-            button2.BackColor = Color.PaleTurquoise;
-            button2.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.Location = new Point(574, 399);
+            button2.BackColor = Color.FromArgb(34, 34, 59);
+            button2.BackgroundColor = Color.FromArgb(34, 34, 59);
+            button2.BorderColor = Color.PaleVioletRed;
+            button2.BorderRadius = 32;
+            button2.BorderSize = 0;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Quicksand", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(640, 479);
             button2.Name = "button2";
             button2.Size = new Size(150, 63);
             button2.TabIndex = 10;
             button2.Text = "SAVE";
+            button2.TextColor = Color.White;
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(68, 333);
+            label5.Font = new Font("Quicksand", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Location = new Point(32, 190);
             label5.Name = "label5";
-            label5.Size = new Size(203, 25);
+            label5.Size = new Size(172, 28);
             label5.TabIndex = 9;
             label5.Text = "DATE OF PUBLISH";
-            label5.Click += label5_Click;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(129, 387);
+            label4.Font = new Font("Quicksand", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(114, 253);
             label4.Name = "label4";
-            label4.Size = new Size(102, 25);
+            label4.Size = new Size(90, 28);
             label4.TabIndex = 8;
             label4.Text = "AUTHOR";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(129, 228);
+            label3.Font = new Font("Quicksand", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(141, 64);
             label3.Name = "label3";
-            label3.Size = new Size(72, 25);
+            label3.Size = new Size(63, 28);
             label3.TabIndex = 7;
             label3.Text = "TITLE";
             // 
-            // textBox4
+            // isbnText
             // 
-            textBox4.Location = new Point(289, 277);
-            textBox4.Multiline = true;
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(189, 28);
-            textBox4.TabIndex = 6;
-            textBox4.TextChanged += textBox4_TextChanged;
+            isbnText.BackColor = SystemColors.Window;
+            isbnText.Font = new Font("Quicksand", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            isbnText.ForeColor = Color.FromArgb(64, 64, 64);
+            isbnText.Location = new Point(235, 127);
+            isbnText.Margin = new Padding(3, 4, 3, 4);
+            isbnText.MinimumSize = new Size(300, 30);
+            isbnText.Multiline = true;
+            isbnText.Name = "isbnText";
+            isbnText.Padding = new Padding(10, 7, 10, 7);
+          
+          
+            isbnText.PlaceholderText = "";
+            isbnText.Size = new Size(300, 36);
+            isbnText.TabIndex = 6;
+          
+            isbnText.TextChanged += textBox4_TextChanged;
             // 
-            // textBox3
+            // titleText
             // 
-            textBox3.Location = new Point(289, 225);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(189, 28);
-            textBox3.TabIndex = 5;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(289, 330);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(189, 28);
-            textBox2.TabIndex = 4;
+            titleText.BackColor = SystemColors.Window;
+            titleText.Font = new Font("Quicksand", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            titleText.ForeColor = Color.FromArgb(64, 64, 64);
+            titleText.Location = new Point(235, 64);
+            titleText.Margin = new Padding(4);
+            titleText.MinimumSize = new Size(300, 30);
+            titleText.Multiline = true;
+            titleText.Name = "titleText";
+            titleText.Padding = new Padding(10, 7, 10, 7);
+            titleText.PlaceholderText = "";
+            titleText.Size = new Size(300, 36);
+            titleText.TabIndex = 5;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(139, 280);
+            label2.Font = new Font("Quicksand", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(150, 127);
             label2.Name = "label2";
-            label2.Size = new Size(62, 25);
+            label2.Size = new Size(54, 28);
             label2.TabIndex = 3;
             label2.Text = "ISBN";
-            label2.Click += label2_Click_1;
             // 
-            // textBox1
+            // authorText
             // 
-            textBox1.Location = new Point(289, 384);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(189, 28);
-            textBox1.TabIndex = 2;
+            authorText.BackColor = SystemColors.Window;
+            authorText.Font = new Font("Quicksand", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            authorText.ForeColor = Color.FromArgb(64, 64, 64);
+            authorText.Location = new Point(235, 253);
+            authorText.Margin = new Padding(4);
+            authorText.MinimumSize = new Size(300, 30);
+            authorText.Multiline = true;
+            authorText.Name = "authorText";
+            authorText.Padding = new Padding(10, 7, 10, 7);
+          
+            
+            authorText.PlaceholderText = "";
+            authorText.Size = new Size(300, 36);
+            authorText.TabIndex = 2;
+            authorText.Text = "";
+            
             // 
             // button1
             // 
-            button1.BackColor = Color.PaleTurquoise;
-            button1.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(330, 172);
+            button1.BackColor = Color.FromArgb(74, 78, 105);
+            button1.BackgroundColor = Color.FromArgb(74, 78, 105);
+            button1.BorderColor = Color.PaleVioletRed;
+            button1.BorderRadius = 22;
+            button1.BorderSize = 0;
+            button1.FlatAppearance.BorderColor = Color.FromArgb(102, 102, 102);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Quicksand", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(626, 400);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(109, 34);
+            button1.Size = new Size(179, 41);
             button1.TabIndex = 1;
-            button1.Text = "UPLOAD";
+            button1.Text = "UPLOAD PHOTO";
+            button1.TextColor = Color.White;
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
-            // AddBookPicture
+            // pictureBox
             // 
-            AddBookPicture.BackColor = Color.White;
-            AddBookPicture.Location = new Point(289, 14);
-            AddBookPicture.Name = "AddBookPicture";
-            AddBookPicture.Size = new Size(189, 141);
-            AddBookPicture.TabIndex = 0;
-            AddBookPicture.TabStop = false;
-            AddBookPicture.Click += pictureBox1_Click;
+            pictureBox.BackColor = Color.White;
+            pictureBox.InitialImage = Properties.Resources.a_brief_history_of_time;
+            pictureBox.Location = new Point(604, 64);
+            pictureBox.Name = "pictureBox";
+            pictureBox.Size = new Size(222, 329);
+            pictureBox.TabIndex = 0;
+            pictureBox.TabStop = false;
             // 
             // AddBookDashboard
             // 
@@ -177,25 +340,35 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panel1);
             Name = "AddBookDashboard";
-            Size = new Size(800, 532);
+            Size = new Size(882, 559);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)AddBookPicture).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
         private Panel panel1;
-        private Button button1;
-        private PictureBox AddBookPicture;
+        private CustomButton button1;
+        private PictureBox pictureBox;
         private Label label2;
-        private TextBox textBox1;
+        private TextBox authorText;
         private Label label5;
         private Label label4;
         private Label label3;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private Button button2;
+        private TextBox isbnText;
+        private TextBox titleText;
+        private CustomButton button2;
+        private TextBox categoryText;
+        private Label label1;
+        private TextBox publisherText;
+        private Label label6;
+        private TextBox bookNoText;
+        private Label label7;
+        private DateTimePicker dateText;
+        private Panel panel2;
+        private Label label8;
     }
 }
