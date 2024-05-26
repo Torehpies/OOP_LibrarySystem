@@ -23,7 +23,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             containerPanel.Controls.Add(new AddAccount() { TopLevel = false, TopMost = true, Dock = DockStyle.None });
             if (!LoginDatabase.isUsersEmpty())
             {
-
                 disableLogin();
                 noAccount = true;
             }
@@ -34,7 +33,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         }
 
-        private void disableLogin()
+        public void disableLogin()
         {
             createAccount.Location = new System.Drawing.Point(707, 320);
             loginButton.Visible = false;
@@ -43,9 +42,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             checkBox1.Visible = false;
         }
 
-        private void enableLogin()
+        public void enableLogin()
         {
-            createAccount.Location = new System.Drawing.Point(707, 415);
+            createAccount.Location = new System.Drawing.Point(692,419);
             loginButton.Visible = true;
             PasstBox.Visible = true;
             LogintBox.Visible = true;
@@ -85,7 +84,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 containerPanel.Controls[1].Show();
                 containerPanel.Controls[0].Hide();
                 enableLogin();
-                noAccount = false;
                 return;
             }
             containerPanel.Controls[0].Show();

@@ -52,7 +52,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
             LoginDatabase.addAccount(Usertbox1.Text, passwordHash, isAdmin);
 
-            MessageBox.Show("Account: " + Usertbox1.Text + " is created.");
+            LoginForm parent = this.ParentForm as LoginForm;
+            parent.noAccount = false;
+
+            //MessageBox.Show("Account: " + Usertbox1.Text + " is created.");
             ClearTextBoxes(Parent.Controls);
             Parent.Visible = false;
         }
@@ -61,6 +64,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         {
             ClearTextBoxes(this.Parent.Controls);
             this.Parent.Visible = false;
+            LoginForm parent = this.ParentForm as LoginForm;
+            parent.disableLogin();
         }
 
         private void ClearTextBoxes(System.Windows.Forms.Control.ControlCollection controls)
