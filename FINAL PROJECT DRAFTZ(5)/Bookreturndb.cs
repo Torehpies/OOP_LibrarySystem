@@ -127,9 +127,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                     updateCommand.Parameters.AddWithValue("@borrowedBookId", borrowedBookId);
                     int rowsAffected = updateCommand.ExecuteNonQuery();
 
+                    Database database = new Database();
+                    database.recordTransaction("return");
+
                     if (rowsAffected == 0)
                     {
-                        MessageBox.Show("No rows updated. The book might have already been returned.");
+                        //MessageBox.Show("No rows updated. The book might have already been returned.");
                     }
                 }
             }

@@ -160,7 +160,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 cmd.Parameters.AddWithValue(@"AvailableCopies", keyValuePairs.Value);
 
 
-                MessageBox.Show(query);
+                //MessageBox.Show(query);
                 int rowsAffected = cmd.ExecuteNonQuery();
 
                 /*
@@ -197,7 +197,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                     Thread.Sleep(1000);
                     int idInt = reader.GetInt32(0);
                     id = idInt.ToString();
-                    MessageBox.Show(id);
+                    //MessageBox.Show(id);
                     
                     return id;
                 }
@@ -214,7 +214,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         public void addBorrowedBooks(string title, string borrowerId, int quantity)
         {
             
-
             if (SQL_SERVER == null)
             {
                 start();
@@ -230,9 +229,27 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             cmd.Parameters.AddWithValue("@quantity", quantity);
             cmd.Parameters.AddWithValue("@borrowDate", DateTime.Now.ToString("yyyy-MM-dd"));
             cmd.Parameters.AddWithValue("@dueDate", DateTime.Now.AddDays(14).ToString("yyyy-MM-dd"));
-
-
             
+            cmd.ExecuteNonQuery();
+
+            recordTransaction("borrow");
+
+            SQL_SERVER.Close();
+        }
+
+        public void recordTransaction(string type)
+        {
+            if (SQL_SERVER == null)
+            {
+                start();
+            }
+
+            MySqlCommand cmd = new MySqlCommand("INSERT INTO transactions (userId, type) " +
+                                                "VALUES(@userId, @type)", SQL_SERVER);
+
+            cmd.Parameters.AddWithValue("@userId", LoginDatabase.currentUserId);
+            cmd.Parameters.AddWithValue("@type", type);
+
             cmd.ExecuteNonQuery();
             SQL_SERVER.Close();
         }

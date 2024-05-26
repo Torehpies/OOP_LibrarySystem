@@ -34,6 +34,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             main_pnl = new Panel();
             container_pnl = new Panel();
             navigation_pnl = new Panel();
+            label2 = new Label();
+            pictureBox1 = new PictureBox();
+            welcomeLbl = new Label();
+            userLabel = new Label();
             button2 = new Button();
             button1 = new Button();
             logoutButton = new CustomButton();
@@ -43,6 +47,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             library_btn = new CustomButton();
             main_pnl.SuspendLayout();
             navigation_pnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // main_pnl
@@ -68,6 +73,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // 
             navigation_pnl.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             navigation_pnl.BackColor = Color.FromArgb(74, 78, 105);
+            navigation_pnl.Controls.Add(label2);
+            navigation_pnl.Controls.Add(pictureBox1);
+            navigation_pnl.Controls.Add(welcomeLbl);
+            navigation_pnl.Controls.Add(userLabel);
             navigation_pnl.Controls.Add(button2);
             navigation_pnl.Controls.Add(button1);
             navigation_pnl.Controls.Add(logoutButton);
@@ -80,6 +89,53 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             navigation_pnl.Size = new Size(1186, 93);
             navigation_pnl.TabIndex = 0;
             navigation_pnl.Paint += navigation_pnl_Paint;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Quicksand", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = SystemColors.ButtonHighlight;
+            label2.Location = new Point(573, 5);
+            label2.Name = "label2";
+            label2.Size = new Size(71, 24);
+            label2.TabIndex = 9;
+            label2.Text = "|   VOOX";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.None;
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.BackgroundImage = Properties.Resources.vooxSmallIcon3;
+            pictureBox1.BackgroundImageLayout = ImageLayout.None;
+            pictureBox1.Location = new Point(545, 6);
+            pictureBox1.Margin = new Padding(0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(25, 25);
+            pictureBox1.TabIndex = 8;
+            pictureBox1.TabStop = false;
+            // 
+            // welcomeLbl
+            // 
+            welcomeLbl.AutoSize = true;
+            welcomeLbl.Font = new Font("Quicksand", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            welcomeLbl.ForeColor = SystemColors.ButtonHighlight;
+            welcomeLbl.Location = new Point(29, 22);
+            welcomeLbl.Name = "welcomeLbl";
+            welcomeLbl.Size = new Size(84, 24);
+            welcomeLbl.TabIndex = 7;
+            welcomeLbl.Text = "Welcome,";
+            // 
+            // userLabel
+            // 
+            userLabel.AutoSize = true;
+            userLabel.Font = new Font("Quicksand", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            userLabel.ForeColor = SystemColors.ButtonHighlight;
+            userLabel.Location = new Point(29, 46);
+            userLabel.Name = "userLabel";
+            userLabel.Size = new Size(87, 24);
+            userLabel.TabIndex = 6;
+            userLabel.Text = "username";
+            userLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // button2
             // 
@@ -123,7 +179,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             logoutButton.FlatStyle = FlatStyle.Flat;
             logoutButton.Font = new Font("Quicksand SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             logoutButton.ForeColor = Color.White;
-            logoutButton.Location = new Point(985, 43);
+            logoutButton.Location = new Point(1079, 43);
             logoutButton.Name = "logoutButton";
             logoutButton.Size = new Size(93, 40);
             logoutButton.TabIndex = 0;
@@ -145,7 +201,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             bookinvent_btn.FlatStyle = FlatStyle.Flat;
             bookinvent_btn.Font = new Font("Quicksand SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             bookinvent_btn.ForeColor = Color.White;
-            bookinvent_btn.Location = new Point(770, 43);
+            bookinvent_btn.Location = new Point(824, 43);
             bookinvent_btn.Name = "bookinvent_btn";
             bookinvent_btn.RightToLeft = RightToLeft.Yes;
             bookinvent_btn.Size = new Size(191, 40);
@@ -168,7 +224,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             bookreturn_btn.FlatStyle = FlatStyle.Flat;
             bookreturn_btn.Font = new Font("Quicksand SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             bookreturn_btn.ForeColor = Color.White;
-            bookreturn_btn.Location = new Point(550, 43);
+            bookreturn_btn.Location = new Point(601, 43);
             bookreturn_btn.Name = "bookreturn_btn";
             bookreturn_btn.Size = new Size(191, 40);
             bookreturn_btn.TabIndex = 2;
@@ -190,7 +246,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             borrower_btn.FlatStyle = FlatStyle.Flat;
             borrower_btn.Font = new Font("Quicksand SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             borrower_btn.ForeColor = Color.White;
-            borrower_btn.Location = new Point(323, 43);
+            borrower_btn.Location = new Point(378, 43);
             borrower_btn.Name = "borrower_btn";
             borrower_btn.Size = new Size(191, 40);
             borrower_btn.TabIndex = 1;
@@ -214,7 +270,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             library_btn.FlatStyle = FlatStyle.Flat;
             library_btn.Font = new Font("Quicksand SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             library_btn.ForeColor = Color.White;
-            library_btn.Location = new Point(101, 43);
+            library_btn.Location = new Point(155, 43);
             library_btn.Name = "library_btn";
             library_btn.Size = new Size(191, 40);
             library_btn.TabIndex = 0;
@@ -236,6 +292,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             Text = "MainForm";
             main_pnl.ResumeLayout(false);
             navigation_pnl.ResumeLayout(false);
+            navigation_pnl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -251,5 +309,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private CustomControls.RJControls.CustomButton logoutButton;
         private Button button2;
         private Button button1;
+        private Label userLabel;
+        private Label welcomeLbl;
+        private PictureBox pictureBox1;
+        private Label label2;
     }
 }

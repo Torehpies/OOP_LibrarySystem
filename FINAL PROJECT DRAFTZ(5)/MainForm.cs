@@ -24,6 +24,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         {
             InitializeComponent();
 
+            userLabel.Text = LoginDatabase.currentUsername;
+
             Region = Region.FromHrgn(RoundEdge.CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
 
             libPane = new Library() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
@@ -48,7 +50,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void library_btn_Click(object sender, EventArgs e)
         {
-
+            // Reload yung mga kailangan ireload
+            Library.Instance.populateItems();
 
             borrowPane.Show();
             library_btn.BackColor = ColorTranslator.FromHtml("#F2E9E4");
@@ -67,13 +70,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             bookreturnPane.Hide();
             bookinventPane.Hide();
 
-            // Reload yung mga kailangan ireload
-            Library.Instance.populateItems();
         }
 
         private void borrower_btn_Click(object sender, EventArgs e)
         {
-
+            B_Books borrow = new B_Books();
+            borrow.LoadUsersData();
             library_btn.BackColor = ColorTranslator.FromHtml("#4A4E69");
             borrower_btn.BackColor = ColorTranslator.FromHtml("#F2E9E4");
             bookreturn_btn.BackColor = ColorTranslator.FromHtml("#4A4E69");
