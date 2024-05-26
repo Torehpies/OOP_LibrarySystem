@@ -24,6 +24,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         {
             InitializeComponent();
 
+            userLabel.Text = LoginDatabase.currentUsername;
+
             Region = Region.FromHrgn(RoundEdge.CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
 
             libPane = new Library() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };

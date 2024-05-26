@@ -247,7 +247,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             MySqlCommand cmd = new MySqlCommand("INSERT INTO transactions (userId, type) " +
                                                 "VALUES(@userId, @type)", SQL_SERVER);
 
-            cmd.Parameters.AddWithValue("@userId", LoginDatabase.currentUser);
+            cmd.Parameters.AddWithValue("@userId", LoginDatabase.currentUserId);
             cmd.Parameters.AddWithValue("@type", type);
 
             cmd.ExecuteNonQuery();

@@ -14,7 +14,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
     {
         public static MySqlConnection SQL_SERVER;
 
-        public static string currentUser;
+        public static string currentUserId;
+        public static string currentUsername;
 
         public static void start()
         {
@@ -58,7 +59,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             start();
 
             MySqlCommand cmd = new MySqlCommand("SELECT id from users WHERE username = @username",SQL_SERVER);
-            cmd.Parameters.AddWithValue("username", username);
+            cmd.Parameters.AddWithValue("@username", username);
 
             MySqlDataReader reader = cmd.ExecuteReader();
 
@@ -69,6 +70,25 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             SQL_SERVER.Close();
 
             return id;           
+        }
+
+        public static string getUsername(string id)
+        {
+            string username = "";
+            start();
+
+            MySqlCommand cmd = new MySqlCommand("SELECT username from users WHERE id = @id", SQL_SERVER);
+            cmd.Parameters.AddWithValue("@id", id);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            if (!reader.Read()) return username;
+
+            username = reader.GetValue(0).ToString();
+            reader.Close();
+            SQL_SERVER.Close();
+
+            return id;
         }
 
         public static bool checkLogin(string username, string password, bool isAdmin)
@@ -93,7 +113,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
             if (BCrypt.Net.BCrypt.EnhancedVerify(password, hashPasswordDB))
             {
-                currentUser = getUserId(username).ToString();
+                currentUserId = getUserId(username).ToString();
+                currentUsername = username;
                 return true;
             }
             else return false;

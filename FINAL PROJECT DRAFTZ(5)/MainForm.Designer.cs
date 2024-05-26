@@ -34,6 +34,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             main_pnl = new Panel();
             container_pnl = new Panel();
             navigation_pnl = new Panel();
+            label2 = new Label();
+            pictureBox1 = new PictureBox();
+            welcomeLbl = new Label();
+            userLabel = new Label();
             button2 = new Button();
             button1 = new Button();
             logoutButton = new CustomButton();
@@ -41,10 +45,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             bookreturn_btn = new CustomButton();
             borrower_btn = new CustomButton();
             library_btn = new CustomButton();
-            label1 = new Label();
-            welcomeLbl = new Label();
-            pictureBox1 = new PictureBox();
-            label2 = new Label();
             main_pnl.SuspendLayout();
             navigation_pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -76,7 +76,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             navigation_pnl.Controls.Add(label2);
             navigation_pnl.Controls.Add(pictureBox1);
             navigation_pnl.Controls.Add(welcomeLbl);
-            navigation_pnl.Controls.Add(label1);
+            navigation_pnl.Controls.Add(userLabel);
             navigation_pnl.Controls.Add(button2);
             navigation_pnl.Controls.Add(button1);
             navigation_pnl.Controls.Add(logoutButton);
@@ -89,6 +89,53 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             navigation_pnl.Size = new Size(1186, 93);
             navigation_pnl.TabIndex = 0;
             navigation_pnl.Paint += navigation_pnl_Paint;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Quicksand", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = SystemColors.ButtonHighlight;
+            label2.Location = new Point(573, 5);
+            label2.Name = "label2";
+            label2.Size = new Size(71, 24);
+            label2.TabIndex = 9;
+            label2.Text = "|   VOOX";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.None;
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.BackgroundImage = Properties.Resources.vooxSmallIcon3;
+            pictureBox1.BackgroundImageLayout = ImageLayout.None;
+            pictureBox1.Location = new Point(545, 6);
+            pictureBox1.Margin = new Padding(0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(25, 25);
+            pictureBox1.TabIndex = 8;
+            pictureBox1.TabStop = false;
+            // 
+            // welcomeLbl
+            // 
+            welcomeLbl.AutoSize = true;
+            welcomeLbl.Font = new Font("Quicksand", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            welcomeLbl.ForeColor = SystemColors.ButtonHighlight;
+            welcomeLbl.Location = new Point(29, 22);
+            welcomeLbl.Name = "welcomeLbl";
+            welcomeLbl.Size = new Size(84, 24);
+            welcomeLbl.TabIndex = 7;
+            welcomeLbl.Text = "Welcome,";
+            // 
+            // userLabel
+            // 
+            userLabel.AutoSize = true;
+            userLabel.Font = new Font("Quicksand", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            userLabel.ForeColor = SystemColors.ButtonHighlight;
+            userLabel.Location = new Point(29, 46);
+            userLabel.Name = "userLabel";
+            userLabel.Size = new Size(87, 24);
+            userLabel.TabIndex = 6;
+            userLabel.Text = "username";
+            userLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // button2
             // 
@@ -232,52 +279,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             library_btn.UseVisualStyleBackColor = false;
             library_btn.Click += library_btn_Click;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Quicksand", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(29, 46);
-            label1.Name = "label1";
-            label1.Size = new Size(87, 24);
-            label1.TabIndex = 6;
-            label1.Text = "username";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // welcomeLbl
-            // 
-            welcomeLbl.AutoSize = true;
-            welcomeLbl.Font = new Font("Quicksand", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            welcomeLbl.ForeColor = SystemColors.ButtonHighlight;
-            welcomeLbl.Location = new Point(29, 22);
-            welcomeLbl.Name = "welcomeLbl";
-            welcomeLbl.Size = new Size(84, 24);
-            welcomeLbl.TabIndex = 7;
-            welcomeLbl.Text = "Welcome,";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.BackgroundImage = Properties.Resources.vooxSmallIcon1;
-            pictureBox1.BackgroundImageLayout = ImageLayout.None;
-            pictureBox1.Location = new Point(542, 5);
-            pictureBox1.Margin = new Padding(0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(30, 30);
-            pictureBox1.TabIndex = 8;
-            pictureBox1.TabStop = false;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Quicksand", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(575, 5);
-            label2.Name = "label2";
-            label2.Size = new Size(71, 24);
-            label2.TabIndex = 9;
-            label2.Text = "|   VOOX";
-            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -308,7 +309,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private CustomControls.RJControls.CustomButton logoutButton;
         private Button button2;
         private Button button1;
-        private Label label1;
+        private Label userLabel;
         private Label welcomeLbl;
         private PictureBox pictureBox1;
         private Label label2;
