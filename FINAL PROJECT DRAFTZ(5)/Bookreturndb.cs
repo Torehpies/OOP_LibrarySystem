@@ -128,7 +128,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                     int rowsAffected = updateCommand.ExecuteNonQuery();
 
                     Database database = new Database();
-                    database.recordTransaction(LoginDatabase.currentUser);
+                    database.recordTransaction("return");
 
                     if (rowsAffected == 0)
                     {

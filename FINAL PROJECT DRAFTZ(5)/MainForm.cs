@@ -48,7 +48,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void library_btn_Click(object sender, EventArgs e)
         {
-
+            // Reload yung mga kailangan ireload
+            Library.Instance.populateItems();
 
             borrowPane.Show();
             library_btn.BackColor = ColorTranslator.FromHtml("#F2E9E4");
@@ -67,8 +68,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             bookreturnPane.Hide();
             bookinventPane.Hide();
 
-            // Reload yung mga kailangan ireload
-            Library.Instance.populateItems();
         }
 
         private void borrower_btn_Click(object sender, EventArgs e)

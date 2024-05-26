@@ -52,6 +52,25 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
         }
 
+        public static string getUserId(string username)
+        {
+            string id = "";
+            start();
+
+            MySqlCommand cmd = new MySqlCommand("SELECT id from users WHERE username = @username",SQL_SERVER);
+            cmd.Parameters.AddWithValue("username", username);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            if (!reader.Read()) return id;
+
+            id = reader.GetValue(0).ToString();
+            reader.Close();
+            SQL_SERVER.Close();
+
+            return id;           
+        }
+
         public static bool checkLogin(string username, string password, bool isAdmin)
         {
             start();
@@ -68,10 +87,13 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             if (!reader.Read()) return false;
                 
             hashPasswordDB = reader.GetString("password");
+
+            reader.Close();
             SQL_SERVER.Close();
+
             if (BCrypt.Net.BCrypt.EnhancedVerify(password, hashPasswordDB))
             {
-                currentUser = username;
+                currentUser = getUserId(username).ToString();
                 return true;
             }
             else return false;
