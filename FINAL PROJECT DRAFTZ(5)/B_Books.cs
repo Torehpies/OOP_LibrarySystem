@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace FINAL_PROJECT_DRAFTZ_5_
 {
@@ -29,7 +30,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             using (MySqlConnection con = new MySqlConnection("server=127.0.0.1; user=root; database=test; password=;Convert Zero Datetime=True"))
             {
                 con.Open();
-                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT b.isbn, b.title, b.author, m.name, bb.borrowDate, bb.dueDate FROM BorrowedBooks bb INNER JOIN Books b ON bb.bookId = b.id INNER JOIN Members m ON bb.borrowerId = m.id", con);
+                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT b.isbn, b.title, b.author, m.name, bb.borrowDate, bb.dueDate, returnDate FROM BorrowedBooks bb INNER JOIN Books b ON bb.bookId = b.id INNER JOIN Members m ON bb.borrowerId = m.id", con);
 
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
@@ -44,12 +45,17 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
                 foreach (DataRow dr in dataTable.Rows)
                 {
-                    ListViewItem item = new ListViewItem(dr["isbn"].ToString()); 
+                    ListViewItem item = new ListViewItem(dr["isbn"].ToString());
                     item.SubItems.Add(dr["title"].ToString());
                     item.SubItems.Add(dr["author"].ToString());
                     item.SubItems.Add(dr["name"].ToString());
                     item.SubItems.Add(((DateTime)dr["borrowDate"]).ToString("yyyy-MM-dd"));
                     item.SubItems.Add(((DateTime)dr["dueDate"]).ToString("yyyy-MM-dd"));
+
+                    item.SubItems.Add(dr["returnDate"] == DBNull.Value ? "BORROWED" : ((DateTime)dr["returnDate"]).ToString("yyyy-MM-dd"));
+
+
+                    //item.SubItems.Add(((DateTime)dr["returnDate"]).ToString("yyyy-MM-dd"));
                     listView1.Items.Add(item);
                 }
             }
@@ -66,6 +72,15 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 listitem.SubItems.Add(dr["name"].ToString());
                 listitem.SubItems.Add(dr["borrowDate"].ToString());
                 listitem.SubItems.Add(dr["dueDate"].ToString());
+
+                if (dr["returnDate"] == DBNull.Value)
+                {
+                    listitem.SubItems.Add("BORROWED");
+                }
+                else
+                {
+                    listitem.SubItems.Add(Convert.ToDateTime(dr["returnDate"]).ToString("yyyy-MM-dd HH:mm:ss"));
+                }
 
 
                 listView1.Items.Add(listitem);
@@ -97,9 +112,25 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             LoadUsersData();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void sortComboBox()
         {
-            string searchText = textBox1.Text.Trim();
+            // Run sum query
+            //datePicker;
+            MessageBox.Show(sortCombo.Text);
+            string searchText = sortCombo.Text.Trim();
+            string query = "";
+            if (searchText == "BORROWED BOOKS")
+            {
+                query = "SELECT bb.*, b.isbn, b.title, b.author, m.name FROM `borrowedbooks` bb JOIN books b ON bb.bookId = b.id JOIN members m ON bb.borrowerId = m.id WHERE bb.returnDate IS NULL";
+            }
+            else if (searchText == "RETURNED BOOKS")
+            {
+                query = "SELECT bb.*, b.isbn, b.title, b.author, m.name FROM `borrowedbooks` bb JOIN books b ON bb.bookId = b.id JOIN members m ON bb.borrowerId = m.id WHERE bb.returnDate IS NOT NULL";
+            }
+            else
+            {
+                query = "SELECT bb.*, b.isbn, b.title, b.author, m.name FROM `borrowedbooks` bb JOIN books b ON bb.bookId = b.id JOIN members m ON bb.borrowerId = m.id";
+            }
 
 
             if (string.IsNullOrEmpty(searchText))
@@ -108,12 +139,173 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 return;
             }
 
+            using (MySqlConnection con = new MySqlConnection("server=127.0.0.1; user=root; database=test; password="))
+            {
+                using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, con))
+                {
+                    DataTable filteredDataTable = new DataTable();
+                    adapter.Fill(filteredDataTable);
+
+                    UpdateListView(filteredDataTable);
+                }
+            }
+        }
+
+        private void searchFilter()
+        {
+            string searchText = textBox1.Text.Trim();
+            string query = "";
+
+            if (sortCombo.Text == "BORROWED BOOKS")
+            {
+                query = $"SELECT bb.bookId, bb.borrowerId, " +
+                $"DATE_FORMAT(bb.borrowDate, '%Y-%m-%d %H:%i:%s') AS borrowDate, " +
+                $"DATE_FORMAT(bb.returnDate, '%Y-%m-%d %H:%i:%s') AS returnDate, " +
+                $"DATE_FORMAT(bb.dueDate, '%Y-%m-%d %H:%i:%s') AS dueDate, " +
+                $"b.isbn AS ISBN, b.title AS Title, b.author AS Author, " +
+                $"m.name AS Name " +
+                $"FROM borrowedbooks bb " +
+                $"INNER JOIN books b ON bb.bookId = b.id " +
+                $"INNER JOIN members m ON bb.borrowerId = m.id " +
+                $"WHERE " +
+                $"LOWER(m.name) LIKE '%{searchText.ToLower()}%'" +
+                "IS NULL";
+
+            }
+            else if (sortCombo.Text == "RETURNED BOOKS")
+            {
+                query = $"SELECT bb.bookId, bb.borrowerId, " +
+                $"DATE_FORMAT(bb.borrowDate, '%Y-%m-%d %H:%i:%s') AS borrowDate, " +
+                $"DATE_FORMAT(bb.returnDate, '%Y-%m-%d %H:%i:%s') AS returnDate, " +
+                $"DATE_FORMAT(bb.dueDate, '%Y-%m-%d %H:%i:%s') AS dueDate, " +
+                $"b.isbn AS ISBN, b.title AS Title, b.author AS Author, " +
+                $"m.name AS Name " +
+                $"FROM borrowedbooks bb " +
+                $"INNER JOIN books b ON bb.bookId = b.id " +
+                $"INNER JOIN members m ON bb.borrowerId = m.id " +
+                $"WHERE " +
+                $"LOWER(m.name) LIKE '%{searchText.ToLower()}%'" +
+                "IS NOT NULL";
+            }
+            else
+            {
+                query = $"SELECT bb.bookId, bb.borrowerId, " +
+                $"DATE_FORMAT(bb.borrowDate, '%Y-%m-%d %H:%i:%s') AS borrowDate, " +
+                $"DATE_FORMAT(bb.returnDate, '%Y-%m-%d %H:%i:%s') AS returnDate, " +
+                $"DATE_FORMAT(bb.dueDate, '%Y-%m-%d %H:%i:%s') AS dueDate, " +
+                $"b.isbn AS ISBN, b.title AS Title, b.author AS Author, " +
+                $"m.name AS Name " +
+                $"FROM borrowedbooks bb " +
+                $"INNER JOIN books b ON bb.bookId = b.id " +
+                $"INNER JOIN members m ON bb.borrowerId = m.id " +
+                $"WHERE " +
+                $"LOWER(m.name) LIKE '%{searchText.ToLower()}%'";
+
+            }
+
+            using (MySqlConnection con = new MySqlConnection("server=127.0.0.1; user=root; database=test; password="))
+            {
+                using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, con))
+                {
+
+                    DataTable filteredDataTable = new DataTable();
+                    adapter.Fill(filteredDataTable);
 
 
-            // di ko alam kung bakit ganyan. wag nyoko tanungin
-            //in the name of the father, the son, the holy spirit, amen
-            //why
-            string query = $"SELECT bb.bookId, bb.borrowerId, " +
+                    UpdateListView(filteredDataTable);
+
+                }
+            }
+        }
+
+        private void selectedIndexChange(object sender, EventArgs e)
+        {
+            if (textBox1.Text.Length <= 0)
+            {
+                //MessageBox.Show("Text box is empty");
+                sortComboBox();
+            }
+            else
+            {
+                //MessageBox.Show("Text box is not empty");
+
+                string searchText = textBox1.Text.Trim();
+
+                // Kapag nag select lang ng shet tapos wala namang searchtext
+                if (sortCombo.SelectedIndex >= 0)
+                {
+                    sortComboBox();
+                    return;
+                }
+
+                // Kapag nag select sa combo box at may searchbox
+                else if (sortCombo.SelectedIndex < -1 && searchText.Length > 0)
+                {
+                    searchFilter();
+                    return;
+                }
+
+                // Kapag searhbox lang
+                else
+                {
+                    string query = $"SELECT bb.bookId, bb.borrowerId, " +
+                     $"DATE_FORMAT(bb.borrowDate, '%Y-%m-%d %H:%i:%s') AS borrowDate, " +
+                     $"DATE_FORMAT(bb.returnDate, '%Y-%m-%d %H:%i:%s') AS returnDate, " +
+                     $"DATE_FORMAT(bb.dueDate, '%Y-%m-%d %H:%i:%s') AS dueDate, " +
+                     $"b.isbn AS ISBN, b.title AS Title, b.author AS Author, " +
+                     $"m.name AS Name " +
+                     $"FROM borrowedbooks bb " +
+                     $"INNER JOIN books b ON bb.bookId = b.id " +
+                     $"INNER JOIN members m ON bb.borrowerId = m.id " +
+                     $"WHERE " +
+                     $"LOWER(m.name) LIKE '%{searchText.ToLower()}%' OR " +
+                     $"DATE_FORMAT(bb.borrowDate, '%Y-%m-%d %H:%i:%s') LIKE '%{searchText.ToLower()}%' OR " +
+                     $"DATE_FORMAT(bb.returnDate, '%Y-%m-%d %H:%i:%s') LIKE '%{searchText.ToLower()}%' OR " +
+                     $"DATE_FORMAT(bb.dueDate, '%Y-%m-%d %H:%i:%s') LIKE '%{searchText.ToLower()}%'";
+
+                    using (MySqlConnection con = new MySqlConnection("server=127.0.0.1; user=root; database=test; password="))
+                    {
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, con))
+                        {
+
+                            DataTable filteredDataTable = new DataTable();
+                            adapter.Fill(filteredDataTable);
+
+                            UpdateListView(filteredDataTable);
+                        }
+                    }
+                }
+
+                if (string.IsNullOrEmpty(searchText))
+                {
+                    ResetListView();
+                    return;
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string searchText = textBox1.Text.Trim();
+
+            // Kapag nag select lang ng shet tapos wala namang searchtext
+            if (sortCombo.SelectedIndex >= 0)
+            {
+                sortComboBox();
+                return;
+            }
+
+            // Kapag nag select sa combo box at may searchbox
+            else if (sortCombo.SelectedIndex < -1 && searchText.Length > 0)
+            {
+                searchFilter();
+                return;
+            }
+
+            // Kapag searhbox lang
+            else
+            {
+                string query = $"SELECT bb.bookId, bb.borrowerId, " +
                  $"DATE_FORMAT(bb.borrowDate, '%Y-%m-%d %H:%i:%s') AS borrowDate, " +
                  $"DATE_FORMAT(bb.returnDate, '%Y-%m-%d %H:%i:%s') AS returnDate, " +
                  $"DATE_FORMAT(bb.dueDate, '%Y-%m-%d %H:%i:%s') AS dueDate, " +
@@ -123,28 +315,65 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                  $"INNER JOIN books b ON bb.bookId = b.id " +
                  $"INNER JOIN members m ON bb.borrowerId = m.id " +
                  $"WHERE " +
-                 $"LOWER(b.isbn) LIKE '%{searchText.ToLower()}%' OR " +
-                 $"LOWER(b.title) LIKE '%{searchText.ToLower()}%' OR " +
-                 $"LOWER(b.author) LIKE '%{searchText.ToLower()}%' OR " +
                  $"LOWER(m.name) LIKE '%{searchText.ToLower()}%' OR " +
                  $"DATE_FORMAT(bb.borrowDate, '%Y-%m-%d %H:%i:%s') LIKE '%{searchText.ToLower()}%' OR " +
                  $"DATE_FORMAT(bb.returnDate, '%Y-%m-%d %H:%i:%s') LIKE '%{searchText.ToLower()}%' OR " +
                  $"DATE_FORMAT(bb.dueDate, '%Y-%m-%d %H:%i:%s') LIKE '%{searchText.ToLower()}%'";
 
+                using (MySqlConnection con = new MySqlConnection("server=127.0.0.1; user=root; database=test; password="))
+                {
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, con))
+                    {
+
+                        DataTable filteredDataTable = new DataTable();
+                        adapter.Fill(filteredDataTable);
+
+                        UpdateListView(filteredDataTable);
+                    }
+                }
+            }
+
+            if (string.IsNullOrEmpty(searchText))
+            {
+                ResetListView();
+                return;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
 
 
+        }
+
+        private void selectedDateChange(object sender, EventArgs e)
+        {
+            MessageBox.Show(datepicker.Value + " is the date");
+
+            string query = $"SELECT bb.bookId, bb.borrowerId, " +
+                     $"DATE_FORMAT(bb.borrowDate, '%Y-%m-%d %H:%i:%s') AS borrowDate, " +
+                     $"DATE_FORMAT(bb.returnDate, '%Y-%m-%d %H:%i:%s') AS returnDate, " +
+                     $"DATE_FORMAT(bb.dueDate, '%Y-%m-%d %H:%i:%s') AS dueDate, " +
+                     $"b.isbn AS ISBN, b.title AS Title, b.author AS Author, " +
+                     $"m.name AS Name " +
+                     $"FROM borrowedbooks bb " +
+                     $"INNER JOIN books b ON bb.bookId = b.id " +
+                     $"INNER JOIN members m ON bb.borrowerId = m.id " +
+                     $"WHERE " +
+                     $"DATE_FORMAT(bb.borrowDate, '%Y-%m-%d %H:%i:%s') LIKE '%{datepicker.Text.ToLower()}%' OR " +
+                     $"DATE_FORMAT(bb.returnDate, '%Y-%m-%d %H:%i:%s') LIKE '%{datepicker.Text.ToLower()}%' OR " +
+                     $"DATE_FORMAT(bb.dueDate, '%Y-%m-%d %H:%i:%s') LIKE '%{datepicker.Text.ToLower()}%'";
 
             using (MySqlConnection con = new MySqlConnection("server=127.0.0.1; user=root; database=test; password="))
             {
                 using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, con))
                 {
-                    
+
                     DataTable filteredDataTable = new DataTable();
                     adapter.Fill(filteredDataTable);
 
-                
                     UpdateListView(filteredDataTable);
-                    
                 }
             }
         }

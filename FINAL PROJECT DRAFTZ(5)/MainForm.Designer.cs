@@ -194,7 +194,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             borrower_btn.Name = "borrower_btn";
             borrower_btn.Size = new Size(191, 40);
             borrower_btn.TabIndex = 1;
-            borrower_btn.Text = "BORROWED BOOKS";
+            borrower_btn.Text = "BORROW HISTORY";
             borrower_btn.TextColor = Color.White;
             borrower_btn.UseVisualStyleBackColor = false;
             borrower_btn.Click += borrower_btn_Click;
