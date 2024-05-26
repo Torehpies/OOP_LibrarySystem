@@ -70,5 +70,28 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             foreach (Control c in controls)
                 ClearTextBoxes(c.Controls);
         }
+
+        bool hidden = false;
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (hidden)
+            {
+                passwordtbox.UseSystemPasswordChar = true;
+                passwordtbox1.UseSystemPasswordChar = true;
+                hidden = false;
+            }
+            else
+            {
+                passwordtbox.UseSystemPasswordChar = false;
+                passwordtbox1.UseSystemPasswordChar = false;
+                hidden = true;
+            }
+
+        }
+
+        private void passwordtbox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

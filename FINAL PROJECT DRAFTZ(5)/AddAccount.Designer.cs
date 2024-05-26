@@ -37,6 +37,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             accountType = new ComboBox();
             label1 = new Label();
             cancelButton = new CustomButton();
+            checkBox1 = new CheckBox();
             SuspendLayout();
             // 
             // Usertbox1
@@ -79,6 +80,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             passwordtbox1.Size = new Size(299, 25);
             passwordtbox1.TabIndex = 2;
             passwordtbox1.UseSystemPasswordChar = true;
+            passwordtbox1.TextChanged += passwordtbox1_TextChanged;
             // 
             // button1
             // 
@@ -91,7 +93,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Quicksand", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.FromArgb(242, 233, 228);
-            button1.Location = new Point(77, 190);
+            button1.Location = new Point(77, 197);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(150, 30);
@@ -107,7 +109,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             accountType.Font = new Font("Quicksand", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             accountType.FormattingEnabled = true;
             accountType.Items.AddRange(new object[] { "Admin", "Standard" });
-            accountType.Location = new Point(4, 140);
+            accountType.Location = new Point(3, 158);
             accountType.MinimumSize = new Size(121, 0);
             accountType.Name = "accountType";
             accountType.Size = new Size(121, 31);
@@ -135,7 +137,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             cancelButton.FlatStyle = FlatStyle.Flat;
             cancelButton.Font = new Font("Quicksand", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             cancelButton.ForeColor = Color.FromArgb(34, 34, 59);
-            cancelButton.Location = new Point(77, 221);
+            cancelButton.Location = new Point(77, 228);
             cancelButton.Margin = new Padding(2);
             cancelButton.Name = "cancelButton";
             cancelButton.Size = new Size(150, 30);
@@ -145,12 +147,24 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             cancelButton.UseVisualStyleBackColor = false;
             cancelButton.Click += cancelButton_Click;
             // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(3, 138);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(108, 19);
+            checkBox1.TabIndex = 9;
+            checkBox1.Text = "Show Password";
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            // 
             // AddAccount
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(242, 233, 228);
             ClientSize = new Size(306, 283);
+            Controls.Add(checkBox1);
             Controls.Add(cancelButton);
             Controls.Add(label1);
             Controls.Add(accountType);
@@ -173,5 +187,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private ComboBox accountType;
         private Label label1;
         private CustomButton cancelButton;
+        private CheckBox checkBox1;
     }
 }

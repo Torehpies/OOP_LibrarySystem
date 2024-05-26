@@ -42,6 +42,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             containerPanel = new Panel();
             button2 = new Button();
             button1 = new Button();
+            checkBox1 = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -95,7 +96,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             loginButton.FlatStyle = FlatStyle.Flat;
             loginButton.Font = new Font("Quicksand", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             loginButton.ForeColor = Color.Snow;
-            loginButton.Location = new Point(692, 366);
+            loginButton.Location = new Point(692, 387);
             loginButton.Margin = new Padding(2);
             loginButton.Name = "loginButton";
             loginButton.Size = new Size(150, 30);
@@ -117,7 +118,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             createAccount.FlatStyle = FlatStyle.Flat;
             createAccount.Font = new Font("Quicksand", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             createAccount.ForeColor = SystemColors.ActiveCaptionText;
-            createAccount.Location = new Point(692, 398);
+            createAccount.Location = new Point(692, 419);
             createAccount.Margin = new Padding(2);
             createAccount.Name = "createAccount";
             createAccount.Size = new Size(150, 30);
@@ -158,11 +159,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // 
             // containerPanel
             // 
-            containerPanel.Location = new Point(618, 266);
+            containerPanel.Location = new Point(611, 266);
             containerPanel.Name = "containerPanel";
             containerPanel.Size = new Size(306, 283);
             containerPanel.TabIndex = 10;
             containerPanel.Visible = false;
+            containerPanel.Paint += containerPanel_Paint;
             // 
             // button2
             // 
@@ -194,6 +196,17 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(618, 363);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(108, 19);
+            checkBox1.TabIndex = 1;
+            checkBox1.Text = "Show Password";
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -211,6 +224,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             Controls.Add(label1);
             Controls.Add(PasstBox);
             Controls.Add(LogintBox);
+            Controls.Add(checkBox1);
             Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -238,5 +252,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private Panel containerPanel;
         private Button button2;
         private Button button1;
+        private CheckBox checkBox1;
     }
 }

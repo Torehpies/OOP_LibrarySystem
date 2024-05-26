@@ -23,6 +23,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             containerPanel.Controls.Add(new AddAccount() { TopLevel = false, TopMost = true, Dock = DockStyle.None });
             if (!LoginDatabase.isUsersEmpty())
             {
+
                 disableLogin();
                 noAccount = true;
             }
@@ -39,6 +40,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             loginButton.Visible = false;
             PasstBox.Visible = false;
             LogintBox.Visible = false;
+            checkBox1.Visible = false;
         }
 
         private void enableLogin()
@@ -47,6 +49,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             loginButton.Visible = true;
             PasstBox.Visible = true;
             LogintBox.Visible = true;
+            checkBox1.Visible = true;
 
         }
 
@@ -104,6 +107,27 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        bool hidden = false;
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (hidden)
+            {
+                PasstBox.UseSystemPasswordChar = true;
+                hidden = false;
+            }
+            else
+            {
+                PasstBox.UseSystemPasswordChar = false;
+                hidden = true;
+            }
+
+        }
+
+        private void containerPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
