@@ -35,8 +35,10 @@
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
             columnHeader4 = new ColumnHeader();
-            textBox1 = new TextBox();
+            columnHeader3 = new ColumnHeader();
             button1 = new Button();
+            sortCombo = new ComboBox();
+            textBox1 = new TextBox();
             SuspendLayout();
             // 
             // listView1
@@ -44,7 +46,7 @@
             listView1.BackColor = SystemColors.Control;
             listView1.BackgroundImageTiled = true;
             listView1.BorderStyle = BorderStyle.None;
-            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader6, columnHeader8, columnHeader9, columnHeader1, columnHeader2, columnHeader4 });
+            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader6, columnHeader8, columnHeader9, columnHeader1, columnHeader2, columnHeader4, columnHeader3 });
             listView1.GridLines = true;
             listView1.Location = new Point(41, 93);
             listView1.Name = "listView1";
@@ -58,44 +60,37 @@
             // columnHeader6
             // 
             columnHeader6.Text = "ISBN";
-            columnHeader6.Width = -1;
+            columnHeader6.Width = 100;
             // 
             // columnHeader8
             // 
             columnHeader8.Text = "Title";
-            columnHeader8.Width = 400;
+            columnHeader8.Width = 195;
             // 
             // columnHeader9
             // 
             columnHeader9.Text = "Author";
-            columnHeader9.Width = 195;
+            columnHeader9.Width = 125;
             // 
             // columnHeader1
             // 
             columnHeader1.Text = "Borrowers Name";
-            columnHeader1.Width = 195;
+            columnHeader1.Width = 150;
             // 
             // columnHeader2
             // 
             columnHeader2.Text = "Borrow Date";
-            columnHeader2.Width = 100;
+            columnHeader2.Width = 125;
             // 
             // columnHeader4
             // 
-            columnHeader4.DisplayIndex = 5;
             columnHeader4.Text = "Due Date";
-            columnHeader4.Width = 100;
+            columnHeader4.Width = 125;
             // 
-            // textBox1
+            // columnHeader3
             // 
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Quicksand", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(42, 41);
-            textBox1.MinimumSize = new Size(327, 31);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(327, 31);
-            textBox1.TabIndex = 1;
-            textBox1.TextChanged += textBox1_TextChanged;
+            columnHeader3.Text = "Return Date";
+            columnHeader3.Width = 125;
             // 
             // button1
             // 
@@ -104,7 +99,7 @@
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.ForeColor = SystemColors.ControlText;
-            button1.Location = new Point(378, 41);
+            button1.Location = new Point(542, 41);
             button1.Name = "button1";
             button1.Size = new Size(98, 31);
             button1.TabIndex = 2;
@@ -112,11 +107,34 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // sortCombo
+            // 
+            sortCombo.FormattingEnabled = true;
+            sortCombo.Items.AddRange(new object[] { "RETURNED BOOKS", "BORROWED BOOKS", "ALL" });
+            sortCombo.Location = new Point(374, 41);
+            sortCombo.Name = "sortCombo";
+            sortCombo.Size = new Size(162, 31);
+            sortCombo.TabIndex = 3;
+            sortCombo.Text = "Sort by...";
+            sortCombo.SelectedIndexChanged += selectedIndexChange;
+            // 
+            // textBox1
+            // 
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Font = new Font("Quicksand", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox1.Location = new Point(41, 41);
+            textBox1.MinimumSize = new Size(327, 31);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(327, 31);
+            textBox1.TabIndex = 1;
+            textBox1.TextChanged += textBox1_TextChanged;
+            // 
             // B_Books
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(201, 173, 167);
+            Controls.Add(sortCombo);
             Controls.Add(button1);
             Controls.Add(textBox1);
             Controls.Add(listView1);
@@ -138,9 +156,11 @@
         private ColumnHeader columnHeader4;
         private ColumnHeader columnHeader5;
         private ColumnHeader columnHeader7;
-        private TextBox textBox1;
         private Button button1;
         private ColumnHeader columnHeader8;
         private ColumnHeader columnHeader9;
+        private ComboBox sortCombo;
+        private TextBox textBox1;
+        private ColumnHeader columnHeader3;
     }
 }
