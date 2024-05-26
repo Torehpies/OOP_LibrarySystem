@@ -305,6 +305,16 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
         }
 
+        public void deleteUser(int id)
+        {
+            start();
+
+            MySqlCommand cmd = new MySqlCommand("DELETE FROM users WHERE id = @id", SQL_SERVER);
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.ExecuteNonQuery();
+            SQL_SERVER.Close();
+        } 
+
         
 
     }

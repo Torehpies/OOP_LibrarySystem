@@ -17,35 +17,70 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         public AccountManager()
         {
             InitializeComponent();
+            populate();
+
         }
 
-        private void populateTable()
+        private void populate()
         {
-            using (MySqlConnection con = new MySqlConnection("server=127.0.0.1; user=root; database=test; password=;Convert Zero Datetime=True"))
+            DataTable borrowedBooksTable = new DataTable();
+            // Call method from Bookreturndb class to get borrowed books info
+            Bookreturndb.DisplayMembers(out borrowedBooksTable);
+
+            // Populate ListView with borrowed books data
+            PopulateListView(borrowedBooksTable);
+
+        }
+
+        private void PopulateListView(DataTable borrowedBooksTable)
+        {
+            borrowedbooks_tbl.Items.Clear();
+            foreach (DataRow row in borrowedBooksTable.Rows)
             {
-                con.Open();
-                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM users", con);
+                ListViewItem item = new ListViewItem(row["id"].ToString());
+                item.SubItems.Add(row["username"].ToString());
 
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable);
+                item.SubItems.Add(((DateTime)row["lastLogin"]).ToString());
+                item.SubItems.Add(((DateTime)row["created"]).ToString());
+                item.SubItems.Add(row["type"].ToString());
 
-                
+                borrowedbooks_tbl.Items.Add(item);
+            }
+        }
 
-                foreach (DataRow dr in dataTable.Rows)
+        private void confirm_btn_Click_1(object sender, EventArgs e)
+        {
+            // Check if items are checked in the ListView
+            if (borrowedbooks_tbl.CheckedItems.Count > 0)
+            {
+                foreach (ListViewItem checkedItem in borrowedbooks_tbl.CheckedItems)
                 {
-                    ListViewItem item = new ListViewItem(dr["username"].ToString());
-                    
-                    item.SubItems.Add(dr["created"].ToString());
-                    item.SubItems.Add(dr["type"].ToString());
-                    
-                    //item.SubItems.Add(((DateTime)dr["returnDate"]).ToString("yyyy-MM-dd"));
-                    users.Items.Add(item);
+                    // Get the title of the checked book
+                    string name = checkedItem.SubItems[1].Text;
+                    string id = checkedItem.SubItems[0].Text;
+
+                    if (name == LoginDatabase.currentUsername)
+                    {
+                        MessageBox.Show("You cannot delete your own account!");
+                        return;
+                    }
+
+                    //MessageBox.Show(id);
+                    Database delete = new Database();
+                    delete.deleteUser(Convert.ToInt32(id));
+
+                    MessageBox.Show("Successfully deleted! Account: " + name);
+                    populate();
                 }
+            }
+            else
+            {
+                MessageBox.Show("Checkfields are empty");
             }
 
         }
 
-        private void borrowedbooks_tbl_SelectedIndexChanged(object sender, EventArgs e)
+        private void customButton1_Click(object sender, EventArgs e)
         {
 
         }

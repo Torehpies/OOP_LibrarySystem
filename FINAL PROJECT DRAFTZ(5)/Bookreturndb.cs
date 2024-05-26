@@ -114,6 +114,22 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             }
         }
 
+        public static void DisplayMembers(out DataTable borrowedBooksTable)
+        {
+            start();
+            borrowedBooksTable = new DataTable();
+
+            string query = "SELECT * FROM users";
+
+            using (MySqlCommand command = new MySqlCommand(query, SQL_SERVER))
+            {
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    borrowedBooksTable.Load(reader);
+                }
+            }
+        }
+
         public static void UpdateReturnDateById(int borrowedBookId, DateTime returnDate)
         {
             start();
