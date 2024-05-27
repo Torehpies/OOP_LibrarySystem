@@ -63,7 +63,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             Adminpass.Size = new Size(299, 25);
             Adminpass.TabIndex = 1;
             Adminpass.UseSystemPasswordChar = true;
-            Adminpass.TextChanged += Adminpass_TextChanged;
             // 
             // label1
             // 

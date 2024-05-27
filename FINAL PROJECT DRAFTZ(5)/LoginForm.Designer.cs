@@ -199,6 +199,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // checkBox1
             // 
             checkBox1.AutoSize = true;
+            checkBox1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox1.Location = new Point(618, 363);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(108, 19);
