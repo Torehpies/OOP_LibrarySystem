@@ -53,7 +53,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // 
             // bookPic
             // 
-            bookPic.Image = Properties.Resources.how_to_write_a_lot;
+            bookPic.Image = Properties.Resources.voox_logo;
             bookPic.Location = new Point(23, 12);
             bookPic.Name = "bookPic";
             bookPic.Size = new Size(126, 153);
