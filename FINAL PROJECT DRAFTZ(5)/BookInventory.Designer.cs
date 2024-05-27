@@ -37,8 +37,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // libraryeditpanel
             // 
             libraryeditpanel.BackColor = Color.DarkGray;
-            libraryeditpanel.Controls.Add(AddBookBtn);
             libraryeditpanel.Controls.Add(addBookDashboard1);
+            libraryeditpanel.Controls.Add(AddBookBtn);
             libraryeditpanel.Location = new Point(-2, -2);
             libraryeditpanel.Name = "libraryeditpanel";
             libraryeditpanel.Size = new Size(1186, 609);
@@ -70,10 +70,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // addBookDashboard1
             // 
             addBookDashboard1.BackColor = Color.Transparent;
-            addBookDashboard1.Location = new Point(136, 23);
+            addBookDashboard1.Location = new Point(151, 23);
             addBookDashboard1.Name = "addBookDashboard1";
             addBookDashboard1.Size = new Size(883, 559);
             addBookDashboard1.TabIndex = 2;
+            addBookDashboard1.Visible = false;
             addBookDashboard1.Load += addBookDashboard1_Load;
             // 
             // BookInventory

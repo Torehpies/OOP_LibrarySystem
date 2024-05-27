@@ -76,7 +76,7 @@
             // 
             publishedLabel.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             publishedLabel.ForeColor = Color.FromArgb(73, 85, 121);
-            publishedLabel.Location = new Point(335, 241);
+            publishedLabel.Location = new Point(398, 241);
             publishedLabel.Name = "publishedLabel";
             publishedLabel.Size = new Size(228, 20);
             publishedLabel.TabIndex = 21;
@@ -85,7 +85,7 @@
             // BorrowButton
             // 
             BorrowButton.BackColor = Color.FromArgb(38, 49, 89);
-            BorrowButton.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            BorrowButton.Font = new Font("Quicksand", 12F, FontStyle.Bold, GraphicsUnit.Point);
             BorrowButton.ForeColor = Color.FromArgb(255, 251, 235);
             BorrowButton.Location = new Point(3, 329);
             BorrowButton.Name = "BorrowButton";
@@ -99,7 +99,7 @@
             // 
             publisherLabel.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             publisherLabel.ForeColor = Color.FromArgb(73, 85, 121);
-            publisherLabel.Location = new Point(334, 214);
+            publisherLabel.Location = new Point(398, 214);
             publisherLabel.Name = "publisherLabel";
             publisherLabel.Size = new Size(229, 26);
             publisherLabel.TabIndex = 20;
@@ -107,7 +107,7 @@
             // 
             // titleLabel
             // 
-            titleLabel.Font = new Font("Franklin Gothic Demi Cond", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            titleLabel.Font = new Font("Quicksand SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             titleLabel.ForeColor = Color.FromArgb(38, 49, 89);
             titleLabel.Location = new Point(245, 35);
             titleLabel.Name = "titleLabel";
@@ -120,7 +120,7 @@
             // 
             categoryLabel.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             categoryLabel.ForeColor = Color.FromArgb(73, 85, 121);
-            categoryLabel.Location = new Point(335, 184);
+            categoryLabel.Location = new Point(398, 184);
             categoryLabel.Name = "categoryLabel";
             categoryLabel.Size = new Size(228, 21);
             categoryLabel.TabIndex = 19;
@@ -130,7 +130,7 @@
             // 
             authorLabel.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             authorLabel.ForeColor = Color.FromArgb(73, 85, 121);
-            authorLabel.Location = new Point(334, 155);
+            authorLabel.Location = new Point(398, 155);
             authorLabel.Name = "authorLabel";
             authorLabel.Size = new Size(229, 21);
             authorLabel.TabIndex = 18;
@@ -140,7 +140,7 @@
             // 
             isbn10Label.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             isbn10Label.ForeColor = Color.FromArgb(73, 85, 121);
-            isbn10Label.Location = new Point(335, 127);
+            isbn10Label.Location = new Point(398, 127);
             isbn10Label.Name = "isbn10Label";
             isbn10Label.Size = new Size(228, 21);
             isbn10Label.TabIndex = 16;
@@ -179,13 +179,13 @@
             // button1
             // 
             button1.BackColor = Color.FromArgb(38, 49, 89);
-            button1.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Font = new Font("Quicksand SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.FromArgb(255, 251, 235);
             button1.Location = new Point(52, 280);
             button1.Name = "button1";
             button1.Size = new Size(137, 38);
             button1.TabIndex = 32;
-            button1.Text = "Upload new Image";
+            button1.Text = "Upload Image";
             button1.UseVisualStyleBackColor = false;
             button1.Visible = false;
             button1.Click += picture_Click;
@@ -194,7 +194,7 @@
             // 
             totalcopies.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             totalcopies.ForeColor = Color.FromArgb(73, 85, 121);
-            totalcopies.Location = new Point(347, 298);
+            totalcopies.Location = new Point(398, 298);
             totalcopies.Name = "totalcopies";
             totalcopies.Size = new Size(229, 20);
             totalcopies.TabIndex = 31;
@@ -203,22 +203,22 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Franklin Gothic Medium Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Font = new Font("Quicksand SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label7.ForeColor = Color.FromArgb(73, 85, 121);
             label7.Location = new Point(244, 297);
             label7.Name = "label7";
-            label7.Size = new Size(97, 21);
+            label7.Size = new Size(122, 24);
             label7.TabIndex = 30;
             label7.Text = "TOTAL COPIES:";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Franklin Gothic Medium Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Font = new Font("Quicksand SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label6.ForeColor = Color.FromArgb(73, 85, 121);
             label6.Location = new Point(244, 272);
             label6.Name = "label6";
-            label6.Size = new Size(126, 21);
+            label6.Size = new Size(152, 24);
             label6.TabIndex = 29;
             label6.Text = "AVAILABLE COPIES:";
             // 
@@ -226,7 +226,7 @@
             // 
             availablecopies.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
             availablecopies.ForeColor = Color.FromArgb(73, 85, 121);
-            availablecopies.Location = new Point(376, 273);
+            availablecopies.Location = new Point(398, 273);
             availablecopies.Name = "availablecopies";
             availablecopies.Size = new Size(229, 20);
             availablecopies.TabIndex = 28;
@@ -235,44 +235,44 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Franklin Gothic Medium Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Font = new Font("Quicksand SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.FromArgb(73, 85, 121);
             label5.Location = new Point(243, 241);
             label5.Name = "label5";
-            label5.Size = new Size(84, 21);
+            label5.Size = new Size(99, 24);
             label5.TabIndex = 27;
             label5.Text = "PUBLISHED:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Franklin Gothic Medium Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Font = new Font("Quicksand SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.FromArgb(73, 85, 121);
             label4.Location = new Point(244, 214);
             label4.Name = "label4";
-            label4.Size = new Size(83, 21);
+            label4.Size = new Size(99, 24);
             label4.TabIndex = 26;
             label4.Text = "PUBLISHER:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Franklin Gothic Medium Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Font = new Font("Quicksand SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.FromArgb(73, 85, 121);
             label3.Location = new Point(244, 184);
             label3.Name = "label3";
-            label3.Size = new Size(76, 21);
+            label3.Size = new Size(95, 24);
             label3.TabIndex = 25;
             label3.Text = "CATEGORY:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Franklin Gothic Medium Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Quicksand SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.FromArgb(73, 85, 121);
             label2.Location = new Point(244, 155);
             label2.Name = "label2";
-            label2.Size = new Size(63, 21);
+            label2.Size = new Size(80, 24);
             label2.TabIndex = 24;
             label2.Text = "AUTHOR:";
             label2.Click += label2_Click;
@@ -280,18 +280,18 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Franklin Gothic Medium Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Quicksand SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.FromArgb(73, 85, 121);
             label1.Location = new Point(245, 127);
             label1.Name = "label1";
-            label1.Size = new Size(47, 21);
+            label1.Size = new Size(53, 24);
             label1.TabIndex = 23;
             label1.Text = "ISBN: ";
             // 
             // statusLabel
             // 
-            statusLabel.BackColor = Color.Ivory;
-            statusLabel.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Underline, GraphicsUnit.Point);
+            statusLabel.BackColor = Color.Transparent;
+            statusLabel.Font = new Font("Quicksand SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             statusLabel.ForeColor = Color.FromArgb(73, 85, 121);
             statusLabel.Location = new Point(244, 100);
             statusLabel.Name = "statusLabel";
@@ -314,7 +314,7 @@
             // exitButton
             // 
             exitButton.BackColor = Color.Navy;
-            exitButton.Font = new Font("Franklin Gothic Demi Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            exitButton.Font = new Font("Quicksand SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             exitButton.ForeColor = SystemColors.ButtonHighlight;
             exitButton.Location = new Point(5, 2);
             exitButton.Name = "exitButton";
@@ -342,7 +342,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             AutoSize = true;
-            BackColor = Color.Ivory;
+            BackColor = Color.FromArgb(242, 233, 228);
             ClientSize = new Size(700, 430);
             ControlBox = false;
             Controls.Add(exitButton);
