@@ -27,6 +27,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         public void LoadUsersData()
         {
+            listView1.Items.Clear();
             using (MySqlConnection con = new MySqlConnection("server=127.0.0.1; user=root; database=test; password=;Convert Zero Datetime=True"))
             {
                 con.Open();
@@ -116,8 +117,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         {
             // Run sum query
             //datePicker;
-            MessageBox.Show(sortCombo.Text);
-            string searchText = sortCombo.Text.Trim();
+            //MessageBox.Show(sortCombo.Text);
+            string searchText = sortCombo.Text;
             string query = "";
             if (searchText == "BORROWED BOOKS")
             {
@@ -224,6 +225,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             {
                 //MessageBox.Show("Text box is empty");
                 sortComboBox();
+                //LoadUsersData();
             }
             else
             {

@@ -8,6 +8,7 @@ using System.Windows.Forms.VisualStyles;
 using MySql.Data.MySqlClient;
 using BCrypt.Net;
 using System.Net;
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace FINAL_PROJECT_DRAFTZ_5_
 {
@@ -179,12 +180,18 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         public string getBookId(string title)
         {
-            if (SQL_SERVER == null)
-            {
-                start();
-            }
+            string SERVER = "127.0.0.1";
+            string DATABASE = "test";
+            string USER = "root";
+            string PASSWORD = "";
 
-            MySqlCommand cmd = new MySqlCommand("SELECT id FROM books WHERE title = @title", SQL_SERVER);
+            MySqlConnection con = new MySqlConnection("server=" + SERVER + "; user=" + USER + "; database=" + DATABASE + "; password=" + PASSWORD + ";");
+
+            con.Open();
+
+            //Thread.Sleep(500);
+
+            MySqlCommand cmd = new MySqlCommand("SELECT id FROM books WHERE title = @title", con);
             cmd.Parameters.AddWithValue("@title", title);
 
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -194,11 +201,11 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             {
                 while (reader.Read())
                 {
-                    Thread.Sleep(1000);
+                    //Thread.Sleep(500);
                     int idInt = reader.GetInt32(0);
                     id = idInt.ToString();
                     //MessageBox.Show(id);
-                    
+                    con.Close();
                     return id;
                 }
             }
@@ -208,21 +215,25 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 
             }
 
+            con.Close();
             return id;
         }
 
+        public string bookId;
+
         public void addBorrowedBooks(string title, string borrowerId, int quantity)
         {
+            string SERVER = "127.0.0.1";
+            string DATABASE = "test";
+            string USER = "root";
+            string PASSWORD = "";
             
-            if (SQL_SERVER == null)
-            {
-                start();
-            }
+            MySqlConnection  con = new MySqlConnection("server=" + SERVER + "; user=" + USER + "; database=" + DATABASE + "; password=" + PASSWORD + ";");
 
-            string bookId = getBookId(title);
+            con.Open();
 
             MySqlCommand cmd = new MySqlCommand("INSERT INTO borrowedBooks (bookId, borrowerId, quantity, borrowDate, dueDate) " +
-                                                "VALUES(@bookId, @borrowerId, @quantity, @borrowDate, @dueDate)", SQL_SERVER);
+                                                "VALUES(@bookId, @borrowerId, @quantity, @borrowDate, @dueDate)", con);
 
             cmd.Parameters.AddWithValue("@bookId", bookId);
             cmd.Parameters.AddWithValue("@borrowerId", borrowerId);
@@ -234,24 +245,27 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
             recordTransaction("borrow");
 
-            SQL_SERVER.Close();
+            con.Close();
         }
 
         public void recordTransaction(string type)
         {
-            if (SQL_SERVER == null)
-            {
-                start();
-            }
+            string SERVER = "127.0.0.1";
+            string DATABASE = "test";
+            string USER = "root";
+            string PASSWORD = "";
 
+            MySqlConnection con = new MySqlConnection("server=" + SERVER + "; user=" + USER + "; database=" + DATABASE + "; password=" + PASSWORD + ";");
+
+            con.Open();
             MySqlCommand cmd = new MySqlCommand("INSERT INTO transactions (userId, type) " +
-                                                "VALUES(@userId, @type)", SQL_SERVER);
+                                                "VALUES(@userId, @type)", con);
 
             cmd.Parameters.AddWithValue("@userId", LoginDatabase.currentUserId);
             cmd.Parameters.AddWithValue("@type", type);
 
             cmd.ExecuteNonQuery();
-            SQL_SERVER.Close();
+            con.Close();
         }
 
         public DataTable retrieveData()

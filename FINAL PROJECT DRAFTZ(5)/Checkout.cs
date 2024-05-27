@@ -123,7 +123,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (checkoutList.Count <= 0)
+            if (checkoutList.Count < 0)
             {
                 MessageBox.Show("Nothing to checkout");
                 return;
@@ -168,7 +168,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                     }
                     // Reset para gamitin ule
                     keyValuePairs.Clear();
-                    checkoutList.Clear();
+                    //checkoutList.Clear();
                 }
                 else
                 {

@@ -71,6 +71,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 return;
             }
 
+            warningText.Hide();
             currentMember = BorrowerDB.GetMemberDetails(idTextbox.Texts);
             nameLabel.Text = currentMember.Name;
             detailsLabel.Text = currentMember.Department + " " + currentMember.Details;
@@ -117,10 +118,13 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 {
                     //database.addBorrowedBooks(book.Title, currentMember.Id, 5);
                     MessageBox.Show(book.Title + " is the title and the member id is " + currentMember.Id);
+                    database.bookId = database.getBookId(book.Title);
                     database.addBorrowedBooks(book.Title, currentMember.Id, book.BooksToborrow);
                     
                 }
             }
+
+            Library.Instance.populateItems();
 
 
 

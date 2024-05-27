@@ -99,8 +99,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_.Controls
 
             string imagePath = Path.Combine(resourceFolderPath, imageName);
 
-            MessageBox.Show(imagePath);
-            MessageBox.Show(resourceFolderPath);
+           // MessageBox.Show(imagePath);
+            //MessageBox.Show(resourceFolderPath);
             image.Save(imagePath + ".jpg");
 
 

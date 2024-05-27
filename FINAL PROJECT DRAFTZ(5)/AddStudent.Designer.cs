@@ -39,10 +39,10 @@
             name = new TextBox();
             label2 = new Label();
             panel1 = new Panel();
+            cancelBtn = new CustomControls.RJControls.CustomButton();
             label5 = new Label();
             id = new TextBox();
             department = new TextBox();
-            cancelBtn = new CustomControls.RJControls.CustomButton();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -64,9 +64,9 @@
             label8.ForeColor = SystemColors.ButtonFace;
             label8.Location = new Point(12, 7);
             label8.Name = "label8";
-            label8.Size = new Size(159, 31);
+            label8.Size = new Size(202, 31);
             label8.TabIndex = 18;
-            label8.Text = "ADD STUDENT";
+            label8.Text = "ADD NEW MEMBER";
             // 
             // type
             // 
@@ -80,7 +80,7 @@
             type.Name = "type";
             type.PlaceholderText = "(ex. Student)";
             type.Size = new Size(300, 36);
-            type.TabIndex = 12;
+            type.TabIndex = 4;
             // 
             // label1
             // 
@@ -106,7 +106,7 @@
             button2.Location = new Point(366, 435);
             button2.Name = "button2";
             button2.Size = new Size(150, 40);
-            button2.TabIndex = 10;
+            button2.TabIndex = 5;
             button2.Text = "SAVE";
             button2.TextColor = Color.White;
             button2.UseVisualStyleBackColor = false;
@@ -145,7 +145,7 @@
             details.Name = "details";
             details.PlaceholderText = "(ex. 2A)";
             details.Size = new Size(300, 36);
-            details.TabIndex = 6;
+            details.TabIndex = 2;
             // 
             // name
             // 
@@ -159,7 +159,7 @@
             name.Name = "name";
             name.PlaceholderText = "(ex. Seiffer)";
             name.Size = new Size(300, 36);
-            name.TabIndex = 5;
+            name.TabIndex = 1;
             // 
             // label2
             // 
@@ -193,6 +193,26 @@
             panel1.Size = new Size(883, 559);
             panel1.TabIndex = 2;
             // 
+            // cancelBtn
+            // 
+            cancelBtn.BackColor = Color.Gainsboro;
+            cancelBtn.BackgroundColor = Color.Gainsboro;
+            cancelBtn.BorderColor = Color.FromArgb(34, 34, 59);
+            cancelBtn.BorderRadius = 20;
+            cancelBtn.BorderSize = 2;
+            cancelBtn.FlatAppearance.BorderSize = 0;
+            cancelBtn.FlatStyle = FlatStyle.Flat;
+            cancelBtn.Font = new Font("Quicksand", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            cancelBtn.ForeColor = Color.FromArgb(34, 34, 59);
+            cancelBtn.Location = new Point(366, 476);
+            cancelBtn.Name = "cancelBtn";
+            cancelBtn.Size = new Size(150, 40);
+            cancelBtn.TabIndex = 22;
+            cancelBtn.Text = "CANCEL";
+            cancelBtn.TextColor = Color.FromArgb(34, 34, 59);
+            cancelBtn.UseVisualStyleBackColor = false;
+            cancelBtn.Click += cancelBtn_Click;
+            // 
             // label5
             // 
             label5.AutoSize = true;
@@ -215,7 +235,7 @@
             id.Name = "id";
             id.PlaceholderText = "(ex. 20220456-N)";
             id.Size = new Size(300, 36);
-            id.TabIndex = 20;
+            id.TabIndex = 0;
             // 
             // department
             // 
@@ -229,27 +249,7 @@
             department.Name = "department";
             department.PlaceholderText = "(ex. BSCS)";
             department.Size = new Size(300, 36);
-            department.TabIndex = 2;
-            // 
-            // cancelBtn
-            // 
-            cancelBtn.BackColor = Color.Gainsboro;
-            cancelBtn.BackgroundColor = Color.Gainsboro;
-            cancelBtn.BorderColor = Color.FromArgb(34, 34, 59);
-            cancelBtn.BorderRadius = 20;
-            cancelBtn.BorderSize = 2;
-            cancelBtn.FlatAppearance.BorderSize = 0;
-            cancelBtn.FlatStyle = FlatStyle.Flat;
-            cancelBtn.Font = new Font("Quicksand", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            cancelBtn.ForeColor = Color.FromArgb(34, 34, 59);
-            cancelBtn.Location = new Point(366, 476);
-            cancelBtn.Name = "cancelBtn";
-            cancelBtn.Size = new Size(150, 40);
-            cancelBtn.TabIndex = 22;
-            cancelBtn.Text = "CANCEL";
-            cancelBtn.TextColor = Color.FromArgb(34, 34, 59);
-            cancelBtn.UseVisualStyleBackColor = false;
-            cancelBtn.Click += cancelBtn_Click;
+            department.TabIndex = 3;
             // 
             // AddStudent
             // 
