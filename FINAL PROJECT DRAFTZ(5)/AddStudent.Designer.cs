@@ -39,9 +39,9 @@
             name = new TextBox();
             label2 = new Label();
             panel1 = new Panel();
-            department = new TextBox();
             label5 = new Label();
             id = new TextBox();
+            department = new TextBox();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -77,6 +77,7 @@
             type.MinimumSize = new Size(300, 30);
             type.Multiline = true;
             type.Name = "type";
+            type.PlaceholderText = "(ex. Student)";
             type.Size = new Size(300, 36);
             type.TabIndex = 12;
             // 
@@ -141,6 +142,7 @@
             details.MinimumSize = new Size(300, 30);
             details.Multiline = true;
             details.Name = "details";
+            details.PlaceholderText = "(ex. 2A)";
             details.Size = new Size(300, 36);
             details.TabIndex = 6;
             // 
@@ -154,6 +156,7 @@
             name.MinimumSize = new Size(300, 30);
             name.Multiline = true;
             name.Name = "name";
+            name.PlaceholderText = "(ex. Seiffer)";
             name.Size = new Size(300, 36);
             name.TabIndex = 5;
             // 
@@ -163,9 +166,9 @@
             label2.Font = new Font("Quicksand", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(236, 236);
             label2.Name = "label2";
-            label2.Size = new Size(87, 28);
+            label2.Size = new Size(91, 28);
             label2.TabIndex = 3;
-            label2.Text = "DETAILS";
+            label2.Text = "SECTION";
             // 
             // panel1
             // 
@@ -188,19 +191,6 @@
             panel1.Size = new Size(883, 559);
             panel1.TabIndex = 2;
             // 
-            // department
-            // 
-            department.BackColor = SystemColors.Window;
-            department.Font = new Font("Quicksand", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            department.ForeColor = Color.FromArgb(64, 64, 64);
-            department.Location = new Point(345, 297);
-            department.Margin = new Padding(4);
-            department.MinimumSize = new Size(300, 30);
-            department.Multiline = true;
-            department.Name = "department";
-            department.Size = new Size(300, 36);
-            department.TabIndex = 2;
-            // 
             // label5
             // 
             label5.AutoSize = true;
@@ -221,8 +211,23 @@
             id.MinimumSize = new Size(300, 30);
             id.Multiline = true;
             id.Name = "id";
+            id.PlaceholderText = "(ex. 20220456-N)";
             id.Size = new Size(300, 36);
             id.TabIndex = 20;
+            // 
+            // department
+            // 
+            department.BackColor = SystemColors.Window;
+            department.Font = new Font("Quicksand", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            department.ForeColor = Color.FromArgb(64, 64, 64);
+            department.Location = new Point(345, 297);
+            department.Margin = new Padding(4);
+            department.MinimumSize = new Size(300, 30);
+            department.Multiline = true;
+            department.Name = "department";
+            department.PlaceholderText = "(ex. BSCS)";
+            department.Size = new Size(300, 36);
+            department.TabIndex = 2;
             // 
             // AddStudent
             // 

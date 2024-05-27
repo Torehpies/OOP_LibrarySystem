@@ -231,6 +231,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             id_txtbox.Location = new Point(181, 25);
             id_txtbox.Multiline = true;
             id_txtbox.Name = "id_txtbox";
+            id_txtbox.PlaceholderText = "(ex. 20220456-N)";
             id_txtbox.Size = new Size(308, 26);
             id_txtbox.TabIndex = 4;
             id_txtbox.TextAlign = HorizontalAlignment.Center;
