@@ -45,6 +45,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             bookreturn_btn = new CustomButton();
             borrower_btn = new CustomButton();
             library_btn = new CustomButton();
+            manageAcc = new CustomButton();
             main_pnl.SuspendLayout();
             navigation_pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -73,6 +74,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // 
             navigation_pnl.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             navigation_pnl.BackColor = Color.FromArgb(74, 78, 105);
+            navigation_pnl.Controls.Add(manageAcc);
             navigation_pnl.Controls.Add(label2);
             navigation_pnl.Controls.Add(pictureBox1);
             navigation_pnl.Controls.Add(welcomeLbl);
@@ -179,7 +181,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             logoutButton.FlatStyle = FlatStyle.Flat;
             logoutButton.Font = new Font("Quicksand SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             logoutButton.ForeColor = Color.White;
-            logoutButton.Location = new Point(1079, 43);
+            logoutButton.Location = new Point(1084, 43);
             logoutButton.Name = "logoutButton";
             logoutButton.Size = new Size(93, 40);
             logoutButton.TabIndex = 0;
@@ -201,10 +203,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             bookinvent_btn.FlatStyle = FlatStyle.Flat;
             bookinvent_btn.Font = new Font("Quicksand SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             bookinvent_btn.ForeColor = Color.White;
-            bookinvent_btn.Location = new Point(824, 43);
+            bookinvent_btn.Location = new Point(745, 43);
             bookinvent_btn.Name = "bookinvent_btn";
             bookinvent_btn.RightToLeft = RightToLeft.Yes;
-            bookinvent_btn.Size = new Size(191, 40);
+            bookinvent_btn.Size = new Size(191, 43);
             bookinvent_btn.TabIndex = 3;
             bookinvent_btn.Text = "BOOK INVENTORY";
             bookinvent_btn.TextColor = Color.White;
@@ -224,9 +226,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             bookreturn_btn.FlatStyle = FlatStyle.Flat;
             bookreturn_btn.Font = new Font("Quicksand SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             bookreturn_btn.ForeColor = Color.White;
-            bookreturn_btn.Location = new Point(601, 43);
+            bookreturn_btn.Location = new Point(545, 43);
             bookreturn_btn.Name = "bookreturn_btn";
-            bookreturn_btn.Size = new Size(191, 40);
+            bookreturn_btn.Size = new Size(191, 42);
             bookreturn_btn.TabIndex = 2;
             bookreturn_btn.Text = "BOOK RETURNING";
             bookreturn_btn.TextColor = Color.White;
@@ -246,9 +248,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             borrower_btn.FlatStyle = FlatStyle.Flat;
             borrower_btn.Font = new Font("Quicksand SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             borrower_btn.ForeColor = Color.White;
-            borrower_btn.Location = new Point(378, 43);
+            borrower_btn.Location = new Point(343, 43);
             borrower_btn.Name = "borrower_btn";
-            borrower_btn.Size = new Size(191, 40);
+            borrower_btn.Size = new Size(191, 41);
             borrower_btn.TabIndex = 1;
             borrower_btn.Text = "BORROW HISTORY";
             borrower_btn.TextColor = Color.White;
@@ -270,7 +272,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             library_btn.FlatStyle = FlatStyle.Flat;
             library_btn.Font = new Font("Quicksand SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             library_btn.ForeColor = Color.White;
-            library_btn.Location = new Point(155, 43);
+            library_btn.Location = new Point(145, 44);
             library_btn.Name = "library_btn";
             library_btn.Size = new Size(191, 40);
             library_btn.TabIndex = 0;
@@ -278,6 +280,30 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             library_btn.TextColor = Color.White;
             library_btn.UseVisualStyleBackColor = false;
             library_btn.Click += library_btn_Click;
+            // 
+            // manageAcc
+            // 
+            manageAcc.AccessibleName = "";
+            manageAcc.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            manageAcc.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            manageAcc.BackColor = Color.FromArgb(74, 78, 105);
+            manageAcc.BackgroundColor = Color.FromArgb(74, 78, 105);
+            manageAcc.BorderColor = Color.FromArgb(242, 233, 228);
+            manageAcc.BorderRadius = 20;
+            manageAcc.BorderSize = 2;
+            manageAcc.FlatAppearance.BorderColor = Color.FromArgb(242, 233, 228);
+            manageAcc.FlatAppearance.BorderSize = 2;
+            manageAcc.FlatStyle = FlatStyle.Flat;
+            manageAcc.Font = new Font("Quicksand SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            manageAcc.ForeColor = Color.White;
+            manageAcc.Location = new Point(945, 43);
+            manageAcc.Name = "manageAcc";
+            manageAcc.Size = new Size(126, 42);
+            manageAcc.TabIndex = 11;
+            manageAcc.Text = "MANAGE";
+            manageAcc.TextColor = Color.White;
+            manageAcc.UseVisualStyleBackColor = false;
+            manageAcc.Click += manageAcc_Click;
             // 
             // MainForm
             // 
@@ -313,5 +339,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private Label welcomeLbl;
         private PictureBox pictureBox1;
         private Label label2;
+        private CustomButton manageAcc;
     }
 }

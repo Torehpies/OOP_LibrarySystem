@@ -54,6 +54,7 @@
             toolTip1 = new ToolTip(components);
             toolTip2 = new ToolTip(components);
             toolTip3 = new ToolTip(components);
+            label8 = new Label();
             ((System.ComponentModel.ISupportInitialize)picture).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)borrownumber).BeginInit();
@@ -108,7 +109,7 @@
             // 
             titleLabel.Font = new Font("Quicksand SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             titleLabel.ForeColor = Color.FromArgb(38, 49, 89);
-            titleLabel.Location = new Point(244, 17);
+            titleLabel.Location = new Point(245, 35);
             titleLabel.Name = "titleLabel";
             titleLabel.Size = new Size(413, 83);
             titleLabel.TabIndex = 8;
@@ -149,6 +150,7 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.AutoSize = true;
+            panel1.Controls.Add(label8);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(totalcopies);
             panel1.Controls.Add(label7);
@@ -323,6 +325,17 @@
             exitButton.UseVisualStyleBackColor = false;
             exitButton.Click += exitButton_Click;
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Franklin Gothic Medium Cond", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.ForeColor = Color.FromArgb(73, 85, 121);
+            label8.Location = new Point(245, 14);
+            label8.Name = "label8";
+            label8.Size = new Size(39, 21);
+            label8.TabIndex = 33;
+            label8.Text = "Title:";
+            // 
             // BookDetails
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -375,5 +388,6 @@
         private Label totalcopies;
         private Label label7;
         private Button button1;
+        private Label label8;
     }
 }

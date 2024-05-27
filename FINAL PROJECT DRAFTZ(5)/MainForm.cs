@@ -25,6 +25,15 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             InitializeComponent();
 
             userLabel.Text = LoginDatabase.currentUsername;
+            string username = LoginDatabase.currentUsername;
+            if (LoginDatabase.isAdmin(username))
+            {
+                manageAcc.Visible = true;
+            } else
+            {
+                manageAcc.Visible = false;
+            }
+
 
             Region = Region.FromHrgn(RoundEdge.CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
 
@@ -155,6 +164,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void manageAcc_Click(object sender, EventArgs e)
+        {
+            AccountManager open = new AccountManager();
+            open.Show();
         }
     }
 }

@@ -28,6 +28,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             borrowedbooks_tbl = new ListView();
             title_column = new ColumnHeader();
             author_column = new ColumnHeader();
+            quantity = new ColumnHeader();
             borrowDate_column = new ColumnHeader();
             dueDate_column = new ColumnHeader();
             bbcountslbl = new Label();
@@ -36,7 +37,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             enterId_btn = new CustomButton();
             Dsplay_Id = new Label();
             id_txtbox = new TextBox();
-            quantity = new ColumnHeader();
             panel1.SuspendLayout();
             panel5.SuspendLayout();
             panel2.SuspendLayout();
@@ -124,6 +124,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             borrowedbooks_tbl.UseCompatibleStateImageBehavior = false;
             borrowedbooks_tbl.View = View.Details;
             borrowedbooks_tbl.ItemChecked += Borrowedbooks_tbl_ItemChecked;
+            borrowedbooks_tbl.SelectedIndexChanged += borrowedbooks_tbl_SelectedIndexChanged;
             // 
             // title_column
             // 
@@ -135,6 +136,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             author_column.Text = "Author";
             author_column.TextAlign = HorizontalAlignment.Center;
             author_column.Width = 320;
+            // 
+            // quantity
+            // 
+            quantity.Text = "Quantity";
+            quantity.TextAlign = HorizontalAlignment.Center;
+            quantity.Width = 100;
             // 
             // borrowDate_column
             // 
@@ -227,12 +234,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             id_txtbox.Size = new Size(308, 26);
             id_txtbox.TabIndex = 4;
             id_txtbox.TextAlign = HorizontalAlignment.Center;
-            // 
-            // quantity
-            // 
-            quantity.Text = "Quantity";
-            quantity.TextAlign = HorizontalAlignment.Center;
-            quantity.Width = 100;
             // 
             // BookReturn
             // 
