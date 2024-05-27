@@ -47,14 +47,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 tb.Text = string.Empty;
             foreach (Control c in controls)
                 ClearTextBoxes(c.Controls);
-        }
-
-        private void Adminpass_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        
+        }       
 
         bool hidden = false;
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
