@@ -150,6 +150,14 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                     // Get the borrowedbook ID from the Tag property
                     int borrowedBookId = (int)checkedItem.Tag;
 
+                    var confirm_result = MessageBox.Show("Are you sure you will return this book(s)\n " + title, "Confirm Release!", MessageBoxButtons.YesNo);
+
+                    if (confirm_result == DialogResult.No)
+                    {
+                      
+                        return;
+
+                    }
                     try
                     {
                         // Update borrowedbooks table with the return date
