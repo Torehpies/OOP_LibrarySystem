@@ -19,6 +19,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private BorrowedList borrowPane;
         private BookReturn bookreturnPane;
         private BookInventory bookinventPane;
+        private AccountManager accountsPane;
 
         public MainForm()
         {
@@ -41,12 +42,14 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             borrowPane = new BorrowedList() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
             bookreturnPane = new BookReturn() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
             bookinventPane = new BookInventory() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
+            accountsPane = new AccountManager() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
 
             // Add panes to container panel
             container_pnl.Controls.Add(libPane);
             container_pnl.Controls.Add(borrowPane);
             container_pnl.Controls.Add(bookreturnPane);
             container_pnl.Controls.Add(bookinventPane);
+            container_pnl.Controls.Add(accountsPane);
 
             // Hide BorrowedList initially
             libPane.Show();
@@ -54,6 +57,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             borrowPane.Hide();
             bookreturnPane.Hide();
             bookinventPane.Hide();
+            accountsPane.Hide();
 
         }
 
@@ -62,7 +66,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // Reload yung mga kailangan ireload
             Library.Instance.populateItems();
 
-            borrowPane.Show();
+            //borrowPane.Show();
             library_btn.BackColor = ColorTranslator.FromHtml("#F2E9E4");
             borrower_btn.BackColor = ColorTranslator.FromHtml("#4A4E69");
             bookreturn_btn.BackColor = ColorTranslator.FromHtml("#4A4E69");
@@ -78,7 +82,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             borrowPane.Hide();
             bookreturnPane.Hide();
             bookinventPane.Hide();
-
+            accountsPane.Hide();
         }
 
         private void borrower_btn_Click(object sender, EventArgs e)
@@ -99,6 +103,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             borrowPane.Show();
             bookreturnPane.Hide();
             bookinventPane.Hide();
+            accountsPane.Hide();
         }
 
         private void bookreturn_btn_Click(object sender, EventArgs e)
@@ -118,6 +123,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             bookreturnPane.Show();
             bookreturnPane.FormBorderStyle = FormBorderStyle.None;
             bookinventPane.Hide();
+            accountsPane.Hide();
         }
 
         private void bookinvent_btn_Click(object sender, EventArgs e)
@@ -137,8 +143,17 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             bookreturnPane.Hide();
             bookinventPane.Show();
             bookinventPane.FormBorderStyle = FormBorderStyle.None;
+            accountsPane.Hide();
         }
 
+        private void manageAcc_Click(object sender, EventArgs e)
+        {
+            libPane.Hide();
+            borrowPane.Hide();
+            bookreturnPane.Hide();
+            bookinventPane.Hide();
+            accountsPane.Show();
+        }
         private void logoutButton_Click(object sender, EventArgs e)
         {
             Application.Restart();
@@ -166,10 +181,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             this.Close();
         }
 
-        private void manageAcc_Click(object sender, EventArgs e)
-        {
-            AccountManager open = new AccountManager();
-            open.Show();
-        }
+     
     }
 }

@@ -132,6 +132,7 @@
             Controls.Add(customButton1);
             Controls.Add(confirm_btn);
             Controls.Add(borrowedbooks_tbl);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "AccountManager";
             Text = "AccountManager";
             ResumeLayout(false);
