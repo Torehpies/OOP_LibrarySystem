@@ -55,7 +55,7 @@
             // title_column
             // 
             title_column.Text = "ID";
-            title_column.Width = 320;
+            title_column.Width = 100;
             // 
             // author_column
             // 

@@ -20,6 +20,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         public B_Books()
         {
             InitializeComponent();
+            sortCombo.SelectedIndex = 2;
             listView1.Region = Region.FromHrgn(RoundEdge.CreateRoundRectRgn(0, 0, listView1.Width, listView1.Height, 30, 30));
             originalDataTable = new DataTable();
             LoadUsersData();
@@ -71,8 +72,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 listitem.SubItems.Add(dr["title"].ToString());
                 listitem.SubItems.Add(dr["author"].ToString());
                 listitem.SubItems.Add(dr["name"].ToString());
-                listitem.SubItems.Add(dr["borrowDate"].ToString());
-                listitem.SubItems.Add(dr["dueDate"].ToString());
+                listitem.SubItems.Add(((DateTime)dr["borrowDate"]).ToString("yyyy-MM-dd"));
+                listitem.SubItems.Add(((DateTime)dr["dueDate"]).ToString("yyyy-MM-dd"));
 
                 if (dr["returnDate"] == DBNull.Value)
                 {
@@ -80,7 +81,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 }
                 else
                 {
-                    listitem.SubItems.Add(Convert.ToDateTime(dr["returnDate"]).ToString("yyyy-MM-dd HH:mm:ss"));
+                    listitem.SubItems.Add(Convert.ToDateTime(dr["returnDate"]).ToString("yyyy-MM-dd"));
                 }
 
 

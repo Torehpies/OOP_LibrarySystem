@@ -109,13 +109,13 @@
             // 
             // sortCombo
             // 
+            sortCombo.DropDownStyle = ComboBoxStyle.DropDownList;
             sortCombo.FormattingEnabled = true;
             sortCombo.Items.AddRange(new object[] { "RETURNED BOOKS", "BORROWED BOOKS", "ALL" });
             sortCombo.Location = new Point(374, 41);
             sortCombo.Name = "sortCombo";
             sortCombo.Size = new Size(162, 31);
             sortCombo.TabIndex = 3;
-            sortCombo.Text = "Sort by...";
             sortCombo.SelectedIndexChanged += selectedIndexChange;
             // 
             // textBox1
