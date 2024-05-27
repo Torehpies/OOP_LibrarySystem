@@ -111,7 +111,7 @@
             titleLabel.ForeColor = Color.FromArgb(38, 49, 89);
             titleLabel.Location = new Point(245, 35);
             titleLabel.Name = "titleLabel";
-            titleLabel.Size = new Size(413, 83);
+            titleLabel.Size = new Size(345, 65);
             titleLabel.TabIndex = 8;
             titleLabel.Text = "How to Write a Lot: A Practical Guide to Productive Academic Writing";
             titleLabel.Click += titleLabel_Click;

@@ -32,7 +32,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             LogintBox = new TextBox();
-            PasstBox = new TextBox();
             label1 = new Label();
             loginButton = new CustomButton();
             createAccount = new CustomButton();
@@ -43,6 +42,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             button2 = new Button();
             button1 = new Button();
             checkBox1 = new CheckBox();
+            PasstBox = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -59,21 +59,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             LogintBox.PlaceholderText = "Username";
             LogintBox.Size = new Size(299, 25);
             LogintBox.TabIndex = 0;
-            // 
-            // PasstBox
-            // 
-            PasstBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            PasstBox.BorderStyle = BorderStyle.None;
-            PasstBox.Font = new Font("Quicksand", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            PasstBox.Location = new Point(618, 330);
-            PasstBox.Margin = new Padding(2);
-            PasstBox.MinimumSize = new Size(299, 25);
-            PasstBox.Name = "PasstBox";
-            PasstBox.PasswordChar = '*';
-            PasstBox.PlaceholderText = "Password";
-            PasstBox.Size = new Size(299, 25);
-            PasstBox.TabIndex = 1;
-            PasstBox.UseSystemPasswordChar = true;
             // 
             // label1
             // 
@@ -159,7 +144,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             // 
             // containerPanel
             // 
-            containerPanel.Location = new Point(611, 266);
+            containerPanel.Location = new Point(618, 266);
             containerPanel.Name = "containerPanel";
             containerPanel.Size = new Size(306, 283);
             containerPanel.TabIndex = 10;
@@ -208,6 +193,18 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             checkBox1.UseVisualStyleBackColor = true;
             checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
+            // PasstBox
+            // 
+            PasstBox.BorderStyle = BorderStyle.None;
+            PasstBox.Font = new Font("Quicksand", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            PasstBox.Location = new Point(618, 332);
+            PasstBox.MinimumSize = new Size(299, 25);
+            PasstBox.Name = "PasstBox";
+            PasstBox.PlaceholderText = "Password";
+            PasstBox.Size = new Size(299, 25);
+            PasstBox.TabIndex = 13;
+            PasstBox.UseSystemPasswordChar = true;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -223,9 +220,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             Controls.Add(createAccount);
             Controls.Add(loginButton);
             Controls.Add(label1);
-            Controls.Add(PasstBox);
             Controls.Add(LogintBox);
             Controls.Add(checkBox1);
+            Controls.Add(PasstBox);
             Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -243,7 +240,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         #endregion
 
         private TextBox LogintBox;
-        private TextBox PasstBox;
         private Label label1;
         private CustomButton loginButton;
         private CustomButton createAccount;
@@ -254,5 +250,6 @@ namespace FINAL_PROJECT_DRAFTZ_5_
         private Button button2;
         private Button button1;
         private CheckBox checkBox1;
+        private TextBox PasstBox;
     }
 }
