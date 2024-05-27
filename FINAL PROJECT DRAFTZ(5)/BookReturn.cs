@@ -197,5 +197,10 @@ namespace FINAL_PROJECT_DRAFTZ_5_
                 id_txtbox.SelectionStart = id_txtbox.Text.Length; // Move the cursor to the end
             }
         }
+
+        private void borrowedbooks_tbl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace FINAL_PROJECT_DRAFTZ_5_
 {
-    partial class BorrowedList
+    partial class StudentFillUp
     {
         /// <summary>
         /// Required designer variable.
@@ -28,33 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            b_Books1 = new B_Books();
+            addStudent1 = new AddStudent();
             SuspendLayout();
             // 
-            // b_Books1
+            // addStudent1
             // 
-            b_Books1.BackColor = Color.FromArgb(201, 173, 167);
-            b_Books1.Font = new Font("Quicksand", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            b_Books1.Location = new Point(0, 0);
-            b_Books1.Name = "b_Books1";
-            b_Books1.Size = new Size(1186, 633);
-            b_Books1.TabIndex = 0;
-            b_Books1.Load += b_Books1_Load;
+            addStudent1.Location = new Point(140, 6);
+            addStudent1.Name = "addStudent1";
+            addStudent1.Size = new Size(883, 559);
+            addStudent1.TabIndex = 0;
             // 
-            // BorrowedList
+            // StudentFillUp
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1130, 600);
-            Controls.Add(b_Books1);
-            FormBorderStyle = FormBorderStyle.None;
-            Name = "BorrowedList";
-            Text = "BorrowedList";
+            BackColor = Color.FromArgb(242, 233, 228);
+            ClientSize = new Size(1170, 570);
+            Controls.Add(addStudent1);
+            Name = "StudentFillUp";
+            Text = "StudentFillUp";
             ResumeLayout(false);
         }
 
         #endregion
 
-        private B_Books b_Books1;
+        private AddStudent addStudent1;
     }
 }
