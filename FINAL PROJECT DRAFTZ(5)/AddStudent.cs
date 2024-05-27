@@ -27,7 +27,13 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
             Database addStudent = new Database();
             addStudent.addStudent(id.Text, name.Text, details.Text, department.Text, type.Text);
-            MessageBox.Show("Student named: " + id.Text  + " is added to the database");
+            MessageBox.Show("Student named: " + id.Text + " is added to the database");
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            StudentFillUp parent = this.ParentForm as StudentFillUp;
+            parent.Close();
         }
     }
 }

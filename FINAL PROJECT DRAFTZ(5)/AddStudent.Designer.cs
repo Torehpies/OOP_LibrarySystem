@@ -42,6 +42,7 @@
             label5 = new Label();
             id = new TextBox();
             department = new TextBox();
+            cancelBtn = new CustomControls.RJControls.CustomButton();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -96,15 +97,15 @@
             button2.BackColor = Color.FromArgb(34, 34, 59);
             button2.BackgroundColor = Color.FromArgb(34, 34, 59);
             button2.BorderColor = Color.PaleVioletRed;
-            button2.BorderRadius = 32;
+            button2.BorderRadius = 20;
             button2.BorderSize = 0;
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Quicksand", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(411, 415);
+            button2.Location = new Point(366, 435);
             button2.Name = "button2";
-            button2.Size = new Size(150, 63);
+            button2.Size = new Size(150, 40);
             button2.TabIndex = 10;
             button2.Text = "SAVE";
             button2.TextColor = Color.White;
@@ -173,6 +174,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(225, 213, 206);
+            panel1.Controls.Add(cancelBtn);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(id);
             panel1.Controls.Add(panel2);
@@ -229,6 +231,26 @@
             department.Size = new Size(300, 36);
             department.TabIndex = 2;
             // 
+            // cancelBtn
+            // 
+            cancelBtn.BackColor = Color.Gainsboro;
+            cancelBtn.BackgroundColor = Color.Gainsboro;
+            cancelBtn.BorderColor = Color.FromArgb(34, 34, 59);
+            cancelBtn.BorderRadius = 20;
+            cancelBtn.BorderSize = 2;
+            cancelBtn.FlatAppearance.BorderSize = 0;
+            cancelBtn.FlatStyle = FlatStyle.Flat;
+            cancelBtn.Font = new Font("Quicksand", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            cancelBtn.ForeColor = Color.FromArgb(34, 34, 59);
+            cancelBtn.Location = new Point(366, 476);
+            cancelBtn.Name = "cancelBtn";
+            cancelBtn.Size = new Size(150, 40);
+            cancelBtn.TabIndex = 22;
+            cancelBtn.Text = "CANCEL";
+            cancelBtn.TextColor = Color.FromArgb(34, 34, 59);
+            cancelBtn.UseVisualStyleBackColor = false;
+            cancelBtn.Click += cancelBtn_Click;
+            // 
             // AddStudent
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -259,5 +281,6 @@
         private TextBox department;
         private Label label5;
         private TextBox id;
+        private CustomControls.RJControls.CustomButton cancelBtn;
     }
 }

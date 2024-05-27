@@ -33,7 +33,7 @@
             // 
             // addStudent1
             // 
-            addStudent1.Location = new Point(140, 6);
+            addStudent1.Location = new Point(0, -1);
             addStudent1.Name = "addStudent1";
             addStudent1.Size = new Size(883, 559);
             addStudent1.TabIndex = 0;
@@ -43,9 +43,11 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(242, 233, 228);
-            ClientSize = new Size(1170, 570);
+            ClientSize = new Size(883, 559);
             Controls.Add(addStudent1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "StudentFillUp";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "StudentFillUp";
             ResumeLayout(false);
         }
