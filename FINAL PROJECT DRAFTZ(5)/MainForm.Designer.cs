@@ -105,9 +105,9 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             manageAcc.FlatAppearance.BorderColor = Color.FromArgb(242, 233, 228);
             manageAcc.FlatAppearance.BorderSize = 0;
             manageAcc.FlatStyle = FlatStyle.Flat;
-            manageAcc.Font = new Font("Quicksand SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            manageAcc.Font = new Font("Quicksand Medium", 11.25F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
             manageAcc.ForeColor = Color.White;
-            manageAcc.Location = new Point(1014, 38);
+            manageAcc.Location = new Point(1011, 38);
             manageAcc.Margin = new Padding(0);
             manageAcc.Name = "manageAcc";
             manageAcc.Size = new Size(91, 40);
@@ -204,7 +204,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             logoutButton.FlatAppearance.BorderSize = 0;
             logoutButton.FlatAppearance.MouseOverBackColor = Color.IndianRed;
             logoutButton.FlatStyle = FlatStyle.Flat;
-            logoutButton.Font = new Font("Quicksand SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            logoutButton.Font = new Font("Quicksand Medium", 11.25F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
             logoutButton.ForeColor = Color.White;
             logoutButton.Location = new Point(1102, 38);
             logoutButton.Margin = new Padding(0);
