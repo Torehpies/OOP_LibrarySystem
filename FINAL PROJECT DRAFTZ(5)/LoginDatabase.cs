@@ -16,6 +16,8 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         public static string currentUserId;
         public static string currentUsername;
+        public static bool admin;
+        
 
         public static void start()
         {
@@ -115,10 +117,36 @@ namespace FINAL_PROJECT_DRAFTZ_5_
             {
                 currentUserId = getUserId(username).ToString();
                 currentUsername = username;
+                
                 return true;
             }
             else return false;
             
+        }
+
+        public static bool isAdmin(string username)
+        {
+            start();
+            string query = "SELECT * FROM users WHERE username = @username AND type = 'admin'";
+
+            MySqlCommand cmd = new MySqlCommand(query, SQL_SERVER);
+            cmd.Parameters.AddWithValue("@username", username);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+            
+            
+
+
+            
+            if (reader.Read())
+            {
+                admin = true;
+                return true;
+            } else
+            {
+                admin = false;
+                return false;
+            }
         }
 
         public static bool checkAccount(string username)

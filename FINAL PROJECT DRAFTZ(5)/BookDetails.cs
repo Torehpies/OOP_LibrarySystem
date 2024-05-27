@@ -106,12 +106,12 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
         public void populateDetails()
         {
-            titleLabel.Text = "Title: " + title;
-            isbn10Label.Text = "ISBN: " + isbn;
-            authorLabel.Text = "Author: " + author;
-            categoryLabel.Text = "Category: " + category;
-            publisherLabel.Text = "Publisher: " + publisher;
-            publishedLabel.Text = "Year: " + published;
+            titleLabel.Text = title;
+            isbn10Label.Text = isbn;
+            authorLabel.Text = author;
+            categoryLabel.Text = category;
+            publisherLabel.Text = publisher;
+            publishedLabel.Text = published;
             availablecopies.Text = avail.ToString();
             totalcopies.Text = total.ToString();
             borrownumber.Maximum = avail;
@@ -211,6 +211,7 @@ namespace FINAL_PROJECT_DRAFTZ_5_
 
                 // Refresh
                 LibraryEdit.Instance.populateItems();
+                this.Close();
 
 
             }

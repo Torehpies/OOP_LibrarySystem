@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace FINAL_PROJECT_DRAFTZ_5_
 {
-    public partial class BorrowedList : Form
+    public partial class StudentFillUp : Form
     {
-        public BorrowedList()
+        public StudentFillUp()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void b_Books1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
